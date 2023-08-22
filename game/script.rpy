@@ -195,6 +195,40 @@
 
     label startloop:
     scene bghome
+    "This is a belly stuffing game"
+    menu:
+
+        "I'm in and 18+":
+            "Great, continue!"
+
+            python:
+                name = renpy.input("What's your name?")
+
+                name = name.strip() or "The Feeder"
+
+        "No I'm not into this or I'm under 18 years old":
+            "Sorry, the game is over for you!"
+            $ renpy.quit()
+    window hide
+    show text "{color=#ffffff}{size=200} Choose your way {/size}{/color}" at truecenter
+    with slowdissolve
+    pause 3
+    hide text
+    with slowdissolve
+    pause 1
+    menu:
+
+        "[name]'s Professional Journey":
+            "You are [name], a recent transplant to the thriving city of Urbana. Armed with a degree in computer science, you've come here in search of job opportunities in the tech industry. Your goal is to make your mark on the city's booming startup scene and develop groundbreaking software that changes the world."
+
+        "[name]'s Adventurous Spirit":
+            "You are [name], an adventurer at heart who has just arrived in the bustling city of Urbana. Tired of the mundane, you seek excitement and new experiences around every corner. Whether it's exploring hidden alleys, joining local clubs, or embarking on spontaneous road trips, you're determined to make your time in Urbana unforgettable."
+
+        "[name]'s Culinary Journey":
+            "You are [name], a culinary enthusiast who has relocated to the food-loving city of Urbana. With a love for experimenting in the kitchen, you're excited to dive into the diverse culinary scene and maybe even open your own restaurant one day. From food trucks to upscale eateries, you're ready to savor every flavor the city has to offer."
+
+        "[name]'s Social Butterfly":
+            "You are [name], a people person who has recently moved to the vibrant city of Urbana. Eager to connect with others, you're excited about the endless possibilities for making new friends, attending parties, and immersing yourself in the city's social scene. Your charisma and charm are your greatest assets as you navigate your way through this exciting chapter of your life."
     pause
 
     jump startloop
