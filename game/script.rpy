@@ -194,6 +194,7 @@
     show screen day_icon
 
 label startloop:
+    $ position = "home"
     scene bg
     "This is a belly stuffing game"
     menu:
@@ -231,6 +232,17 @@ label startloop:
             "You are [name], a people person who has recently moved to the vibrant city of Urbana. Eager to connect with others, you're excited about the endless possibilities for making new friends, attending parties, and immersing yourself in the city's social scene. Your charisma and charm are your greatest assets as you navigate your way through this exciting chapter of your life."
         "Next day":
             call dayvariables
+        "Show Alexa":
+            $ position = "alexaexplaining"
+            show alexa
+            pause
+            $ position = "alexaworking"
+            pause
+            $ position = "alexahappy"
+            pause
+            $ position = "alexasurprised"
+            pause
+        
     pause
 
     jump startloop

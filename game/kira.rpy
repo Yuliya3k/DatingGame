@@ -1,6 +1,10 @@
 label kira:
     default kira_fullness = int(0)
 
+    default kira_abolutemaxfullness = 8000
+
+    default kira_minfullness = 400
+
     default kira_fullnessoz = int(kira_fullness*0.034)
 
     default kira_weight = 48

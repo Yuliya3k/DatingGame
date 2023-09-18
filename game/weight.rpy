@@ -3,7 +3,7 @@ label weight:
 
     if wg == 1:
 
-
+        
 
         $ g1_weight = int(g1_defaultweight + (g1_calories/7000))
         $ g2_weight = int(g2_defaultweight + (g2_calories/7000))

@@ -1,6 +1,10 @@
 label kris:
     default kris_fullness = int(0)
 
+    default kris_abolutemaxfullness = 8000
+    
+    default kris_minfullness = 400
+
     default kris_fullnessoz = int(kris_fullness*0.034)
 
     default kris_weight = 50

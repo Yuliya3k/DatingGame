@@ -6,6 +6,8 @@ label variables:
 
     call kris  
 
+    call alexa
+
     default calendar = Calendar(1, 7, 0, 1, 0, 0, ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31], ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"])
 
     define slowdissolve = Dissolve(.5)
