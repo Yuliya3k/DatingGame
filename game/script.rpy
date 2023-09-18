@@ -193,8 +193,8 @@
 
     show screen day_icon
 
-    label startloop:
-    scene bghome
+label startloop:
+    scene bg
     "This is a belly stuffing game"
     menu:
 
@@ -229,6 +229,8 @@
 
         "[name]'s Social Butterfly":
             "You are [name], a people person who has recently moved to the vibrant city of Urbana. Eager to connect with others, you're excited about the endless possibilities for making new friends, attending parties, and immersing yourself in the city's social scene. Your charisma and charm are your greatest assets as you navigate your way through this exciting chapter of your life."
+        "Next day":
+            call dayvariables
     pause
 
     jump startloop
