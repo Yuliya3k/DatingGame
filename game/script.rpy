@@ -2,50 +2,18 @@
 
 
     call variables
-
+    call girl
     init python:
 
-        class Items(object):
-            def __init__ (self, name, val, volume, calories, NoOwned, ID, img):
-                self.name = name
-                self.val = val
-                self.volume = volume
-                self.calories = calories
-                self.NoOwned = NoOwned
-                self.ID = ID
-                self.img = img
+        # gamerunning = 1
+        # position = "home"
 
-            def AddItem(self):
-                MaxVolume = 50
+        # labelvariable = "sceneimg"
+        
+        # while gamerunning == 1:
+        #     renpy.call(labelvariable)
 
-                if self.CurrentVolume + self.volume > MaxVolume:
-                    return
-                else:
-                    self.NoOwned += 1
-
-            @property
-            def CurrentVolume(self):
-                CurrentW = 0
-                for q in Inventory:
-                    CurrentW += (q.volume*q.NoOwned)
-                return CurrentW
-
-            @property
-            def ItemImg(self):
-                return self.img
-
-            @property
-            def ItemNoOwned(self):
-                return self.NoOwned
-
-
-        Inventory = []
-        t = 0
-
-        while t < 50:
-            # Events.append(Event(0,0,0, "", False))
-            Inventory.append(Items("none", 0, 0, 0, 0, t, "none"))
-            t += 1
+        # renpy.call("sceneimg")
 
 
         class Calendar(object):
@@ -192,7 +160,7 @@
         ###############################
 
     show screen day_icon
-
+    
 label startloop:
     $ position = "home"
     scene bg
@@ -217,22 +185,24 @@ label startloop:
     hide text
     with slowdissolve
     pause 1
+    
     menu:
-
-        "[name]'s Professional Journey":
-            "You are [name], a recent transplant to the thriving city of Urbana. Armed with a degree in computer science, you've come here in search of job opportunities in the tech industry. Your goal is to make your mark on the city's booming startup scene and develop groundbreaking software that changes the world."
+      
+        "[name]'s Culinary journey":
+            jump culinarystart
 
         "[name]'s Adventurous Spirit":
             "You are [name], an adventurer at heart who has just arrived in the bustling city of Urbana. Tired of the mundane, you seek excitement and new experiences around every corner. Whether it's exploring hidden alleys, joining local clubs, or embarking on spontaneous road trips, you're determined to make your time in Urbana unforgettable."
 
-        "[name]'s Culinary Journey":
+        "[name]'s Professional journey (IT digital nomad)":
             "You are [name], a culinary enthusiast who has relocated to the food-loving city of Urbana. With a love for experimenting in the kitchen, you're excited to dive into the diverse culinary scene and maybe even open your own restaurant one day. From food trucks to upscale eateries, you're ready to savor every flavor the city has to offer."
 
-        "[name]'s Social Butterfly":
+        "[name]'s Philanthropic Endeavors":
             "You are [name], a people person who has recently moved to the vibrant city of Urbana. Eager to connect with others, you're excited about the endless possibilities for making new friends, attending parties, and immersing yourself in the city's social scene. Your charisma and charm are your greatest assets as you navigate your way through this exciting chapter of your life."
         "Next day":
             call dayvariables
         "Show Alexa":
+            scene bg
             $ position = "alexaexplaining"
             show alexa
             pause
@@ -242,6 +212,48 @@ label startloop:
             pause
             $ position = "alexasurprised"
             pause
+        "Show Kira":
+            label kiraloop:
+                
+                $ position = "kiraexplain"    
+                call sceneimg                          
+                pause 0.5
+                $ position = "kiraworking"
+                call sceneimg
+                pause 0.5
+                $ position = "kiraworking2"
+                call sceneimg
+                pause 0.5
+                $ position = "kiraquestion"
+                call sceneimg
+                pause 0.5
+                $ position = "kiraflirting"
+                call sceneimg
+                pause 0.5
+                $ kira_fullness += 400
+                if kira_fullstage == 10:
+                    menu:
+                        "Alexa":
+                            
+                            scene bg
+                            $ position = "alexaexplaining"
+                            call sceneimg 
+                            $ alexa_fullness += 800
+                            pause
+                            $ position = "alexaworking"
+                            call sceneimg 
+                            $ alexa_fullness += 800
+                            pause
+                            $ position = "alexahappy"
+                            call sceneimg 
+                            $ alexa_fullness += 800
+                            pause
+                            $ position = "alexasurprised"
+                            call sceneimg 
+                            $ alexa_fullness += 800
+                            pause
+                jump kiraloop
+
         
     pause
 

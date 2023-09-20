@@ -20,9 +20,13 @@ label variables:
 
     default endgame = 0
 
-    default goodwork = 0    
+    default goodwork = 0   
+
+    default sevent = 0 
 
     default daytime = 18
+
+    default gamerunning = 1
 
     default money = 1000 
     

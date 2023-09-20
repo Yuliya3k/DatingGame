@@ -2,9 +2,11 @@
 errors listed below, and try again.
 
 
-File "game/my_screens.rpy", line 24: 'outline' is not a keyword argument or valid child of the text statement.
-    text "Day [calendar.TotalDays]" bold 1 xpos 30 ypos 1 color ("#ffff0c") size 30 outline ("#00ff00")
-                                                                                           ^
+The label sceneimg is defined twice, at File "game/scene.rpyc", line 1:
+
+and File "game/sceneimg.rpy", line 1:
+label sceneimg:
+
 
 Ren'Py Version: Ren'Py 8.1.0.23051307
-Tue Sep 19 00:06:18 2023
+Wed Sep 20 00:55:15 2023
