@@ -1,32 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 219, in script call
-    call sceneimg
-  File "game/scene.rpy", line 11, in script
-    if position == "alexaexplaining" or position == "alexaworking" or position == "alexahappy" or position = "alexasurprised":
-SyntaxError: invalid syntax (game/scene.rpy, line 11)
+PermissionError: [WinError 32] Процесс не может получить доступ к файлу, так как этот файл занят другим процессом: 'D:\\Digital goods Dropbox\\Digital goods\\R800\\Game projects\\Dating_game\\game\\saves\\persistent'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 219, in script call
-    call sceneimg
-  File "game/scene.rpy", line 11, in script
-    if position == "alexaexplaining" or position == "alexaworking" or position == "alexahappy" or position = "alexasurprised":
-  File "D:\renpy-7.4.11-sdk\renpy\ast.py", line 2133, in execute
-    if renpy.python.py_eval(condition):
-  File "D:\renpy-7.4.11-sdk\renpy\python.py", line 1151, in py_eval
-    code = py_compile(code, 'eval')
-  File "D:\renpy-7.4.11-sdk\renpy\python.py", line 1088, in py_compile
-    raise e
-  File "D:\renpy-7.4.11-sdk\renpy\python.py", line 1034, in py_compile
-    raise orig_e
-  File "D:\renpy-7.4.11-sdk\renpy\python.py", line 1027, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (game/scene.rpy, line 11)
+  File "D:\renpy-7.4.11-sdk\renpy\bootstrap.py", line 275, in bootstrap
+    renpy.main.main()
+  File "D:\renpy-7.4.11-sdk\renpy\main.py", line 684, in main
+    renpy.persistent.update(True)
+  File "D:\renpy-7.4.11-sdk\renpy\persistent.py", line 401, in update
+    save()
+  File "D:\renpy-7.4.11-sdk\renpy\persistent.py", line 419, in save
+    renpy.loadsave.location.save_persistent(compressed)
+  File "D:\renpy-7.4.11-sdk\renpy\savelocation.py", line 545, in save_persistent
+    l.save_persistent(data)
+  File "D:\renpy-7.4.11-sdk\renpy\savelocation.py", line 378, in save_persistent
+    safe_rename(fn_new, fn)
+  File "D:\renpy-7.4.11-sdk\renpy\loadsave.py", line 302, in safe_rename
+    os.unlink(new)
+PermissionError: [WinError 32] Процесс не может получить доступ к файлу, так как этот файл занят другим процессом: 'D:\\Digital goods Dropbox\\Digital goods\\R800\\Game projects\\Dating_game\\game\\saves\\persistent'
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.1.0.23051307
 Dating_game 1.0
-Wed Sep 20 00:51:05 2023
+Thu Sep 21 00:44:45 2023

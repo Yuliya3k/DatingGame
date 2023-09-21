@@ -2,11 +2,9 @@
 errors listed below, and try again.
 
 
-The label sceneimg is defined twice, at File "game/scene.rpyc", line 1:
-
-and File "game/sceneimg.rpy", line 1:
-label sceneimg:
-
+File "game/culiarychoices.rpy", line 3: expected 'label_name' not found.
+    call scene
+        ^
 
 Ren'Py Version: Ren'Py 8.1.0.23051307
-Wed Sep 20 00:55:15 2023
+Thu Sep 21 00:30:26 2023

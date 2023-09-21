@@ -12,4 +12,4 @@ label culinarystart:
 
     player "As I unpacked my belongings, I couldn't help but feel a sense of anticipation. This city held the promise of culinary adventures, new friendships, and a journey into the world of flavors. With my pots and pans at the ready, I was prepared to turn this cozy apartment into the heart of my culinary dreams."
 
-    jump culiarychoices
+    jump culinarychoices

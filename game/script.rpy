@@ -185,77 +185,24 @@ label startloop:
     hide text
     with slowdissolve
     pause 1
-    
-    menu:
-      
-        "[name]'s Culinary journey":
-            jump culinarystart
+    label choosetheway:
+        menu:
+        
+            "[name]'s Culinary journey":
+                jump culinarystart
 
-        "[name]'s Adventurous Spirit":
-            "You are [name], an adventurer at heart who has just arrived in the bustling city of Urbana. Tired of the mundane, you seek excitement and new experiences around every corner. Whether it's exploring hidden alleys, joining local clubs, or embarking on spontaneous road trips, you're determined to make your time in Urbana unforgettable."
+            "[name]'s Adventurous Spirit":
+                "Not yet"
 
-        "[name]'s Professional journey (IT digital nomad)":
-            "You are [name], a culinary enthusiast who has relocated to the food-loving city of Urbana. With a love for experimenting in the kitchen, you're excited to dive into the diverse culinary scene and maybe even open your own restaurant one day. From food trucks to upscale eateries, you're ready to savor every flavor the city has to offer."
+            "[name]'s Professional journey (IT digital nomad)":
+                "Not yet"
 
-        "[name]'s Philanthropic Endeavors":
-            "You are [name], a people person who has recently moved to the vibrant city of Urbana. Eager to connect with others, you're excited about the endless possibilities for making new friends, attending parties, and immersing yourself in the city's social scene. Your charisma and charm are your greatest assets as you navigate your way through this exciting chapter of your life."
-        "Next day":
-            call dayvariables
-        "Show Alexa":
-            scene bg
-            $ position = "alexaexplaining"
-            show alexa
-            pause
-            $ position = "alexaworking"
-            pause
-            $ position = "alexahappy"
-            pause
-            $ position = "alexasurprised"
-            pause
-        "Show Kira":
-            label kiraloop:
-                
-                $ position = "kiraexplain"    
-                call sceneimg                          
-                pause 0.5
-                $ position = "kiraworking"
-                call sceneimg
-                pause 0.5
-                $ position = "kiraworking2"
-                call sceneimg
-                pause 0.5
-                $ position = "kiraquestion"
-                call sceneimg
-                pause 0.5
-                $ position = "kiraflirting"
-                call sceneimg
-                pause 0.5
-                $ kira_fullness += 400
-                if kira_fullstage == 10:
-                    menu:
-                        "Alexa":
-                            
-                            scene bg
-                            $ position = "alexaexplaining"
-                            call sceneimg 
-                            $ alexa_fullness += 800
-                            pause
-                            $ position = "alexaworking"
-                            call sceneimg 
-                            $ alexa_fullness += 800
-                            pause
-                            $ position = "alexahappy"
-                            call sceneimg 
-                            $ alexa_fullness += 800
-                            pause
-                            $ position = "alexasurprised"
-                            call sceneimg 
-                            $ alexa_fullness += 800
-                            pause
-                jump kiraloop
+            "[name]'s Philanthropic Endeavors":
+                "Not yet"
+        jump choosetheway  
 
         
-    pause
+    
 
     jump startloop
 

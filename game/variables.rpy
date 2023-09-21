@@ -30,6 +30,16 @@ label variables:
 
     default money = 1000 
     
-    default invpos = 1     
+    default invpos = 1  
 
+    default myrandom = renpy.random.randint(0,1)
+
+    default alexafirsttime = 0
+
+    default krisfirsttime = 0
+
+    default kirafirsttime = 0
+
+    default aurorafirsttime = 0
+    
     return
