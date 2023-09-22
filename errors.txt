@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/culiarychoices.rpy", line 3: expected 'label_name' not found.
-    call scene
-        ^
+File "game/bcafe.rpy", line 117: Indentation mismatch.
 
 Ren'Py Version: Ren'Py 8.1.0.23051307
-Thu Sep 21 00:30:26 2023
+Fri Sep 22 01:23:24 2023

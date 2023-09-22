@@ -25,4 +25,4 @@ PermissionError: [WinError 32] Процесс не может получить �
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.1.0.23051307
 Dating_game 1.0
-Thu Sep 21 00:44:45 2023
+Fri Sep 22 01:29:49 2023

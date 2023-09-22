@@ -6,10 +6,10 @@ label sceneimg:
     # hide alexa
     if position == "home":
         scene bg
-    if position == "kiraworking" or position == "kiraworking2" or position == "kiraquestion" or position == "kiraflirting" or position == "kiraexplain":
+    if position == "kiraworking" or position == "kiraworking2" or position == "kiraquestion" or position == "kiraflirting" or position == "kiraexplain" or position == "kiraenterance":
         scene bg
         show kira
-    if position == "alexaexplaining" or position == "alexaworking" or position == "alexahappy" or position == "alexasurprised":
+    if position == "alexaexplaining" or position == "alexaworking" or position == "alexahappy" or position == "alexasurprised" or position == "alexaskingtable":
         scene bg
         show alexa
 
@@ -21,7 +21,7 @@ label sceneimg:
         scene bg
         show aurora
 
-    if position == "backyard" or position == "gardeningbalconynoaurora" or position == "kriswalkingbalconynokris":
+    if position == "backyard" or position == "gardeningbalconynoaurora" or position == "kriswalkingbalconynokris" or position == "foodburger" or position == "foodburgerfrappe" or position == "foodfrappe" or position == "foodnofood" or position == "cafeenterance" or position == "barenterance":
         scene bg
         
     

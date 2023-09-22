@@ -1,4 +1,5 @@
 label culinarystart:
+    play music "audio/campfire.mp3"
     $ position = "backyard"
     call sceneimg
 

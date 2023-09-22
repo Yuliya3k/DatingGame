@@ -41,5 +41,7 @@ label variables:
     default kirafirsttime = 0
 
     default aurorafirsttime = 0
+
+    default alexa_bloatask = 0
     
     return
