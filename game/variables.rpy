@@ -43,5 +43,19 @@ label variables:
     default aurorafirsttime = 0
 
     default alexa_bloatask = 0
+
+    default overallpeople = 0
+
+    default hayoonintro = 0
+
+    default avaintro = 0
+
+    default linintro = 0
+
+    default sallyintro = 0
+
+    default usual = 0
+
+    default towninfo = 0
     
     return

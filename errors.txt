@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/bcafe.rpy", line 117: Indentation mismatch.
+File "game/kiragirlsmenu.rpy", line 29: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    "Hey, Kira. I'm curious about the locals. Who should I keep an eye out for?"
+                                                                                ^
 
 Ren'Py Version: Ren'Py 8.1.0.23051307
-Fri Sep 22 01:23:24 2023
+Sun Sep 24 21:16:28 2023
