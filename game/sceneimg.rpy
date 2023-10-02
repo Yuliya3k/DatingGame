@@ -21,7 +21,15 @@ label sceneimg:
         scene bg
         show aurora
 
-    if position == "backyard" or position == "gardeningbalconynoaurora" or position == "kriswalkingbalconynokris" or position == "foodburger" or position == "foodburgerfrappe" or position == "foodfrappe" or position == "foodnofood" or position == "cafeenterance" or position == "barenterance" or position == "hayoonintro" or position == "linintro" or position == "avaintro" or position == "sallyintro":
+    if position == "linhi" or position == "linhmm" or position == "linletsdoit" or position == "linlistening" or position == "linexplaining":
+        scene bg
+        show lin
+
+    if position == "margohismile" or position == "margormexplaining" or position == "margormgoodluck" or position == "margormlistening" or position == "margormpointing" or position == "margormserious" or position == "margormtalking":
+        scene bg
+        show margo
+
+    if position == "backyard" or position == "gardeningbalconynoaurora" or position == "kriswalkingbalconynokris" or position == "foodburger" or position == "foodburgerfrappe" or position == "foodfrappe" or position == "foodnofood" or position == "cafeenterance" or position == "barenterance" or position == "hayoonintro" or position == "linintro" or position == "avaintro" or position == "sallyintro" or position == "parkocean" or position == "parkwalk" or position == "parkbench" or position == "kitchen":
         scene bg
         
     

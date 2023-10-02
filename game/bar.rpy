@@ -7,12 +7,12 @@ label bar:
 
     if kirafirsttime == 1:
         $ kirafirsttime = 2
-        call bar2
+        jump bar2
 
         
 
     if kirafirsttime == 2:
-        call bar3
+        jump bar3
 
     
 "Something went wrong"

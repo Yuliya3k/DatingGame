@@ -1,25 +1,57 @@
 label myscreens:
 
+
+screen callmap():
+    
+    imagebutton:
+        auto "gui/dg_map_callmap_%s.png" xpos 1834 ypos 0 action ShowTransient("map")
+    if mapishere == 0:
+        imagebutton:
+            auto "gui/dg_map_pointer_%s.png" xpos 1622 ypos 42 action [ Play("sound", "audio/click2.mp3"), Call("mapishere") ] hovered [ Play("sound", "audio/button hover4.mp3") ] 
+
+screen map():
+    
+    image "gui/dg_map.png"
+    imagebutton:
+        auto "gui/dg_map_home_%s.png" xpos 863 ypos 102 action [ Play("sound", "audio/click2.mp3"), Jump("culinarychoices") ] hovered [ Play("sound", "audio/button hover4.mp3") ] 
+    
+    imagebutton:
+        auto "gui/dg_map_bar_%s.png" xpos 1027 ypos 315 action [ Play("sound", "audio/click2.mp3"), Jump("bar") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    imagebutton:
+        auto "gui/dg_map_burgers_%s.png" xpos 1034 ypos 160 action [ Play("sound", "audio/click2.mp3"), Jump("bcafe") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    if hayoonfirsttime > 0:
+        imagebutton:
+            auto "gui/dg_map_hospital_%s.png" xpos 818 ypos 511 action [ Play("sound", "audio/click2.mp3"), Call("g7stats") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    
+    imagebutton:
+        auto "gui/dg_map_park_%s.png" xpos 81 ypos 654 action [ Play("sound", "audio/click2.mp3"), Jump("park") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    if calendar.WeekDay == 'Mon' or calendar.WeekDay == 'Tue' or calendar.WeekDay == 'Wed' or calendar.WeekDay == 'Thu' or calendar.WeekDay == 'Fri':
+        imagebutton:
+            auto "gui/dg_map_work_%s.png" xpos 1089 ypos 395 action [ Play("sound", "audio/click2.mp3"), Jump("work") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    if overallpeople > 0:
+        imagebutton:
+            auto "gui/dg_map_fitness_%s.png" xpos 544 ypos 407 action [ Play("sound", "audio/click2.mp3"), Jump("fitness") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+
 screen day_icon():
     frame:
         xsize 160
         ysize 37
         xpos 0
         ypos 0
-        background Solid("#2f0aff70")
+        background Solid("#999966ca")
         xpadding 10
         ypadding 10
         
     if calendar.TotalDays <= 9:
-        text "Day [calendar.TotalDays]" bold 1 xpos 30 ypos 1 color ("#ffff0c") size 30
+        text "Day [calendar.TotalDays]" bold 1 xpos 30 ypos 1 color ("#ffffffff") size 30
     if calendar.TotalDays >=10 and calendar.TotalDays <= 99:
-        text "Day [calendar.TotalDays]" bold 1 xpos 25 ypos 1 color ("#ffff0c") size 30
+        text "Day [calendar.TotalDays]" bold 1 xpos 25 ypos 1 color ("#ffffffff") size 30
     if calendar.TotalDays >=100 and calendar.TotalDays <= 999:
-        text "Day [calendar.TotalDays]" bold 1 xpos 12 ypos 1 color ("#ffff0c") size 30
+        text "Day [calendar.TotalDays]" bold 1 xpos 12 ypos 1 color ("#ffffffff") size 30
     if calendar.TotalDays >=1000 and calendar.TotalDays <= 9999:
-        text "Day [calendar.TotalDays]" bold 1 xpos 1 ypos 1 color ("#ffff0c") size 29
+        text "Day [calendar.TotalDays]" bold 1 xpos 1 ypos 1 color ("#ffffffff") size 29
     if calendar.TotalDays >=10000 and calendar.TotalDays <= 99999:
-        text "Day [calendar.TotalDays]" bold 1 xpos 1 ypos 3 color ("#ffff0c") size 25
+        text "Day [calendar.TotalDays]" bold 1 xpos 1 ypos 3 color ("#ffffffff") size 25
 
     if calendar.Days <= 9:
         frame:
@@ -27,41 +59,41 @@ screen day_icon():
             ysize 37
             xpos 180
             ypos 0
-            background Solid("#2f0aff70")
+            background Solid("#999966")
             xpadding 10
             ypadding 10
-        text "[calendar.Days]" bold 1 xpos 185 ypos 1 color ("#ffff0c") size 30
-        text "[calendar.Month]" bold 1 xpos 220 ypos 1 color ("#ffff0c") size 30
+        text "[calendar.Days]" bold 1 xpos 185 ypos 1 color ("#ffffffff") size 30
+        text "[calendar.Month]" bold 1 xpos 220 ypos 1 color ("#ffffffff") size 30
     if calendar.Days >= 10 and calendar.Days <= 99:
         frame:
             xsize 125
             ysize 37
             xpos 170
             ypos 0
-            background Solid("#2f0aff70")
+            background Solid("#999966")
             xpadding 10
             ypadding 10
-        text "[calendar.Days]" bold 1 xpos 175 ypos 1 color ("#ffff0c") size 30
-        text "[calendar.Month]" bold 1 xpos 220 ypos 1 color ("#ffff0c") size 30
+        text "[calendar.Days]" bold 1 xpos 175 ypos 1 color ("#ffffffff") size 30
+        text "[calendar.Month]" bold 1 xpos 220 ypos 1 color ("#ffffffff") size 30
 
     frame:
         xsize 80
         ysize 37
         xpos 310
         ypos 0
-        background Solid("#2f0aff70")
+        background Solid("#999966")
         xpadding 10
         ypadding 10
-    text "[calendar.WeekDay]" bold 1 xpos 313 ypos 1 color ("#ffff0c") size 30
+    text "[calendar.WeekDay]" bold 1 xpos 313 ypos 1 color ("#ffffffff") size 30
     frame:
         xsize 105
         ysize 37
         xpos 410
         ypos 0
-        background Solid("#2f0aff70")
+        background Solid("#999966")
         xpadding 10
         ypadding 10
-    text "[calendar.Time]" bold 1 xpos 413 ypos 1 color ("#ffff0c") size 30
+    text "[calendar.Time]" bold 1 xpos 413 ypos 1 color ("#ffffffff") size 30
 
     if money >= 10 and money <= 99:
         frame:
@@ -69,11 +101,11 @@ screen day_icon():
             ysize 37
             xpos 530
             ypos 0
-            background Solid("#2f0aff70")
+            background Solid("#999966")
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffff0c") size 30
+        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
 
     if money >= 100 and money <= 999:
         frame:
@@ -81,44 +113,44 @@ screen day_icon():
             ysize 37
             xpos 530
             ypos 0
-            background Solid("#2f0aff70")
+            background Solid("#999966")
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffff0c") size 30
+        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
     if money >= 1000 and money <= 9999:
         frame:
             xsize 125
             ysize 37
             xpos 530
             ypos 0
-            background Solid("#2f0aff70")
+            background Solid("#999966")
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffff0c") size 30
+        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
     if money >= 10000 and money <= 99999:
         frame:
             xsize 145
             ysize 37
             xpos 530
             ypos 0
-            background Solid("#2f0aff70")
+            background Solid("#999966")
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffff0c") size 30
+        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
     if money >= 100000 and money <= 999999:
         frame:
             xsize 165
             ysize 37
             xpos 530
             ypos 0
-            background Solid("#2f0aff70")
+            background Solid("#999966")
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffff0c") size 30
+        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
     if money >= 1000000 and money <= 9999999:
         frame:
             xsize 185
@@ -129,7 +161,7 @@ screen day_icon():
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffff0c") size 30
+        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
     if money >= 10000000 and money <= 99999999:
         frame:
             xsize 205
@@ -140,7 +172,7 @@ screen day_icon():
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffff0c") size 30
+        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
     if money >= 100000000 and money <= 999999999:
         frame:
             xsize 225
@@ -151,7 +183,7 @@ screen day_icon():
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffff0c") size 30
+        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
 
     if money >= 1000000000 and money <= 9999999999:
         frame:
@@ -163,7 +195,7 @@ screen day_icon():
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffff0c") size 30
+        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
     if money >= 10000000000 and money <= 99999999999:
         frame:
             xsize 265
@@ -174,7 +206,7 @@ screen day_icon():
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffff0c") size 30
+        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
 
     if money >= 100000000000 and money <= 999999999999:
         frame:
@@ -186,12 +218,12 @@ screen day_icon():
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffff0c") size 30
+        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
 
 
     # image:
     #     # auto "gui/month_%s.png" xpos 305 ypos 8
-    # text "[calendar.Month]" bold 1 xpos 320 ypos 15 color ("#ffff0c") size 30
+    # text "[calendar.Month]" bold 1 xpos 320 ypos 15 color ("#ffffffff") size 30
     # if calendar.Days < 10:
     #     imagebutton:
     #         # auto "gui/monthday_%s.png" xpos 409 ypos 8
@@ -199,15 +231,15 @@ screen day_icon():
     # else:
     #     imagebutton:
     #         # auto "gui/monthday_%s.png" xpos 409 ypos 8
-    #     text "[calendar.Days]" bold 1 xpos 435 ypos 15 color ("#ffff0c") size 30
+    #     text "[calendar.Days]" bold 1 xpos 435 ypos 15 color ("#ffffffff") size 30
     #
     # image:
     #     # auto "gui/weekday_%s.png" xpos 513 ypos 8
-    # text "[calendar.WeekDay]" bold 1 xpos 523 ypos 15 color ("#ffff0c") size 30
+    # text "[calendar.WeekDay]" bold 1 xpos 523 ypos 15 color ("#ffffffff") size 30
     #
     # image:
     #     # auto "gui/time_%s.png" xpos 619 ypos 8 action
-    # text "[calendar.Time]" bold 1 xpos 633 ypos 15 color ("#ffff0c") size 30
+    # text "[calendar.Time]" bold 1 xpos 633 ypos 15 color ("#ffffffff") size 30
 
 screen stats():
     image "gui/statsbg.png"

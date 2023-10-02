@@ -1,12 +1,18 @@
 label variables:    
 
-    call characters
+   
 
     call kira
 
     call kris  
 
     call alexa
+
+    call lin
+
+    call margo
+
+    define player = Character("[name]")
 
     default calendar = Calendar(1, 7, 0, 1, 0, 0, ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31], ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"])
 
@@ -37,10 +43,12 @@ label variables:
     default alexafirsttime = 0
 
     default krisfirsttime = 0
-
-    default kirafirsttime = 0
-
+    
     default aurorafirsttime = 0
+
+    default hayoonfirsttime = 0
+
+    default training = 0
 
     default alexa_bloatask = 0
 
@@ -57,5 +65,7 @@ label variables:
     default usual = 0
 
     default towninfo = 0
+
+    default mapishere = 0
     
     return

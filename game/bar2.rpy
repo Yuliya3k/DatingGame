@@ -14,7 +14,7 @@ label bar2:
 
     if myrandom == 1:        
         player "Hey there, Kira! It's good to be back. What's your special recommendation today?"
-        $ position = "kiraexplaining"
+        $ position = "kiraexplain"
         call sceneimg
         Kira "Welcome back! You've got great timing. Today, we're featuring a signature cocktail called the 'City Lights.' It's a delightful blend of citrus and a hint of spice. Care to give it a try?"
         $ position = "kiraquestion"

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/kiragirlsmenu.rpy", line 29: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    "Hey, Kira. I'm curious about the locals. Who should I keep an eye out for?"
-                                                                                ^
+File "game/fitness.rpy", line 180: end of line expected.
+    player "Honestly, Lin, I'm not sure why I'm here. It's a bit confusing even for me. I can't seem to find the motivation to start training.":
+                                                                                                                                               ^
 
 Ren'Py Version: Ren'Py 8.1.0.23051307
-Sun Sep 24 21:16:28 2023
+Mon Oct  2 02:19:32 2023

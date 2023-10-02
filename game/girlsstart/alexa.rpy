@@ -1,4 +1,7 @@
 label alexa:
+
+    define Alexa = Character("Alexa", colour="#000984")
+
     default alexa_fullness = int(0)
 
     default alexa_abolutemaxfullness = 8000

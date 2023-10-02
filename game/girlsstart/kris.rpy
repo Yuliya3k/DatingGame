@@ -1,4 +1,7 @@
 label kris:
+
+    define Kris = Character("Kris", colour="#000984")
+
     default kris_fullness = int(0)
 
     default kris_abolutemaxfullness = 8000

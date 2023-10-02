@@ -1,28 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-PermissionError: [WinError 32] Процесс не может получить доступ к файлу, так как этот файл занят другим процессом: 'D:\\Digital goods Dropbox\\Digital goods\\R800\\Game projects\\Dating_game\\game\\saves\\persistent'
+  File "game/bar2.rpy", line 18, in script call
+    call sceneimg
+  File "game/sceneimg.rpy", line 10, in script
+    scene bg
+Exception: DynamicImage '/images/bgpos[position].png': could not find image. ('/images/bgposkiraexplaining.png')
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "D:\renpy-7.4.11-sdk\renpy\bootstrap.py", line 275, in bootstrap
-    renpy.main.main()
-  File "D:\renpy-7.4.11-sdk\renpy\main.py", line 684, in main
-    renpy.persistent.update(True)
-  File "D:\renpy-7.4.11-sdk\renpy\persistent.py", line 401, in update
-    save()
-  File "D:\renpy-7.4.11-sdk\renpy\persistent.py", line 419, in save
-    renpy.loadsave.location.save_persistent(compressed)
-  File "D:\renpy-7.4.11-sdk\renpy\savelocation.py", line 545, in save_persistent
-    l.save_persistent(data)
-  File "D:\renpy-7.4.11-sdk\renpy\savelocation.py", line 378, in save_persistent
-    safe_rename(fn_new, fn)
-  File "D:\renpy-7.4.11-sdk\renpy\loadsave.py", line 302, in safe_rename
-    os.unlink(new)
-PermissionError: [WinError 32] Процесс не может получить доступ к файлу, так как этот файл занят другим процессом: 'D:\\Digital goods Dropbox\\Digital goods\\R800\\Game projects\\Dating_game\\game\\saves\\persistent'
+  File "game/bar2.rpy", line 18, in script call
+    call sceneimg
+  File "game/sceneimg.rpy", line 10, in script
+    scene bg
+  File "D:\renpy-7.4.11-sdk\renpy\ast.py", line 1562, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "D:\renpy-7.4.11-sdk\renpy\ast.py", line 1391, in show_imspec
+    renpy.config.show(name,
+  File "D:\renpy-7.4.11-sdk\renpy\exports.py", line 759, in show
+    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
+  File "D:\renpy-7.4.11-sdk\renpy\display\core.py", line 1190, in add
+    thing.set_transform_event("show")
+  File "D:\renpy-7.4.11-sdk\renpy\display\transform.py", line 695, in set_transform_event
+    self.child.set_transform_event(event)
+  File "D:\renpy-7.4.11-sdk\renpy\display\image.py", line 501, in set_transform_event
+    return self.target.set_transform_event(event)
+  File "D:\renpy-7.4.11-sdk\renpy\display\image.py", line 760, in set_transform_event
+    self.find_target()
+  File "D:\renpy-7.4.11-sdk\renpy\display\image.py", line 683, in find_target
+    raise Exception(error)
+Exception: DynamicImage '/images/bgpos[position].png': could not find image. ('/images/bgposkiraexplaining.png')
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.1.0.23051307
-Dating_game 0.1
-Sun Sep 24 22:14:26 2023
+Dating_game 0.2a
+Mon Oct  2 16:32:44 2023

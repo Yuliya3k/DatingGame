@@ -1,4 +1,7 @@
 label aurora:
+
+    define Aurora = Character("Aurora", colour="#000984")
+
     default aurora_fullness = int(0)
 
     default aurora_abolutemaxfullness = 8000

@@ -3,6 +3,7 @@
 
     call variables
     call girl
+    
     init python:
 
         # gamerunning = 1

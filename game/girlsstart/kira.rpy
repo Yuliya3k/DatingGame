@@ -1,4 +1,8 @@
 label kira:
+
+    define Kira = Character("Kira", colour="#000984")
+
+    image kira = "/images/kirapos[position]weight[kira_weightstage] ([kira_fullstage]).png"
     
     default kira_fullness = int(0)
 
@@ -40,7 +44,8 @@ label kira:
 
     default kira_dinner = 0
 
-    default kira_fullstage = int(kira_fullness/kira_minfullness)
+    default kira_fullstage = int(kira_fullness/kira_minfullness) + 1
     
+    default kirafirsttime = 0
 
 return
