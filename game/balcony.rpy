@@ -1,5 +1,5 @@
 label balcony:
-
+    
     $ myrandom = renpy.random.randint(1,4)
     if myrandom == 1:
         $ position = "gardeningbalconynoaurora"

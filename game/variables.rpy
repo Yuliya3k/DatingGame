@@ -67,5 +67,17 @@ label variables:
     default towninfo = 0
 
     default mapishere = 0
+
+    default pointerpose = 0
+
+    default scaleactive = 0
+
+    default x = 562
+
+    default y = 478
+
+    default poiterforward = 1
+
+    default rmclients = 0
     
     return

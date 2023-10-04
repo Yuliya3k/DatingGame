@@ -7,6 +7,7 @@ label culinarychoices:
         "Go upstairs and look around":
             jump balcony
         
+        
     
     
     jump culiarychoices

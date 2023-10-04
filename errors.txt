@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/fitness.rpy", line 180: end of line expected.
-    player "Honestly, Lin, I'm not sure why I'm here. It's a bit confusing even for me. I can't seem to find the motivation to start training.":
-                                                                                                                                               ^
+File "game/restaurant.rpy", line 120: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a ' at the end of the first line.)
+        This dialogue shows the player's willingness to adapt to the restaurant's service-oriented approach and Margo's encouragement and support in this new role.
 
 Ren'Py Version: Ren'Py 8.1.0.23051307
-Mon Oct  2 02:19:32 2023
+Tue Oct  3 00:48:54 2023

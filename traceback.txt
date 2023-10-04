@@ -1,38 +1,43 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/bar2.rpy", line 18, in script call
-    call sceneimg
-  File "game/sceneimg.rpy", line 10, in script
-    scene bg
-Exception: DynamicImage '/images/bgpos[position].png': could not find image. ('/images/bgposkiraexplaining.png')
+  File "game/testloop.rpy", line 4, in script call
+    pause
+  File "game/restaurant.rpy", line 1, in script
+    label restaurant:
+  File "game/testloop.rpy", line 4, in script call
+    pause
+  File "game/restaurant.rpy", line 1, in script
+    label restaurant:
+Exception: Could not find return label ('game/stoppointer.rpy', 1696279255, 0, 'end_translate').
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/bar2.rpy", line 18, in script call
-    call sceneimg
-  File "game/sceneimg.rpy", line 10, in script
-    scene bg
-  File "D:\renpy-7.4.11-sdk\renpy\ast.py", line 1562, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "D:\renpy-7.4.11-sdk\renpy\ast.py", line 1391, in show_imspec
-    renpy.config.show(name,
-  File "D:\renpy-7.4.11-sdk\renpy\exports.py", line 759, in show
-    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
-  File "D:\renpy-7.4.11-sdk\renpy\display\core.py", line 1190, in add
-    thing.set_transform_event("show")
-  File "D:\renpy-7.4.11-sdk\renpy\display\transform.py", line 695, in set_transform_event
-    self.child.set_transform_event(event)
-  File "D:\renpy-7.4.11-sdk\renpy\display\image.py", line 501, in set_transform_event
-    return self.target.set_transform_event(event)
-  File "D:\renpy-7.4.11-sdk\renpy\display\image.py", line 760, in set_transform_event
-    self.find_target()
-  File "D:\renpy-7.4.11-sdk\renpy\display\image.py", line 683, in find_target
-    raise Exception(error)
-Exception: DynamicImage '/images/bgpos[position].png': could not find image. ('/images/bgposkiraexplaining.png')
+  File "D:\renpy-7.4.11-sdk\renpy\bootstrap.py", line 275, in bootstrap
+    renpy.main.main()
+  File "D:\renpy-7.4.11-sdk\renpy\main.py", line 670, in main
+    run(restart)
+  File "D:\renpy-7.4.11-sdk\renpy\main.py", line 144, in run
+    renpy.execution.run_context(True)
+  File "D:\renpy-7.4.11-sdk\renpy\execution.py", line 942, in run_context
+    context.run()
+  File "game/testloop.rpy", line 4, in script call
+    pause
+  File "game/restaurant.rpy", line 1, in script
+    label restaurant:
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/site-packages/future/utils/__init__.py", line 444, in raise_
+  File "game/testloop.rpy", line 4, in script call
+    pause
+  File "game/restaurant.rpy", line 1, in script
+    label restaurant:
+  File "D:\renpy-7.4.11-sdk\renpy\ast.py", line 1801, in execute
+    next_node(renpy.game.context().lookup_return(pop=True))
+  File "D:\renpy-7.4.11-sdk\renpy\execution.py", line 730, in lookup_return
+    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
+Exception: Could not find return label ('game/stoppointer.rpy', 1696279255, 0, 'end_translate').
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.1.0.23051307
 Dating_game 0.2a
-Mon Oct  2 16:32:44 2023
+Mon Oct  2 22:49:03 2023

@@ -1,5 +1,17 @@
 label myscreens:
 
+screen kitchenscale:
+    image "gui/bgposkitchencooking.png"
+    if scaleactive == 0:
+        imagebutton:
+            auto "gui/dg_kitchen_scale_%s.png" xpos 568 ypos 557 action [ Play("sound", "audio/click2.mp3"), Call("scale") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    if scaleactive == 1:
+        imagebutton:
+            auto "gui/dg_kitchen_scale_%s.png" xpos 568 ypos 557 action [ Play("sound", "audio/click2.mp3"), SetVariable("scaleactive", "0") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    if scaleactive == 0:
+        image "gui/dg_kitchen_arrow_idle.png" xpos x ypos y
+    if scaleactive == 1:
+        image "gui/dg_kitchen_arrow_hover.png" xpos x ypos y
 
 screen callmap():
     
@@ -27,7 +39,7 @@ screen map():
         auto "gui/dg_map_park_%s.png" xpos 81 ypos 654 action [ Play("sound", "audio/click2.mp3"), Jump("park") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
     if calendar.WeekDay == 'Mon' or calendar.WeekDay == 'Tue' or calendar.WeekDay == 'Wed' or calendar.WeekDay == 'Thu' or calendar.WeekDay == 'Fri':
         imagebutton:
-            auto "gui/dg_map_work_%s.png" xpos 1089 ypos 395 action [ Play("sound", "audio/click2.mp3"), Jump("work") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+            auto "gui/dg_map_work_%s.png" xpos 1089 ypos 395 action [ Play("sound", "audio/click2.mp3"), Jump("rm") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
     if overallpeople > 0:
         imagebutton:
             auto "gui/dg_map_fitness_%s.png" xpos 544 ypos 407 action [ Play("sound", "audio/click2.mp3"), Jump("fitness") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
