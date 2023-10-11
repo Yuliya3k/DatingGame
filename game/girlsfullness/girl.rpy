@@ -23,6 +23,14 @@ label girl:
         $ lin_fullstage = 10
     if lin_fullstage > 20 and sevent == 1:
         $ lin_fullstage = 20
+
+
+    $ margo_fullnessoz = int(margo_fullness*0.034)  
+    $ margo_fullstage = 1+int(margo_fullness/margo_minfullness)
+    if margo_fullstage > 10 and sevent == 0:
+        $ margo_fullstage = 10
+    if margo_fullstage > 20 and sevent == 1:
+        $ margo_fullstage = 20
     
     return
 

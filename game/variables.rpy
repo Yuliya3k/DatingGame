@@ -11,6 +11,8 @@ label variables:
     call lin
 
     call margo
+    
+    call images
 
     define player = Character("[name]")
 
@@ -74,10 +76,38 @@ label variables:
 
     default x = 562
 
-    default y = 478
+    default y = 321
 
     default poiterforward = 1
 
     default rmclients = 0
+
+    default monthworkresulthours = 0
+
+    default dayworkresult = 0
+
+    default workresult = 0
+
+    default workreputation = 0
+
+    default cooksalaryperhour = 7
+    
+    default dayworksuccessfulhours = 0    
+
+    default cookingskill = float(10.1)
+
+    default salarystatus = (workreputation*cookingskill)/10000
+
+    default cookingstatus = "none"
+    
+    default daysalary = float(cooksalaryperhour*dayworksuccessfulhours)
+
+    default monthsalary = float(monthworkresulthours*cooksalaryperhour)
+
+    default rightpan = 1
+
+    default leftpan = 1
+
+    default rmclienttalk = "mrsanderson"
     
     return

@@ -1,5 +1,6 @@
 label rm:
-
+    call closescreens
+    play music "audio/rmkitchen.mp3" volume 0.3
     
     $ myrandom = renpy.random.randint(1,3)
     if margofirsttime == 0:
@@ -20,10 +21,10 @@ label rm:
         Margo "Hello there, you must be the new face in our kitchen. I'm Margo, the manager of this fine establishment. And you are?"
         $ position = "margormlistening"
         call sceneimg 
-        player "I'm [name], nice to meet you, Margo."
+        player "I'm  nice to meet you, Margo."
         $ position = "margormexplaining"
         call sceneimg
-        Margo "Likewise, [name]. I'm thrilled to have you on board. You'll find we take our work seriously here, but we also value teamwork and a positive attitude. Our restaurant prides itself on providing impeccable service to our guests. Remember, they're not just customers; they're our patrons, and their satisfaction is our top priority."
+        Margo "Likewise. I'm thrilled to have you on board. You'll find we take our work seriously here, but we also value teamwork and a positive attitude. Our restaurant prides itself on providing impeccable service to our guests. Remember, they're not just customers; they're our patrons, and their satisfaction is our top priority."
         $ position = "margormlistening"
         $ margofirsttime = 1
         call sceneimg 
@@ -43,7 +44,7 @@ label rm:
                 player "Thank you, Margo. I'm eager to contribute to the team and help uphold the high standards of this restaurant."
                 $ position = "margormtalking"
                 call sceneimg
-                Margo "I have no doubt you will, [name]. Welcome to the team, and good luck."
+                Margo "I have no doubt you will. Welcome to the team, and good luck."
                 $ position = "margormlistening"
                 call sceneimg 
                 player "Thank you, Margo. I'm looking forward to it."
@@ -60,7 +61,7 @@ label rm:
                 player "I understand, Margo, but I was hoping to primarily focus on honing my skills in the kitchen."
                 $ position = "margormtalking"
                 call sceneimg
-                Margo "I respect your dedication to your craft, [name]. However, as a member of this team, it's essential to be well-rounded. We work closely together to create memorable experiences for our guests. Perhaps over time, you'll see the value in the balance we strike here."
+                Margo "I respect your dedication to your craft. However, as a member of this team, it's essential to be well-rounded. We work closely together to create memorable experiences for our guests. Perhaps over time, you'll see the value in the balance we strike here."
                 $ position = "margormlistening"
                 call sceneimg 
                 player "Alright, Margo, I'll do my best to adapt and contribute in every way I can."
@@ -72,7 +73,7 @@ label rm:
                 player "Thank you, Margo. I'll give it my best shot."
                 $ position = "margormtalking"
                 call sceneimg
-                Margo "Welcome to the team, [name]. I appreciate your willingness to try new things."
+                Margo "Welcome to the team. I appreciate your willingness to try new things."
                 $ position = "margormlistening"
                 call sceneimg 
                 player "Thank you, Margo. I hope I can meet your expectations."
@@ -83,25 +84,25 @@ label rm:
             "I appreciate that, Margo, but I've always believed that my primary role is in the kitchen, creating exceptional dishes. Service and customer interactions are best left to those who excel in that area.":
                 $ position = "margormexplaining"
                 call sceneimg
-                Margo "I understand your perspective, [name], but here, we expect all team members to contribute to the overall guest experience. We believe that both the culinary and service aspects are essential for our success."
+                Margo "I understand your perspective, but here, we expect all team members to contribute to the overall guest experience. We believe that both the culinary and service aspects are essential for our success."
                 $ position = "margormlistening"
                 call sceneimg 
                 player "I'm sorry, Margo, but I won't be engaging with the customers directly. My focus will be on delivering the best dishes from the kitchen."
                 $ position = "margormexplaining"
                 call sceneimg
-                Margo "I respect your dedication to your craft, [name], but I must emphasize that working here means embracing our service-oriented approach. It's a fundamental part of our restaurant's philosophy."
+                Margo "I respect your dedication to your craft, but I must emphasize that working here means embracing our service-oriented approach. It's a fundamental part of our restaurant's philosophy."
                 $ position = "margormlistening"
                 call sceneimg 
                 player "I understand, Margo, but I won't be deviating from my culinary role."
                 $ position = "margormexplaining"
                 call sceneimg
-                Margo "I appreciate your honesty, [name]. We'll work around this for now. However, I hope you'll eventually see the value in providing a complete dining experience. If you ever change your mind or have any questions, don't hesitate to reach out."
+                Margo "I appreciate your honesty. We'll work around this for now. However, I hope you'll eventually see the value in providing a complete dining experience. If you ever change your mind or have any questions, don't hesitate to reach out."
                 $ position = "margormlistening"
                 call sceneimg 
                 player "Thank you, Margo. I'll keep that in mind."
                 $ position = "margormtalking"
                 call sceneimg
-                Margo "Welcome to the team, [name]. Let's hope for a successful collaboration."
+                Margo "Welcome to the team. Let's hope for a successful collaboration."
                 $ position = "margormlistening"
                 call sceneimg 
                 player "Thank you, Margo. I'll do my best in the kitchen."
@@ -115,7 +116,7 @@ label rm:
 
             $ position = "margohismile"
             call sceneimg
-            Margo "Ah, [name], good to see you. How are you settling in so far?"
+            Margo "Ah, good to see you. How are you settling in so far?"
             $ position = "margormlistening"
             call sceneimg 
             player "I'm doing well, thank you, Margo. It's been quite the experience."
@@ -133,13 +134,13 @@ label rm:
             player "I've noticed that, too. It's rewarding to see them enjoy the meals."
             $ position = "margormgoodluck"
             call sceneimg
-            Margo "Excellent. Keep up the good work, [name]. Your culinary skills are a huge asset to us, and when combined with your newfound customer interaction skills, I have no doubt you'll become a true star in our restaurant."
+            Margo "Excellent. Keep up the good work. Your culinary skills are a huge asset to us, and when combined with your newfound customer interaction skills, I have no doubt you'll become a true star in our restaurant."
             $ position = "margormlistening"
             call sceneimg 
             player "Thanks, Margo. I'll do my best to contribute to the team and make the customers' dining experience memorable."
             $ position = "margormexplaining"
             call sceneimg
-            Margo "I have no doubt you will, [name]. Now, get ready for a busy shift. And remember, if you ever need assistance or have any questions, don't hesitate to ask."
+            Margo "I have no doubt you will. Now, get ready for a busy shift. And remember, if you ever need assistance or have any questions, don't hesitate to ask."
             $ position = "margormlistening"
             call sceneimg 
             player "I will, Margo. Thanks for your support."
@@ -150,25 +151,25 @@ label rm:
         if myrandom == 2:
             $ position = "margohismile"
             call sceneimg
-            Margo "[name], I'm glad to see you again. How are you feeling about working directly with our customers today?"
+            Margo " I'm glad to see you again. How are you feeling about working directly with our customers today?"
             $ position = "margormlistening"
             call sceneimg 
             player "I've had some time to think about it, Margo. I'm willing to give it a try and help out where I can."
             $ position = "margormgoodluck"
             call sceneimg
-            Margo "That's the spirit, [name]. I think you'll find it to be a rewarding experience. Remember, our patrons appreciate a personal touch, and it can make their dining experience truly special."
+            Margo "That's the spirit. I think you'll find it to be a rewarding experience. Remember, our patrons appreciate a personal touch, and it can make their dining experience truly special."
             $ position = "margormlistening"
             call sceneimg 
             player "I'll do my best to provide that personal touch, Margo. I'm here to contribute to the team and make our guests happy."
             $ position = "margormexplaining"
             call sceneimg
-            Margo "That's the attitude we love to see, [name]. If you have any questions or need guidance while interacting with customers, feel free to ask. We're here to support you."
+            Margo "That's the attitude we love to see. If you have any questions or need guidance while interacting with customers, feel free to ask. We're here to support you."
             $ position = "margormlistening"
             call sceneimg 
             player "Thanks, Margo. I appreciate your support. Let's make it a great day for our customers."
             $ position = "margormexplaining"
             call sceneimg
-            Margo "Absolutely, [name]. Let's go out there and show them what our restaurant is all about."
+            Margo "Absolutely. Let's go out there and show them what our restaurant is all about."
 
         
 
@@ -176,13 +177,13 @@ label rm:
         if myrandom == 3:
             $ position = "margohismile"
             call sceneimg
-            Margo "Good evening, [name]. It's nice to see you back."
+            Margo "Hello. It's nice to see you back."
             $ position = "margormlistening"
             call sceneimg 
-            player "Good evening, Margo. I've decided to give this customer interaction thing a try, like you suggested."
+            player "Hello, Margo. I've decided to give this customer interaction thing a try, like you suggested."
             $ position = "margormtalking"
             call sceneimg
-            Margo "That's great to hear, [name]. I'm confident you'll do well. Just remember, the key is to be attentive, friendly, and make our guests feel special. It's all about creating memorable experiences."
+            Margo "That's great to hear. I'm confident you'll do well. Just remember, the key is to be attentive, friendly, and make our guests feel special. It's all about creating memorable experiences."
             $ position = "margormlistening"
             call sceneimg 
             player "I'll keep that in mind. Any specific tasks for me tonight?"
@@ -200,7 +201,7 @@ label rm:
             player "Absolutely, Margo. Let's make it a great night."
             $ position = "margormtalking"
             call sceneimg
-            Margo "That's the spirit, [name]. I have no doubt you'll make a positive impression on our guests tonight. Good luck!"
+            Margo "That's the spirit. I have no doubt you'll make a positive impression on our guests tonight. Good luck!"
             $ position = "margormlistening"
             call sceneimg 
             player "Thank you, Margo. I'll do my best."
@@ -213,7 +214,7 @@ label rm:
         if myrandom == 1:
             $ position = "margohismile"
             call sceneimg
-            Margo "Good morning, [name]. I hope you're ready for your first day here at the restaurant. We have a wonderful team, and I think you'll enjoy working with us."
+            Margo "Good morning. I hope you're ready for your first day here at the restaurant. We have a wonderful team, and I think you'll enjoy working with us."
             $ position = "margormlistening"
             call sceneimg 
             player "Morning, Margo. I'm looking forward to the cooking part, but I won't be interacting with customers. I'm not comfortable with that."
@@ -225,7 +226,7 @@ label rm:
             player "I understand, but I won't be doing that. My expertise is in the kitchen, not at the front of the house."
             $ position = "margormexplaining"
             call sceneimg
-            Margo "I appreciate your skills, [name], but we all have to pitch in. How about we start with you taking a few orders and see how it goes? You might find it's not as bad as you think."
+            Margo "I appreciate your skills, but we all have to pitch in. How about we start with you taking a few orders and see how it goes? You might find it's not as bad as you think."
             $ position = "margormlistening"
             call sceneimg 
             player "Margo, I won't change my mind on this. Cooking is what I'm here for, not serving tables."
@@ -237,13 +238,13 @@ label rm:
             player "I won't forget, Margo. I'll focus on the kitchen, and you can handle the front."
             $ position = "margormtalking"
             call sceneimg
-            Margo "Fair enough, [name]. Let's make sure we excel in our respective roles. Welcome to the team."
+            Margo "Fair enough. Let's make sure we excel in our respective roles. Welcome to the team."
 
 
         if myrandom == 2:
             $ position = "margohismile"
             call sceneimg
-            Margo "Good morning, [name], welcome to our restaurant. I hope you're ready for your first day."
+            Margo "Good morning, welcome to our restaurant. I hope you're ready for your first day."
             $ position = "margormlistening"
             call sceneimg 
             player "Morning, Margo. I am, but I want to clarify something from our last conversation. I won't be comfortable communicating with customers."
@@ -255,20 +256,20 @@ label rm:
             player "I understand that, but my expertise is in cooking. I'll give my best in the kitchen, but I won't be mingling with customers."
             $ position = "margormexplaining"
             call sceneimg
-            Margo "We value your cooking skills, [name], but we also expect every team member to assist in customer service. Perhaps we can arrange some training to help you get comfortable?"
+            Margo "We value your cooking skills, but we also expect every team member to assist in customer service. Perhaps we can arrange some training to help you get comfortable?"
             $ position = "margormlistening"
             call sceneimg 
             player "I appreciate the offer, Margo, but it's not something I want to do. I'd rather focus on my role in the kitchen."
             $ position = "margormexplaining"
             call sceneimg
-            Margo "I understand your position, [name], but this is a part of our culture here. I hope you'll reconsider in the future."
+            Margo "I understand your position, but this is a part of our culture here. I hope you'll reconsider in the future."
             $ position = "margormlistening"
             call sceneimg 
             player "I won't, Margo. Cooking is my passion, and that's where I can contribute best."
 
             $ position = "margormexplaining"
             call sceneimg
-            Margo "Very well, [name]. We'll work with your decision, but keep in mind that our goal is to provide the best dining experience for our customers."
+            Margo "Very well. We'll work with your decision, but keep in mind that our goal is to provide the best dining experience for our customers."
             $ position = "margormlistening"
             call sceneimg 
             player "I appreciate your understanding, Margo. I'll give my all in the kitchen."
@@ -279,7 +280,7 @@ label rm:
         if myrandom == 3:
             $ position = "margormtalking"
             call sceneimg
-            Margo "[name], I want to reiterate the importance of customer service in our restaurant. Our clients are our lifeblood, and we need everyone on the team to engage with them."
+            Margo " I want to reiterate the importance of customer service in our restaurant. Our clients are our lifeblood, and we need everyone on the team to engage with them."
             $ position = "margormlistening"
             call sceneimg 
             player "Margo, I appreciate your perspective, but I'm a cook. My strength lies in the kitchen, not in chatting with customers."
@@ -291,7 +292,7 @@ label rm:
             player "I'm sorry, Margo, but I can't commit to that. I'll give my best in the kitchen, but I won't be mingling with customers."
             $ position = "margormexplaining"
             call sceneimg
-            Margo "Well, [name], I was hoping for more cooperation. Customer satisfaction is crucial to us, and your refusal to engage directly might affect our ratings."
+            Margo "Well, I was hoping for more cooperation. Customer satisfaction is crucial to us, and your refusal to engage directly might affect our ratings."
             $ position = "margormlistening"
             call sceneimg 
             player "I understand the stakes, Margo, but I can't step out of my comfort zone like that. Cooking is what I do best."

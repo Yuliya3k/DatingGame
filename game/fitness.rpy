@@ -1,4 +1,7 @@
 label fitness:
+    play music "audio/gym.mp3" 
+    $ calendar.AddMinutes(20)
+    call closescreens
     $ lin_fullness = renpy.random.randint(0,4000)
 
     if linfirsttime == 0:
@@ -15,7 +18,7 @@ label fitness:
             player "I'm [name]. Nice to meet you, Lin. What kind of training programs do you offer here?"
 
             Lin "Nice to meet you too, [name]. We have a range of programs, from cardio and strength training to group classes like yoga and spin. It depends on your goals. What are you looking to achieve?"
-
+            $ calendar.AddMinutes(5)
             $ linfirsttime = 1
         
         if myrandom == 2:
@@ -30,6 +33,7 @@ label fitness:
             player "I'm [name]. Nice to meet you, Lin. Do you offer personal training sessions here?"
 
             Lin "Nice to meet you too, [name]. Yes, we do have personal training if myrandom ==s. We can tailor a program to your specific needs and goals."
+            $ calendar.AddMinutes(5)
             $ linfirsttime = 1
 
         if myrandom == 3:
@@ -44,6 +48,7 @@ label fitness:
             player "I'm [name]. It's good to meet you, Lin. Are there any group classes or special events coming up?"
 
             Lin "Likewise, [name]. Yes, we have a schedule of group classes, and we often organize fitness challenges and events. I can give you a rundown if you'd like."
+            $ calendar.AddMinutes(5)
             $ linfirsttime = 1        
         
         $ myrandom = renpy.random.randint(1,3)

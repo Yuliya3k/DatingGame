@@ -1,5 +1,6 @@
 label bcafe:
-    
+    call closescreens
+    $ calendar.AddMinutes(20)
     $ alexa_fullness = renpy.random.randint(0,4000)
     
     
@@ -60,6 +61,7 @@ label bcafe:
             call sceneimg
             play sound "audio/Waren-1946617.mp3"
             player "As I enjoyed my burger, Alexa came over to ensure everything was to my liking. I couldn't contain my enthusiasm and praised the burger's deliciousness. She chuckled, clearly pleased, and mentioned that their burgers were a local favorite."
+            $ calendar.AddMinutes(15)
             $ position = "foodnofood"
             call sceneimg
             if alexa_fullstage > 1 and alexa_bloatask == 0:
@@ -74,6 +76,7 @@ label bcafe:
                 
                 menu:
                     "Ask her about her belly bloat" :
+                        $ calendar.AddMinutes(5)
                         $ myrandom = renpy.random.randint(1,3)
                         $ alexa_bloatask = 1
                         if myrandom == 1:

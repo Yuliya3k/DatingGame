@@ -2,16 +2,34 @@ label myscreens:
 
 screen kitchenscale:
     image "gui/bgposkitchencooking.png"
+    
     if scaleactive == 0:
         imagebutton:
-            auto "gui/dg_kitchen_scale_%s.png" xpos 568 ypos 557 action [ Play("sound", "audio/click2.mp3"), Call("scale") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+            auto "gui/dg_kitchen_scale_%s.png" xpos 568 ypos 400 action [ Play("sound", "audio/click2.mp3"), Call("scale") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
     if scaleactive == 1:
+        image "rightpan" xpos 965 ypos 306
+        image "leftpan" xpos 166 ypos 290
         imagebutton:
-            auto "gui/dg_kitchen_scale_%s.png" xpos 568 ypos 557 action [ Play("sound", "audio/click2.mp3"), SetVariable("scaleactive", "0") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+            auto "gui/dg_kitchen_scale_%s.png" xpos 568 ypos 400 action [ Play("sound", "audio/click2.mp3"), SetVariable("scaleactive", "0") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
     if scaleactive == 0:
         image "gui/dg_kitchen_arrow_idle.png" xpos x ypos y
     if scaleactive == 1:
         image "gui/dg_kitchen_arrow_hover.png" xpos x ypos y
+    text "[cookingstatus]" bold 1 xpos 790 ypos 413 color ("#1ca600ff") size 40
+    image "gui/dg_scale_signbg.png" xpos 30 ypos 413
+    text "PROreputaion [workreputation]" bold 1 xpos 30 ypos 413 color ("#1ca600ff") size 30
+
+    image "gui/dg_scale_signbg.png" xpos 30 ypos 453
+    text "Day earnings [daysalary:.2f]" bold 1 xpos 30 ypos 453 color ("#1ca600ff") size 30
+
+    image "gui/dg_scale_signbg.png" xpos 30 ypos 493
+    text "Month salary [monthsalary:.2f]" bold 1 xpos 30 ypos 493 color ("#1ca600ff") size 30
+
+
+    image "gui/dg_scale_signbg.png" xpos 30 ypos 533
+    text "Cooking skill [cookingskill:.1f]" bold 1 xpos 30 ypos 533 color ("#1ca600ff") size 30
+
+
 
 screen callmap():
     
@@ -37,10 +55,10 @@ screen map():
     
     imagebutton:
         auto "gui/dg_map_park_%s.png" xpos 81 ypos 654 action [ Play("sound", "audio/click2.mp3"), Jump("park") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
-    if calendar.WeekDay == 'Mon' or calendar.WeekDay == 'Tue' or calendar.WeekDay == 'Wed' or calendar.WeekDay == 'Thu' or calendar.WeekDay == 'Fri':
+    if (calendar.WeekDay == 'Mon' or calendar.WeekDay == 'Tue' or calendar.WeekDay == 'Wed' or calendar.WeekDay == 'Thu' or calendar.WeekDay == 'Fri') and calendar.Hours > 8 and calendar.Hours < 21:
         imagebutton:
             auto "gui/dg_map_work_%s.png" xpos 1089 ypos 395 action [ Play("sound", "audio/click2.mp3"), Jump("rm") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
-    if overallpeople > 0:
+    if overallpeople > 0 and ((calendar.WeekDay == 'Mon' or calendar.WeekDay == 'Tue' or calendar.WeekDay == 'Wed' or calendar.WeekDay == 'Thu' or calendar.WeekDay == 'Fri') and calendar.Hours >= 7 and calendar.Hours <= 23):
         imagebutton:
             auto "gui/dg_map_fitness_%s.png" xpos 544 ypos 407 action [ Play("sound", "audio/click2.mp3"), Jump("fitness") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
 
@@ -117,7 +135,7 @@ screen day_icon():
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
+        text "$ [money:.0f]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
 
     if money >= 100 and money <= 999:
         frame:
@@ -129,7 +147,7 @@ screen day_icon():
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
+        text "$ [money:.0f]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
     if money >= 1000 and money <= 9999:
         frame:
             xsize 125
@@ -140,7 +158,7 @@ screen day_icon():
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
+        text "$ [money:.0f]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
     if money >= 10000 and money <= 99999:
         frame:
             xsize 145
@@ -151,7 +169,7 @@ screen day_icon():
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
+        text "$ [money:.0f]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
     if money >= 100000 and money <= 999999:
         frame:
             xsize 165
@@ -162,7 +180,7 @@ screen day_icon():
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
+        text "$ [money:.0f]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
     if money >= 1000000 and money <= 9999999:
         frame:
             xsize 185
@@ -173,7 +191,7 @@ screen day_icon():
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
+        text "$ [money:.0f]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
     if money >= 10000000 and money <= 99999999:
         frame:
             xsize 205
@@ -184,7 +202,7 @@ screen day_icon():
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
+        text "$ [money:.0f]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
     if money >= 100000000 and money <= 999999999:
         frame:
             xsize 225
@@ -195,7 +213,7 @@ screen day_icon():
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
+        text "$ [money:.0f]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
 
     if money >= 1000000000 and money <= 9999999999:
         frame:
@@ -207,7 +225,7 @@ screen day_icon():
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
+        text "$ [money:.0f]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
     if money >= 10000000000 and money <= 99999999999:
         frame:
             xsize 265
@@ -218,7 +236,7 @@ screen day_icon():
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
+        text "$ [money:.0f]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
 
     if money >= 100000000000 and money <= 999999999999:
         frame:
@@ -230,7 +248,7 @@ screen day_icon():
             xpadding 10
             ypadding 10
 
-        text "$ [money]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
+        text "$ [money:.0f]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
 
 
     # image:

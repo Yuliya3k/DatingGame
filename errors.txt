@@ -2,9 +2,8 @@
 errors listed below, and try again.
 
 
-File "game/restaurant.rpy", line 120: is not terminated with a newline. (Check strings and parenthesis.)
-(Perhaps you left out a ' at the end of the first line.)
-        This dialogue shows the player's willingness to adapt to the restaurant's service-oriented approach and Margo's encouragement and support in this new role.
+File "game/rmclienttalk.rpy", line 69: invalid syntax
+    julia_fullness =
 
 Ren'Py Version: Ren'Py 8.1.0.23051307
-Tue Oct  3 00:48:54 2023
+Sun Oct  8 19:49:59 2023

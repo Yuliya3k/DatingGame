@@ -2,6 +2,8 @@ label kris:
 
     define Kris = Character("Kris", colour="#000984")
 
+    image kris = "/images/krispos[position]weight[kris_weightstage] ([kris_fullstage]).png"
+
     default kris_fullness = int(0)
 
     default kris_abolutemaxfullness = 8000

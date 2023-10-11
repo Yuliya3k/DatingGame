@@ -2,6 +2,8 @@ label aurora:
 
     define Aurora = Character("Aurora", colour="#000984")
 
+    image aurora = "/images/aurorapos[position]weight[aurora_weightstage] ([aurora_fullstage]).png"
+    
     default aurora_fullness = int(0)
 
     default aurora_abolutemaxfullness = 8000

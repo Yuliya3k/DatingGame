@@ -2,6 +2,8 @@ label alexa:
 
     define Alexa = Character("Alexa", colour="#000984")
 
+    image alexa = "/images/alexapos[position]weight[alexa_weightstage] ([alexa_fullstage]).png"
+    
     default alexa_fullness = int(0)
 
     default alexa_abolutemaxfullness = 8000

@@ -1,4 +1,7 @@
 label park:
+    play music "audio/sea.mp3" 
+    call closescreens
+    $ calendar.AddMinutes(20)
     $ position = "parkwalk"
     player "As I strolled along the ocean promenade, the salty breeze kissed my cheeks, and the rhythmic sound of waves crashing against the shore created a soothing melody. The sun dipped toward the horizon, casting a warm, golden glow across the sandy expanse. Seagulls glided effortlessly through the sky, their calls echoing in the distance."
 
@@ -14,7 +17,7 @@ label park:
 
     "I continued my leisurely walk, feeling a deep sense of peace wash over me. There was something magical about the ocean, its ever-changing nature mirroring the ebb and flow of life itself. As I gazed out at the vast, endless horizon, I couldn't help but feel a profound connection to the world around me."
 
-    
+    $ calendar.AddMinutes(30)
 
     jump culinarychoices
 

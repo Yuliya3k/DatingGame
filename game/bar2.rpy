@@ -1,4 +1,6 @@
 label bar2:
+    call closescreens
+    $ calendar.AddMinutes(20)
     $ myrandom = renpy.random.randint(1,5)
 
     $ position = "barenterance"

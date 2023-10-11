@@ -1,4 +1,5 @@
 label trainingthanks:
+    $ calendar.AddMinutes(60)
     $ myrandom = renpy.random.randint(1,3)
     if myrandom == 1:
 

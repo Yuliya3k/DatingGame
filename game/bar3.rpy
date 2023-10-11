@@ -1,4 +1,6 @@
 label bar3:
+    call closescreens
+    $ calendar.AddMinutes(20)
     $ myrandom = renpy.random.randint(1,5)
 
     play music "audio/bar.mp3" volume 0.3

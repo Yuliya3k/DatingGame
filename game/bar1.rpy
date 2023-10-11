@@ -1,4 +1,6 @@
 label bar1:
+    call closescreens
+    $ calendar.AddMinutes(20)
     play music "audio/barcity.mp3" volume 0.5
     $ position = "barenterance"
     call sceneimg
