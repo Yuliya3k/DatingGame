@@ -1,34 +1,72 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/cooking/cook.rpy", line 9, in script call
-    pause
-  File "game/cooking/cook.rpy", line 9, in script call
-    pause
-  File "game/cooking/cook.rpy", line 9, in script call
-    pause
-  [Previous line repeated 39 more times]
-  File "game/cooking/scale.rpy", line 14, in script
-    if x >= 1190:
+  File "game/marshmallowcook.rpy", line 36, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 80, in script call
+    "Oops, you have ruined the marshmallow"
+  File "game/marshmallowcook.rpy", line 21, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 21, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 36, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 36, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 36, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 21, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 36, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 36, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 21, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 36, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 36, in script call
+    pause 1
+  File "game/krisbackyard.rpy", line 79, in script
+    pause 1
 Exception: Possible infinite loop.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/cooking/cook.rpy", line 9, in script call
-    pause
-  File "game/cooking/cook.rpy", line 9, in script call
-    pause
-  File "game/cooking/cook.rpy", line 9, in script call
-    pause
-  [Previous line repeated 39 more times]
-  File "game/cooking/scale.rpy", line 14, in script
-    if x >= 1190:
+  File "game/marshmallowcook.rpy", line 36, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 80, in script call
+    "Oops, you have ruined the marshmallow"
+  File "game/marshmallowcook.rpy", line 21, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 21, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 36, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 36, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 36, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 21, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 36, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 36, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 21, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 36, in script call
+    pause 1
+  File "game/marshmallowcook.rpy", line 36, in script call
+    pause 1
+  File "game/krisbackyard.rpy", line 79, in script
+    pause 1
   File "D:\renpy-7.4.11-sdk\renpy\execution.py", line 61, in check_infinite_loop
     raise Exception("Possible infinite loop.")
 Exception: Possible infinite loop.
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.1.0.23051307
-Dating_game 0.2a
-Sun Oct  8 19:56:54 2023
+Dating_game 0.2d
+Tue Oct 24 16:54:20 2023

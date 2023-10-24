@@ -46,7 +46,7 @@ label variables:
 
     default krisfirsttime = 0
     
-    default aurorafirsttime = 0
+    
 
     default hayoonfirsttime = 0
 
@@ -109,5 +109,20 @@ label variables:
     default leftpan = 1
 
     default rmclienttalk = "mrsanderson"
-    
+
+    default marshmallowraw = 0
+
+    default marshmallowslight = 0
+
+    default marshmallowmedium = 0
+
+    default marshmallowmuch = 0
+
+    default marshmallowpos = 1
+
+    default marshmallowstate = 1
+
+    default stop = 0
+
+    default cooking = 0
     return

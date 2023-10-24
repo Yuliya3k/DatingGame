@@ -7,8 +7,13 @@ label girl:
     if kira_fullstage > 20 and sevent == 1:
         $ kira_fullstage = 20
 
-
+    $ kris_fullnessoz = int(kris_fullness*0.034) 
     $ kris_fullstage = 1+int(kris_fullness/kris_minfullness)
+    $ kris_fullstage = 1+int(kris_fullness/kris_minfullness)
+    if kris_fullstage > 10 and sevent == 0:
+        $ kris_fullstage = 10
+    if kris_fullstage > 20 and sevent == 1:
+        $ kris_fullstage = 20
 
     $ alexa_fullnessoz = int(alexa_fullness*0.034)  
     $ alexa_fullstage = 1+int(alexa_fullness/alexa_minfullness)

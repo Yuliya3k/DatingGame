@@ -13,11 +13,11 @@ label sceneimg:
         scene bg
         show alexa
 
-    if position == "krisexplaining" or position == "krishi" or position == "krisshy" or position == "kriswalking" or position == "kriswalkingbalcony":
+    if position == "krisexplaining" or position == "krishi" or position == "krisshy" or position == "kriswalking" or position == "kriswalkingbalcony" or position == "krisbackyardeating" or position == "krisbackyardhello" or position == "krisbackyardsmiling" or position == "krisbackyardsmilingslightly" or position == "krisbackyardtalking":
         scene bg
         show kris
 
-    if position == "auroragardening" or position == "aurorahello" or position == "aurorahey" or position == "auroraiwish" or position == "auroragardeningbalcony":
+    if position == "auroragardening" or position == "aurorahello" or position == "aurorahey" or position == "auroraiwish" or position == "auroragardeningbalcony" or position == "auroraexplain":
         scene bg
         show aurora
 

@@ -34,7 +34,9 @@ screen kitchenscale:
 screen callmap():
     
     imagebutton:
-        auto "gui/dg_map_callmap_%s.png" xpos 1834 ypos 0 action ShowTransient("map")
+        auto "gui/dg_map_callmap_%s.png" xpos 1834 ypos 0 action [ Play("sound", "audio/click2.mp3"), ShowTransient("map") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    imagebutton:
+        auto "gui/dg_home_%s.png" xpos 20 ypos 540 action [ Play("sound", "audio/click2.mp3"), Jump("culinarychoices") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
     if mapishere == 0:
         imagebutton:
             auto "gui/dg_map_pointer_%s.png" xpos 1622 ypos 42 action [ Play("sound", "audio/click2.mp3"), Call("mapishere") ] hovered [ Play("sound", "audio/button hover4.mp3") ] 
@@ -249,6 +251,23 @@ screen day_icon():
             ypadding 10
 
         text "$ [money:.0f]" bold 1 xpos 533 ypos 1 color ("#ffffffff") size 30
+
+
+
+screen marshmallow:
+    imagebutton:
+        auto "gui/dg_backyard_place_%s.png" xpos 998 ypos 465 action [ Play("sound", "audio/click2.mp3"), Call("marshmallowpos") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    if cooking == 0:
+        imagebutton:
+            auto "gui/dg_backyard_cook_%s.png" xpos 1001 ypos 837 action [ Play("sound", "audio/click2.mp3"), Jump("marshmallowcook") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    if cooking == 1:
+        imagebutton:
+            auto "gui/dg_backyard_stop_%s.png" xpos 1001 ypos 837 action [ Play("sound", "audio/click2.mp3"), Call("stop") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    image "marshmallow" xpos 965 ypos 527
+
+
+    
+
 
 
     # image:

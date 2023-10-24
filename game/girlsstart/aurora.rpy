@@ -44,4 +44,16 @@ label aurora:
 
     default aurora_dinner = 0
 
+    default aurorafirstmeet = 0
+
+    default auroraseen = 0
+
+    default ethan = 0
+
+    default mark = 0
+
+    default auroraforliving = 0
+
+    default aurorahi = 0
+
 return

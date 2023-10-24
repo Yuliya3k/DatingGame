@@ -44,4 +44,18 @@ label kris:
 
     default kris_dinner = 0
 
+    default krisfitness = 0
+
+    default kriscooking = 0
+
+    default krisartist = 0
+
+    default krisfirstmeet = 0
+
+    default krisbackyard = 0
+
+    default krisstory = 0
+
+    default krisnottoday = 0
+
 return

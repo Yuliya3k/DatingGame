@@ -110,32 +110,7 @@
                 self.days += days
                 self.totaldays += days
                 self.day += days
-                if self.minutes > 59:
-                    self.minutes = self.minutes - 60
-                    self.hours += 1
 
-
-                if self.hours > 23:
-                    self.hours = self.hours - 24
-                    self.day += 1
-                    self.days += 1
-                    self.totaldays += 1
-
-                if self.day > 6:
-                    self.day = 1
-
-                if self.days > self.monthdays[self.month]:
-                    self.month += 1
-                    self.days = 1
-                if self.month > 11:
-                    self.month = 1
-                # return
-
-            def AddDay(self, days):
-                self.days += days
-                self.totaldays += days
-                self.hours = 18
-                self.minutes = 0
                 if self.minutes > 59:
                     self.minutes = self.minutes - 60
                     self.hours += 1
@@ -153,8 +128,35 @@
                 if self.days > self.monthdays[self.month]:
                     self.month += 1
                     self.days = 1
+
                 if self.month > 11:
                     self.month = 1
+                # return
+
+            # def AddDay(self, days):
+            #     self.days += days
+            #     self.totaldays += days
+            #     self.hours = 18
+            #     self.minutes = 0
+            #     if self.minutes > 59:
+            #         self.minutes = self.minutes - 60
+            #         self.hours += 1
+
+
+            #     if self.hours > 23:
+            #         self.hours = self.hours - 24
+            #         self.day += 1
+            #         self.days += 1
+            #         self.totaldays += 1
+
+            #     if self.day > 6:
+            #         self.day = 1
+
+            #     if self.days > self.monthdays[self.month]:
+            #         self.month += 1
+            #         self.days = 1
+            #     if self.month > 11:
+            #         self.month = 1
 
 
 
