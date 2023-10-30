@@ -35,6 +35,8 @@ label culinarychoices:
                 call dayvariables
             "Go talk to Aurora" if auroraseen == 1:
                 jump aurorafirstmeet
+            "Test":
+                call hayoonfirstmeet
             
         
         

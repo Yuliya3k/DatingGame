@@ -1,72 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/marshmallowcook.rpy", line 36, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 80, in script call
-    "Oops, you have ruined the marshmallow"
-  File "game/marshmallowcook.rpy", line 21, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 21, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 36, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 36, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 36, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 21, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 36, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 36, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 21, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 36, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 36, in script call
-    pause 1
-  File "game/krisbackyard.rpy", line 79, in script
-    pause 1
-Exception: Possible infinite loop.
+  File "renpy/common/00start.rpy", line 189, in script
+    python:
+  File "renpy/common/00start.rpy", line 190, in <module>
+    renpy.execute_default_statement(True)
+  File "game/screens.rpy", line 273, in execute_default
+    default quick_menu = True
+Exception: store.quick_menu is being given a default a second time.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/marshmallowcook.rpy", line 36, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 80, in script call
-    "Oops, you have ruined the marshmallow"
-  File "game/marshmallowcook.rpy", line 21, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 21, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 36, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 36, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 36, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 21, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 36, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 36, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 21, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 36, in script call
-    pause 1
-  File "game/marshmallowcook.rpy", line 36, in script call
-    pause 1
-  File "game/krisbackyard.rpy", line 79, in script
-    pause 1
-  File "D:\renpy-7.4.11-sdk\renpy\execution.py", line 61, in check_infinite_loop
-    raise Exception("Possible infinite loop.")
-Exception: Possible infinite loop.
+  File "renpy/common/00start.rpy", line 189, in script
+    python:
+  File "D:\renpy-7.4.11-sdk\renpy\ast.py", line 1138, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "D:\renpy-7.4.11-sdk\renpy\python.py", line 1122, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00start.rpy", line 190, in <module>
+    renpy.execute_default_statement(True)
+  File "D:\renpy-7.4.11-sdk\renpy\exports.py", line 3963, in execute_default_statement
+    i.execute_default(start)
+  File "game/screens.rpy", line 273, in execute_default
+    default quick_menu = True
+Exception: store.quick_menu is being given a default a second time.
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.1.0.23051307
 Dating_game 0.2d
-Tue Oct 24 16:54:20 2023
+Mon Oct 30 02:43:46 2023

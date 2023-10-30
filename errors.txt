@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/stop.rpy", line 2: expected 'name' not found.
-    hide screen 
-                ^
+File "game/hayoonfirstmeet.rpy", line 529: end of line expected.
+    HaYoon " Likewise. Don't be a stranger; I'll be here at the bar from time to time. Have a wonderful evening."$ position = "barhayoonhey"
+                                                                                                                 ^
 
 Ren'Py Version: Ren'Py 8.1.0.23051307
-Tue Oct 24 16:52:17 2023
+Mon Oct 30 02:41:59 2023

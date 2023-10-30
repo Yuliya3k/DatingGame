@@ -2,4 +2,4 @@ label mapishere:
     
     $ mapishere = 1
 
-return
+jump culinarychoices

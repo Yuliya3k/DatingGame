@@ -36,6 +36,13 @@ label girl:
         $ margo_fullstage = 10
     if margo_fullstage > 20 and sevent == 1:
         $ margo_fullstage = 20
+
+    $ hayoon_fullnessoz = int(hayoon_fullness*0.034)  
+    $ hayoon_fullstage = 1+int(hayoon_fullness/hayoon_minfullness)
+    if hayoon_fullstage > 10 and sevent == 0:
+        $ hayoon_fullstage = 10
+    if hayoon_fullstage > 20 and sevent == 1:
+        $ hayoon_fullstage = 20
     
     return
 
