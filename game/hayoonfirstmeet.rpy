@@ -1,5 +1,6 @@
 label hayoonfirstmeet:
-
+    $ position = "barhayoonwhat"
+    call sceneimg
     
     
     

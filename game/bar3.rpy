@@ -29,37 +29,53 @@ label bar3:
         $  hayoonfirstmeet = 1
         $ myrandom = renpy.random.randint(1,3)
         if myrandom == 1:
-            
+            $ position = "kiraleaningwhispering"
+            call sceneimg
             Kira "Hey, remember when I mentioned HaYoon, the town's doctor?"
-
+            $ position = "kiraquestion"
+            call sceneimg
             player "Yeah, I remember. What about her?"
-
+            $ position = "kiraleaningwhispering"
+            call sceneimg
             Kira "Well, look who just walked in. She's sitting at the bar, a few stools down from you."
-
+            $ position = "kiraquestion"
+            call sceneimg
             player "Oh, I see her. She's alone?"
-
+            $ position = "kiraleaningwhispering"
+            call sceneimg
             Kira "Yeah, she often comes here to unwind after a long day at the clinic. She's a great person, and you might find her company enjoyable."
-
+            $ position = "kiraquestion"
+            call sceneimg
             player "That sounds interesting. Do you think you could introduce us?"
-
+            $ position = "kiraleaningwhispering"
+            call sceneimg
             Kira "Of course! Just give me a moment to wrap up some orders, and I'll make the introduction."  
-
+            $ position = "kiraworking2"
+            call sceneimg
+            pause
+            $ position = "kiraleaningwhispering"
+            call sceneimg
             Kira "Alright, it's time. Let's go meet HaYoon."
-
-            player "Lead the way, Kira."   
-
+            $ position = "kiraleaningtohayoon"
+            call sceneimg
             Kira "Hey, HaYoon! Mind if I introduce you to someone?"
-
+            $ position = "barhayoonhey"
+            call sceneimg
             HaYoon "Kira, always a pleasure. Introduce away!"
-
+            $ position = "kiraleaningtohayoon"
+            call sceneimg
             Kira "HaYoon, this is, our newest resident in town. Meet HaYoon, our amazing doctor."
-
+            $ position = "barhayoonwhat"
+            call sceneimg
             player "Nice to meet you, HaYoon."
-
+            $ position = "barhayoonchatting"
+            call sceneimg
             HaYoon "Likewise. Welcome to our town. Kira has been singing your praises."
-
+            $ position = "barhayoonwhat"
+            call sceneimg
             player "Well, Kira has been a wonderful guide so far. I am looking forward to getting to know more people in town."
-
+            $ position = "barhayoonchatting"
+            call sceneimg
             HaYoon "Then, here is to new beginnings and new friendships. Cheers!"
 
         
@@ -67,67 +83,93 @@ label bar3:
 
 
         if myrandom == 2:
+            $ position = "kiraleaningwhispering"
+            call sceneimg
             Kira "Hey, see that woman at the bar? That's HaYoon, the doctor I mentioned to you before."
-
+            $ position = "kiraquestion"
+            call sceneimg
             player "Yeah, you told me about her. She's the town's doctor, right?"
-
+            $ position = "kiraleaningwhispering"
+            call sceneimg
             Kira "That's her. She's a regular here after her long shifts at the clinic. If you're interested, I can introduce you two. She's really friendly and great to chat with."
-
+            $ position = "kiraquestion"
+            call sceneimg
             player "That sounds like a good idea, Kira. I'd love to meet her and maybe learn more about the town."
-
+            $ position = "kiraleaningtohayoon"
+            call sceneimg
             Kira "Perfect. I'll go over and talk to her for a moment, then I'll bring her over to meet you. Just be yourself; you'll get along just fine."
-
-        
-
+            $ position = "barhayoonhey"
+            call sceneimg
             HaYoon "Hi there, I'm HaYoon. Kira tells me you're new in town. Nice to meet you!"
-
+            $ position = "barhayoonwhat"
+            call sceneimg
             player "Hi, HaYoon. Yeah, I just moved here recently. It's a pleasure to meet you too. Kira mentioned you work at the clinic. That must keep you pretty busy."
-
+            $ position = "barhayoonchatting"
+            call sceneimg
             HaYoon "It can be, but I love what I do. And it's always nice to unwind with good company. Kira speaks highly of you."
-
+            $ position = "barhayoonwhat"
+            call sceneimg
             player "Likewise, HaYoon. I'm looking forward to getting to know the people in this town better."
-
+            $ position = "barhayoonchatting"
+            call sceneimg
             HaYoon "Well, you're off to a good start. If you have any questions about the town or need recommendations, feel free to ask anytime."
-
+            $ position = "barhayoonwhat"
+            call sceneimg
             player "Thanks, HaYoon. I'll definitely keep that in mind. It's great to have such welcoming neighbors."
-
+            $ position = "kiraquestion"
+            call sceneimg
             Kira "I knew you two would hit it off. Enjoy your chat, and don't hesitate to ask if you need anything else!"
 
 
 
         if myrandom == 3:
-
+            $ position = "kiraleaningwhispering"
+            call sceneimg
             Kira "Hey, remember I mentioned HaYoon sometimes swings by here after her shifts at the hospital?"
-
+            $ position = "kiraquestion"
+            call sceneimg
             player "Yeah, you did. That's the doctor you were talking about, right?"
-
+            $ position = "kiraleaningwhispering"
+            call sceneimg
             Kira "The very same. She's sitting at the bar right now. Want me to introduce you?"
-
+            $ position = "kiraquestion"
+            call sceneimg
             player "That would be great, Kira. Thanks for offering.But, you know, I don't want to bother her if she's busy or anything."
-
+            $ position = "kiraleaningwhispering"
+            call sceneimg
             Kira "Oh, don't worry about that. HaYoon's usually pretty chill when she's here. Let's go over, and I'll make the introduction."
-
+            $ position = "kiraquestion"
+            call sceneimg
             player "That sounds good, Kira. Lead the way."
-
-
+            $ position = "kiraleaningtohayoon"
+            call sceneimg
             Kira "HaYoon, meet.This is HaYoon, one of our regulars and an amazing doctor at the hospital."
-
+            $ position = "barhayoonhey"
+            call sceneimg
             HaYoon "Nice to meet you. Kira's been telling me you're new in town. How are you finding it so far?"
-
+            $ position = "barhayoonwhat"
+            call sceneimg
             player "Pleasure to meet you too, HaYoon. It's been quite an adventure settling in, but everyone's been so welcoming."
-
+            $ position = "barhayoonchatting"
+            call sceneimg
             HaYoon "Well, you've got a fantastic spot here with Kira. She's a gem, always making sure everyone's taken care of."
-
+            $ position = "barhayoonwhat"
+            call sceneimg
             player "I can tell. Kira's been great."
-
+            $ position = "kiraflirting"
+            call sceneimg
             Kira "Alright, you two, I'll leave you to your conversation. If you need anything, just holler."
-
+            $ position = "barhayoonchatting"
+            call sceneimg
             HaYoon "So, what brings you to our little town?"
-
+            $ position = "barhayoonwhat"
+            call sceneimg
             player "Oh, a mix of things, really. New job, new surroundings. I'm also a cook, so I'm looking forward to exploring the local food scene."
-
+            $ position = "barhayoonchatting"
+            call sceneimg
             HaYoon "That sounds intriguing. If you ever need a food critic, count me in. (winks)"
-
+            $ position = "barhayoonwhat"
+            call sceneimg
             player "You've got a deal, HaYoon. I might just take you up on that."
 
     $ usual = 1
@@ -150,12 +192,17 @@ label bar3:
             "Where can I find all these people?" if overallpeople == 1:
                 $ position = "kiraexplain"
                 call sceneimg
-                Kira "Well, Ha-Yoon frequents this place quite often, especially during her downtime. So, you're in the right spot to bump into her. "
-                Kira "Lin, the fitness trainer, usually hangs out at the local gym."
-                Kira "Ava, the lifeguard, spends her free time at the beach, of course. "
-                Kira "And Sally, the maid, often visits the park nearby, enjoying some fresh air on her days off. Just keep your eyes open, and you'll run into them sooner or later. Who knows, you might even make some new friends!"
+                if hayoonintro == 1:
+                    Kira "Well, Ha-Yoon frequents this place quite often, especially during her downtime. So, you're in the right spot to bump into her. "
+                if linintro == 1:
+                    Kira "Lin, the fitness trainer, usually hangs out at the local gym."
+                if avaintro == 1:
+                    Kira "Ava, the lifeguard, spends her free time at the beach, of course. "
+                if sallyintro == 1:
+                    Kira "And Sally, the maid, often visits the park nearby, enjoying some fresh air on her days off. Just keep your eyes open, and you'll run into them sooner or later. Who knows, you might even make some new friends!"
                 $ overallpeople = 2
             "Talk to HaYoon" if hayoonfirstmeet > 0:
+
                 jump hayoonfirstmeet
             "Go home":
                 pass

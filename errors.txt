@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/hayoonfirstmeet.rpy", line 529: end of line expected.
-    HaYoon " Likewise. Don't be a stranger; I'll be here at the bar from time to time. Have a wonderful evening."$ position = "barhayoonhey"
-                                                                                                                 ^
+File "game/avabeach.rpy", line 349: Line is indented, but the preceding jump statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    jump avabeachloop
+    ^
 
 Ren'Py Version: Ren'Py 8.1.0.23051307
-Mon Oct 30 02:41:59 2023
+Tue Nov  7 00:21:29 2023

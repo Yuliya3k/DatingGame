@@ -9,5 +9,6 @@ label dayvariables:
     $ auroraseen = 0
     $ aurorahi = 0
     $ krisnottoday = 0
+    
 
 return

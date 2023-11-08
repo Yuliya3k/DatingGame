@@ -43,6 +43,13 @@ label girl:
         $ hayoon_fullstage = 10
     if hayoon_fullstage > 20 and sevent == 1:
         $ hayoon_fullstage = 20
+
+    $ ava_fullnessoz = int(ava_fullness*0.034)  
+    $ ava_fullstage = 1+int(ava_fullness/ava_minfullness)
+    if ava_fullstage > 10 and sevent == 0:
+        $ ava_fullstage = 10
+    if ava_fullstage > 20 and sevent == 1:
+        $ ava_fullstage = 20
     
     return
 

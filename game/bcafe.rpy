@@ -26,6 +26,29 @@ label bcafe:
     else:
         pass    
     play music "audio/bcafe.mp3" volume 0.5
+
+    if avaintro == 1 and (calendar.Hours < 9 or calendar.Hours > 18):
+        $ myrandom = renpy.random.randint(1,5)
+        if myrandom == 3:
+            $ avafirstmeet = 1
+            $ avabcafe = 1
+            $ position = "cafeenteranceavaalexafar"
+            call sceneimg
+            pause 3.0
+            $ position = "cafeenteranceavaalexacloser"
+            call sceneimg
+            menu:
+                "Come to Alexa to order":
+                    pass
+                "Sneak peek at the girl that is ordering":
+                    $ position = "cafeavaorderingside"
+                    call sceneimg
+                    pause
+        else:
+            pass
+    else:
+        pass
+
     $ position = "alexaexplaining"
     call sceneimg
     play sound "audio/Kayla-1946726.mp3"
@@ -56,6 +79,22 @@ label bcafe:
             call sceneimg
             play sound "audio/Waren-1946615.mp3"
             player "I picked up the burger, its warmth radiating through the paper wrapping. My first bite was an explosion of flavors - the juicy beef, the tangy sauce, the crunch of lettuce - it was a symphony of taste. I couldn't help but savor each bite, sipping on a cold drink that accompanied the meal."
+            
+            
+            if avabcafe == 1:
+                $ position = "cafeavasitting"
+                call sceneimg
+                player "As I sat at Crave Bites, savoring every bite of my meal, I couldn't help but notice a newcomer. She was hard to miss, sitting at a nearby table in her leather jacket and shorts combination. Her aura seemed to exude a certain edginess, and I couldn't help but be intrigued."
+                $ ava_fullness += renpy.random.randint(200,2000)
+                call sceneimg
+                player "The way she ate her meal with a certain enthusiasm caught my attention. It wasn't just about eating; it was an experience, and she seemed to relish every moment of it. With each bite, her expressions told a story of satisfaction and delight."
+                $ position = "avawalkingout"
+                call sceneimg
+                player "But as quickly as she had arrived, she remained seated until she finished her meal. With a casual nod to the staff, she gathered her belongings and sauntered towards the exit, her leather jacket swinging gently with her every step. There was an air of mystery about her, and I couldn't help but wonder what her story was, where she was headed, and what adventures lay ahead for her."
+                $ avabcafe = 0
+                $ position = "foodburger"
+                call sceneimg
+                player "I returned my focus to my own meal, but the memory of the girl in the leather jacket lingered in the back of my mind, a fleeting encounter that left me with a sense of curiosity and a reminder that in this city, there were countless stories waiting to be discovered."
 
             $ position = "alexaskingtable"
             call sceneimg
@@ -64,6 +103,7 @@ label bcafe:
             $ calendar.AddMinutes(15)
             $ position = "foodnofood"
             call sceneimg
+            pause 1
             if alexa_fullstage > 1 and alexa_bloatask == 0:
                 play sound "audio/Waren-1946622.mp3"
                 player "As I sat at my regular spot in Crave Bites, savoring every bite of my Classic Cravings Burger, I couldn't help but notice something unusual. Alexa, the cheerful server who had taken my order and shared a bit of her story, had a noticeably bloated belly. It was hard not to notice, given her usually slender frame."

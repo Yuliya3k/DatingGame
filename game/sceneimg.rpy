@@ -6,13 +6,26 @@ label sceneimg:
     # hide alexa
     if position == "home":
         scene bg
-    if position == "kiraworking" or position == "kiraworking2" or position == "kiraquestion" or position == "kiraflirting" or position == "kiraexplain" or position == "kiraenterance" or position == "kiraquestion2" or position == "kirahayoonenter":        
+
+
+    #Kira
+    if position == "kiraworking" or position == "kiraworking2" or position == "kiraquestion" or position == "kiraflirting" or position == "kiraexplain" or position == "kiraenterance" or position == "kiraquestion2" or position == "kirahayoonenter"  or position == "kiraleaningtohayoon" or position == "kiraleaningwhispering":        
         scene bg
         show kira
-    if position == "alexaexplaining" or position == "alexaworking" or position == "alexahappy" or position == "alexasurprised" or position == "alexaskingtable":
+
+    #Alexa
+    if position == "alexaexplaining" or position == "alexaworking" or position == "alexahappy" or position == "alexasurprised" or position == "alexaskingtable" or position == "cafeenteranceavaalexafar" or position == "cafeenteranceavaalexacloser":
         scene bg
         show alexa
 
+
+    #Ava
+    if position == "cafeenteranceavaalexafar" or position == "cafeenteranceavaalexacloser" or position == "avawalkingout" or position == "beachavaclosehey" or position == "beachavacloselisten" or position == "beachavaclosemynameis" or position == "beachavacloseplease" or position == "beachavaclosestop" or position == "beachavaclosetalk" or position == "beachavaclose" or position == "beachava" or position == "cafeavaorderingside" or position == "cafeavasitting" or position == "beachavacloseexplaining":
+        scene bg
+        show ava
+
+
+    #hayoon
     if position == "barhayoonlecturing" or position == "barhayoonchatting" or position == "barhayoonclarifiying" or position == "barhayoonexplaining" or position == "barhayoonhey" or position == "barhayoonstop" or position == "barhayoonwhat" or position == "kirahayoonenter":
         scene bg
         show hayoon
@@ -38,7 +51,7 @@ label sceneimg:
         scene bg
         show julia
 
-    if position == "backyard" or position == "gardeningbalconynoaurora" or position == "kriswalkingbalconynokris" or position == "foodburger" or position == "foodburgerfrappe" or position == "foodfrappe" or position == "foodnofood" or position == "cafeenterance" or position == "barenterance" or position == "hayoonintro" or position == "linintro" or position == "avaintro" or position == "sallyintro" or position == "parkocean" or position == "parkwalk" or position == "parkbench" or position == "kitchen":
+    if position == "backyard" or position == "gardeningbalconynoaurora" or position == "kriswalkingbalconynokris" or position == "foodburger" or position == "foodburgerfrappe" or position == "foodfrappe" or position == "foodnofood" or position == "cafeenterance" or position == "barenterance" or position == "hayoonintro" or position == "linintro" or position == "avaintro" or position == "sallyintro" or position == "parkocean" or position == "parkwalk" or position == "parkbench" or position == "kitchen"  or position == "beachempty" or position == "beachlifeguardempty":
         scene bg
         
     
