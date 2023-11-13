@@ -55,8 +55,10 @@ screen map():
         imagebutton:
             auto "gui/dg_map_hospital_%s.png" xpos 818 ypos 511 action [ Play("sound", "audio/click2.mp3"), Call("g7stats") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
     
-    imagebutton:
-        auto "gui/dg_map_park_%s.png" xpos 81 ypos 654 action [ Play("sound", "audio/click2.mp3"), Jump("park") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    if calendar.Hours < 23 and calendar.Hours > 5:
+        imagebutton:
+            auto "gui/dg_map_park_%s.png" xpos 81 ypos 654 action [ Play("sound", "audio/click2.mp3"), Jump("park") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    
     if (calendar.WeekDay == 'Mon' or calendar.WeekDay == 'Tue' or calendar.WeekDay == 'Wed' or calendar.WeekDay == 'Thu' or calendar.WeekDay == 'Fri') and calendar.Hours > 8 and calendar.Hours < 21:
         imagebutton:
             auto "gui/dg_map_work_%s.png" xpos 1089 ypos 395 action [ Play("sound", "audio/click2.mp3"), Jump("rm") ] hovered [ Play("sound", "audio/button hover4.mp3") ]

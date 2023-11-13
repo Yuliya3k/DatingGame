@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/avabeach.rpy", line 349: Line is indented, but the preceding jump statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    jump avabeachloop
-    ^
+File "game/sallyfirsttime.rpy", line 986: Indentation mismatch.
 
 Ren'Py Version: Ren'Py 8.1.0.23051307
-Tue Nov  7 00:21:29 2023
+Mon Nov 13 02:46:15 2023

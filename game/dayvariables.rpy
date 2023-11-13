@@ -9,6 +9,9 @@ label dayvariables:
     $ auroraseen = 0
     $ aurorahi = 0
     $ krisnottoday = 0
-    
-
+    if sallyhello > 0:
+        $ sallyhello = 1
+    else:
+        pass
+    $ sallyhellotoday = 0
 return

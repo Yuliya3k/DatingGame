@@ -51,6 +51,15 @@ label girl:
     if ava_fullstage > 20 and sevent == 1:
         $ ava_fullstage = 20
     
+
+    $ sally_fullnessoz = int(sally_fullness*0.034)  
+    $ sally_fullstage = 1+int(sally_fullness/sally_minfullness)
+    if sally_fullstage > 10 and sevent == 0:
+        $ sally_fullstage = 10
+    if sally_fullstage > 20 and sevent == 1:
+        $ sally_fullstage = 20
+
+
     return
 
 

@@ -5,5 +5,8 @@ label girlsfullness:
     $ margo_fullness = 0
     $ kris_fullness = 0
     $ ava_fullness = 0
+    $ sally_fullness -= 3
+    if sally_fullness < 0:
+        $ sally_fullness = 0
     
 return

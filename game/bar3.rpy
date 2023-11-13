@@ -199,7 +199,8 @@ label bar3:
                 if avaintro == 1:
                     Kira "Ava, the lifeguard, spends her free time at the beach, of course. "
                 if sallyintro == 1:
-                    Kira "And Sally, the maid, often visits the park nearby, enjoying some fresh air on her days off. Just keep your eyes open, and you'll run into them sooner or later. Who knows, you might even make some new friends!"
+                    Kira "And Sally, the maid, often visits the park nearby, enjoying some fresh air on her days off."
+                    $ sallypark = 1
                 $ overallpeople = 2
             "Talk to HaYoon" if hayoonfirstmeet > 0:
 

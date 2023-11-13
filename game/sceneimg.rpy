@@ -25,6 +25,13 @@ label sceneimg:
         show ava
 
 
+
+    #Sally
+    if position == "parksallybencheveninghi" or position == "parksallybencheveninglistening" or position == "parksallybencheveningsitting" or position == "parksallybencheveningstanding" or position == "parksallybencheveningtalking" or position == "parksallyeveninglookingatthesea" or position == "parksallyeveningwalking" or position == "parksallyeveningwalkingback" or position == "parksallymorningrunning" or position == "parksallymorningrunningback" or position == "parksallyseaviewmorninglistening" or position == "parksallyseaviewmorningtalking":
+        scene bg
+        show sally
+
+
     #hayoon
     if position == "barhayoonlecturing" or position == "barhayoonchatting" or position == "barhayoonclarifiying" or position == "barhayoonexplaining" or position == "barhayoonhey" or position == "barhayoonstop" or position == "barhayoonwhat" or position == "kirahayoonenter":
         scene bg
@@ -51,8 +58,11 @@ label sceneimg:
         scene bg
         show julia
 
-    if position == "backyard" or position == "gardeningbalconynoaurora" or position == "kriswalkingbalconynokris" or position == "foodburger" or position == "foodburgerfrappe" or position == "foodfrappe" or position == "foodnofood" or position == "cafeenterance" or position == "barenterance" or position == "hayoonintro" or position == "linintro" or position == "avaintro" or position == "sallyintro" or position == "parkocean" or position == "parkwalk" or position == "parkbench" or position == "kitchen"  or position == "beachempty" or position == "beachlifeguardempty":
+    if position == "backyard" or position == "gardeningbalconynoaurora" or position == "kriswalkingbalconynokris" or position == "foodburger" or position == "foodburgerfrappe" or position == "foodfrappe" or position == "foodnofood" or position == "cafeenterance" or position == "barenterance" or position == "hayoonintro" or position == "linintro" or position == "avaintro" or position == "sallyintro" or position == "parkocean" or position == "parkwalk" or position == "parkbench" or position == "kitchen"  or position == "beachempty" or position == "beachlifeguardempty" or position == "parkeveningwalk" or position == "parkeveningseaview" or position == "parkeveningbench" or position == "parkmorningseaview" or position == "parkmorningwalk" or position == "parkmorningbench":
         scene bg
         
-    
+
+        
+        
+        
 return
