@@ -589,7 +589,7 @@ label sallyfirsttime:
                     $ position = "parksallybencheveninglistening"
                     call sceneimg
                     player "Sally, I hope you don't mind me asking, but I've noticed your belly looks quite round. Are you...?"
-                    $ position = "parksallybencheveningtalking"
+                    $ position = "sallyeveningbellyholding"
                     call sceneimg
                     Sally "Oh, no, I'm not pregnant. It's just that Mr. Johnson insists we eat well, and I find it hard to resist his delicious meals. I guess I'm just well-fed."
                     $ position = "parksallybencheveninglistening"
@@ -627,7 +627,7 @@ label sallyfirsttime:
                     $ position = "parksallybencheveninglistening"
                     call sceneimg
                     player "Sally, I hope you don't mind me asking, but your belly looks quite round today. Are you...?"
-                    $ position = "parksallybencheveningtalking"
+                    $ position = "sallyeveningbellyholding"
                     call sceneimg
                     Sally "Oh, no, I'm not pregnant. Today was a dinner party, and I may have indulged in a bit too much. Leftovers are hard to resist."
                     $ position = "parksallybencheveninglistening"
@@ -644,7 +644,7 @@ label sallyfirsttime:
                     $ position = "parksallybencheveninglistening"
                     call sceneimg
                     player "Sally, I couldn't help but notice that your belly looks quite full tonight. Have you been enjoying some good meals recently?"
-                    $ position = "parksallybencheveningtalking"
+                    $ position = "sallyeveningbellyholding"
                     call sceneimg
                     Sally "Oh, you've got a keen eye, [name]. You're absolutely right. My employer makes sure we eat well, and sometimes, it shows."
                     $ position = "parksallybencheveninglistening"
@@ -677,7 +677,7 @@ label sallyfirsttime:
                         $ position = "parksallybencheveninglistening"
                         call sceneimg
                         player "Sally, forgive me for being forward, but your belly seems quite round. Are you... expecting?"
-                        $ position = "parksallybencheveningtalking"
+                        $ position = "sallyeveningbellyholding"
                         call sceneimg
                         Sally "Oh, no, nothing like that. I can see why you might think so, though. It's just that I had a rather indulgent dinner party tonight. Leftovers and all that."
                         $ position = "parksallybencheveninglistening"
@@ -714,7 +714,7 @@ label sallyfirsttime:
                         $ position = "parksallybencheveninglistening"
                         call sceneimg
                         player "Hey, Sally, I hope you don't mind me asking, but I couldn't help but notice your belly. It looks pretty round. Is there something special about it?"
-                        $ position = "parksallybencheveningtalking"
+                        $ position = "sallyeveningbellyholding"
                         call sceneimg
                         Sally "Oh, you noticed, huh? Well, it's just that I had a rather hearty dinner tonight. My employer decided to throw a little feast, and, well, I may have indulged a bit."
                         $ position = "parksallybencheveninglistening"
@@ -878,6 +878,7 @@ label sallyfirsttime:
                     Sally "I'd look forward to that. It sounds like a delightful idea."
                 $ sallyjob = 8
             "Tell her about yourself" if sallyjob > 6 and sallytellyourself == 0:
+                $ sallyhowstheday = 1
                 $ position = "parksallybencheveninglistening"
                 call sceneimg
                 player " Speaking of obligations and responsibilities, I recently moved to this town. I'm actually a cook by profession. It's been quite an adjustment getting used to everything here."
@@ -901,6 +902,101 @@ label sallyfirsttime:
 
                 
                 $ sallytellyourself = 1
+            
+            
+            "How was your day today?" if sallyhowstheday == 0 and sallyjob > 7:
+                $ sallyhowstheday = 1
+                $ myrandom = renpy.random.randint(1,3)
+                if myrandom == 1:
+                    $ position = "parksallybencheveninglistening"
+                    call sceneimg
+                    player "Hey, Sally! How was your day today?"
+                    $ position = "parksallybencheveninghi"
+                    call sceneimg
+                    Sally "Oh, it was pretty eventful, actually. I started with my morning run, of course. It was a bit windy, but I enjoy the challenge."
+                    $ position = "parksallybencheveninglistening"
+                    call sceneimg
+                    player "That sounds great. What else did you do today?"
+                    $ position = "parksallybencheveningtalking"
+                    call sceneimg
+                    Sally "Well, today was quite a day. After my run, I spent a busy morning at work, taking care of Mr. Johnson's mansion."
+                    $ position = "parksallybencheveninglistening"
+                    call sceneimg
+                    player "What tasks were you handling today?"
+                    $ position = "parksallybencheveningtalking"
+                    call sceneimg
+                    Sally "Today, I focused on deep cleaning the mansion's grand entrance and staircase. It's quite a sight when it's spotless."
+                    $ position = "parksallybencheveninglistening"
+                    call sceneimg
+                    player "Sounds like a lot of responsibility."
+                    $ position = "parksallybencheveningtalking"
+                    call sceneimg
+                    Sally "It is, but I'm used to it now. Anyway, after work, I decided to enjoy the evening at the park, watching the sunset over the sea. It's so peaceful."
+                    $ position = "parksallybencheveninglistening"
+                    call sceneimg
+                    player "That does sound peaceful. And it's a great way to unwind after a long day."
+                    $ position = "parksallybencheveningtalking"
+                    call sceneimg
+                    Sally "Indeed it is. How about you? How was your day today?"
+
+                if myrandom == 2:
+                    player "Hey, Sally! How's your day been?"
+                    $ position = "parksallybencheveninghi"
+                    call sceneimg
+                    Sally "Hello! Well, today was quite productive. I started with my usual morning run, which always energizes me."
+                    $ position = "parksallybencheveninglistening"
+                    call sceneimg
+                    player "Nice! What else did you do today?"
+                    $ position = "parksallybencheveningtalking"
+                    call sceneimg
+                    Sally "After my run, I headed to Mr. Johnson's place to take care of some cleaning tasks. Today, I focused on the large windows; they need to be sparkling clean, you know."
+                    $ position = "parksallybencheveninglistening"
+                    call sceneimg
+                    player "That sounds like a meticulous job."
+                    $ position = "parksallybencheveningtalking"
+                    call sceneimg
+                    Sally "It can be, but I take pride in keeping the mansion looking its best. After work, I went to the park and watched the sunset by the sea. It's so calming."
+                    $ position = "parksallybencheveninglistening"
+                    call sceneimg
+                    player "Sounds like a lovely way to end the day."
+                    $ position = "parksallybencheveningtalking"
+                    call sceneimg
+                    Sally "It truly is. How about you? How was your day today?"
+
+                if myrandom == 3:
+                    player "Hey, Sally! How's your day been?"
+                    $ position = "parksallybencheveninghi"
+                    call sceneimg
+                    Sally "Hello! Today was quite a day. I kicked it off with my morning run, which always sets a positive tone."
+                    $ position = "parksallybencheveninglistening"
+                    call sceneimg
+                    player "Sounds like a great start. What else did you do today?"
+                    $ position = "parksallybencheveningtalking"
+                    call sceneimg
+                    Sally "Well, after my run, I headed to Mr. Johnson's place. Today, my focus was on giving the mansion's grand entrance a thorough cleaning. Those marble floors are a beauty when they're polished."
+                    $ position = "parksallybencheveninglistening"
+                    call sceneimg
+                    player "That must be a lot of work."
+                    $ position = "parksallybencheveningtalking"
+                    call sceneimg
+                    Sally "It can be, but I enjoy it. Later, I went to the park to catch the sunset by the sea. It's my favorite way to relax."
+                    $ position = "parksallybencheveninglistening"
+                    call sceneimg
+                    player "Watching the sunset sounds lovely."
+                    $ position = "parksallybencheveningtalking"
+                    call sceneimg
+                    Sally "It truly is. Now, how about you? How was your day today?"
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             "I need to go":
                 $ myrandom = renpy.random.randint(1,2)
@@ -1135,7 +1231,7 @@ label sallyfirsttime:
                     $ position = "parksallyseaviewmorninglistening"
                     call sceneimg
                     player "Sally, I couldn't help but notice, even in the morning, your belly isn't exactly flat. Is there a reason for that?"
-                    $ position = "parksallyseaviewmorningtalking"
+                    $ position = "sallymorningseaviewbellyholding"
                     call sceneimg
                     Sally "Oh, that... Well, it's just the way my body is, I suppose. I've always had a bit of a rounded tummy, even when I'm not full."
                     $ position = "parksallyseaviewmorninglistening"
@@ -1154,7 +1250,7 @@ label sallyfirsttime:
                     $ position = "parksallyseaviewmorninglistening"
                     call sceneimg
                     player "Sally, I couldn't help but notice, even in the morning, your belly looks quite nicely rounded. Is there a specific reason for that?"
-                    $ position = "parksallyseaviewmorningtalking"
+                    $ position = "sallymorningseaviewbellyholding"
                     call sceneimg
                     Sally "Oh, you're observant, aren't you? Well, it's because I tend to eat quite a bit, especially during the evenings. I love food, and it seems my belly decides to stick around in the morning as a reminder."
                     $ position = "parksallyseaviewmorninglistening"
@@ -1177,7 +1273,7 @@ label sallyfirsttime:
                     $ position = "parksallyseaviewmorninglistening"
                     call sceneimg
                     player "Sally, I couldn't help but notice, even in the morning, your belly looks like you're 7-9 months pregnant. What happened?"
-                    $ position = "parksallyseaviewmorningtalking"
+                    $ position = "sallymorningseaviewbellyholding"
                     call sceneimg
                     Sally "Oh, that! Well, yesterday, I indulged in so much food that I thought I'd pop. My belly just decided to hang around this morning as a reminder. But don't worry, it's empty now, so it doesn't hinder my morning run."
                     $ position = "parksallyseaviewmorninglistening"

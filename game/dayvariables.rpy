@@ -14,4 +14,5 @@ label dayvariables:
     else:
         pass
     $ sallyhellotoday = 0
+    $ sallyhowstheday = 0
 return

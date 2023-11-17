@@ -27,7 +27,7 @@ label sceneimg:
 
 
     #Sally
-    if position == "parksallybencheveninghi" or position == "parksallybencheveninglistening" or position == "parksallybencheveningsitting" or position == "parksallybencheveningstanding" or position == "parksallybencheveningtalking" or position == "parksallyeveninglookingatthesea" or position == "parksallyeveningwalking" or position == "parksallyeveningwalkingback" or position == "parksallymorningrunning" or position == "parksallymorningrunningback" or position == "parksallyseaviewmorninglistening" or position == "parksallyseaviewmorningtalking":
+    if position == "parksallybencheveninghi" or position == "parksallybencheveninglistening" or position == "parksallybencheveningsitting" or position == "parksallybencheveningstanding" or position == "parksallybencheveningtalking" or position == "parksallyeveninglookingatthesea" or position == "parksallyeveningwalking" or position == "parksallyeveningwalkingback" or position == "parksallymorningrunning" or position == "parksallymorningrunningback" or position == "parksallyseaviewmorninglistening" or position == "parksallyseaviewmorningtalking" or position == "sallyeveningbellyholding" or position == "sallymorningseaviewbellyholding":
         scene bg
         show sally
 

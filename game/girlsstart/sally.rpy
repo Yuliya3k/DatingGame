@@ -100,7 +100,7 @@ label sally:
 
     default sallytellyourself = 0
 
-    # default 
+    default sallyhowstheday = 0
 
     # default 
 
