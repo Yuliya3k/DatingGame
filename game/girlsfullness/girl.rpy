@@ -60,6 +60,14 @@ label girl:
         $ sally_fullstage = 20
 
 
+    $ mindy_fullnessoz = int(mindy_fullness*0.034)  
+    $ mindy_fullstage = 1+int(mindy_fullness/mindy_minfullness)
+    if mindy_fullstage > 10 and sevent == 0:
+        $ mindy_fullstage = 10
+    if mindy_fullstage > 20 and sevent == 1:
+        $ mindy_fullstage = 20
+
+
     return
 
 

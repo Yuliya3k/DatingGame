@@ -4,6 +4,8 @@ label hayoon:
 
     image hayoon = "/images/hayoonpos[position]weight[hayoon_weightstage] ([hayoon_fullstage]).png"
 
+    image hayoonstats = "/images/hayoonstatsweight[hayoon_weightstage] ([hayoon_fullstage]).png"
+
     default hayoon_fullness = int(0)
 
     default hayoon_abolutemaxfullness = 8000
@@ -16,7 +18,7 @@ label hayoon:
 
     default hayoon_weightlbs = int(hayoon_weight*2.2)
 
-    default hayoon_fullmax = 800
+    default hayoon_fullmax = 4000
 
     default hayoon_fullmaxoz = int(hayoon_fullmax*0.034)
 

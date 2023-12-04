@@ -37,9 +37,34 @@ screen callmap():
         auto "gui/dg_map_callmap_%s.png" xpos 1834 ypos 0 action [ Play("sound", "audio/click2.mp3"), ShowTransient("map") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
     imagebutton:
         auto "gui/dg_home_%s.png" xpos 20 ypos 540 action [ Play("sound", "audio/click2.mp3"), Jump("culinarychoices") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    imagebutton:
+        auto "gui/statsallgirls_%s.png" xpos 20 ypos 92 action [ Play("sound", "audio/click2.mp3"), ToggleScreen("girlsstats") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    
     if mapishere == 0:
         imagebutton:
             auto "gui/dg_map_pointer_%s.png" xpos 1622 ypos 42 action [ Play("sound", "audio/click2.mp3"), Call("mapishere") ] hovered [ Play("sound", "audio/button hover4.mp3") ] 
+
+
+screen girlsstats():
+    vpgrid:
+        xpos 119
+        ypos 92
+        # xsize 243
+        # ysize 735
+        rows 1
+        spacing 5
+        if avafirstmeet > 0:
+            imagebutton:
+                auto "gui/statsava_%s.png" action [ Play("sound", "audio/click2.mp3"), ToggleScreen("avastats") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+        if hayoonfirstmeet > 0:
+            imagebutton:
+                auto "gui/statshayoon_%s.png" action [ Play("sound", "audio/click2.mp3"), ToggleScreen("hayoonstats") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+        if sallyhello > 0:
+            imagebutton:
+                auto "gui/statssally_%s.png" action [ Play("sound", "audio/click2.mp3"), ToggleScreen("sallystats") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+        if linfirsttime > 0:
+            imagebutton:
+                auto "gui/statslin_%s.png" action [ Play("sound", "audio/click2.mp3"), ToggleScreen("linstats") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
 
 screen map():
     
@@ -351,56 +376,232 @@ screen statsgirls():
             ysize 37
             textbutton "Kassidy" text_size 17 text_color ("#A3F170") action [ Play("sound", "audio/click2.mp3"), Call("g7stats") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
 
-screen g1stats():
-    image "g1stats"
-    if g1_weightstage <= 4:
-        if metric == 1:
-            text "Weight [g1_weight]" xpos 610 ypos 277 color ("#A3F170")
-        else:
-            text "Weight [g1_weightlbs]" xpos 610 ypos 277 color ("#A3F170")
-    if g1_weightstage > 4 and g1_weightstage <= 7:
-        if metric == 1:
-            text "Weight [g1_weight]" xpos 610 ypos 277 color ("#F4F400")
-        else:
-            text "Weight [g1_weightlbs]" xpos 610 ypos 277 color ("#F4F400")
-    if g1_weightstage > 7 and g1_weightstage <= 10:
-        if metric == 1:
-            text "Weight [g1_weight]" xpos 610 ypos 277 color ("#E50000")
-        else:
-            text "Weight [g1_weightlbs]" xpos 610 ypos 277 color ("#E50000")
-    if g1_fullstage <= 8:
-        if metric == 1:
-            text "Fullness [g1_fullness]/[g1_fullmax]" xpos 610 ypos 345 color ("#A3F170")
-        else:
-            text "Fullness [g1_fullnessoz]/[g1_fullmaxoz]" xpos 610 ypos 345 color ("#A3F170")
-    if g1_fullstage > 8 and g1_fullstage <= 15:
-        if metric == 1:
-            text "Fullness [g1_fullness]/[g1_fullmax]" xpos 610 ypos 345 color ("#F4F400")
-        else:
-            text "Fullness [g1_fullnessoz]/[g1_fullmaxoz]" xpos 610 ypos 345 color ("#F4F400")
-    if g1_fullstage > 15 and g1_fullstage <= 20:
-        if metric == 1:
-            text "Fullness [g1_fullness]/[g1_fullmax]" xpos 610 ypos 345 color ("#E50000")
-        else:
-            text "Fullness [g1_fullnessoz]/[g1_fullmaxoz]" xpos 610 ypos 345 color ("#E50000")
-    text "Kira" xpos 737 ypos 168 color ("#A3F170")
-    text "Attitude [g1_attitude]" xpos 610 ypos 413 color ("#A3F170")
-    text "Resistance [g1_resistance]" xpos 610 ypos 481 color ("#A3F170")
+screen avastats():
+    image "avastats"
+    # image "gui/rectanglestats.png" xpos 393 ypos 430
+    # image "gui/rectanglestats.png" xpos 1094 ypos 112
+    # image "gui/rectanglestats.png" xpos 472 ypos 1000
+    image "gui/statsnames.png" xpos 400 ypos 117
+    text "Ava" xpos 604 ypos 222 color ("#ffffff") size 50
+    
     imagebutton:
-        auto "gui/plus_%s.png" xpos 503 ypos 275 action Call("g1gain")
-    imagebutton:
-        auto "gui/minus_%s.png" xpos 558 ypos 275 action Call("g1loose")
-
-    imagebutton:
-        auto "gui/plus_%s.png" xpos 503 ypos 345 action Call("g1eat")
-    imagebutton:
-        auto "gui/minus_%s.png" xpos 558 ypos 345 action Call("g1purge")
+            auto "gui/close_%s.png" xpos 1865 ypos 13 action [ Play("sound", "audio/click2.mp3"), ToggleScreen("avastats") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    if ava_weightstage <= 4:
+        if metric == 1:
+            text "[ava_weight] kg" xpos 609 ypos 1005 color ("#ffffff") size 32
+        else:
+            text "[ava_weightlbs] lbs" xpos 609 ypos 1005 color ("#ffffff") size 32
+    if ava_weightstage > 4 and ava_weightstage <= 7:
+        if metric == 1:
+            text "[ava_weight] kg" xpos 609 ypos 1005 color ("#F4F400") size 32
+        else:
+            text "[ava_weightlbs] lbs" xpos 609 ypos 1005 color ("#F4F400") size 32
+    if ava_weightstage > 7 and ava_weightstage <= 10:
+        if metric == 1:
+            text "[ava_weight] kg" xpos 609 ypos 1005 color ("#E50000") size 32
+        else:
+            text "[ava_weightlbs] lbs" xpos 609 ypos 1005 color ("#E50000") size 32
+    if ava_fullstage <= 8:
+        if metric == 1:
+            text "[ava_fullness]/[ava_fullmax] ml" xpos 543 ypos 435 color ("#ffffff") size 32
+        else:
+            text "[ava_fullnessoz]/[ava_fullmaxoz] oz" xpos 543 ypos 435 color ("#ffffff") size 32
+    if ava_fullstage > 8 and ava_fullstage <= 15:
+        if metric == 1:
+            text "[ava_fullness]/[ava_fullmax] ml" xpos 543 ypos 435 color ("#F4F400") size 32
+        else:
+            text "[ava_fullnessoz]/[ava_fullmaxoz] oz" xpos 543 ypos 435 color ("#F4F400") size 32
+    if ava_fullstage > 15 and ava_fullstage <= 20:
+        if metric == 1:
+            text "[ava_fullness]/[ava_fullmax] ml" xpos 543 ypos 435 color ("#E50000") size 32
+        else:
+            text "[ava_fullnessoz]/[ava_fullmaxoz] oz" xpos 543 ypos 435 color ("#E50000") size 32
+    
+    text "[ava_attitude]" xpos 1239 ypos 117 color ("#ffffff") size 32
+    
+    
     if metric == 1:
         imagebutton:
-            auto "gui/imperial_%s.png" xpos 1513 ypos 168 action [ Play("sound", "audio/click2.mp3"), Call("imperial") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+            auto "gui/imperial_%s.png" xpos 376 ypos 40 action [ Play("sound", "audio/click2.mp3"), Call("imperial") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+        imagebutton:
+            auto "gui/cmetric_%s.png" xpos 437 ypos 40 action [ Play("sound", "audio/click2.mp3"), Call("metric") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
     else:
         imagebutton:
-            auto "gui/metric_%s.png" xpos 1513 ypos 168 action [ Play("sound", "audio/click2.mp3"), Call("metric") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+            auto "gui/cimperial_%s.png" xpos 376 ypos 40 action [ Play("sound", "audio/click2.mp3"), Call("imperial") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+        imagebutton:
+            auto "gui/metric_%s.png" xpos 437 ypos 40 action [ Play("sound", "audio/click2.mp3"), Call("metric") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+
+
+screen hayoonstats():
+    image "hayoonstats"
+    # image "gui/rectanglestats.png" xpos 393 ypos 430
+    # image "gui/rectanglestats.png" xpos 1094 ypos 112
+    # image "gui/rectanglestats.png" xpos 472 ypos 1000
+    image "gui/statsnames.png" xpos 400 ypos 117
+    text "Ha-yoon" xpos 604 ypos 222 color ("#ffffff") size 50
+    
+    imagebutton:
+            auto "gui/close_%s.png" xpos 1865 ypos 13 action [ Play("sound", "audio/click2.mp3"), ToggleScreen("hayoonstats") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    if hayoon_weightstage <= 4:
+        if metric == 1:
+            text "[hayoon_weight] kg" xpos 609 ypos 1005 color ("#ffffff") size 32
+        else:
+            text "[hayoon_weightlbs] lbs" xpos 609 ypos 1005 color ("#ffffff") size 32
+    if hayoon_weightstage > 4 and hayoon_weightstage <= 7:
+        if metric == 1:
+            text "[hayoon_weight] kg" xpos 609 ypos 1005 color ("#F4F400") size 32
+        else:
+            text "[hayoon_weightlbs] lbs" xpos 609 ypos 1005 color ("#F4F400") size 32
+    if hayoon_weightstage > 7 and hayoon_weightstage <= 10:
+        if metric == 1:
+            text "[hayoon_weight] kg" xpos 609 ypos 1005 color ("#E50000") size 32
+        else:
+            text "[hayoon_weightlbs] lbs" xpos 609 ypos 1005 color ("#E50000") size 32
+    if hayoon_fullstage <= 8:
+        if metric == 1:
+            text "[hayoon_fullness]/[hayoon_fullmax] ml" xpos 543 ypos 435 color ("#ffffff") size 32
+        else:
+            text "[hayoon_fullnessoz]/[hayoon_fullmaxoz] oz" xpos 543 ypos 435 color ("#ffffff") size 32
+    if hayoon_fullstage > 8 and hayoon_fullstage <= 15:
+        if metric == 1:
+            text "[hayoon_fullness]/[hayoon_fullmax] ml" xpos 543 ypos 435 color ("#F4F400") size 32
+        else:
+            text "[hayoon_fullnessoz]/[hayoon_fullmaxoz] oz" xpos 543 ypos 435 color ("#F4F400") size 32
+    if hayoon_fullstage > 15 and hayoon_fullstage <= 20:
+        if metric == 1:
+            text "[hayoon_fullness]/[hayoon_fullmax] ml" xpos 543 ypos 435 color ("#E50000") size 32
+        else:
+            text "[hayoon_fullnessoz]/[hayoon_fullmaxoz] oz" xpos 543 ypos 435 color ("#E50000") size 32
+    
+    text "[hayoon_attitude]" xpos 1239 ypos 117 color ("#ffffff") size 32
+    
+    
+    if metric == 1:
+        imagebutton:
+            auto "gui/imperial_%s.png" xpos 376 ypos 40 action [ Play("sound", "audio/click2.mp3"), Call("imperial") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+        imagebutton:
+            auto "gui/cmetric_%s.png" xpos 437 ypos 40 action [ Play("sound", "audio/click2.mp3"), Call("metric") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    else:
+        imagebutton:
+            auto "gui/cimperial_%s.png" xpos 376 ypos 40 action [ Play("sound", "audio/click2.mp3"), Call("imperial") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+        imagebutton:
+            auto "gui/metric_%s.png" xpos 437 ypos 40 action [ Play("sound", "audio/click2.mp3"), Call("metric") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+
+
+
+
+
+screen sallystats():
+    image "sallystats"
+    # image "gui/rectanglestats.png" xpos 393 ypos 430
+    # image "gui/rectanglestats.png" xpos 1094 ypos 112
+    # image "gui/rectanglestats.png" xpos 472 ypos 1000
+    image "gui/statsnames.png" xpos 400 ypos 117
+    text "Sally" xpos 604 ypos 222 color ("#ffffff") size 50
+    
+    imagebutton:
+            auto "gui/close_%s.png" xpos 1865 ypos 13 action [ Play("sound", "audio/click2.mp3"), ToggleScreen("sallystats") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    if sally_weightstage <= 4:
+        if metric == 1:
+            text "[sally_weight] kg" xpos 609 ypos 1005 color ("#ffffff") size 32
+        else:
+            text "[sally_weightlbs] lbs" xpos 609 ypos 1005 color ("#ffffff") size 32
+    if sally_weightstage > 4 and sally_weightstage <= 7:
+        if metric == 1:
+            text "[sally_weight] kg" xpos 609 ypos 1005 color ("#F4F400") size 32
+        else:
+            text "[sally_weightlbs] lbs" xpos 609 ypos 1005 color ("#F4F400") size 32
+    if sally_weightstage > 7 and sally_weightstage <= 10:
+        if metric == 1:
+            text "[sally_weight] kg" xpos 609 ypos 1005 color ("#E50000") size 32
+        else:
+            text "[sally_weightlbs] lbs" xpos 609 ypos 1005 color ("#E50000") size 32
+    if sally_fullstage <= 8:
+        if metric == 1:
+            text "[sally_fullness]/[sally_fullmax] ml" xpos 543 ypos 435 color ("#ffffff") size 32
+        else:
+            text "[sally_fullnessoz]/[sally_fullmaxoz] oz" xpos 543 ypos 435 color ("#ffffff") size 32
+    if sally_fullstage > 8 and sally_fullstage <= 15:
+        if metric == 1:
+            text "[sally_fullness]/[sally_fullmax] ml" xpos 543 ypos 435 color ("#F4F400") size 32
+        else:
+            text "[sally_fullnessoz]/[sally_fullmaxoz] oz" xpos 543 ypos 435 color ("#F4F400") size 32
+    if sally_fullstage > 15 and sally_fullstage <= 20:
+        if metric == 1:
+            text "[sally_fullness]/[sally_fullmax] ml" xpos 543 ypos 435 color ("#E50000") size 32
+        else:
+            text "[sally_fullnessoz]/[sally_fullmaxoz] oz" xpos 543 ypos 435 color ("#E50000") size 32
+    
+    text "[sally_attitude]" xpos 1239 ypos 117 color ("#ffffff") size 32
+    
+    
+    if metric == 1:
+        imagebutton:
+            auto "gui/imperial_%s.png" xpos 376 ypos 40 action [ Play("sound", "audio/click2.mp3"), Call("imperial") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+        imagebutton:
+            auto "gui/cmetric_%s.png" xpos 437 ypos 40 action [ Play("sound", "audio/click2.mp3"), Call("metric") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    else:
+        imagebutton:
+            auto "gui/cimperial_%s.png" xpos 376 ypos 40 action [ Play("sound", "audio/click2.mp3"), Call("imperial") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+        imagebutton:
+            auto "gui/metric_%s.png" xpos 437 ypos 40 action [ Play("sound", "audio/click2.mp3"), Call("metric") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+
+
+screen linstats():
+    image "linstats"
+    # image "gui/rectanglestats.png" xpos 393 ypos 430
+    # image "gui/rectanglestats.png" xpos 1094 ypos 112
+    # image "gui/rectanglestats.png" xpos 472 ypos 1000
+    image "gui/statsnames.png" xpos 400 ypos 117
+    text "Lin" xpos 604 ypos 222 color ("#ffffff") size 50
+    
+    imagebutton:
+            auto "gui/close_%s.png" xpos 1865 ypos 13 action [ Play("sound", "audio/click2.mp3"), ToggleScreen("linstats") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    if lin_weightstage <= 4:
+        if metric == 1:
+            text "[lin_weight] kg" xpos 609 ypos 1005 color ("#ffffff") size 32
+        else:
+            text "[lin_weightlbs] lbs" xpos 609 ypos 1005 color ("#ffffff") size 32
+    if lin_weightstage > 4 and lin_weightstage <= 7:
+        if metric == 1:
+            text "[lin_weight] kg" xpos 609 ypos 1005 color ("#F4F400") size 32
+        else:
+            text "[lin_weightlbs] lbs" xpos 609 ypos 1005 color ("#F4F400") size 32
+    if lin_weightstage > 7 and lin_weightstage <= 10:
+        if metric == 1:
+            text "[lin_weight] kg" xpos 609 ypos 1005 color ("#E50000") size 32
+        else:
+            text "[lin_weightlbs] lbs" xpos 609 ypos 1005 color ("#E50000") size 32
+    if lin_fullstage <= 8:
+        if metric == 1:
+            text "[lin_fullness]/[lin_fullmax] ml" xpos 543 ypos 435 color ("#ffffff") size 32
+        else:
+            text "[lin_fullnessoz]/[lin_fullmaxoz] oz" xpos 543 ypos 435 color ("#ffffff") size 32
+    if lin_fullstage > 8 and lin_fullstage <= 15:
+        if metric == 1:
+            text "[lin_fullness]/[lin_fullmax] ml" xpos 543 ypos 435 color ("#F4F400") size 32
+        else:
+            text "[lin_fullnessoz]/[lin_fullmaxoz] oz" xpos 543 ypos 435 color ("#F4F400") size 32
+    if lin_fullstage > 15 and lin_fullstage <= 20:
+        if metric == 1:
+            text "[lin_fullness]/[lin_fullmax] ml" xpos 543 ypos 435 color ("#E50000") size 32
+        else:
+            text "[lin_fullnessoz]/[lin_fullmaxoz] oz" xpos 543 ypos 435 color ("#E50000") size 32
+    
+    text "[lin_attitude]" xpos 1239 ypos 117 color ("#ffffff") size 32
+    
+    
+    if metric == 1:
+        imagebutton:
+            auto "gui/imperial_%s.png" xpos 376 ypos 40 action [ Play("sound", "audio/click2.mp3"), Call("imperial") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+        imagebutton:
+            auto "gui/cmetric_%s.png" xpos 437 ypos 40 action [ Play("sound", "audio/click2.mp3"), Call("metric") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    else:
+        imagebutton:
+            auto "gui/cimperial_%s.png" xpos 376 ypos 40 action [ Play("sound", "audio/click2.mp3"), Call("imperial") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+        imagebutton:
+            auto "gui/metric_%s.png" xpos 437 ypos 40 action [ Play("sound", "audio/click2.mp3"), Call("metric") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+
 
 screen back():
     imagebutton:

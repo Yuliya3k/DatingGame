@@ -329,7 +329,7 @@ label sallyfirsttime:
                 
 
 
-            "Ask her how she bacame a maid?" if sallyjob == 0 and sallyhello == 1:               
+            "Ask her how she became a maid?" if sallyjob == 0 and (sallyhello == 1 or sallyhellotoday == 1):               
                 $ position = "parksallybencheveninglistening"
                 call sceneimg
                 player "Sally, if you don't mind me asking, how did you end up becoming a maid for Mr. Johnson? It seems like quite a unique profession."
@@ -904,7 +904,7 @@ label sallyfirsttime:
                 $ sallytellyourself = 1
             
             
-            "How was your day today?" if sallyhowstheday == 0 and sallyjob > 7:
+            "How was your day today?" if sallyhowstheday == 0 and sallyjob > 6:
                 $ sallyhowstheday = 1
                 $ myrandom = renpy.random.randint(1,3)
                 if myrandom == 1:
@@ -1118,6 +1118,8 @@ label sallyfirsttime:
                     call sceneimg
                     Sally "You too! Have a great day!"
                 $ sallyhellotoday = 1
+            
+            
             "Chat a little and say goodbye":
                 $ myrandom = renpy.random.randint(1,2)
                 if myrandom == 1:
@@ -1226,7 +1228,7 @@ label sallyfirsttime:
                     call sceneimg
                     player "Same to you, Sally! Stay well."
                 jump culinarychoices
-            "Ask her about her belly":
+            "Ask her about her belly" if sally_fullstage > 2:
                 if sally_fullstage > 0 and sally_fullstage < 4:
                     $ position = "parksallyseaviewmorninglistening"
                     call sceneimg

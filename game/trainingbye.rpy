@@ -1,5 +1,6 @@
 label trainingbye:
-
+    if lin_attitude > 0:
+        $ lin_attitude -= 1
     
     if myrandom == 1:
 

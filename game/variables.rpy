@@ -82,7 +82,7 @@ label variables:
 
     default rmclients = 0
 
-    default monthworkresulthours = 0
+    # default monthworkresulthours = 0
 
     default dayworkresult = 0
 
@@ -96,13 +96,13 @@ label variables:
 
     default cookingskill = float(10.1)
 
-    default salarystatus = (workreputation*cookingskill)/10000
+    default salarystatus = float(0.1)
 
     default cookingstatus = "none"
     
     default daysalary = float(cooksalaryperhour*dayworksuccessfulhours)
 
-    default monthsalary = float(monthworkresulthours*cooksalaryperhour)
+    default monthsalary = 0
 
     default rightpan = 1
 
@@ -125,4 +125,10 @@ label variables:
     default stop = 0
 
     default cooking = 0
+
+    default promcafe = 0
+
+    default parknothing = 0
+
+    default promcafetoday = 0
     return

@@ -45,9 +45,22 @@ label sceneimg:
         scene bg
         show aurora
 
-    if position == "linhi" or position == "linhmm" or position == "linletsdoit" or position == "linlistening" or position == "linexplaining":
+
+    # Lin
+    if position == "linhi" or position == "linhmm" or position == "linletsdoit" or position == "linlistening" or position == "linexplaining" or position == "parklinrunning" or position == "parklinrunningthrough" or position == "parklintalkhi" or position == "parklintalklisten" or position == "parklintalktalk" or position == "parkpromlincafesittingapproaching" or position == "parkpromlincafesittingapproachinghappy" or position == "parkpromlincafesittingapproachingunhappy" or position == "parkpromlincafesittingeating" or position == "parkpromlincafesittingfar" or position == "parkpromlincafesittinglistening" or position == "parkpromlincafesittingtalking" or position == "parkpromcafelincomingin" or position == "parklinstopping":
         scene bg
         show lin
+
+
+    
+
+    # Mindy
+    if position == "parkmindycafeenterance":
+        scene bg
+        show mindy
+
+
+        
 
     if position == "margohismile" or position == "margormexplaining" or position == "margormgoodluck" or position == "margormlistening" or position == "margormpointing" or position == "margormserious" or position == "margormtalking" or position == "margormstandingwhilecooking" or position == "margoeatingleftovers":
         scene bg
@@ -58,7 +71,7 @@ label sceneimg:
         scene bg
         show julia
 
-    if position == "backyard" or position == "gardeningbalconynoaurora" or position == "kriswalkingbalconynokris" or position == "foodburger" or position == "foodburgerfrappe" or position == "foodfrappe" or position == "foodnofood" or position == "cafeenterance" or position == "barenterance" or position == "hayoonintro" or position == "linintro" or position == "avaintro" or position == "sallyintro" or position == "parkocean" or position == "parkwalk" or position == "parkbench" or position == "kitchen"  or position == "beachempty" or position == "beachlifeguardempty" or position == "parkeveningwalk" or position == "parkeveningseaview" or position == "parkeveningbench" or position == "parkmorningseaview" or position == "parkmorningwalk" or position == "parkmorningbench":
+    if position == "backyard" or position == "gardeningbalconynoaurora" or position == "kriswalkingbalconynokris" or position == "foodburger" or position == "foodburgerfrappe" or position == "foodfrappe" or position == "foodnofood" or position == "cafeenterance" or position == "barenterance" or position == "hayoonintro" or position == "linintro" or position == "avaintro" or position == "sallyintro" or position == "parkocean" or position == "parkwalk" or position == "parkbench" or position == "kitchen"  or position == "beachempty" or position == "beachlifeguardempty" or position == "parkeveningwalk" or position == "parkeveningseaview" or position == "parkeveningbench" or position == "parkmorningseaview" or position == "parkmorningwalk" or position == "parkmorningbench" or position == "parkpromcafeempty":
         scene bg
         
 

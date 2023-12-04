@@ -4,6 +4,8 @@ label sally:
 
     image sally = "/images/sallypos[position]weight[sally_weightstage] ([sally_fullstage]).png"
 
+    image sallystats = "/images/sallystatsweight[sally_weightstage] ([sally_fullstage]).png"
+
     default sally_fullness = int(0)
 
     default sally_abolutemaxfullness = 8000
@@ -16,7 +18,7 @@ label sally:
 
     default sally_weightlbs = int(sally_weight*2.2)
 
-    default sally_fullmax = 800
+    default sally_fullmax = 4000
 
     default sally_fullmaxoz = int(sally_fullmax*0.034)
 

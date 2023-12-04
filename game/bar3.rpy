@@ -10,6 +10,7 @@ label bar3:
     play music "audio/bar.mp3" volume 0.3
 
     if hayoonatthebar == 1:
+        $ hayoon_fullness = renpy.random.randint(1,2000)
         $ position = "kirahayoonenter"
         call sceneimg
         player "I walk into the bar, greeted by the warm hum of chatter and clinking glasses."

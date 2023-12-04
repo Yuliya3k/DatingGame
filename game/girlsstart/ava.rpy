@@ -4,6 +4,8 @@ label ava:
 
     image ava = "/images/avapos[position]weight[ava_weightstage] ([ava_fullstage]).png"
 
+    image avastats = "/images/avastatsweight[ava_weightstage] ([ava_fullstage]).png"
+
     default ava_fullness = int(0)
 
     default ava_abolutemaxfullness = 8000
@@ -16,7 +18,7 @@ label ava:
 
     default ava_weightlbs = int(ava_weight*2.2)
 
-    default ava_fullmax = 800
+    default ava_fullmax = 4000
 
     default ava_fullmaxoz = int(ava_fullmax*0.034)
 

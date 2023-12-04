@@ -2,7 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/sallyfirsttime.rpy", line 986: Indentation mismatch.
+File "game/lindatelistening.rpy", line 10: expected statement.
+    lin_fullness = 4000
+                 ^
 
 Ren'Py Version: Ren'Py 8.1.0.23051307
-Mon Nov 13 02:46:15 2023
+Mon Dec  4 01:28:10 2023

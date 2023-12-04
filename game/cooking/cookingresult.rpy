@@ -6,8 +6,12 @@ label cookingresult:
         with slowdissolve
         
         $ workreputation += 1
-        $ dayworksuccessfulhours += 0.25
+        $ dayworksuccessfulhours += float(0.25)
         $ cookingskill += float(0.1)
+        $ daysalary = float(cooksalaryperhour*dayworksuccessfulhours)
+        # $ salarystatus = (workreputation*cookingskill)/10000
+
+
     else:
         $ cookingstatus = "You have failed"
         with slowdissolve

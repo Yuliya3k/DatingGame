@@ -27,7 +27,7 @@ label bcafe:
         pass    
     play music "audio/bcafe.mp3" volume 0.5
 
-    if avaintro == 1 and (calendar.Hours < 9 or calendar.Hours > 18):
+    if avaintro == 1 and (calendar.Hours < 9 or calendar.Hours > 17):
         $ myrandom = renpy.random.randint(1,5)
         if myrandom == 3:
             $ avafirstmeet = 1

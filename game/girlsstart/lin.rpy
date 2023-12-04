@@ -4,6 +4,8 @@ label lin:
 
     image lin = "/images/linpos[position]weight[lin_weightstage] ([lin_fullstage]).png"
 
+    image linstats = "/images/linstatsweight[lin_weightstage] ([lin_fullstage]).png"
+
     default lin_fullness = int(0)
 
     default lin_abolutemaxfullness = 8000
@@ -16,7 +18,7 @@ label lin:
 
     default lin_weightlbs = int(lin_weight*2.2)
 
-    default lin_fullmax = 800
+    default lin_fullmax = 4000
 
     default lin_fullmaxoz = int(lin_fullmax*0.034)
 
@@ -48,6 +50,54 @@ label lin:
     
     default linfirsttime = 0
 
-    
+    default lin_cafetoday = 0
+
+    default lincompliment = 0
+
+    default linseen = 0
+
+    default lintrain = 0
+
+    default linstory = 0
+
+    default linaboutyou = 0
+
+    default lincookhome = 0
+
+    default linparkchat = 0
+
+    default linrideabike = 0
+
+    default asklinout = 0
+
+    default lintoolate = 0
+
+    default lintoolatesorry = 0
+
+    default lindtaeeatq = 0
+
+    default lindatehowstheday = 0
+
+    default linbloatq = 0
+
+    default linhowstheplaceq = 0
+
+    default linwhatsthelifeplansq = 0
+
+    default lindatebfq = 0
+
+    default lindatefamilyq = 0
+
+    # default 
+
+    # default 
+
+    # default 
+
+    # default 
+
+    # default 
+
+    # default 
 
 return

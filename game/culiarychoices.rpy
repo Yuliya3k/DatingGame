@@ -13,18 +13,7 @@ label culinarychoices:
         jump krisbackyard
 
 
-    label cchoicesloop:
-        $ monthworkresulthours += dayworksuccessfulhours
-        $ dayworksuccessfulhours = 0
-        
-        if calendar.Days == 1:
-            $ money += monthsalary
-            $ monthsalary = 0            
-            $ monthworkresulthours = 0
-            $ cooksalaryperhour = 23.5*salarystatus
-        else:
-            pass
-        
+    label cchoicesloop: 
         
         $ position = "backyard"
         call sceneimg
@@ -35,6 +24,7 @@ label culinarychoices:
                 call dayvariables
             "Go talk to Aurora" if auroraseen == 1:
                 jump aurorafirstmeet
+            
             
             
         

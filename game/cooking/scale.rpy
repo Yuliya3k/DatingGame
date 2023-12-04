@@ -1,8 +1,9 @@
 label scale:
     play sound "audio/rmcooking.mp3" volume 0.5
     show screen kitchenscale
-    $ daysalary = float(cooksalaryperhour*dayworksuccessfulhours)
-    $ monthsalary = float(monthworkresulthours*cooksalaryperhour)
+
+    
+    
     $ rightpan = renpy.random.randint(1,9)
     $ leftpan = renpy.random.randint(1,9)
     label scaleloop:
