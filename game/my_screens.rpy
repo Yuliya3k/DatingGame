@@ -267,9 +267,9 @@ screen callmap():
         imagebutton:
             auto "gui/dg_home_%s.png" xpos 20 ypos 540 action [ Play("sound", "audio/click2.mp3"), Jump("culinarychoices") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
     
-    if youarehome == True:
+    if youarehome == True and (avafirstmeet > 0 or hayoonfirstmeet > 0 or sallyhello > 0 or linfirsttime > 0):
         imagebutton:
-            auto "gui/statsallgirls_%s.png" xpos 20 ypos 130 action [ Play("sound", "audio/click2.mp3"), ToggleScreen("girlsstats")] hovered [ Play("sound", "audio/button hover4.mp3") ]
+            auto "gui/statsallgirls_%s.png" xpos 320 ypos 18 action [ Play("sound", "audio/click2.mp3"), ToggleScreen("girlsstats")] hovered [ Play("sound", "audio/button hover4.mp3") ]
     
     if mapishere == 0:
         imagebutton:
@@ -442,8 +442,8 @@ screen girlsstats():
     on "hide" action SetVariable("mapbuttonisactive", True)
     
     vpgrid:
-        xpos 119
-        ypos 130
+        xpos 420
+        ypos 18
         # xsize 243
         # ysize 735
         rows 1
@@ -463,6 +463,8 @@ screen girlsstats():
 
 screen map():
     on "show" action SetVariable("youarehome", False)
+    on "show" action Function(pause_music)
+    on "hide" action Function(resume_music)
 
     image "gui/dg_map.png"
     imagebutton:

@@ -38,10 +38,10 @@ label culinarychoices:
                 jump linhiking
             "Game adjustments":
                 menu:
-                    "Toggle WG":
+                    "Toggle weight gain for the girls":
                         call wgswitch
-                    "Toggle speech sounds":
-                        call speechswitch
+                    # "Toggle speech sounds":
+                    #     call speechswitch
             
             
             

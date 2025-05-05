@@ -4,17 +4,31 @@ label park:
     $ calendar.AddMinutes(20)
 
 
+    if linrideabikesat == 1 and calendar.Hours >= 9 and calendar.Hours < 16 and calendar.WeekDay == "Sat":
+        
+        $ linrideabikesat = 0
+        jump lincycling
+    else:
+        pass
+
     
     
 
     if calendar.Hours > 5 and calendar.Hours < 9:
-        $ myrandom = renpy.random.randint(1,2)
+        $ myrandom = renpy.random.randint(1,3)
         if myrandom == 1:
             $ position = "parkmorningwalk"
             call sceneimg  
             jump sallyfirsttime
         if myrandom == 2:
-            jump linpark
+            if linfirsttime == 0:
+                jump parknothing
+            else:
+                jump linpark
+        if myrandom == 3:
+            if linfirsttime == 0:
+                jump parknothing
+            jump lincycling
     if calendar.Hours > 17 and calendar.Hours < 23:        
         $ position = "parkeveningwalk"
         call sceneimg

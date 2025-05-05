@@ -79,7 +79,7 @@ label fitness:
                 call sceneimg
                 player "Thank you, Lin. I'm looking forward to it!"  
                 $ training = 1
-                jump trainingbye
+                jump trainingthanks
             "I appreciate your offer, Lin, but I'm not really into fitness training right now." if myrandom == 1:
                 $ position = "linexplaining"
                 call sceneimg

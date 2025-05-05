@@ -174,7 +174,7 @@ label surfingoptions:
                 call sceneimg
                 Ava "Sure thing—I could use a break too."
                 jump avaaftersurfchoices
-                # You can add a scene of Ava drinking water here
+                
             else:
                 $ position = "avabeachsurflearningsmilingfromabove"
                 call sceneimg

@@ -10,14 +10,14 @@ label cookingresult:
         $ workreputation += 1
         $ niimage = "cookreputation"
         $ nigirlimage = ""
-        $ notify_success("+1")
+        $ notify_success("+5")
         $ dayworksuccessfulhours += float(0.25)
         $ cookingskill += float(0.1)
         $ daysalary += float(cooksalaryperhour*0.25)
         pause 1
         $ niimage = "cookingskill"
         $ nigirlimage = ""
-        $ notify_success("+1")
+        $ notify_success("+5")
         
         pause 1
         $ niimage = "money"

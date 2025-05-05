@@ -125,7 +125,8 @@ label linpromcafetalk:
                 Lin "  A classic margarita, please. It's the perfect match for Mexican food."
 
             $ lindtaeeatq = 1
-
+            $ moneytoadd = -50
+            call moneynotification
         "How was your day?" if lindatehowstheday == 0:
             $ lindatehowstheday = 1
             $ myrandom = renpy.random.randint(1,3)

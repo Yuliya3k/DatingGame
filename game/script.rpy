@@ -1,5 +1,7 @@
 ﻿label start:
 
+    
+
 
     call variables
     
@@ -22,6 +24,29 @@
         import random
 
         import math
+
+        _music_paused = False
+
+        def pause_music():
+            """
+            Pause whatever is on the standard 'music' channel and remember
+            that we did so, but only if a track is really playing.
+            """
+            global _music_paused
+            if renpy.music.get_playing("music"):
+                renpy.music.set_pause(True, channel="music")
+                _music_paused = True
+            else:
+                _music_paused = False           # nothing to resume later
+
+        def resume_music():
+            """
+            Resume the channel only if we actually paused it on entry.
+            """
+            global _music_paused
+            if _music_paused:
+                renpy.music.set_pause(False, channel="music")
+                _music_paused = False
 
         # === WAVE CATCH PARAMETERS ===
         wave_zone_min = 0.4
@@ -546,6 +571,7 @@ label startloop:
         menu:
         
             "[name]'s Culinary journey":
+                
                 jump culinarystart
 
             "[name]'s Adventurous Spirit":

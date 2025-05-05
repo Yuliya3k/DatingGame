@@ -5,85 +5,89 @@ label bar2:
 
     $ position = "barenterance"
     call sceneimg
-    player "I decided to revisit Kira's bar, eager to experience the vibrant atmosphere once more. The moment I walked through the door, the lively chatter and clinking of glasses greeted me." 
+    player "I decided to revisit Kiras bar, eager to feel that vibrant atmosphere again. The moment I stepped inside, lively chatter and clinking glasses welcomed me."
+
     $ position = "kiraenterance"
     call sceneimg
-    player "Kira was behind the bar, a beacon of confidence as she expertly mixed drinks and served customers. I made my way to an empty spot at the bar."
+    player "Kira was behind the counter, confident and precise as she mixed drinks and served guests. I found an open stool at the bar."
+
     $ position = "kiraworking"
     call sceneimg
 
-
-
-    if myrandom == 1:        
-        player "Hey there, Kira! It's good to be back. What's your special recommendation today?"
+    if myrandom == 1:
+        player "Hello Kira, it is great to be back. What special do you recommend today?"
         $ position = "kiraexplain"
         call sceneimg
-        Kira "Welcome back! You've got great timing. Today, we're featuring a signature cocktail called the 'City Lights.' It's a delightful blend of citrus and a hint of spice. Care to give it a try?"
+        Kira "Welcome back Welcome is correct Today we feature a signature cocktail called City Lights A bright mix of citrus and a touch of spice. Care to try it?"
         $ position = "kiraquestion"
         call sceneimg
         menu:
-            "Sounds amazing, Kira. I'll take one, please.":
+            "That sounds wonderful Kira I will take one please":
                 call drinkthank
                 jump barleaving
-            "You know what, Kira? I'm curious to explore the menu a bit. I'll take a look at what else you've got behind that bar.":
+            "I am curious about the rest of the menu I will take a look":
                 call bardrinks
                 jump barleaving
 
     if myrandom == 2:
-        player "Hi, Kira! Your bar has such a fantastic vibe. What's the crowd's favorite drink here?"
+        player "Hi Kira Your bar has such a great vibe What do most people order here?"
         $ position = "kiraexplain"
         call sceneimg
-        Kira "Thanks for the compliment! You can't go wrong with our 'Sapphire Sunset.' It's been a hit lately, and I think you'll love its smooth and refreshing taste."
+        Kira "You cannot go wrong with Sapphire Sunset It has been a big hit and I think you will love its smooth, refreshing taste."
         $ position = "kiraquestion"
         call sceneimg
         menu:
-            "Sounds amazing, Kira. I'll take one, please.":
+            "That sounds wonderful Kira I will take one please":
                 call drinkthank
                 jump barleaving
-            "You know what, Kira? I'm curious to explore the menu a bit. I'll take a look at what else you've got behind that bar.":
+            "I am curious about the rest of the menu I will take a look":
                 call bardrinks
                 jump barleaving
+
     if myrandom == 3:
-        player "Hey, Kira! Last time I was here, your cocktails were amazing. Surprise me with something new today!"
+        player "Hi Kira Last time your cocktails amazed me Surprise me with something new today"
         $ position = "kiraexplaining"
         call sceneimg
-        Kira "I like your adventurous spirit! How about I whip up a 'Mystic Mirage' for you? It's a bit mysterious, just like the city."
+        Kira "I like your adventurous spirit How about I make a Mystic Mirage for you It is a bit mysterious, just like this city."
         $ position = "kiraquestion"
         call sceneimg
         menu:
-            "Sounds amazing, Kira. I'll take one, please.":
+            "That sounds wonderful Kira I will take one please":
                 call drinkthank
                 jump barleaving
-            "You know what, Kira? I'm curious to explore the menu a bit. I'll take a look at what else you've got behind that bar.":
+            "I am curious about the rest of the menu I will take a look":
                 call bardrinks
                 jump barleaving
+
     if myrandom == 4:
-        player "Hi again, Kira! I had a blast the last time I was here. What's the most popular drink on the menu?"
+        player "Hello again Kira I had a blast last time here What is the most popular drink?"
         $ position = "kiraexplaining"
         call sceneimg
-        Kira "I'm glad you enjoyed it! Our 'Moonlit Martini' has been a long-time favorite. It's a classic, elegant choice. Want one?"
+        Kira "Moonlit Martini has been a favorite for years It is a classic, elegant choice Would you like one?"
         $ position = "kiraquestion"
         call sceneimg
         menu:
-            "Sounds amazing, Kira. I'll take one, please.":
+            "That sounds wonderful Kira I will take one please":
                 call drinkthank
                 jump barleaving
-            "You know what, Kira? I'm curious to explore the menu a bit. I'll take a look at what else you've got behind that bar.":
+            "I am curious about the rest of the menu I will take a look":
                 call bardrinks
                 jump barleaving
+
     if myrandom == 5:
-        player "Kira, it's great to be back. Your drinks are top-notch. What's today's special?"
+        player "Kira it is great to be back Your drinks remain top notch What is the special today?"
         $ position = "kiraexplaining"
         call sceneimg
-        Kira "Welcome back! Today's special is a 'Starfall Sour.' It's a unique blend of sweet and sour with a hint of raspberry. Care to give it a shot?"
+        Kira "Today we have a Starfall Sour A unique blend of sweet and tart with a hint of raspberry. Care to try?"
         $ position = "kiraquestion"
         call sceneimg
         menu:
-            "Sounds amazing, Kira. I'll take one, please.":
+            "That sounds wonderful Kira I will take one please":
                 call drinkthank
                 jump barleaving
-            "You know what, Kira? I'm curious to explore the menu a bit. I'll take a look at what else you've got behind that bar.":
+            "I am curious about the rest of the menu I will take a look":
                 call bardrinks
                 jump barleaving
+
     jump barleaving
 return

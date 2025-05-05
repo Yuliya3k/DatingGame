@@ -121,8 +121,14 @@ label ava_offer_beer:
     # --- sip SFX (random of 3) ------------------------------------------
     $ position = "avaaftersurfingdrinkingclose"
     call sceneimg
-    $ ava_fullness += 330
-    $ ava_calories += 183
+    $ fullnesschange = 330
+    $ nigirlimage = "niava"
+    call fullnesschange
+    pause 0.7
+    $ calorieschange = 183
+    $ nigirlimage = "niava"
+    call calorieschange
+    
     $ myrandom = renpy.random.randint(1,3)
     if myrandom == 1:
         play sound "audio/beersipfromthebottle1.mp3"

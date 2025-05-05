@@ -555,7 +555,7 @@ label linpark:
                             $ position = "parklintalktalk"
                             call sceneimg
 
-                            Lin "Just your adventurous spirit, a water bottle, and a sense of excitement. We'll enjoy the ride, and I'll bring some snacks for our pitstops. It's going to be a memorable day! See you at about 12:00 on saturday"
+                            Lin "Just your adventurous spirit, a water bottle, and a sense of excitement. We'll enjoy the ride, and I'll bring some snacks for our pitstops. It's going to be a memorable day! See you at about 10:00 on Saturday"
                             
                         "No, thank you":
                             $ linrideabikesat = 0
@@ -595,17 +595,17 @@ label linpark:
                             $ position = "parklintalktalk"
                             call sceneimg
 
-                            Lin "How about this Sunday? It's usually quieter on the trails. As for preparations, just wear comfortable clothing and bring your enthusiasm. I'll make sure we have enough snacks and refreshments."
+                            Lin "How about this Saturday 10:00? It's usually quieter on the trails. As for preparations, just wear comfortable clothing and bring your enthusiasm. I'll make sure we have enough snacks and refreshments."
                             $ position = "parklintalklisten"
                             call sceneimg
 
-                            player "Sunday it is! I can't wait to see what you have in store for our adventure."
+                            player "Saturday it is! I can't wait to see what you have in store for our adventure."
                             $ position = "parklintalktalk"
                             call sceneimg
 
                             Lin "Get ready for a day of exploration and relaxation. It's going to be unforgettable!"
 
-                            "Coming next..."
+                            
                         "No, thank you":
                             $ position = "parklintalklisten"
                             call sceneimg

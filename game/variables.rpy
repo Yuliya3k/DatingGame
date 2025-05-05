@@ -230,5 +230,30 @@ label variables:
         "gui/arrow.png"
         # We assume the pivot is visually at the bottom center in the arrow image
         anchor (0.5, 1)
+
+
+
     
+    default lin_belly_accept  = False
+    default lin_belly_visible = False
+    default notenoughmoney = False
+    default moneytoadd = 0
+
+    default _seen_health = False
+    default _seen_history = False
+    default _seen_bodyintro = False
+    default _seen_fit_healthy = False
+    default _seen_fit_goodlooking = False
+    default _seen_fit_highenergy = False
+    default _seen_fat_intro = False
+    default _seen_belly_intro = False
+    default _preg_right_answer = False
+    default _fbarebaspreg = False
+    default _dynamicbellies = False
+    default _fitpeople = False
+    
+    
+
+
+
     return

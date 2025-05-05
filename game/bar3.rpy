@@ -179,23 +179,37 @@ label bar3:
         call sceneimg
         menu:
             "Absolutely, Kira. You know me too well" if usual == 1:
-                $ usual = 0
-                $ kira_calories += 200
+                $ moneytoadd = -5
+                call moneynotification
+                if notenoughmoney == True:
+                    jump bar3
+                else:
+                    $ usual = 0
+                    $ fullnesschange = 200
+                    $ nigirlimage = "nikira"
+                    call fullnesschange
+                    pause 0.6
+                    $ calorieschange = 200
+                    $ nigirlimage = "nikira"
+                    call calorieschange
+                    
+
+                
                 call drinkthank
-            "I'm curious to explore the menu a bit. I'll take a look at what else you've got behind that bar" if usual == 1:
+            "I'm curious to explore the menu a bit" if usual == 1:
                 $ usual = 0
                 call bardrinks
             "I want to know more about the town" if towninfo == 0:
                 $ towninfo = 1
                 call kiracitydescription
-            "Kira, you must meet all sorts of people here. Who are some of the most fascinating folks in town?" if hayoonintro == 0 or avaintro == 0 or linintro == 0 or sallyintro == 0:
+            "Who are some of the most fascinating folks in town?" if hayoonintro == 0 or avaintro == 0 or linintro == 0 or sallyintro == 0:
                 pass
                 call kirapeopledescription
             "Where can I find all these people?" if overallpeople == 1:
                 $ position = "kiraexplain"
                 call sceneimg
                 if hayoonintro == 1:
-                    Kira "Well, Ha-Yoon frequents this place quite often, especially during her downtime. So, you're in the right spot to bump into her. "
+                    Kira "Well, Ha-Yoon frequents this place quite often, especially during her downtime. So, you're in the right spot to bump into her"
                 if linintro == 1:
                     Kira "Lin, the fitness trainer, usually hangs out at the local gym."
                 if avaintro == 1:

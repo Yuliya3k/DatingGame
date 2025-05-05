@@ -1,6 +1,7 @@
 label krisfirstmeet:
     $ position = "kriswalking"
     call sceneimg
+    play music "audio/countryside_birds.mp3" volume 0.3
     "You can see Kris is walking at the street while you are going home"
     "What will you do?"
     menu:
