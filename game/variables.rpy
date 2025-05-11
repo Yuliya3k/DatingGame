@@ -21,6 +21,8 @@ label variables:
     default calendar = Calendar(1, 7, 0, 1, 0, 0, ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31], ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"])
 
     define slowdissolve = Dissolve(.5)
+
+    
     
     default position = "home"     
 
@@ -252,8 +254,36 @@ label variables:
     default _dynamicbellies = False
     default _fitpeople = False
     
-    
+    default seen_videos = set()
+
+    # define THUMB_W      = 260          # width  of each thumb (px)
+    # define THUMB_H      = 146          # height of each thumb (px)
+    # define THUMB_COLS   = 4            # columns per row
+    # define GALLERY_X    = 60           # top‑left corner
+    # define GALLERY_Y    = 120
+    # define GALLERY_W    = 1160         # viewport size
+    # define GALLERY_H    = 820
 
 
 
+    # define GIRL_PREFIXES = [
+    #     "alexa", "ava", "aurora", "hayoon", "kira", "kris",
+    #     "lin", "margo", "mindy", "sally", "julia",
+    # ]
+
+
+    # define GIRL_PRETTY = {
+    #     "alexa": "Alexa",
+    #     "ava":   "Ava",
+    #     "aurora":"Aurora",
+    #     "hayoon":"Hayoon",
+    #     "kira":  "Kira",
+    #     "kris":  "Kris",
+    #     "lin":   "Lin",
+    #     "margo": "Margo",
+    #     "mindy": "Mindy",
+    #     "sally": "Sally",
+    #     "julia": "Julia",
+    #     "other": "Misc.",
+    # }
     return

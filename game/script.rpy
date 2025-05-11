@@ -20,12 +20,56 @@
     
 
     init python:
+        import os, store
 
-        import random
+        # ------------------------------------------------------------------
+        # 1) discover thumbnails in game/videos/*.png
+        # ------------------------------------------------------------------
+        thumbs = [f for f in renpy.list_files(common=False)
+                if f.startswith("videos/") and f.lower().endswith(".png")]
 
-        import math
+        # map file‑prefix → girl
+        def guess_girl(vid_id):
+            for g in GIRL_PREFIXES:
+                if vid_id.lower().startswith(g):
+                    return g
+            return "other"
 
-        _music_paused = False
+        store.VIDEO_DATA = [
+            {
+                "id":    (vid_id := os.path.splitext(os.path.basename(full))[0]),
+                "girl":  guess_girl(vid_id),
+                "thumb": full,                       # videos/xxx.png
+                "video": f"videos/{vid_id}.webm",
+            }
+            for full in thumbs
+        ]
+        store.GIRLS = GIRL_PREFIXES      # keeps your chosen order
+
+        # ------------------------------------------------------------------
+        # 2) hook movie_cutscene → mark video as seen (per‑game variable)
+        # ------------------------------------------------------------------
+        _real_cut = renpy.movie_cutscene
+
+        def _hook(fn, *a, **kw):
+            vid = os.path.splitext(os.path.basename(fn))[0]
+            seen_videos.add(vid)
+            return _real_cut(fn, *a, **kw)
+
+        renpy.movie_cutscene = _hook
+
+        # ------------------------------------------------------------------
+        # 3) helper to play from gallery without nested‑UI error
+        # ------------------------------------------------------------------
+        def play_from_gallery(entry):
+            renpy.hide_screen("gallery")
+            renpy.invoke_in_new_context(renpy.movie_cutscene, entry["video"])
+            renpy.show_screen("gallery")
+            import random
+
+            import math
+
+            _music_paused = False
 
         def pause_music():
             """
@@ -529,7 +573,7 @@
         ###############################
 
     show screen day_icon
-
+    # show screen gallery_bg
     
 
 

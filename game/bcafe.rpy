@@ -8,7 +8,8 @@ label bcafe:
     # "Alexa fullstage [alexa_fullstage]"
     # "ALexa imgindex [alexaimgindex]"
     # "Alexa weightstage [alexa_weightstage]"
-
+    $ renpy.movie_cutscene("videos/avabeachaftersurfingfrontstand10.webm")
+    $ renpy.movie_cutscene("videos/avabeachsurtlisten1.webm")
 
     if alexafirsttime == 0:
         play music "audio/streetquiet.mp3" volume 0.5
@@ -96,8 +97,10 @@ label bcafe:
                     pause 0.7
                     $ calorieschange = renpy.random.randint(200,600)
                     $ nigirlimage = "niava"
-                    call calorieschange
-                    
+                    call calorieschange                    
+                    call sceneimg
+
+                    $ position = "avawalkingout"
                     call sceneimg
                     player "When she finally left she gave a nod that felt like a challenge - adventure waits around every corner."
                     $ avabcafe = 0

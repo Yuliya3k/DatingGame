@@ -46,10 +46,6 @@ screen success_notification_screen(
     #     size text_size
     #     color "#ffffff"
 
-     
-    
-
-
 screen warning_notification_screen(
         message="[negativemessage]",
         start_y=0.6,
@@ -86,7 +82,6 @@ screen neutral_notification_screen(
         size text_size
         color "#FFA500"   # <-- Orange for warning
 
-
 screen error_notification_screen(
         message="Error!",
         start_y=0.6,
@@ -104,8 +99,6 @@ screen error_notification_screen(
         bold text_bold
         size text_size
         color "#FF0000"   # <-- Red for error
-
-
 
 screen kitchenscale:
     image "gui/bgposkitchencooking.png"
@@ -252,10 +245,7 @@ screen kitchenscale:
                 yalign 0.5
                 yoffset 7
                 xoffset 3
-
-    
-    
-
+ 
 screen callmap():
     
 
@@ -274,15 +264,14 @@ screen callmap():
     if mapishere == 0:
         imagebutton:
             auto "gui/dg_map_pointer_%s.png" xpos 1622 ypos 42 action [ Play("sound", "audio/click2.mp3"), Call("mapishere") ] hovered [ Play("sound", "audio/button hover4.mp3") ] 
-
-        
-# screen attitude_stat_bar(attitude, width=261, height=41):
-#     $ crop_rect = get_stat_crop(attitude, width, height)
-#     # Draw the full background bar
-#     add "gui/girlstatsscalebg.png" # xpos 0 ypos 0  # xysize (width, height)
-#     # Draw the dynamically cropped fill image
-#     add LiveCrop(crop_rect, "gui/girlstatsscaleattitude.png") xpos crop_rect[0]
-
+    
+    if youarehome == True:
+        fixed:
+            xpos 5 ypos 120 xsize 300 ysize 24
+            imagebutton:
+                    auto "gui/vgallerybutton_bg_%s.png" xpos 0 ypos 0 action [ Play("sound", "audio/click2.mp3"), ToggleScreen("gallery"), ToggleScreen("callmap") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+            text "Unlocked videos" bold True color "#ffffff" size 15 xalign 0.5 yalign 0.5
+    
 screen attitude_stat_bar(
         attitude,           # current value in [-100..100]
         width=260, 
@@ -354,22 +343,6 @@ screen attitude_stat_bar(
         #     ypos height + 2
         #     anchor (-0.1, -0.3)  # right-edge alignment, below the bar
 
-
-
-
-
-# screen fullness_bar(value, max_value, width=261, height=41):
-#     # Calculate the cropping rectangle for the fill image.
-#     $ crop_rect = get_fill_crop(value, max_value, width, height)
-
-#     # Draw the background bar.
-#     add "gui/girlstatsscalebg.png"  # No forced xysize if your PNG is already 260x40
-
-#     # Draw the cropped fill image, starting at x=0.
-#     add LiveCrop(crop_rect, "gui/girlstatsscalefullness.png") xpos 0 ypos 0
-
-
-
 screen fullness_bar(
         value, 
         max_value, 
@@ -435,8 +408,6 @@ screen fullness_bar(
         #     ypos -2
         #     anchor (0, 1.0)
 
-
-
 screen girlsstats():
     on "show" action SetVariable("mapbuttonisactive", False)
     on "hide" action SetVariable("mapbuttonisactive", True)
@@ -488,9 +459,7 @@ screen map():
     if overallpeople > 0 and ((calendar.WeekDay == 'Mon' or calendar.WeekDay == 'Tue' or calendar.WeekDay == 'Wed' or calendar.WeekDay == 'Thu' or calendar.WeekDay == 'Fri') and calendar.Hours >= 7 and calendar.Hours <= 23):
         imagebutton:
             auto "gui/dg_map_fitness_%s.png" xpos 544 ypos 407 action [ Play("sound", "audio/click2.mp3"), Jump("fitness") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
-    
-
-
+  
 screen day_icon():
 
     fixed:
@@ -588,7 +557,6 @@ screen day_icon():
                 color "#ffffff"
                 size text_size 
                 bold True
-
     
 screen marshmallow:
     imagebutton:
@@ -601,10 +569,8 @@ screen marshmallow:
             auto "gui/dg_backyard_stop_%s.png" xpos 1001 ypos 837 action [ Play("sound", "audio/click2.mp3"), Call("stop") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
     image "marshmallow" xpos 965 ypos 527
 
-
-    
 screen avastats():
-    
+    modal True
 
     
     fixed:
@@ -815,9 +781,8 @@ screen avastats():
             auto "gui/roundbutton_%s.png" xpos xposmetric ypos yposmetric action [ Play("sound", "audio/click2.mp3"), Call("metric") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
         text "M" xpos xpostextmetric ypos ypostextmetric color ("#a1a1a1") size 32
 
-
 screen hayoonstats():
-    
+    modal True
     fixed:
         # Outer border (full screen)
         add Solid("#5b0098") xysize (1920, 1080)
@@ -1026,12 +991,8 @@ screen hayoonstats():
             auto "gui/roundbutton_%s.png" xpos xposmetric ypos yposmetric action [ Play("sound", "audio/click2.mp3"), Call("metric") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
         text "M" xpos xpostextmetric ypos ypostextmetric color ("#a1a1a1") size 32
 
-
-
-
-
 screen sallystats():
-    
+    modal True
     fixed:
         # Outer border (full screen)
         add Solid("#5b0098") xysize (1920, 1080)
@@ -1240,9 +1201,8 @@ screen sallystats():
             auto "gui/roundbutton_%s.png" xpos xposmetric ypos yposmetric action [ Play("sound", "audio/click2.mp3"), Call("metric") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
         text "M" xpos xpostextmetric ypos ypostextmetric color ("#a1a1a1") size 32
 
-
 screen linstats():
-
+    modal True
     # achivements
 
     
@@ -1490,11 +1450,9 @@ screen linstats():
     #     auto "gui/roundbutton_%s.png" xpos 622 ypos 780 action [ Play("sound", "audio/click1.mp3"), Jump("wgswitch") ] hovered [ Play("sound", "audio/button hover2.mp3") ]
     # text "WG" xpos 630 ypos 795 color ("#000000") size 28
 
-
 screen back():
     imagebutton:
         auto "gui/back_%s.png" xpos 6 ypos 625 action [ Play("sound", "audio/click1.mp3"), Jump("test") ] hovered [ Play("sound", "audio/button hover2.mp3") ]
-
 
 screen barometer_screen(barometer_value=0):
         # Show scoreboard in the center
@@ -1506,7 +1464,6 @@ screen barometer_screen(barometer_value=0):
         # Show the arrow in front of the scoreboard.
         # We'll place it in the same center, but you can offset with xpos/ypos if needed.
         add Transform("arrow_image", rotate=angle) xoffset 103 yoffset 57
-
 
 screen linhikefeeding:    
 
@@ -1585,9 +1542,6 @@ screen _video_player(video_path):
         yalign 0.95
         action Return()
 
-
-
-
 screen surfbalancetraining():
 
     # drift + input logic stays the same
@@ -1653,12 +1607,6 @@ screen surfbalancetraining():
         # 3) Crop only that many pixels from the left of your full‑width image
         add LiveCrop((0, 0, left_w, 7), "gui/balanceresultscale.png")
 
-
-
-
-
-
-    
 screen surfwavephase():
 
     # 1) Update the marker
@@ -1692,3 +1640,53 @@ screen surfwavephase():
         # Optional: show your “click to catch” hint
         add "gui/clicktocatch2.png" xpos 35 ypos 90 anchor (0.5, 0.5)
         text "Click to catch!" xpos 40 ypos 90 anchor (0.5, 0.5) color "#ffffff" size 19
+
+screen gallery():
+
+    modal True
+    tag gallery
+    add "gui/vgallery_bg.png" xpos 5 ypos 120
+    fixed:
+        xpos 1845 ypos 123
+        
+        imagebutton:
+                auto "gui/roundbutton_%s.png" action [ Play("sound", "audio/click2.mp3"), ToggleScreen("gallery"), ToggleScreen("callmap") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+        text "X" xpos 16 ypos 9 color ("#000000") size 40 bold True
+
+    fixed xpos GALLERY_X ypos GALLERY_Y xsize GALLERY_W ysize GALLERY_H:
+        
+        vbox:
+            spacing 20
+            text "Unlocked Videos" xalign 0.5 size 32 bold True
+
+            viewport draggable True mousewheel True:
+                xmaximum GALLERY_W
+                ymaximum GALLERY_H - 80
+
+                vbox spacing 20:
+
+                    # build current‑session girl list on the fly,
+                    # so we never crash even if GIRLS were empty
+                    $ current_girls = sorted({ v["girl"] for v in VIDEO_DATA
+                                               if v["id"] in seen_videos })
+
+                    for girl in current_girls:
+
+                        $ vids = [ v for v in VIDEO_DATA
+                                    if v["girl"] == girl and v["id"] in seen_videos ]
+
+                        text GIRL_PRETTY.get(girl, girl.capitalize()) style "gallery_girl_label"
+
+                        # --- NEW: work out rows so the grid never overflows ----------
+                        $ rows = (len(vids) + THUMB_COLS - 1) // THUMB_COLS
+                        grid THUMB_COLS rows spacing 10:
+                            for v in vids:
+                                imagebutton:
+                                    idle  Transform(v["thumb"], size=(THUMB_W, THUMB_H))
+                                    hover Transform(v["thumb"], size=(THUMB_W, THUMB_H))
+                                    action Function(play_from_gallery, v)
+
+style gallery_girl_label:
+    size     24
+    bold     True
+    ypadding 8
