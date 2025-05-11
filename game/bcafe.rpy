@@ -3,13 +3,14 @@ label bcafe:
     $ calendar.AddMinutes(20)
     # $ alexa_fullness = 3000
     $ alexa_fullness = renpy.random.randint(0,4000)
+    $ alexa_calories += renpy.random.randint(0,500)
     # "Alexa fullness [alexa_fullness]"
     
     # "Alexa fullstage [alexa_fullstage]"
     # "ALexa imgindex [alexaimgindex]"
     # "Alexa weightstage [alexa_weightstage]"
-    $ renpy.movie_cutscene("videos/avabeachaftersurfingfrontstand10.webm")
-    $ renpy.movie_cutscene("videos/avabeachsurtlisten1.webm")
+    # $ renpy.movie_cutscene("videos/avabeachaftersurfingfrontstand10.webm")
+    # $ renpy.movie_cutscene("videos/avabeachsurtlisten1.webm")
 
     if alexafirsttime == 0:
         play music "audio/streetquiet.mp3" volume 0.5
