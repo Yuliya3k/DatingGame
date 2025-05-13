@@ -7,23 +7,26 @@ label cookingresult:
         
         with slowdissolve
         
-        $ workreputation += 1
+        $ workreputation += 2
         $ niimage = "cookreputation"
         $ nigirlimage = ""
-        $ notify_success("+5")
+        $ notify_success("+2")
         $ dayworksuccessfulhours += float(0.25)
-        $ cookingskill += float(0.1)
+        $ cookingskill += float(1.5)
+        $ salarystatus = cookingskill/100
+        $ cooksalaryperhour = float(23.5*salarystatus)
+
         $ daysalary += float(cooksalaryperhour*0.25)
         pause 1
         $ niimage = "cookingskill"
         $ nigirlimage = ""
-        $ notify_success("+5")
+        $ notify_success("+1.5")
         
         pause 1
         $ niimage = "money"
         $ nigirlimage = ""
-        $ notify_success("+[(cooksalaryperhour*0.25)]")
-        # $ salarystatus = (workreputation*cookingskill)/10000
+        $ notify_success("+[(cooksalaryperhour*0.25):.2f]")
+        
         pause 1.0
         $ cookingstatus = ""
 
@@ -37,7 +40,7 @@ label cookingresult:
         $ notify_success("-1")
         pause 1.0
         $ cookingstatus = ""
-        if workreputation > 100 and cookingskill > 100:
+        if workreputation > 65 and cookingskill > 65:
             $ margo_fullness += 200
             $ niimage = "fullness"
             $ nigirlimage = "nimargo"
@@ -52,7 +55,7 @@ label cookingresult:
             call sceneimg
             pause
             
-    $ myrandom = renpy.random.randint(1,5)
+    $ myrandom = renpy.random.randint(1,3)
     if myrandom == 1:
         hide screen kitchenscale
         $ position = "margormstandingwhilecooking"

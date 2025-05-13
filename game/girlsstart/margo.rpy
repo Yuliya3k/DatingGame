@@ -16,7 +16,7 @@ label margo:
 
     default margo_weightlbs = int(margo_weight*2.2)
 
-    default margo_fullmax = 800
+    default margo_fullmax = 4000
 
     default margo_fullmaxoz = int(margo_fullmax*0.034)
 

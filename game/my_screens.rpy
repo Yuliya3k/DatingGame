@@ -547,9 +547,9 @@ screen day_icon():
             ypos 60
             image "gui/stdbox.png"
             
-            $ text_size = auto_text_size("$ [money]", 75, 35)  # 160 - 20 padding
+            $ text_size = auto_text_size("$ [money:.2f]", 75, 35)  # 160 - 20 padding
             
-            text "$ [money]":
+            text "$ [money:.0f]":
                 xoffset 0
                 yoffset 2
                 xalign 0.5
