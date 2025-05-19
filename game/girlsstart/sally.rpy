@@ -100,7 +100,7 @@ label sally:
     default sallytellyourself = 0
 
     default sallyhowstheday = 0
-
+    
     default sally_joggingtalking2 = False
     default sally_joggingtalking1 = False
     default sally_joggingmotivation = 1
