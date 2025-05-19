@@ -1423,7 +1423,7 @@ label sallyfirsttime:
                                 $ position = "sallyparkmorningrunningforward"
                                 call sceneimg
                                 menu:
-                                    "Run as you can" if fitnessstate < 10:                                     
+                                    "Run as you can" if fitnessstate < 10*sally_fitnesscapacity:                                     
                                         $ position = "sallyparkmorningrunninginitisltalk"
                                         call sceneimg
                                         pause 1
@@ -1479,7 +1479,7 @@ label sallyfirsttime:
                                         $ nigirlimage = "nisally"
                                         call calorieschange
                                         pause 1.0
-                                    "Run with her pace" if fitnessstate >= 10:
+                                    "Run with her pace" if fitnessstate >= 10*sally_fitnesscapacity:
                                         $ position = "sallyparkmorningrunninginitisltalk"
                                         call sceneimg
                                         pause 1
@@ -1576,7 +1576,7 @@ label sallyfirsttime:
                                         call calorieschange
                                         pause 1.0
                                         jump culinarychoices
-                                    "Run a bit faster, to push her" if fitnessstate >= 30:
+                                    "Run a bit faster, to push her" if fitnessstate >= 30*sally_fitnesscapacity:
                                         $ position = "sallyparkmorningrunningbackward"
                                         call sceneimg
                                         pause 1
