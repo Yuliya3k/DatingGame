@@ -13,6 +13,7 @@ This project’s code is licensed under the [Creative Commons BY-NC-SA 4.0 Licen
 4. Open a Pull Request to the `contributors` branch.
 5. All contributions must follow the CC BY-NC-SA 4.0 license.
 6. Commercial use is not allowed — you must credit the original author (Yuliya3k) in any forks or derived works.
+7. Permitted Use: This code may be used in non-commercial academic or medical research projects, provided attribution is given and no profit is generated from its use.
 
 
 Copyright (c) 2025 Yuliya3k
