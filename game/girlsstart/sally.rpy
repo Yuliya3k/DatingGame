@@ -108,7 +108,7 @@ label sally:
     default sally_joggingtoday = False
     default sally_fitnessstate = 1
     default sally_hospital = False
-    # default 
+    default sally_fitnesscapacity = (sally_fitnessstate*0.01) + (1-sally_weightstage/6)
 
     # default 
 
