@@ -39,6 +39,8 @@ label park:
         
 
     label parknothing:
+        $ position = "parkmorningseaview"
+        call sceneimg  
         if parknothing == 0:
             $ parknothing = 1
             player "As I strolled along the ocean promenade, the salty breeze kissed my cheeks, and the rhythmic sound of waves crashing against the shore created a soothing melody. The sun dipped toward the horizon, casting a warm, golden glow across the sandy expanse. Seagulls glided effortlessly through the sky, their calls echoing in the distance."

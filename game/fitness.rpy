@@ -58,12 +58,18 @@ label fitness:
             "I'm excited to get started. What program would you recommend for someone looking to build strength?" if myrandom == 1:
                 Lin "For building strength, I'd recommend our Strength & Conditioning program. It focuses on weightlifting and resistance training. We'll help you set specific goals and track your progress."
                 $ training = 1
+                $ reputationchange = 1
+                $ nigirlimage = "nilin"
+                call reputationchange
                 jump trainingbye
             "I'm interested in improving my flexibility and reducing stress. What program would you suggest for that?" if myrandom == 2: 
                 $ position = "linletsdoit"
                 call sceneimg
                 Lin "If flexibility and stress reduction are your goals, our Yoga & Mindfulness program would be perfect for you. It combines yoga sessions with relaxation techniques to help you find balance."
                 $ training = 1
+                $ reputationchange = 1
+                $ nigirlimage = "nilin"
+                call reputationchange
                 jump trainingbye
             "I want to improve my overall fitness and endurance. What program should I sign up for?" if myrandom == 3:
                 $ position = "linletsdoit"
@@ -79,24 +85,34 @@ label fitness:
                 call sceneimg
                 player "Thank you, Lin. I'm looking forward to it!"  
                 $ training = 1
+
                 jump trainingthanks
             "I appreciate your offer, Lin, but I'm not really into fitness training right now." if myrandom == 1:
                 $ position = "linexplaining"
                 call sceneimg
                 Lin "No problem at all, [name]. If you ever change your mind or want some advice, just let me know. I'm here to help."
                 $ training = 0
+                $ reputationchange = -1
+                $ nigirlimage = "nilin"
+                call reputationchange
                 jump trainingbye
             "I've had a bad experience with fitness training before, Lin, and I'm not ready to give it another shot." if myrandom == 2:
                 $ position = "linexplaining"
                 call sceneimg
                 Lin "I completely understand. Sometimes it's important to take things at your own pace. If you ever reconsider, we'll be here."
                 $ training = 0
+                $ reputationchange = -1
+                $ nigirlimage = "nilin"
+                call reputationchange
                 jump trainingbye
             "Thanks for the offer, Lin, but I have a pretty busy schedule right now, and I don't think I can commit to training." if myrandom == 3:
                 $ position = "linexplaining"
                 call sceneimg
                 Lin "I get it, [name]. Life can get hectic. If things change or you find some free time, feel free to drop by. We'll be here to help you meet your fitness goals."
                 $ training = 0
+                $ reputationchange = -1
+                $ nigirlimage = "nilin"
+                call reputationchange
                 jump trainingbye
 
     if linfirsttime == 1 and training == 1:
@@ -151,6 +167,9 @@ label fitness:
                     call sceneimg
                     Lin "That's the spirit! It's never too late to start, and I'm here to support you all the way. Let's work together to achieve your fitness goals."
                     $ training = 1
+                    $ reputationchange = 1
+                    $ nigirlimage = "nilin"
+                    call reputationchange
                     jump trainingbye
                 "Honestly, Lin, I can't explain it. I guess I just felt like I needed to be here, even though I'm not sure I'm ready to start training yet.":
                     $ position = "linexplaining"
@@ -169,11 +188,17 @@ label fitness:
                     call sceneimg
                     Lin "I appreciate your honesty, and I'm here to help you reach your potential. Remember, it's not about where you start; it's about the journey and the progress you make."
                     $ training = 1
+                    $ reputationchange = 1
+                    $ nigirlimage = "nilin"
+                    call reputationchange
                     jump trainingbye
                 "I wish I could give you a clear answer, Lin, but I'm not sure why. I guess I just wanted to be in this environment and see where it leads.":
                     $ position = "linexplaining"
                     call sceneimg
                     Lin "Well, that's a start. No pressure, [name]. If and when you're ready, we can discuss a training plan. Until then, feel free to hang around."
+                    $ reputationchange = -1
+                    $ nigirlimage = "nilin"
+                    call reputationchange
                     jump trainingbye
             
 
@@ -187,11 +212,17 @@ label fitness:
                     call sceneimg
                     Lin "I'm glad to hear that. It takes courage to make a choice like this. We'll start slow and work our way up, one step at a time. You've got this!"
                     $ training = 1
+                    $ reputationchange = 1
+                    $ nigirlimage = "nilin"
+                    call reputationchange
                     jump trainingbye
                 "Honestly, Lin, I'm not sure why I'm here. It's a bit confusing even for me. I can't seem to find the motivation to start training.":
                     $ position = "linexplaining"
                     call sceneimg
                     Lin "I appreciate your honesty. Sometimes, these things take time. If you ever want to talk or need guidance, just let me know. I'm here to support you whenever you're ready."
+                    $ reputationchange = -1
+                    $ nigirlimage = "nilin"
+                    call reputationchange
                     jump trainingbye
 
 

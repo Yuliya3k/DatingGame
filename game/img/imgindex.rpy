@@ -31,6 +31,7 @@ label imgindex:
     default sallyimgindex = (sally_weightstage*10) + sally_fullstage - 10
     image sally = "/images/sallypos[position] ([sallyimgindex]).png"
     image sallystats = "/images/sallystats ([sallyimgindex]).png"
+    image sallydia = "/images/sallypos[position] ([sally_weightstage]).png"
 
     default auroraimgindex = (aurora_weightstage*10) + aurora_fullstage - 10
     image aurora = "/images/aurorapos[position] ([auroraimgindex]).png"

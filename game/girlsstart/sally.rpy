@@ -101,6 +101,13 @@ label sally:
 
     default sallyhowstheday = 0
 
+    default sally_joggingtalking2 = False
+    default sally_joggingtalking1 = False
+    default sally_joggingmotivation = 1
+    # default sallyhowstheday = 0
+    default sally_joggingtoday = False
+    default sally_fitnessstate = 1
+    default sally_hospital = False
     # default 
 
     # default 

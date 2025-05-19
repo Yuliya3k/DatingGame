@@ -1,9 +1,13 @@
 label sallyfirsttime:
-    $ sally_fullness = renpy.random.randint(800,4000)
-    $ myrandom = renpy.random.randint(1,2)
-    if sallypark == 1 and myrandom == 1:
+    # $ sally_fullness = renpy.random.randint(800,4000)
+    $ myrandom = renpy.random.randint(0,sally_jogginmotivation)
+    
+    if sallypark == 1 and myrandom >= 1 and sally_joggingtoday == False:
         
         if calendar.Hours > 5 and calendar.Hours < 9:
+            $ calorieschange = -200
+            $ nigirlimage = "nisally"
+            call calorieschange
             $ myrandom = renpy.random.randint(1,2)
             if myrandom == 1:
                 $ position = "parksallymorningrunningback"
@@ -78,6 +82,9 @@ label sallyfirsttime:
     
 
     label eveningsallytalk:
+        $ fullnesschange = renpy.random.randint(1000,2000)
+        $ nigirlimage = "nisally"
+        call fullnesschange
         menu:
             "Say hello" if sallyhello < 2 and sallyhellotoday == 0:
                 $ sallyhellotoday = 1
@@ -325,10 +332,7 @@ label sallyfirsttime:
                         call sceneimg
                         player "I appreciate that, Sally. It's nice to know I've got a friendly neighbor."
                     $ sallyhello = 1
-            
                 
-
-
             "Ask her how she became a maid?" if sallyjob == 0 and (sallyhello == 1 or sallyhellotoday == 1):               
                 $ position = "parksallybencheveninglistening"
                 call sceneimg
@@ -394,7 +398,6 @@ label sallyfirsttime:
                 call sceneimg
                 Sally "My pleasure. It's nice to have a friendly neighbor to talk to."
                 $ sallyjob = 2
-
 
             "Ask her if the job is paid well?" if sallyjob == 3:
                 menu:
@@ -514,8 +517,6 @@ label sallyfirsttime:
 
                 $ sallyjob = 5
 
-
-                
             "Ask her how her day goes usually?" if sallyjob == 5:
                 if sally_fullstage < 4:
                     $ position = "parksallybencheveninglistening"
@@ -738,9 +739,7 @@ label sallyfirsttime:
                         $ position = "parksallybencheveninglistening"
                         call sceneimg
                         player "You too, Sally! Take care, and see you around!"
-
-                    
-                    
+          
             "Ask Sally if she likes to eat" if sallyjob == 6:
                 
                 menu:
@@ -903,11 +902,14 @@ label sallyfirsttime:
                 
                 $ sallytellyourself = 1
             
-            
             "How was your day today?" if sallyhowstheday == 0 and sallyjob > 6:
                 $ sallyhowstheday = 1
-                $ sally_calories += 10000
-                $ notify_success("Sally +10000 calories")
+
+                
+                $ calorieschange = renpy.random.randint(1000,2000)
+                $ nigirlimage = "nisally"
+                call calorieschange
+
                 $ myrandom = renpy.random.randint(1,3)
                 if myrandom == 1:
                     $ position = "parksallybencheveninglistening"
@@ -989,18 +991,7 @@ label sallyfirsttime:
                     call sceneimg
                     Sally "It truly is. Now, how about you? How was your day today?"
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            "I need to go":
+            "I have to go":
                 $ myrandom = renpy.random.randint(1,2)
                 if myrandom == 1:
                     $ position = "parksallybencheveninglistening"
@@ -1120,7 +1111,6 @@ label sallyfirsttime:
                     call sceneimg
                     Sally "You too! Have a great day!"
                 $ sallyhellotoday = 1
-            
             
             "Chat a little and say goodbye":
                 $ myrandom = renpy.random.randint(1,2)
@@ -1295,5 +1285,880 @@ label sallyfirsttime:
                     $ position = "parksallyseaviewmorninglistening"
                     call sceneimg
                     player "You too, Sally. Take care and enjoy your morning run!"
-            
+            "Talk about jogging" if sallyhellotoday > 0:
+                # use these 2 scenes here and in all sybdialogues if I will not state otherwise
+                $ position = "parksallyseaviewmorninglistening"
+                call sceneimg    
+                $ position = "parksallyseaviewmorningtalking"
+                call sceneimg
+
+                if sally_joggingtalking1 == False:
+                    $ myrandom = renpy.random.randint(1,3)
+                    $ position = "parksallyseaviewmorningtalking"
+                    call sceneimg
+                    if myrandom == 1:
+                        Sally "I always say, a tidy space starts with a tidy body! But lately... well, jogging’s been harder. Every bounce feels... heavier. Like I'm carrying a little extra 'baggage' from the bakery..."
+                    if myrandom == 2:
+                        Sally "The other day, I caught my reflection polishing silverware—and my apron barely covered my middle! I’ve been jogging every morning since. Still, it jiggles when I run, and I can't tell if that's charming or troubling."
+                    if myrandom == 3:
+                        Sally "I adore sweets, especially after cleaning a whole estate. But indulgence leaves a mark, doesn’t it? Especially right here..."  
+                        
+                        Sally "...so I run. I puff. I hope no one notices how my uniform buttons strain lately."
+                    $ sally_joggingtalking1 = True
+                    $ sally_joggingtalking1 = True
+                menu:
+                    "Ask her why is she jogging?" if sally_joggingtalking2 == False:
+                        #she explains that her job is a figure risky, as she is being fed by her employer and she can't resist eating to her heart's content, so she has to jog every day to keep weight and health
+                        $ myrandom = renpy.random.randint(1,3)
+                        $ position = "parksallyseaviewmorningtalking"
+                        call sceneimg
+                        if myrandom == 1:
+                            Sally "Between all the tea parties and banquet cleanups, there’s always food lying around. And well, I hate waste... so I taste. Just a little. But little bites add up... mostly right around my middle!"
+                        if myrandom == 2:
+                            Sally "Honestly? I clean houses full of mirrors. Seeing myself reflected from every angle lately has been... eye-opening. My skirts are snug. My aprons ride up. I started jogging to... regain some 'order', you know?"
+                        if myrandom == 3:
+                            Sally "It’s silly, but I feel like I’m constantly undoing my own indulgences. I spend my mornings jogging off what I sneak in the evenings. Cakes, leftovers... I try to resist, but it’s hard when everything smells so good."
+
+
+                        $ sally_joggingtalking2 = True
+                    "Encourage her" if sally_joggingtalking2 == True:
+                        
+                        $ reputationchange = 1
+                        $ nigirlimage = "nisally"
+                        call reputationchange
+                        pause 1
+                        
+                        $ myrandom = renpy.random.randint(1,3)
+                        if myrandom == 1:
+                            $ position = "parksallyseaviewmorninglistening"
+                            call sceneimg 
+                            player "You're doing great, Sally. Running like this really helps your body stay strong—even after a few extra sweets."
+                            $ position = "parksallyseaviewmorningtalking"
+                            call sceneimg
+                            Sally "Hehe, tell that to my thighs! They jiggle with every step. But I guess that means I’m working something off, right?"
+                            $ position = "parksallyseaviewmorninglistening"
+                            call sceneimg 
+                            player "Exactly. Every bounce, every puff of breath—it’s your body improving. And honestly... it’s kind of mesmerizing."
+                            $ position = "parksallyseaviewmorningtalking"
+                            call sceneimg
+                            Sally "Oh gosh, now I’m blushing! I thought I looked silly when I get all out of breath... but maybe I’m just determined!"
+
+                        if myrandom == 2:
+                            $ position = "parksallyseaviewmorninglistening"
+                            call sceneimg 
+                            player "It’s smart of you to run like this. With how much you’re around tempting food, it’s impressive how dedicated you are."
+                            $ position = "parksallyseaviewmorningtalking"
+                            call sceneimg
+                            Sally "You should’ve seen me last night—I couldn’t stop nibbling on leftover strawberry tarts. I was so full, I promised myself a long jog today!"
+                            $ position = "parksallyseaviewmorninglistening"
+                            call sceneimg 
+                            player "And you followed through. That’s real willpower. You’re keeping your body in balance... and it shows in how you move."
+                            $ position = "parksallyseaviewmorningtalking"
+                            call sceneimg
+                            Sally "Aw, thank you! I was worried my belly was bouncing too much, but maybe that just means I’m jogging right!"
+
+                        if myrandom == 3:
+                            $ position = "parksallyseaviewmorninglistening"
+                            call sceneimg 
+                            player "Sally, I can see the effort you're putting in. Running like this takes commitment, especially after long workdays."
+                            $ position = "parksallyseaviewmorningtalking"
+                            call sceneimg
+                            Sally "Yeah... my feet ache from cleaning, and then I drag myself out to jog. But when I feel my apron tighten less? It’s worth it."
+                            $ position = "parksallyseaviewmorninglistening"
+                            call sceneimg 
+                            player "I’ve noticed that bounce in your step—literal and figurative. You're shaping up nicely, even if you're still a little... plush."
+                            $ position = "parksallyseaviewmorningtalking"
+                            call sceneimg
+                            Sally "Eek! Plush, huh? That’s one way to say I’ve got padding! But if jogging keeps me from turning into a puff pastry, I’ll take it!"
+
+                        $ joggingmotivationchange = 1
+                        $ nigirlimage = "nisally"
+                        call joggingmotivationchange
+                        pause 1
+                        menu:
+                            "Suggest running together" if sally_joggingtoday == False:
+                                $ sally_joggingtoday = True
+                                $ myrandom = renpy.random.randint(1,3)
+                                if myrandom == 1:
+                                    $ position = "parksallyseaviewmorninglistening"
+                                    call sceneimg 
+                                    player "Hey, how about we jog together right now? You’ve just started, right?"
+                                    $ position = "parksallyseaviewmorningtalking"
+                                    call sceneimg
+                                    Sally "O-oh! Yes, I was just warming up. Honestly, I was dragging my feet a little..."
+                                    $ position = "parksallyseaviewmorninglistening"
+                                    call sceneimg 
+                                    player "Then let’s go. A little teamwork might help you push past that belly’s resistance."
+                                    $ position = "parksallyseaviewmorningtalking"
+                                    call sceneimg
+                                    Sally "Haha! You're on—if my belly bounces too much, I’ll just pretend it’s momentum!"
+
+                                if myrandom == 2:
+                                    $ position = "parksallyseaviewmorninglistening"
+                                    call sceneimg 
+                                    player "Mind if I join you for a jog right now? You look like you could use a little motivation."
+                                    $ position = "parksallyseaviewmorningtalking"
+                                    call sceneimg
+                                    Sally "You're right... I was trying to psych myself up, but my tummy’s still full from breakfast..."
+                                    $ position = "parksallyseaviewmorninglistening"
+                                    call sceneimg 
+                                    player "That just means we’ll be working off every bite, one soft bounce at a time."
+                                    $ position = "parksallyseaviewmorningtalking"
+                                    call sceneimg
+                                    Sally "Hehe, fair enough! If you run beside me, I might actually keep going instead of waddling home."
+
+                                if myrandom == 3:
+                                    $ position = "parksallyseaviewmorninglistening"
+                                    call sceneimg 
+                                    player "Let’s run together—right now. You’ve got the energy, and I could use a push myself."
+                                    $ position = "parksallyseaviewmorningtalking"
+                                    call sceneimg
+                                    Sally "Really? That’d be wonderful! I was about to quit before I even really started..."
+                                    $ position = "parksallyseaviewmorninglistening"
+                                    call sceneimg 
+                                    player "No quitting! Let’s move that cute little apron and jog some of that softness away."
+                                    $ position = "parksallyseaviewmorningtalking"
+                                    call sceneimg
+                                    Sally "You’ve got a deal! If I end up panting like a tea kettle, you better not leave me behind!"
+                                $ position = "sallyparkmorningrunningforward"
+                                call sceneimg
+                                menu:
+                                    "Run as you can" if fitnessstate < 10:                                     
+                                        $ position = "sallyparkmorningrunninginitisltalk"
+                                        call sceneimg
+                                        pause 1
+                                        $ myrandom = renpy.random.randint(1,3)
+                                        if myrandom == 1:
+                                            
+                                            player "Hah... you're doing great, Sally. I think I’m already out of breath just watching you move."
+                                            $ position = "sallyparkmorningrunningtalkingtalk"
+                                            call sceneimg
+                                            Sally "Hehe! I’m puffing too, trust me. My belly keeps bouncing like it's trying to race ahead of me!"
+                                            $ position = "sallyparkmorningrunninglisteningtalk"
+                                            call sceneimg
+                                            player "That bounce... well, it looks like progress. You’ve got a real rhythm going—even if it's a bit jiggly."
+                                            $ position = "sallyparkmorningrunningtalkingtalk"
+                                            call sceneimg
+                                            Sally "Jiggly is an understatement! But hey, if wobbling burns calories, I’m a champion!"
+
+                                        if myrandom == 2:
+                                            player "Okay... maybe I underestimated how fast you go. You’re like a maid on a mission!"
+                                            $ position = "sallyparkmorningrunningtalkingtalk"
+                                            call sceneimg
+                                            Sally "Haha! I feel like a sponge being wrung out. Every step makes my apron flap and my belly sway!"
+                                            $ position = "sallyparkmorningrunninglisteningtalk"
+                                            call sceneimg
+                                            player "That sway... it really shows how hard you’re working. Honestly, you look... determined. And adorable."
+                                            $ position = "sallyparkmorningrunningtalkingtalk"
+                                            call sceneimg
+                                            Sally "Aww, you’re sweet! I may look like I’m bouncing my way to a bakery, but I’m giving it my all!"
+
+                                        if myrandom == 3:
+                                            player "Sally, how are you still moving? I’m barely upright here..."
+                                            $ position = "sallyparkmorningrunningtalkingtalk"
+                                            call sceneimg
+                                            Sally "Whew... it’s not easy! My legs are fine, but it’s like I’m dragging a warm custard-filled center behind me!"
+                                            $ position = "sallyparkmorningrunninglisteningtalk"
+                                            call sceneimg
+                                            player "That sounds... oddly impressive. You’re really pushing through, even with all that softness."
+                                            $ position = "sallyparkmorningrunningtalkingtalk"
+                                            call sceneimg
+                                            Sally "Hehe, well, this softness isn’t jogging itself off! If I don’t keep going, my belly might just win the battle!"
+                                        $ position = "parksallymorningrunningback"
+                                        call sceneimg
+
+                                        $ nigirlimage = "nisally"
+                                        $ fitnessstatechange = 1
+                                        call fitnessstatechange
+                                        pause 1.0
+                                        $ nigirlimage = ""
+                                        $ fitnessstatechange = 1
+                                        call fitnessstatechange
+                                        pause 1.0
+                                        $ calorieschange = -50
+                                        $ nigirlimage = "nisally"
+                                        call calorieschange
+                                        pause 1.0
+                                    "Run with her pace" if fitnessstate >= 10:
+                                        $ position = "sallyparkmorningrunninginitisltalk"
+                                        call sceneimg
+                                        pause 1
+                                        # one way
+                                        
+                                        # the other way
+                                        
+                                        $ myrandom = renpy.random.randint(1,3)
+                                        if myrandom == 1:
+                                            if sally_weightstage <= 3:
+                                                player "You’ve got a good pace going. I’m impressed—it’s actually keeping me on my toes."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "Ugh, I feel like everything’s jiggling, even though I know I’m not that big! These leggings don’t hide anything..."
+                                                $ position = "sallyparkmorningrunninglisteningtalk"
+                                                call sceneimg
+                                                player "You don’t look big at all. Just focused—and maybe a little dramatic with all the bouncing complaints."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "Heeey! I’ll have you know my thighs do have a mind of their own on downhill slopes!"
+
+                                            elif sally_weightstage >= 4:
+                                                player "Your pace is strong, Sally. I wasn’t sure I could keep up, but you're pushing hard."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "Whew... I’m trying! This outfit’s clinging like a second skin, and every step makes my belly bounce like a ball!"
+                                                $ position = "sallyparkmorningrunninglisteningtalk"
+                                                call sceneimg
+                                                player "It's... kind of amazing, actually. The way you move, the determination, the strength in all those curves."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "Haha... well, if my curves keep bouncing, they’re at least burning something!"
+
+                                        if myrandom == 2:
+                                            if sally_weightstage <= 3:
+                                                player "Didn’t expect you to run this steady. I was preparing to slow down for you!"
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "Oh please, I might look petite, but these thighs have opinions. Especially in tight spandex!"
+                                                $ position = "sallyparkmorningrunninglisteningtalk"
+                                                call sceneimg
+                                                player "Yeah? Well, they’re doing great. Honestly, the way they move—focused, confident. Powerful."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "You’re lucky I’m panting too much to blush! But… thanks. That helps."
+
+                                            elif sally_weightstage >= 4:
+                                                player "I’ll admit it—you’re moving better than I thought, with how much you’re carrying."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "Don’t remind me! My boobs are practically bouncing up to my chin, and my belly’s trying to escape these leggings!"
+                                                $ position = "sallyparkmorningrunninglisteningtalk"
+                                                call sceneimg
+                                                player "You wear it like a champ. Watching you take control of every bounce… it’s kind of hypnotic."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "Heh… hypnotic, huh? Just don’t trip watching all this sway!"
+
+                                        if myrandom == 3:
+                                            if sally_weightstage <= 3:
+                                                player "Jogging with you feels natural. Your form’s solid, and you keep the pace without breaking a sweat."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "That’s just my pride talking. I swear I can feel the tiniest belly jiggle, even if it’s all in my head!"
+                                                $ position = "sallyparkmorningrunninglisteningtalk"
+                                                call sceneimg
+                                                player "If it’s in your head, it’s not on your waist. You’re toned, Sally—don’t sell yourself short."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "Pfft! Tell that to these leggings—they make every tiny jiggle feel like an earthquake!"
+
+                                            elif sally_weightstage >= 4:
+                                                player "You're doing great. With everything you’re carrying, I expected you to slow down—but you’re pushing through it."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "You try running with a belly that slaps your thighs every third step! And my chest… oof. It has its own workout plan!"
+                                                $ position = "sallyparkmorningrunninglisteningtalk"
+                                                call sceneimg
+                                                player "It’s impressive, really. All that softness in motion—and yet you’re powering forward. It’s… a lot to admire."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "As long as you’re admiring and not laughing, I’ll keep going! Even if these tights feel like they’re painted on..."
+
+                                        $ nigirlimage == "nisally"
+                                        $ fitnessstatechange = 2
+                                        call fitnessstatechange
+                                        pause 1
+                                        $ nigirlimage = ""
+                                        $ fitnessstatechange = 2
+                                        call fitnessstatechange
+                                        pause 1.0
+                                        $ calorieschange = -100
+                                        $ nigirlimage = "nisally"
+                                        call calorieschange
+                                        pause 1.0
+                                        jump culinarychoices
+                                    "Run a bit faster, to push her" if fitnessstate >= 30:
+                                        $ position = "sallyparkmorningrunningbackward"
+                                        call sceneimg
+                                        pause 1
+                                        $ position = "sallyparkmorningrunningbreathingsoft"
+                                        call sceneimg
+                                        pause 1
+                                        $ position = "sallyparkmorningrunningbreathinghard"
+                                        call sceneimg
+                                        pause 1
+                                        # at first she is running fine with your pace, but then starts to be slightly out of breath, then seriously and she needs to sit down on the bench, you show scene when she is sitting on the bench breathing heavily. You have 2 options. Below
+                                        $ myrandom = renpy.random.randint(1,3)
+                                        if myrandom == 1:
+                                            if sally_weightstage <= 3:
+
+                                                player "Let’s pick it up a bit. Think you can handle my pace?"
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "Oh gosh, you're serious? Alright… but if my thighs start slapping, it's your fault!"
+                                                $ position = "sallyparkmorningrunningbreathinghard"
+                                                call sceneimg
+                                                player "Just means you’re working hard. I can hear your breath picking up already."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "Ughhh… I swear I’m fit, but my chest feels like it’s bouncing out of this top… and I *am* starting to puff!"
+
+                                            elif sally_weightstage >= 4:
+                                                player "I’m going to push the pace—try to keep up, Sally!"
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "Hnnngh… y-you’re joking, right? My belly’s already wobbling like jelly on a trampoline!"
+                                                $ position = "sallyparkmorningrunningbreathinghard"
+                                                call sceneimg
+                                                player "You’re doing great—every bounce, every sway… you’re fighting for it. And I’m impressed."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "I-I can barely breathe! My top’s strangling my chest, and these leggings feel like they’re tearing at the seams!"
+
+                                        if myrandom == 2:
+                                            if sally_weightstage <= 3:
+                                                player "Come on, let’s push a little. Just a short burst."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "You better not laugh if I start panting like a tea kettle! My sports bra’s already working overtime!"
+                                                $ position = "sallyparkmorningrunningbreathinghard"
+                                                call sceneimg
+                                                player "I’m not laughing. You look... determined. A little bounce here and there just shows it’s working."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "Pfft! My 'little' bounce is going to bruise me at this rate!"
+
+                                            elif sally_weightstage >= 4:
+                                                player "You’ve got this, Sally. Just a little faster—power through it."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "W-Wait! My belly’s pulling me back! And my thighs are rubbing like they’re in a wrestling match!"
+                                                $ position = "sallyparkmorningrunningbreathinghard"
+                                                call sceneimg
+                                                player "All the more reason to push. You’ve got so much power behind you, even if it's... soft power."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "Ungh... I-I think I need a breather before this softness melts me on the sidewalk!"
+
+                                        if myrandom == 3:
+                                            if sally_weightstage <= 3:
+                                                player "Let’s turn up the pace. Just to see how far we can go."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "Alright, but if my ponytail hits you in the face while I’m bouncing, you’ve been warned!"
+                                                $ position = "sallyparkmorningrunningbreathinghard"
+                                                call sceneimg
+                                                player "It’s not your ponytail I’m worried about. That top’s under serious tension."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "Hehe! It is, isn’t it? Maybe I should’ve worn something looser... or stopped snacking on custard!"
+
+                                            elif sally_weightstage >= 4:
+                                                player "Faster now—let’s push for a minute!"
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "Oooof... I’m j-jiggling in ten different directions... My boobs feel like weights dragging me down!"
+                                                $ position = "sallyparkmorningrunningbreathinghard"
+                                                call sceneimg
+                                                player "You’re doing more than most could. Every heavy step, every bounce—your body’s working overtime."
+                                                $ position = "sallyparkmorningrunningtalkingtalk"
+                                                call sceneimg
+                                                Sally "I can’t... It’s too much! My belly’s bouncing off my knees—I-I need to sit... now!"
+
+                                        $ nigirlimage == "nisally"
+                                        $ fitnessstatechange = 3
+                                        call fitnessstatechange
+                                        pause 1.0
+                                        $ nigirlimage = ""
+                                        $ fitnessstatechange = 3
+                                        call fitnessstatechange
+                                        pause 1.0
+                                        $ calorieschange = -200
+                                        $ nigirlimage = "nisally"
+                                        call calorieschange
+                                        pause 1.0
+
+                                        $ position = "sallyparkmorningafterrunningbreathinghard"
+                                        call sceneimg
+                                        menu:
+                                            "Give her a lot of water to drink fast":
+
+                                                # here may be two options:
+                                                $ myrandom = renpy.random.randint(1,sally_fitnessstate)
+                                                if myrandom >= 1:
+                                                    # she drinks all the water successfully, she is sitting on the bench surprised
+                                                    # drinking process:
+                                                    $ myrandom = renpy.random.randint(1, 20)
+                                                    $ numberofsips = myrandom
+                                                    # and while numberofsips is > 1 she should make this cycle over and over:
+                                                    while numberofsips > 1:
+                                                        $ fullnesschange = 200
+                                                        $ nigirlimage = "nisally"
+                                                        call fullnesschange
+                                                        call liquiddrinkingsound
+                                                        pause 1.0
+                                                        call sceneimg
+                                                        $ numberofsips -= 1
+
+                                                    
+
+
+                                                    
+                                                    $ position = "sallyparkmorningafterrunningsurprised"
+                                                    call sceneimg
+
+                                                    if sally_weightstage <= 3:
+                                                        if myrandom == 1:
+                                                            player "Wow, you drained that bottle in record time. Feeling better?"
+                                                            Sally "Kinda! Though now my stomach’s gurgling like a fountain. I might start sloshing when I stand!"
+                                                            player "Heh, you really packed it in. Your top's hugging that little water bump pretty tight."
+                                                            Sally "Ack! Don’t say that! I already feel like I swallowed a beach ball!"
+
+                                                        elif myrandom == 2:
+                                                            player "You're amazing. That was a serious gulp session."
+                                                            Sally "Hahh... it’s all in there now. I can feel it stretching a little... right under my ribs."
+                                                            player "You’ve got that flushed look, too. Full and glowing."
+                                                            Sally "Full is right. If I jog now, I’ll water the flowers myself!"
+
+                                                        elif myrandom == 3:
+                                                            player "Think you overdid it, or just right?"
+                                                            Sally "A little of both. My sports bra feels tighter somehow—and not in the usual places!"
+                                                            player "You earned that water belly. It looks... oddly cute on you."
+                                                            Sally "You're not supposed to *compliment* someone’s water belly!"
+                                                        
+                                                    elif sally_weightstage >= 4:
+
+                                                        if myrandom == 1:
+                                                            player "You really chugged that. Impressive, considering how full you already looked."
+                                                            Sally "Urghhh... I can feel it pressing out. My belly's practically pooling on my lap now!"
+                                                            player "That tight top of yours is really working overtime..."
+                                                            Sally "Tell me about it! It’s like my whole front’s become one giant water balloon."
+
+                                                        elif myrandom == 2:
+                                                            player "That was... honestly kind of amazing to watch."
+                                                            Sally "Pfft! I bet. Bet my cheeks puffed out with every gulp. Now I feel *huge*."
+                                                            player "You look like you just had a second breakfast... entirely liquid."
+                                                            Sally "If I lean forward, I think I’ll splash. I’m not built for rapid refills!"
+
+                                                        elif myrandom == 3:
+                                                            player "Feeling alright? You downed all that like a champ."
+                                                            Sally "Barely! My belly’s sticking out even more now—like it’s trying to escape my leggings."
+                                                            player "Soft and swollen... but still smiling. You’re unstoppable."
+                                                            Sally "I don’t feel unstoppable. I feel like a soaked sponge in skin-tight clothes!"
+
+                                                    # image with surprised Sally
+                                                    $ myrandom = renpy.random.randint(1,3)
+                                                    if myrandom == 1:
+                                                        $ position = "sallyparkmorningafterrunningsurprised"
+                                                        call sceneimg
+                                                        Sally "O-Oh wow... when did my belly get this huge?! I swear it wasn't this round five minutes ago!"
+                                                        player "That's what happens when you drink like a fire hose. You’re practically water-filled now."
+                                                        Sally "My sports bra’s digging in... and my leggings are stretched like I just ran through a buffet!"
+                                                        player "You make it look oddly cute. Like a bubbly balloon in spandex."
+
+                                                    if myrandom == 2:
+                                                        $ position = "sallyparkmorningafterrunningsurprised"
+                                                        call sceneimg
+                                                        Sally "Okay, uh... is it just me or did my belly actually *grow* over my waistband?"
+                                                        player "Definitely not just you. It’s really pushing out now... like it wants its own seat."
+                                                        Sally "I can feel it pressing against my thighs... It’s like I brought a second person to sit with me!"
+                                                        player "Hydration achieved. Modesty compromised."
+
+                                                    if myrandom == 3:
+                                                        $ position = "sallyparkmorningafterrunningsurprised"
+                                                        call sceneimg
+                                                        Sally "I feel so... puffy! Like someone inflated me when I wasn’t looking!"
+                                                        player "To be fair, you did just inhale half a liter of water."
+                                                        Sally "My belly's tight, round, and wiggling if I breathe too deep. This isn’t jogging-ready anymore..."
+                                                        player "You’re basically a soft water tank now. A very bouncy one."
+                                                    call sallybyeafterthejogging
+                                                    
+                                                    $ reputationchange = 3
+                                                    $ nigirlimage = "nisally"
+                                                    call reputationchange
+                                                    pause 1
+                                                else:
+                                                    $ myrandom = renpy.random.randint(1,2)
+                                                    if myrandom >= 1:
+                                                        # she drinks all the water successfully, her belly is bloated like a balloon, she seems surprised (sitting surprised scene)
+                                                        # drinking process:
+                                                        $ myrandom = renpy.random.randint(1, 20)
+                                                        $ numberofsips = myrandom
+                                                        # and while numberofsips is > 1 she should make this cycle over and over:
+                                                        while numberofsips > 1:
+                                                            $ fullnesschange = 200
+                                                            $ nigirlimage = "nisally"
+                                                            call fullnesschange
+                                                            call liquiddrinkingsound
+                                                            pause 1.0
+                                                            call sceneimg
+                                                            $ numberofsips -= 1
+                                                        $ myrandom = renpy.random.randint(1,3)
+                                                        
+
+                                                        if sally_weightstage <= 3:
+
+                                                            if myrandom == 1:
+                                                                player "That was... a lot. You sure you’re okay?"
+                                                                Sally "Ugh... I think I overdid it. My belly feels like a water balloon strapped under my sports bra!"
+                                                                player "It’s really pressing out. Even your top looks stretched tighter than before."
+                                                                Sally "No kidding! I swear I can feel it sloshing when I breathe. I didn’t even know water could make me this round!"
+
+                                                            elif myrandom == 2:
+                                                                player "You really drained that bottle. Fastest I’ve ever seen."
+                                                                Sally "It felt fine while I was drinking... but now? My tummy’s pushing out like I’m smuggling a melon!"
+                                                                player "And the way your leggings curve around it... it’s like your belly wanted the spotlight."
+                                                                Sally "Wah! Don’t say that! I already feel like I’m gonna pop if I lean forward!"
+
+                                                            elif myrandom == 3:
+                                                                player "Full yet?"
+                                                                Sally "Beyond full! I can feel my skin stretching under this top—it's like I grew a whole new bump!"
+                                                                player "Well, your figure definitely popped out more after all that water."
+                                                                Sally "I was aiming for hydration, not sudden pregnancy cosplay!"
+
+
+                                                        elif sally_weightstage >= 4:
+
+                                                            if myrandom == 1:
+                                                                player "That was... intense. You really chugged every drop."
+                                                                Sally "Ghh... my belly’s huge now. I swear it’s fighting for space under this top!"
+                                                                player "It’s definitely pushing out hard. You look like you’ve got a second gut packed with water."
+                                                                Sally "Ughhh, and my thighs are getting squished by the waistband—it’s like I expanded everywhere!"
+
+                                                            elif myrandom == 2:
+                                                                player "Whoa... your stomach really ballooned up after that."
+                                                                Sally "Nnngh, it’s heavy. I feel like I just swallowed a bath. My belly's resting on my lap—and I’m still sloshing!"
+                                                                player "Honestly? It’s kind of fascinating seeing it stretch and swell like that."
+                                                                Sally "I can *feel* every gulp in there. And this outfit... was not built for sudden inflation!"
+
+                                                            elif myrandom == 3:
+                                                                player "Feeling okay? That was a serious load of water..."
+                                                                Sally "I’m stuffed! I’ve got this round belly sticking straight out, and it feels like it’s jiggling just from breathing!"
+                                                                player "It’s impressive. Soft, swollen... and still somehow adorable."
+                                                                Sally "If adorable means bloated like a water balloon in a corset—then sure!"
+                                                        
+                                                        
+                                                        call sallybyeafterthejogging
+                                                        $ reputationchange = 3
+                                                        $ nigirlimage = "nisally"
+                                                        call reputationchange
+                                                        pause 1
+                                                    else:
+                                                        # drinking process:
+                                                        $ myrandom = renpy.random.randint(1, 20)
+                                                        $ numberofsips = myrandom
+                                                        # and while numberofsips is > 1 she should make this cycle over and over:
+                                                        while numberofsips > 1:
+                                                            $ fullnesschange = 200
+                                                            $ nigirlimage = "nisally"
+                                                            call fullnesschange
+                                                            call liquiddrinkingsound
+                                                            pause 1.0
+                                                            call sceneimg
+                                                            $ numberofsips -= 1                                                       
+                                                        # First, fade the screen to black
+                                                        scene black with slowdissolve
+
+                                                        # Then, wait briefly for dramatic effect
+                                                        pause 1.0
+
+                                                        # Show center-screen text
+                                                        show text "Too much pressure for her heart.\nYou call the emergency and they take her to the hospital." at truecenter with slowdissolve
+
+                                                        # Hold the message a bit longer
+                                                        pause 3.5
+
+                                                        # Hide the text
+                                                        hide text with dissolve
+
+                                                        # Handle game consequences
+                                                        $ reputationchange = -5
+                                                        $ nigirlimage = "nisally"
+                                                        call reputationchange
+                                                        pause 1
+
+                                                        # Set Sally’s status
+                                                        $ sally_hospital = True
+
+                                                        # Jump to next event
+                                                        jump culinarychoices
+                                            "Give her little water to drink slow":
+                                                # drinking process:
+                                                $ myrandom = renpy.random.randint(1, 5)
+                                                $ numberofsips = myrandom
+                                                # and while numberofsips is > 1 she should make this cycle over and over:
+                                                while numberofsips > 1:
+                                                    $ fullnesschange = 200
+                                                    $ nigirlimage = "nisally"
+                                                    call fullnesschange
+                                                    call liquiddrinkingsound
+                                                    pause 1.0
+                                                    call sceneimg
+                                                    $ numberofsips -= 1 
+                                                # she drinks the water and feels better, after this scene should be changed to the sitting and smiling after jogging
+                                                $ myrandom = renpy.random.randint(1,3)
+                                                if sally_weightstage <= 3:
+
+                                                    if myrandom == 1:
+                                                        player "Feeling better?"
+                                                        $ position = "sallyparkmorningafterrunningsatisfied"
+                                                        call sceneimg
+                                                        Sally "Much better. A few slow sips was all I needed. My tummy’s just a little round now—not a balloon!"
+                                                        player "It’s cute. You’ve got that flushed, glowy look. Post-jog bliss, I guess."
+                                                        Sally "Hehe! Maybe... or maybe I’m just happy not to be waddling home in a water daze."
+
+                                                    elif myrandom == 2:
+                                                        player "You look like you’re recovering nicely."
+                                                        $ position = "sallyparkmorningafterrunningsatisfied"
+                                                        call sceneimg
+                                                        Sally "I am! No belly slosh, no panic—just a nice, calm fullness."
+                                                        player "Still a bit of a curve showing through your top, though."
+                                                        Sally "H-Hey! It’s hydration, not indulgence! Don’t get any ideas."
+
+                                                    elif myrandom == 3:
+                                                        player "That slow approach worked. You’ve got your breath back too."
+                                                        $ position = "sallyparkmorningafterrunningsatisfied"
+                                                        call sceneimg
+                                                        Sally "Yeah... and it didn’t make my belly feel like it was going to pop. That’s progress!"
+                                                        player "You make post-run recovery look cute."
+                                                        Sally "Cute? I’m covered in sweat and puffing. You’re too kind—or blind!"
+
+                                               
+                                                elif sally_weightstage >= 4:
+
+                                                    if myrandom == 1:
+                                                        player "Better now?"
+                                                        $ position = "sallyparkmorningafterrunningsatisfied"
+                                                        call sceneimg
+                                                        Sally "Whew... yeah. That went down easier. My belly’s still round, but it’s not about to pop!"
+                                                        player "It's still pushing your top out pretty far, though. Hydration looks good on you."
+                                                        Sally "Good? I feel like a wobbly waterbed. But... better than earlier."
+
+                                                    elif myrandom == 2:
+                                                        player "That was the right call—slow and steady."
+                                                        $ position = "sallyparkmorningafterrunningsatisfied"
+                                                        call sceneimg
+                                                        Sally "Yup... I feel full, but not stuffed. Just... comfortably sloshy."
+                                                        player "Still sitting a bit heavy in your middle though, huh?"
+                                                        Sally "Hehe... when doesn’t it lately? But yeah, better than wheezing."
+
+                                                    elif myrandom == 3:
+                                                        player "That went down smoother than I thought."
+                                                        $ position = "sallyparkmorningafterrunningsatisfied"
+                                                        call sceneimg
+                                                        Sally "Slow sips work wonders. My belly’s round as ever, but at least I’m not gasping this time."
+                                                        player "It’s still soft and stretched… just in a gentler way."
+                                                        Sally "Soft and stretched is kinda my default now, but hey—hydrated and happy!"
+
+                                                call sallybyeafterthejogging
+                                                $ reputationchange = 3
+                                                $ nigirlimage = "nisally"
+                                                call reputationchange
+                                                pause 1
+                            "I have to go":
+
+                                $ myrandom = renpy.random.randint(1,3)
+                                if myrandom == 1:
+                                    $ position = "parksallyseaviewmorninglistening"
+                                    call sceneimg 
+                                    player "I’d love to stay, but I have to head out. Keep at it—you’re doing great."
+                                    $ position = "parksallyseaviewmorningtalking"
+                                    call sceneimg
+                                    Sally "Aww, thanks! I’ll try not to let my belly talk me into quitting halfway."
+                                    $ position = "parksallyseaviewmorninglistening"
+                                    call sceneimg 
+                                    player "It might bounce a little, but that just means it's along for the ride."
+                                    $ position = "parksallyseaviewmorningtalking"
+                                    call sceneimg
+                                    Sally "Haha! Then I guess me and my belly better get moving before it convinces me to nap!"
+
+                                if myrandom == 2:
+                                    $ position = "parksallyseaviewmorninglistening"
+                                    call sceneimg 
+                                    player "I can’t join you today, but I just wanted to say—you’re really inspiring, Sally."
+                                    $ position = "parksallyseaviewmorningtalking"
+                                    call sceneimg
+                                    Sally "Really? Even with all this jiggle going on in my red spandex? That’s kind of you!"
+                                    $ position = "parksallyseaviewmorninglistening"
+                                    call sceneimg 
+                                    player "It shows you’re working hard. Honestly, you look kind of radiant in motion."
+                                    $ position = "parksallyseaviewmorningtalking"
+                                    call sceneimg
+                                    Sally "Well, that’s enough flattery to carry me at least halfway through the park. Thanks again!"
+
+                                if myrandom == 3:
+                                    $ position = "parksallyseaviewmorninglistening"
+                                    call sceneimg 
+                                    player "I’ve got to run—but not literally, not like you. Keep pushing, alright?"
+                                    $ position = "parksallyseaviewmorningtalking"
+                                    call sceneimg
+                                    Sally "You got it! I’ll try not to wobble off the path from all the breakfast I’m still carrying!"
+                                    $ position = "parksallyseaviewmorninglistening"
+                                    call sceneimg 
+                                    player "Wobble or not, you’re out here doing it. That’s what counts."
+                                    $ position = "parksallyseaviewmorningtalking"
+                                    call sceneimg
+                                    Sally "Hehe... right! I’ll bounce my way to victory!"
+
+                    "Discourage her" if sally_joggingtalking2 == True:
+                        $ joggingmotivationchange = -1
+                        $ nigirlimage = "nisally"
+                        call joggingmotivationchange
+                        pause 1
+                        if sally_attitude < 50 or sally_weightstage <= 3:
+                            $ myrandom = renpy.random.randint(1,3)
+                            if myrandom == 1:
+                                $ position = "parksallyseaviewmorninglistening"
+                                call sceneimg 
+                                player "You don’t need to jog all the time, you know. A few sweets here and there won’t hurt."
+                                $ position = "parksallyseaviewmorningtalking"
+                                call sceneimg
+                                Sally "Haha! That’s exactly how it starts—'just one bite', then suddenly my leggings are crying!"
+                                $ position = "parksallyseaviewmorninglistening"
+                                call sceneimg 
+                                player "I think you'd still look amazing, even with a little extra softness."
+                                $ position = "parksallyseaviewmorningtalking"
+                                call sceneimg
+                                Sally "You’re flattering me into trouble! My routine’s strict for a reason!"
+
+                            elif myrandom == 2:
+                                $ position = "parksallyseaviewmorninglistening"
+                                call sceneimg 
+                                player "Wouldn’t it feel better to relax instead? Skip the sweat, enjoy something sweet?"
+                                $ position = "parksallyseaviewmorningtalking"
+                                call sceneimg
+                                Sally "Tempting… but I know myself too well. That’s how I end up puffed like a pastry."
+                                $ position = "parksallyseaviewmorninglistening"
+                                call sceneimg 
+                                player "But pastries are delightful—especially when they're soft and golden."
+                                $ position = "parksallyseaviewmorningtalking"
+                                call sceneimg
+                                Sally "Oh stop! You’re not helping my self-control at all!"
+
+                            elif myrandom == 3:
+                                $ position = "parksallyseaviewmorninglistening"
+                                call sceneimg 
+                                player "You already look great, Sally. Why stress over jogging every morning?"
+                                $ position = "parksallyseaviewmorningtalking"
+                                call sceneimg
+                                Sally "It’s not about looks, it’s about keeping my belly from becoming a wobble machine!"
+                                $ position = "parksallyseaviewmorninglistening"
+                                call sceneimg 
+                                player "Maybe a little wobble would suit you… adds character."
+                                $ position = "parksallyseaviewmorningtalking"
+                                call sceneimg
+                                Sally "I swear, you’ve got an agenda! I’m watching you!"
+                            $ reputationchange = -1
+                            $ nigirlimage = "nisally"
+                            call reputationchange
+                            pause 1
+                        else:
+                            $ myrandom = renpy.random.randint(1,3)
+                            if myrandom == 1:
+                                $ position = "parksallyseaviewmorninglistening"
+                                call sceneimg 
+                                player "Let’s be honest… jogging hasn’t exactly stopped the bounce, has it?"
+                                $ position = "parksallyseaviewmorningtalking"
+                                call sceneimg
+                                Sally "Guh… you’re not wrong. Every step feels like my belly’s clapping for me!"
+                                $ position = "parksallyseaviewmorninglistening"
+                                call sceneimg 
+                                player "Then maybe it’s time to stop fighting it—and just enjoy the ride."
+                                $ position = "parksallyseaviewmorningtalking"
+                                call sceneimg
+                                Sally "Mmmh… when you say it like that, giving in *does* sound delicious."
+
+                            elif myrandom == 2:
+                                $ position = "parksallyseaviewmorninglistening"
+                                call sceneimg 
+                                player "What if, just once, you skipped the jog and rewarded yourself instead?"
+                                $ position = "parksallyseaviewmorningtalking"
+                                call sceneimg
+                                Sally "Oof… that *does* sound nice. My thighs are still sore from yesterday's wobble-run."
+                                $ position = "parksallyseaviewmorninglistening"
+                                call sceneimg 
+                                player "You deserve it. That plush belly of yours looks ready for something sweet."
+                                $ position = "parksallyseaviewmorningtalking"
+                                call sceneimg
+                                Sally "Careful… keep talking like that and I’ll skip the week."
+
+                            elif myrandom == 3:
+                                $ position = "parksallyseaviewmorninglistening"
+                                call sceneimg 
+                                player "Let go, Sally. You're already soft, beautiful… why push yourself so hard?"
+                                $ position = "parksallyseaviewmorningtalking"
+                                call sceneimg
+                                Sally "You’re really trying to break me, huh? I mean... I *have* been craving pancakes all morning."
+                                $ position = "parksallyseaviewmorninglistening"
+                                call sceneimg 
+                                player "Then what are you waiting for? Feed the craving—and let your belly thank you."
+                                $ position = "parksallyseaviewmorningtalking"
+                                call sceneimg
+                                Sally "Gosh… if I start ballooning, I’m blaming *you* for cheering me on!"
+
+
+                            $ reputationchange = 1
+                            $ nigirlimage = "nisally"
+                            call reputationchange
+                            pause 1
+                        
+                        
+                        
+                        
+
+
+
     jump morningsallytalk
+
+
+
+
+    label sallybyeafterthejogging:
+
+          
+        
+        $ myrandom = renpy.random.randint(1,3)
+        if myrandom == 1:
+            $ position = "parksallyseaviewmorninglistening"
+            call sceneimg  
+            player "That was a good run, Sally. You gave it your all."
+            $ position = "parksallyseaviewmorningtalking"
+            call sceneimg
+            Sally "Hehe, and now I’ll be sore in all the jiggly places tomorrow… but it was worth it!"
+            $ position = "parksallyseaviewmorninglistening"
+            call sceneimg  
+            player "Even the sloshy water belly?"
+            $ position = "parksallyseaviewmorningtalking"
+            call sceneimg
+            Sally "Even that! Next time, I’ll bring a towel just for *me*, not just the sweat!"
+
+        if myrandom == 2:
+            $ position = "parksallyseaviewmorninglistening"
+            call sceneimg  
+            player "I’ll let you cool off. You earned your break today."
+            $ position = "parksallyseaviewmorningtalking"
+            call sceneimg
+            Sally "Aww, thanks! My legs are noodles and my belly’s still trying to decide if it’s full or floating!"
+            $ position = "parksallyseaviewmorninglistening"
+            call sceneimg  
+            player "You looked great out there. Seriously."
+            $ position = "parksallyseaviewmorningtalking"
+            call sceneimg
+            Sally "You're sweet. Tired, bloated, and still sweet — that’s a win!"
+
+        if myrandom == 3:
+            $ position = "parksallyseaviewmorninglistening"
+            call sceneimg  
+            player "Well, I’ll leave you to recover. Don’t float away on all that water!"
+            $ position = "parksallyseaviewmorningtalking"
+            call sceneimg
+            Sally "Hah! If I roll downhill like a hydration balloon, you’re to blame!"
+            $ position = "parksallyseaviewmorninglistening"
+            call sceneimg  
+            player "Hey, I said *drink*, not *inflate*."
+            $ position = "parksallyseaviewmorningtalking"
+            call sceneimg
+            Sally "Same thing when you give me that much water and zero self-control!"
+        $ position = "parksallymorningrunningback"
+        call sceneimg
+
+        return

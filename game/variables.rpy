@@ -256,6 +256,11 @@ label variables:
     
     default seen_videos = set()
 
+    default joggingmotivationchange = 0
+    default fitnessstate = 0
+    default fitnessstatechange = 0
+    default numberofsips = 0
+
     # define THUMB_W      = 260          # width  of each thumb (px)
     # define THUMB_H      = 146          # height of each thumb (px)
     # define THUMB_COLS   = 4            # columns per row
@@ -287,3 +292,32 @@ label variables:
     #     "other": "Misc.",
     # }
     return
+
+
+
+
+    # $ position = "sallyparkmorningrunninginitisltalk"
+    # call sceneimg
+    # $ position = "sallyparkmorningafterrunningbreathinghard"
+    # call sceneimg
+    # $ position = "sallyparkmorningafterrunningsatisfied"
+    # call sceneimg
+    # $ position = "sallyparkmorningafterrunningsurprised"
+    # call sceneimg
+    # $ position = "sallyparkmorningrunningbackward"
+    # call sceneimg
+    # $ position = "sallyparkmorningrunningbreathinghard"
+    # call sceneimg
+    # $ position = "sallyparkmorningrunningbreathingsoft"
+    # call sceneimg
+    # $ position = "sallyparkmorningrunningforward"
+    # call sceneimg
+    # $ position = "sallyparkmorningrunninglisteningtalk"
+    # call sceneimg
+    # $ position = "sallyparkmorningrunningtalkingtalk"
+    # call sceneimg
+    
+    # $ position = "parksallyseaviewmorninglistening"
+    # call sceneimg 
+    # $ position = "parksallyseaviewmorningtalking"
+    # call sceneimg

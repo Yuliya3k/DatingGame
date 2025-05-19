@@ -48,6 +48,7 @@ label dayvariables:
     $ linfeedingpressureysize = 10
     $ lin_dayfullness = 0
     $ hospitalhi = 0
+    $ sally_joggingtoday = False
 
 
 return

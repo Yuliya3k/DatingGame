@@ -46,9 +46,20 @@ label sceneimg:
 
 
     #Sally
-    if position == "parksallybencheveninghi" or position == "parksallybencheveninglistening" or position == "parksallybencheveningsitting" or position == "parksallybencheveningstanding" or position == "parksallybencheveningtalking" or position == "parksallyeveninglookingatthesea" or position == "parksallyeveningwalking" or position == "parksallyeveningwalkingback" or position == "parksallymorningrunning" or position == "parksallymorningrunningback" or position == "parksallyseaviewmorninglistening" or position == "parksallyseaviewmorningtalking" or position == "sallyeveningbellyholding" or position == "sallymorningseaviewbellyholding":
+    if position == "parksallybencheveninghi" or position == "parksallybencheveninglistening" or position == "parksallybencheveningsitting" or position == "parksallybencheveningstanding" or position == "parksallybencheveningtalking" or position == "parksallyeveninglookingatthesea" or position == "parksallyeveningwalking" or position == "parksallyeveningwalkingback" or position == "parksallymorningrunning" or position == "parksallymorningrunningback" or position == "parksallyseaviewmorninglistening" or position == "parksallyseaviewmorningtalking" or position == "sallyeveningbellyholding" or position == "sallymorningseaviewbellyholding" or position == "sallyparkmorningafterrunningbreathinghard" or position == "sallyparkmorningafterrunningsatisfied" or position == "sallyparkmorningafterrunningsurprised" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
         scene bg
         show sally
+
+
+    
+    # $ position = ""
+    # $ position = ""
+    # $ position = ""
+
+
+    if position == "sallyparkmorningrunninginitisltalk" or position == "sallyparkmorningrunningbackward" or position == "sallyparkmorningrunningbreathinghard" or position == "sallyparkmorningrunningbreathingsoft" or position == "sallyparkmorningrunningforward" or position == "..." or position == "sallyparkmorningrunninglisteningtalk" or position == "sallyparkmorningrunningtalkingtalk" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
+        scene bg
+        show sallydia
 
 
     #hayoon

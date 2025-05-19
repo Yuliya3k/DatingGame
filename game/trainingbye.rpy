@@ -1,9 +1,7 @@
 label trainingbye:
-    if lin_attitude > 0:
+    
 
-        $ reputationchange = -1
-        $ nigirlimage = "nilin"
-        call reputationchange
+        
         
     
     if myrandom == 1:
