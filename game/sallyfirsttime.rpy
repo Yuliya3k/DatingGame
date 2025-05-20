@@ -1031,7 +1031,7 @@ label sallyfirsttime:
                     call sceneimg
                     
                     player "Hey, Sally! Fancy meeting you here at the park."
-                    $ position = "parksallyseaviewmorningtalking"
+                    $ position = "sallymorningseaviewhi"
                     call sceneimg
                     Sally "Oh, hello there! Nice to see you too. Just getting in my morning run. How's your day starting?"
                     $ position = "parksallyseaviewmorninglistening"
@@ -1077,7 +1077,7 @@ label sallyfirsttime:
                     $ position = "parksallyseaviewmorninglistening"
                     call sceneimg
                     player "Hey, Sally! Looks like you're really enjoying your run today."
-                    $ position = "parksallyseaviewmorningtalking"
+                    $ position = "sallymorningseaviewhi"
                     call sceneimg
                     Sally "Oh, hi there! You bet I am. There's something about the sea breeze and the sound of the waves that makes running here pure bliss."
                     $ position = "parksallyseaviewmorninglistening"
@@ -1119,7 +1119,7 @@ label sallyfirsttime:
                     $ position = "parksallyseaviewmorninglistening"
                     call sceneimg
                     player "Good morning, Sally! How's your day starting off?"
-                    $ position = "parksallyseaviewmorningtalking"
+                    $ position = "sallymorningseaviewhi"
                     call sceneimg
                     Sally "Morning! It's off to a great start. Can't complain with this view."
                     $ position = "parksallyseaviewmorninglistening"
@@ -1154,7 +1154,7 @@ label sallyfirsttime:
                     $ position = "parksallyseaviewmorninglistening"
                     call sceneimg
                     player "Hey there, Sally! You're always up and running early, huh?"
-                    $ position = "parksallyseaviewmorningtalking"
+                    $ position = "sallymorningseaviewhi"
                     call sceneimg
                     Sally "You know it. Gotta seize the day!"
                     $ position = "parksallyseaviewmorninglistening"
@@ -1189,7 +1189,7 @@ label sallyfirsttime:
                     $ position = "parksallyseaviewmorninglistening"
                     call sceneimg
                     player "Sally, morning! You're already in your element."
-                    $ position = "parksallyseaviewmorningtalking"
+                    $ position = "sallymorningseaviewhi"
                     call sceneimg
                     Sally "Good morning. Nothing like a run to kickstart the day."
                     $ position = "parksallyseaviewmorninglistening"
