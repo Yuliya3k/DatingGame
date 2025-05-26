@@ -261,6 +261,9 @@ label variables:
     default fitnessstatechange = 0
     default numberofsips = 0
 
+
+    default hayoonmettoday = False
+
     # define THUMB_W      = 260          # width  of each thumb (px)
     # define THUMB_H      = 146          # height of each thumb (px)
     # define THUMB_COLS   = 4            # columns per row

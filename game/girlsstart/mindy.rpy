@@ -15,7 +15,7 @@ label mindy:
 
     default mindy_weightlbs = int(mindy_weight*2.2)
 
-    default mindy_fullmax = 800
+    default mindy_fullmax = 4000
 
     default mindy_fullmaxoz = int(mindy_fullmax*0.034)
 

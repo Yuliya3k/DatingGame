@@ -9,6 +9,7 @@ label imgindex:
 
     default krisimgindex = (kris_weightstage*10) + kris_fullstage - 10
     image kris = "/images/krispos[position] ([krisimgindex]).png"
+    image krisdia = "/images/krispos[position] ([kris_weightstage]).png"
 
     default linimgindex = (lin_weightstage*10) + lin_fullstage - 10
     image lin = "/images/linpos[position] ([linimgindex]).png"
@@ -17,6 +18,7 @@ label imgindex:
 
     default margoimgindex = (margo_weightstage*10) + margo_fullstage - 10
     image margo = "/images/margopos[position] ([margoimgindex]).png"
+    image margodia = "/images/margopos[position] ([margo_weightstage]).png"
 
     default hayoonimgindex = (hayoon_weightstage*10) + hayoon_fullstage - 10
     image hayoon = "/images/hayoonpos[position] ([hayoonimgindex]).png"

@@ -16,7 +16,7 @@ label kira:
 
     default kira_weightlbs = int(kira_weight*2.2)
 
-    default kira_fullmax = 800
+    default kira_fullmax = 4000
 
     default kira_fullmaxoz = int(kira_fullmax*0.034)
 

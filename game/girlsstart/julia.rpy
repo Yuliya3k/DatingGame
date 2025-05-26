@@ -16,7 +16,7 @@ label julia:
 
     default julia_weightlbs = int(julia_weight*2.2)
 
-    default julia_fullmax = 800
+    default julia_fullmax = 4000
 
     default julia_fullmaxoz = int(julia_fullmax*0.034)
 

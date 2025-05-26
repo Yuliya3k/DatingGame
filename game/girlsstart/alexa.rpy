@@ -15,7 +15,7 @@ label alexa:
 
     default alexa_weightlbs = int(alexa_weight*2.2)
 
-    default alexa_fullmax = 800
+    default alexa_fullmax = 4000
 
     default alexa_fullmaxoz = int(alexa_fullmax*0.034)
 

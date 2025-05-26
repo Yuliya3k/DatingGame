@@ -1,12 +1,19 @@
 label hayoonfirstmeet:
-    $ position = "barhayoonwhat"
-    call sceneimg
+
+    if hayoonmettoday == False:
+        $ position = "barhayoonhi"
+        call sceneimg
+        $ hayoonmettoday == True
+    else:         
+        $ position = "barhayoonlistening"
+        call sceneimg
     
     
     
     # introduction
     menu:
         "How was your day?":
+            call hayooncantresisttowatch
             $ myrandom = renpy.random.randint(1,3)
 
 
@@ -15,7 +22,7 @@ label hayoonfirstmeet:
                 player "HaYoon, how was your day at the hospital today? I heard you work at the emergency department."
                 $ position = "barhayoonlecturing" 
                 call sceneimg
-                HaYoon "Oh, it was quite a day. You know, at the ER, you never really know what to expect.I had a if myrandom == 1:if myrandom == 2:-hour shift, and it was a rollercoaster."
+                HaYoon "Oh, it was quite a day. You know, at the ER, you never really know what to expect.I had a 12-hour shift, and it was a rollercoaster."
 
                 player "I can only imagine. What kind of cases did you handle?"
                 $ position = "barhayoonclarifiying" 
@@ -66,7 +73,7 @@ label hayoonfirstmeet:
                 HaYoon "It can be challenging, but it's also incredibly rewarding. Knowing that I can make a difference, even on the toughest days, keeps me going."
 
                 player "I have so much respect for what you do, HaYoon. It takes a special kind of person to handle all that pressure and still be there for the patients."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
 
                 HaYoon "Thank you. It means a lot. And hey, hearing about your day is a nice change of pace for me. How's your day been?"
@@ -99,7 +106,7 @@ label hayoonfirstmeet:
                 HaYoon "Thank you. And how about you? How's your day been so far?"
 
                 player "Well, it hasn't been as eventful as yours, that's for sure. But I did try the Classic Cravings Burger at Crave Bites, and it was amazing."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
 
                 HaYoon "Sometimes, a good meal can make all the difference. If you ever need some stress relief after a hectic day, you know where to find me."
@@ -108,6 +115,7 @@ label hayoonfirstmeet:
 
 
         "How did she decide to become a doctor?" if hayoondocq == 0:
+            call hayooncantresisttowatch
             $ myrandom = renpy.random.randint(1,3)
             $ hayoondocq = 1
             if myrandom == 1:
@@ -132,7 +140,7 @@ label hayoonfirstmeet:
                 HaYoon "Thank you.It hasn't been easy, but every day I'm reminded of why I chose this path. It's about making a positive impact and helping others in their time of need."
 
                 player "Well, I have to say, the town is fortunate to have someone as dedicated as you on the medical team."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
 
                 HaYoon "I appreciate that. And if you ever have any health-related questions or concerns, don't hesitate to reach out. I'm here to help."
@@ -159,7 +167,7 @@ label hayoonfirstmeet:
                 HaYoon "It is, but it's also a continuous journey of learning and growth. Medical school was challenging, and the hours at the hospital can be long, but I wouldn't have it any other way."
 
                 player "Your dedication is truly inspiring, HaYoon."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
 
                 HaYoon "Thank you. I believe that if you're passionate about something, the path becomes clearer, and the challenges become opportunities to become better."
@@ -188,7 +196,7 @@ label hayoonfirstmeet:
                 HaYoon "Thank you. It's been a challenging journey, but I wouldn't trade it for anything. Helping people in their time of need, there's nothing quite like it."
 
                 player "Well, I'm glad you followed your passion. We're lucky to have you in town."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
 
                 HaYoon "I'm lucky to be here. And who knows, maybe one day, I'll be able to help you too, even if it's just with some medical advice."
@@ -196,6 +204,7 @@ label hayoonfirstmeet:
 
 
         "What do you do except your work?" if hayoonsparetime == 0:
+            call hayooncantresisttowatch
             $ myrandom = renpy.random.randint(1,3)
             $ hayoonsparetime = 1
             if myrandom == 1:
@@ -220,7 +229,7 @@ label hayoonfirstmeet:
                 HaYoon "Thank you. I believe it's important to make a positive impact wherever we can, whether it's through medicine or a lending hand."
 
                 player "I couldn't agree more. It's been great getting to know you better, HaYoon."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
 
                 HaYoon "Likewise. If you ever want to join me for a walk in the park or borrow a good book, just let me know."
@@ -249,7 +258,7 @@ label hayoonfirstmeet:
                 HaYoon "Oh, yes! There's a beautiful trail in the nearby woods with a stunning view at the end. It's like a little slice of paradise. If you're ever interested, I'd be happy to show you sometime."
 
                 player "I might take you up on that offer. It sounds like a fantastic way to spend a day. Thanks for sharing, HaYoon."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
 
                 HaYoon "My pleasure. It's always nice to chat with someone who's genuinely interested."
@@ -274,13 +283,14 @@ label hayoonfirstmeet:
                 HaYoon "Thank you. It's important to have a well-rounded life, don't you think?"
 
                 player "Absolutely. It keeps things interesting and fulfilling."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
                 HaYoon "I couldn't agree more. How about you? What do you like to do in your free time?"
 
 
 
         "Why are you visiting the bar?" if hayoonbarq == 0:
+            call hayooncantresisttowatch
             $ hayoonbarq = 1
             $ myrandom = renpy.random.randint(1,3)
             if myrandom == 1:
@@ -300,7 +310,7 @@ label hayoonfirstmeet:
                 HaYoon "So, do you come here often?"
 
                 player "Not as often as I'd like. I'm still getting to know the town and its people, but I'm starting to feel more at home."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
 
                 HaYoon "That's great to hear. If you ever want to meet more people around here, just let me know. I can introduce you to some wonderful folks."
@@ -322,7 +332,7 @@ label hayoonfirstmeet:
                 $ position = "barhayoonclarifiying"
                 call sceneimg
                 HaYoon "Well, not close friends, but definitely some acquaintances. It's nice to have a few familiar faces to chat with and share a drink. And who knows, maybe you'll become one of them."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
                 player "I'd like that. It's always good to have a friendly face around."
 
@@ -343,13 +353,13 @@ label hayoonfirstmeet:
                 HaYoon "Likewise. I appreciate the company too. It's a welcome break from the hectic hospital routine."
 
                 player "Well, if you ever need someone to talk to or share a drink with, you know where to find me."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
 
                 HaYoon "That's very kind of you. I'll keep that in mind. Thanks."
 
         "Do you want a drink?":
-            
+            call hayooncantresisttowatch
             $ myrandom = renpy.random.randint(1,3)
             if myrandom == 1:
                 $ position = "barhayoonlecturing"
@@ -360,7 +370,7 @@ label hayoonfirstmeet:
                 HaYoon "That's really sweet of you, but I've got it covered, don't worry. I appreciate the offer, though."
 
                 player "Alright, no problem. Just thought I'd ask. If you change your mind or want anything, feel free to let me know."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
                 HaYoon "Thanks. I'll definitely keep that in mind. It's nice to know you're looking out for me."
 
@@ -374,7 +384,7 @@ label hayoonfirstmeet:
                 HaYoon "Thanks for the offer, but I've got it covered. I like to take care of my own tab."
 
                 player "Of course, HaYoon. Just wanted to make sure you were comfortable."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
 
                 HaYoon "I appreciate that. It's sweet of you to offer."
@@ -388,12 +398,13 @@ label hayoonfirstmeet:
                 HaYoon "Thanks, but I can manage myself. I appreciate the offer, though."
 
                 player "Alright, just let me know if you change your mind. I'm here to help."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
 
                 HaYoon "Will do. You're very kind. I enjoy our conversations."
 
         "What's your story, [name]?" if hayoonplayerstory == 1:
+            call hayooncantresisttowatch
             $ hayoonplayerstory = 1
             $ myrandom = renpy.random.randint(1,3)
             if myrandom == 1:
@@ -417,7 +428,7 @@ label hayoonfirstmeet:
                 HaYoon "It sounds like you're passionate about your work. I admire that. Cooking is an art, too, in its own way."
 
                 player "Thanks, HaYoon. It's been great talking to you about it."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
 
                 HaYoon "Likewise. I'm always here if you want to chat or need medical advice for your culinary adventures."
@@ -446,7 +457,7 @@ label hayoonfirstmeet:
 
 
                 HaYoon "Pasta is a favorite for many. I'll have to try your creations sometime. It's been great getting to know you."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
 
                 player "Likewise, HaYoon. If you ever have a hankering for pasta or just want to chat, you know where to find me."
@@ -471,12 +482,13 @@ label hayoonfirstmeet:
                 player " Exactly! Food has this unique power to connect people, just like how we're connected here, chatting at the bar."
 
                 HaYoon "That's true. And it's always great to meet new people in town. I hope you're enjoying your time here."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
 
                 player " Thanks, HaYoon. It's been quite an adventure so far, and I'm looking forward to more."
 
         "See you next time!":
+            call hayooncantresisttowatch
             $ myrandom = renpy.random.randint(1,3)
             if myrandom == 1:
                 player " Well, HaYoon, it's been a pleasure chatting with you tonight."
@@ -490,7 +502,7 @@ label hayoonfirstmeet:
                 HaYoon "That's a tempting offer. I might take you up on that sometime."
 
                 player "I'll be looking forward to it. Take care, HaYoon, and have a great night."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
 
                 HaYoon " You too. Goodnight!"
@@ -512,7 +524,7 @@ label hayoonfirstmeet:
                 call sceneimg
 
                 HaYoon " Likewise. Don't be a stranger; I'll be here at the bar from time to time. Have a wonderful evening."
-                $ position = "barhayoonhey"
+                $ position = "barhayoonexplaining"
                 call sceneimg
 
                 player " You too, HaYoon. Take care, and I'll see you around."

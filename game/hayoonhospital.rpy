@@ -38,6 +38,7 @@ label hayoonhospital:
 
     menu:
         "Say hi" if hospitalhi == 0:
+            $ hayoonmettoday = True
             $ hospitalhi = 1    
             $ myrandom = renpy.random.randint(1,3)
             if myrandom == 1:

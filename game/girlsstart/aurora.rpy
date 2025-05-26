@@ -16,7 +16,7 @@ label aurora:
 
     default aurora_weightlbs = int(aurora_weight*2.2)
 
-    default aurora_fullmax = 800
+    default aurora_fullmax = 4000
 
     default aurora_fullmaxoz = int(aurora_fullmax*0.034)
 

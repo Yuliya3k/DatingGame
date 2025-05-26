@@ -16,7 +16,7 @@ label kris:
 
     default kris_weightlbs = int(kris_weight*2.2)
 
-    default kris_fullmax = 800
+    default kris_fullmax = 4000
 
     default kris_fullmaxoz = int(kris_fullmax*0.034)
 

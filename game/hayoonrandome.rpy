@@ -1,5 +1,6 @@
 label hayoonrandome:    
     $ hayoonrandome = 1
+    $ hayoonmettoday = True
     $ position = "randomencounterhayoon"
     call sceneimg 
     "You can see Ha-Yoon sitting and reading the book. What will you do?"

@@ -63,24 +63,30 @@ label sceneimg:
 
 
     #hayoon
-    if position == "barhayoonlecturing" or position == "barhayoonchatting" or position == "barhayoonclarifiying" or position == "barhayoonexplaining" or position == "barhayoonhey" or position == "barhayoonstop" or position == "barhayoonwhat" or position == "kirahayoonenter" or position == "randomencounterhayoon" or position == "hayoonhospitalleaning1" or position == "hayoonhospitalleaning2" or position == "hayoonhospitalstretching" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
+    if position == "kirahayoonenter" or position == "randomencounterhayoon" or position == "hayoonhospitalleaning1" or position == "hayoonhospitalleaning2" or position == "hayoonhospitalstretching" or position == "barhayoonbellyview" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
         if position == "hayoonhospitalleaning1" and hayoon_fullstage == 1 and hayoon_weightstage == 1: 
             $ renpy.movie_cutscene("videos/hayoonhospitalleaning1.webm")
         
         scene bg
         show hayoon
 
-    if position == "randomencounterhayoonclose" or position == "randomencounterhayooncloselisten" or position == "randomencounterhayoonclosetalk" or position == "hayoonhospitaltalklisten" or position == "hayoonhospitaltalktalk" or position == "hayoonhospitaltalkhello" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
+    if position == "barhayoonlecturing" or position == "barhayoonchatting" or position == "barhayoonclarifiying" or position == "barhayoonexplaining" or position == "barhayoonhi" or position == "barhayoonlistening" or position == "barhayoonlistening" or position == "randomencounterhayoonclose" or position == "randomencounterhayooncloselisten" or position == "randomencounterhayoonclosetalk" or position == "hayoonhospitaltalklisten" or position == "hayoonhospitaltalktalk" or position == "hayoonhospitaltalkhello" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
         if position == "randomencounterhayoonclose" and hayoon_weightstage == 1:
             $ renpy.movie_cutscene("videos/hayoonrandomencounterclose1.webm")
         scene bg
         show hayoondia
 
-    if position == "krisexplaining" or position == "krishi" or position == "krisshy" or position == "kriswalking" or position == "kriswalkingbalcony" or position == "krisbackyardeating" or position == "krisbackyardhello" or position == "krisbackyardsmiling" or position == "krisbackyardsmilingslightly" or position == "krisbackyardtalking":
+    if position == "..." or position == "..." or position == "..." or position == "kriswalking" or position == "kriswalkingbalcony" or position == "krisbackyardeating" or position == "krisbackyardhello" or position == "krisbackyardsmiling" or position == "krisbackyardsmilingslightly" or position == "krisbackyardtalking" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
         if position == "krisbackyardtalking" and kris_weightstage == 1 and kris_fullstage == 10:
             $ renpy.movie_cutscene("videos/krisstuffedbackyard110.webm")
         scene bg
         show kris
+
+    if position == "krisexplaining" or position == "krishi" or position == "krisshy" or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
+        if position == "krisbackyardtalking" and kris_weightstage == 1 and kris_fullstage == 10:
+            $ renpy.movie_cutscene("videos/krisstuffedbackyard110.webm")
+        scene bg
+        show krisdia
 
     if position == "auroragardening" or position == "aurorahello" or position == "aurorahey" or position == "auroraiwish" or position == "auroragardeningbalcony" or position == "auroraexplain":
         scene bg
@@ -109,9 +115,13 @@ label sceneimg:
 
         
 
-    if position == "margohismile" or position == "margormexplaining" or position == "margormgoodluck" or position == "margormlistening" or position == "margormpointing" or position == "margormserious" or position == "margormtalking" or position == "margormstandingwhilecooking" or position == "margoeatingleftovers":
+    if position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "margormstandingwhilecooking" or position == "margoeatingleftovers" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
         scene bg
         show margo
+
+    if position == "margohismile" or position == "margormexplaining" or position == "margormgoodluck" or position == "margormlistening" or position == "margormpointing" or position == "margormserious" or position == "margormtalking" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
+        scene bg
+        show margodia
 
 
     if position == "rmjuliasit":

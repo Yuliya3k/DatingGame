@@ -3,14 +3,18 @@ label bar3:
     $ calendar.AddMinutes(20)
     $ myrandom = renpy.random.randint(1,5)
 
+
+
     if myrandom == 3 and hayoonintro == 1:
         $ hayoonatthebar = 1
+        
 
 
     play music "audio/bar.mp3" volume 0.3
 
     if hayoonatthebar == 1:
-        $ hayoon_fullness = renpy.random.randint(1,2000)
+        $ hayoon_fullness = renpy.random.randint(800,3000)
+        # 
         $ position = "kirahayoonenter"
         call sceneimg
         player "I walk into the bar, greeted by the warm hum of chatter and clinking glasses."
@@ -60,19 +64,19 @@ label bar3:
             $ position = "kiraleaningtohayoon"
             call sceneimg
             Kira "Hey, HaYoon! Mind if I introduce you to someone?"
-            $ position = "barhayoonhey"
+            $ position = "barhayoonexplaining"
             call sceneimg
             HaYoon "Kira, always a pleasure. Introduce away!"
             $ position = "kiraleaningtohayoon"
             call sceneimg
             Kira "HaYoon, this is, our newest resident in town. Meet HaYoon, our amazing doctor."
-            $ position = "barhayoonwhat"
+            $ position = "barhayoonhi"
             call sceneimg
             player "Nice to meet you, HaYoon."
             $ position = "barhayoonexplaining"
             call sceneimg
             HaYoon "Likewise. Welcome to our town. Kira has been singing your praises."
-            $ position = "barhayoonwhat"
+            $ position = "barhayoonlistening"
             call sceneimg
             player "Well, Kira has been a wonderful guide so far. I am looking forward to getting to know more people in town."
             $ position = "barhayoonexplaining"
@@ -99,22 +103,22 @@ label bar3:
             $ position = "kiraleaningtohayoon"
             call sceneimg
             Kira "Perfect. I'll go over and talk to her for a moment, then I'll bring her over to meet you. Just be yourself; you'll get along just fine."
-            $ position = "barhayoonhey"
+            $ position = "barhayoonexplaining"
             call sceneimg
             HaYoon "Hi there, I'm HaYoon. Kira tells me you're new in town. Nice to meet you!"
-            $ position = "barhayoonwhat"
+            $ position = "barhayoonlistening"
             call sceneimg
             player "Hi, HaYoon. Yeah, I just moved here recently. It's a pleasure to meet you too. Kira mentioned you work at the clinic. That must keep you pretty busy."
             $ position = "barhayoonexplaining"
             call sceneimg
             HaYoon "It can be, but I love what I do. And it's always nice to unwind with good company. Kira speaks highly of you."
-            $ position = "barhayoonwhat"
+            $ position = "barhayoonlistening"
             call sceneimg
             player "Likewise, HaYoon. I'm looking forward to getting to know the people in this town better."
             $ position = "barhayoonexplaining"
             call sceneimg
             HaYoon "Well, you're off to a good start. If you have any questions about the town or need recommendations, feel free to ask anytime."
-            $ position = "barhayoonwhat"
+            $ position = "barhayoonlistening"
             call sceneimg
             player "Thanks, HaYoon. I'll definitely keep that in mind. It's great to have such welcoming neighbors."
             $ position = "kiraquestion"
@@ -145,16 +149,16 @@ label bar3:
             $ position = "kiraleaningtohayoon"
             call sceneimg
             Kira "HaYoon, meet.This is HaYoon, one of our regulars and an amazing doctor at the hospital."
-            $ position = "barhayoonhey"
+            $ position = "barhayoonexplaining"
             call sceneimg
             HaYoon "Nice to meet you. Kira's been telling me you're new in town. How are you finding it so far?"
-            $ position = "barhayoonwhat"
+            $ position = "barhayoonlistening"
             call sceneimg
             player "Pleasure to meet you too, HaYoon. It's been quite an adventure settling in, but everyone's been so welcoming."
             $ position = "barhayoonexplaining"
             call sceneimg
             HaYoon "Well, you've got a fantastic spot here with Kira. She's a gem, always making sure everyone's taken care of."
-            $ position = "barhayoonwhat"
+            $ position = "barhayoonlistening"
             call sceneimg
             player "I can tell. Kira's been great."
             $ position = "kiraflirting"
@@ -163,13 +167,13 @@ label bar3:
             $ position = "barhayoonexplaining"
             call sceneimg
             HaYoon "So, what brings you to our little town?"
-            $ position = "barhayoonwhat"
+            $ position = "barhayoonlistening"
             call sceneimg
             player "Oh, a mix of things, really. New job, new surroundings. I'm also a cook, so I'm looking forward to exploring the local food scene."
             $ position = "barhayoonexplaining"
             call sceneimg
             HaYoon "That sounds intriguing. If you ever need a food critic, count me in. (winks)"
-            $ position = "barhayoonwhat"
+            $ position = "barhayoonlistening"
             call sceneimg
             player "You've got a deal, HaYoon. I might just take you up on that."
 
