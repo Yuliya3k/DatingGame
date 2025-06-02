@@ -38,6 +38,9 @@ label imgindex:
     default auroraimgindex = (aurora_weightstage*10) + aurora_fullstage - 10
     image aurora = "/images/aurorapos[position] ([auroraimgindex]).png"
 
+    default faridaimgindex = (farida_weightstage*10) + farida_fullstage - 10
+    image farida = "/images/faridapos[position] ([faridaimgindex]).png"
+
 
     default juliaimgindex = (julia_weightstage*10) + julia_fullstage - 10
     image julia = "/images/juliapos[position] ([juliaimgindex]).png"

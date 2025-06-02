@@ -1,6 +1,6 @@
 label sallyfirsttime:
     # $ sally_fullness = renpy.random.randint(800,4000)
-    $ myrandom = renpy.random.randint(0,sally_jogginmotivation)
+    $ myrandom = renpy.random.randint(0,sally_joggingmotivation)
     
     if sallypark == 1 and myrandom >= 1 and sally_joggingtoday == False:
         

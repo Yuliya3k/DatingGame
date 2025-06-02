@@ -11,6 +11,10 @@ label variables:
     call lin
 
     call margo
+
+    call farida
+
+    call aurora
     
     call girl
 
@@ -257,12 +261,48 @@ label variables:
     default seen_videos = set()
 
     default joggingmotivationchange = 0
+    
     default fitnessstate = 0
     default fitnessstatechange = 0
     default numberofsips = 0
 
 
     default hayoonmettoday = False
+
+    default rbtok = 0
+    default avarbtok = 0
+    default rbtnotok = 0
+    default avabossauth = 0
+    default margobeachcafediscuss = False
+    default beachcafeisset = False
+    
+    default margo_fullnesscomplaint = False
+    default ava_fullnesscomplaint = False
+    default avabeacbbqgreeting = False
+    default margobeachbbqgreeting = False
+    
+    default beachcafeevents = 4 
+    # default 
+    # default  
+    # default  
+    # default  
+    # default  
+    # default  
+    # default  
+    # default  
+    # default  
+    # default  
+    # default  
+    # default  
+    # default  
+    # default  
+    # default  
+    # default  
+    # default  
+    # default  
+    # default  
+    # default 
+
 
     # define THUMB_W      = 260          # width  of each thumb (px)
     # define THUMB_H      = 146          # height of each thumb (px)

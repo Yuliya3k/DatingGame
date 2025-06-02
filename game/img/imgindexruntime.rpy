@@ -33,9 +33,13 @@ label imgindexruntime:
     image julia = "/images/juliapos[position] ([juliaimgindex]).png"
     
 
-    
+    # $ auroraimgindex = (aurora_weightstage*10) + aurora_fullstage - 10
 
-    
+    # image aurora = "/images/aurorapos[position] ([auroraimgindex]).png"
+
+    $ faridaimgindex = (farida_weightstage*10) + farida_fullstage - 10
+
+    image farida = "/images/faridapos[position] ([faridaimgindex]).png"
     
 
 

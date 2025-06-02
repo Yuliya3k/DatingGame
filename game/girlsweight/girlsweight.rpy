@@ -58,6 +58,15 @@ label girlsweight:
         if kris_weightstage < 1:
             $ kris_weightstage = 1
 
+        # $ farida_weight = int(farida_defaultweight + (farida_calories/caloriesperkg))
+        # $ farida_weightlbs = int(farida_weight*2.2)
+        # $ farida_weightstage = int((farida_weight - farida_defaultweight)/3)
+        # if farida_weightstage > 6:
+        #     $ farida_weightstage = 6
+        # if farida_weightstage < 1:
+        #     $ farida_weightstage = 1
+        $ farida_weightstage = 1
+
     else:
         $ sally_weight = sally_defaultweight
         $ lin_weight = lin_defaultweight
@@ -73,6 +82,7 @@ label girlsweight:
         $ ava_weightstage = 1
         $ margo_weightstage = 1
         $ kris_weightstage = 1
+        $ farida_weightstage = 1
 
 
 

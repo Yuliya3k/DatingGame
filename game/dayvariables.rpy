@@ -1,9 +1,20 @@
 label dayvariables:
 
 
+    # 1) remember the month before ticking over to the next day
+    $ _prev_month = calendar.month          # <-- store numeric month (0-11)
+
+    # 2) advance one day and set the morning time
     $ calendar.AddDays(1)
-    $ calendar.hours = 7
-    $ calendar.minutes = 00
+    $ calendar.hours   = 7
+    $ calendar.minutes = 0
+
+    # 3) if the month rolled over, reset your monthly stat(s)
+    if calendar.month != _prev_month:
+        $ beachcafeevents = 4       # ← whatever you need to reset
+                            
+        
+
     
     call girlsfullness
     # call kiraweight 
@@ -50,5 +61,11 @@ label dayvariables:
     $ hospitalhi = 0
     $ sally_joggingtoday = False
     $ hayoonmettoday = False
+    $ margo_fullnesscomplaint = False
+    $ ava_fullnesscomplaint = False
+    $ myrandom = renpy.random.randint(1,3)
+    if myrandom == 1:
+        if avabossauth == 1:
+            $ avabossauth = 2
 
 return

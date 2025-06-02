@@ -14,7 +14,7 @@ label sceneimg:
         show kira
 
     #Alexa
-    if position == "alexaexplaining" or position == "alexaworking" or position == "alexahappy" or position == "alexasurprised" or position == "alexaskingtable" or position == "cafeenteranceavaalexafar" or position == "cafeenteranceavaalexacloser":
+    if position == "alexaexplaining" or position == "alexaworking" or position == "alexahappy" or position == "alexasurprised" or position == "alexaskingtable" or position == "cafeenteranceavaalexafar" or position == "cafeenteranceavaalexacloser" or position == "alexabeachbbq" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
         if position == "alexaworking" and alexa_fullstage == 10 and alexa_weightstage == 1:
             $ renpy.movie_cutscene("videos/alexaworking10.webm")
         if position == "alexaexplaining" and alexa_fullstage == 10 and alexa_weightstage == 1:
@@ -25,7 +25,7 @@ label sceneimg:
 
 
     #Ava
-    if position == "cafeenteranceavaalexafar" or position == "cafeenteranceavaalexacloser" or position == "avawalkingout" or position == "beachavaclosehey" or position == "beachavacloselisten" or position == "beachavacloseexplaining" or position == "beachavacloseplease" or position == "beachavaclosestop" or position == "beachavaclosetalk" or position == "beachavaclose" or position == "beachava" or position == "cafeavaorderingside" or position == "cafeavasitting" or position == "beachavacloseexplaining" or position == "avabeachsufringfar" or position == "avabeachsurflearningsmilingfullbody" or position == "avabeachaftersurfingfrontstand" or position == "avastandsthirstyside" or position == "avastandsbellylook" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
+    if position == "cafeenteranceavaalexafar" or position == "cafeenteranceavaalexacloser" or position == "avawalkingout" or position == "beachavaclosehey" or position == "beachavacloselisten" or position == "beachavacloseexplaining" or position == "beachavacloseplease" or position == "beachavaclosestop" or position == "beachavaclosetalk" or position == "beachavaclose" or position == "beachava" or position == "cafeavaorderingside" or position == "cafeavasitting" or position == "beachavacloseexplaining" or position == "avabeachsufringfar" or position == "avabeachsurflearningsmilingfullbody" or position == "avabeachaftersurfingfrontstand" or position == "avastandsthirstyside" or position == "avastandsbellylook" or position == "avabeachbbq" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
         if position == "beachavaclose"  and ava_fullstage == 1 and ava_weightstage == 1:
             $ renpy.movie_cutscene("videos/avabeachclose1.webm")
 
@@ -38,7 +38,7 @@ label sceneimg:
         scene bg
         show ava
 
-    if position == "avabeachsurfclosetalking" or position == "avabeachsurfcloselistening" or position == "avabeachsurfclosesmiling" or position == "avabeachsurflearningthmbup" or position == "avabeachsurflearningsoso" or position == "avabeachsurflearninglistening" or position == "avabeachsurflearningtalking" or position == "avabeachsurflearningsmilingfromabove" or position == "avaaftersurfingdrinkingclose" or position == "avaaftersurfingtalkingclose" or position == "avaaftersurfinglisteningclose" or position == "avaaftersurfingsurprisedclose" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
+    if position == "avabeachsurfclosetalking" or position == "avabeachsurfcloselistening" or position == "avabeachsurfclosesmiling" or position == "avabeachsurflearningthmbup" or position == "avabeachsurflearningsoso" or position == "avabeachsurflearninglistening" or position == "avabeachsurflearningtalking" or position == "avabeachsurflearningsmilingfromabove" or position == "avaaftersurfingdrinkingclose" or position == "avaaftersurfingtalkingclose" or position == "avaaftersurfinglisteningclose" or position == "avaaftersurfingsurprisedclose" or position == "avabeachbbqclosehi" or position == "avabeachbbqcloselistening" or position == "avabeachbbqclosetalking" or position == "avabeachbbqclosetalking" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
         if position == "avabeachsurfcloselistening" and ava_weightstage == 1:
             $ renpy.movie_cutscene("videos/avabeachsurtlisten1.webm")
         scene bg
@@ -76,7 +76,7 @@ label sceneimg:
         scene bg
         show hayoondia
 
-    if position == "..." or position == "..." or position == "..." or position == "kriswalking" or position == "kriswalkingbalcony" or position == "krisbackyardeating" or position == "krisbackyardhello" or position == "krisbackyardsmiling" or position == "krisbackyardsmilingslightly" or position == "krisbackyardtalking" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
+    if position == "krisbeachbbq" or position == "..." or position == "..." or position == "kriswalking" or position == "kriswalkingbalcony" or position == "krisbackyardeating" or position == "krisbackyardhello" or position == "krisbackyardsmiling" or position == "krisbackyardsmilingslightly" or position == "krisbackyardtalking" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
         if position == "krisbackyardtalking" and kris_weightstage == 1 and kris_fullstage == 10:
             $ renpy.movie_cutscene("videos/krisstuffedbackyard110.webm")
         scene bg
@@ -88,7 +88,7 @@ label sceneimg:
         scene bg
         show krisdia
 
-    if position == "auroragardening" or position == "aurorahello" or position == "aurorahey" or position == "auroraiwish" or position == "auroragardeningbalcony" or position == "auroraexplain":
+    if position == "auroragardening" or position == "aurorahello" or position == "aurorahey" or position == "auroraiwish" or position == "auroragardeningbalcony" or position == "auroraexplain" or position == "aurorabeachbbq" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
         scene bg
         show aurora
 
@@ -115,20 +115,25 @@ label sceneimg:
 
         
 
-    if position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "margormstandingwhilecooking" or position == "margoeatingleftovers" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
+    if position == "margobeachbbq" or position == "..." or position == "..." or position == "..." or position == "margormstandingwhilecooking" or position == "margoeatingleftovers" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
         scene bg
         show margo
 
-    if position == "margohismile" or position == "margormexplaining" or position == "margormgoodluck" or position == "margormlistening" or position == "margormpointing" or position == "margormserious" or position == "margormtalking" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
+    if position == "margohismile" or position == "margormexplaining" or position == "margormgoodluck" or position == "margormlistening" or position == "margormpointing" or position == "margormserious" or position == "margormtalking" or position == "margobeachbbqclosehi" or position == "margobeachbbqcloselistening" or position == "margobeachbbqclosetalking" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
         scene bg
         show margodia
+
+
+    if position == "faridabeachbbq" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
+        scene bg
+        show farida
 
 
     if position == "rmjuliasit":
         scene bg
         show julia
 
-    if position == "backyard" or position == "gardeningbalconynoaurora" or position == "kriswalkingbalconynokris" or position == "foodburger" or position == "foodburgerfrappe" or position == "foodfrappe" or position == "foodnofood" or position == "cafeenterance" or position == "barenterance" or position == "hayoonintro" or position == "linintro" or position == "avaintro" or position == "sallyintro" or position == "parkocean" or position == "parkwalk" or position == "parkbench" or position == "kitchen"  or position == "beachempty" or position == "beachlifeguardempty" or position == "parkeveningwalk" or position == "parkeveningseaview" or position == "parkeveningbench" or position == "parkmorningseaview" or position == "parkmorningwalk" or position == "parkmorningbench" or position == "parkpromcafeempty" or position == "linbikeparklisteningclose" or position == "linbikeparktalkclose" or position == "linhikingtalklisten" or position == "linhikingno" or position == "linhikingtalk" or position == "linhikingyes" or position == "hospitalempty" or position == "playerswimming" or position == "layingonthebeach" or position == "playerinthewater" or position == "playerisfalling" or position == "playertryingtostand" or position == "playerswimming" or position == "home" or position == "playerinbalance" or position == "icecreamlisten" or position == "icecreamtalk" or position == "icecreamthumbsup" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
+    if position == "backyard" or position == "gardeningbalconynoaurora" or position == "kriswalkingbalconynokris" or position == "foodburger" or position == "foodburgerfrappe" or position == "foodfrappe" or position == "foodnofood" or position == "cafeenterance" or position == "barenterance" or position == "hayoonintro" or position == "linintro" or position == "avaintro" or position == "sallyintro" or position == "parkocean" or position == "parkwalk" or position == "parkbench" or position == "kitchen"  or position == "beachempty" or position == "beachlifeguardempty" or position == "parkeveningwalk" or position == "parkeveningseaview" or position == "parkeveningbench" or position == "parkmorningseaview" or position == "parkmorningwalk" or position == "parkmorningbench" or position == "parkpromcafeempty" or position == "linbikeparklisteningclose" or position == "linbikeparktalkclose" or position == "linhikingtalklisten" or position == "linhikingno" or position == "linhikingtalk" or position == "linhikingyes" or position == "hospitalempty" or position == "playerswimming" or position == "layingonthebeach" or position == "playerinthewater" or position == "playerisfalling" or position == "playertryingtostand" or position == "playerswimming" or position == "home" or position == "playerinbalance" or position == "icecreamlisten" or position == "icecreamtalk" or position == "icecreamthumbsup" or position == "bcroastedchicken" or position == "bcsalmon" or position == "bcbbqdish" or position == "bcribsdish" or position == "bcburgerdish" or position == "bbqbg" or position == "..." or position == "beachcafeassambled" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
         if position == "home":
             play music "audio/countryside_birds.mp3" volume 0.3
 

@@ -110,5 +110,74 @@ label fullnesschange:
             $ niimage = "fullness"
             $ notify_success("[fullnesschange]")
 
+    if nigirlimage == "nialexa":
+        if alexa_fullness + fullnesschange > alexa_fullmax:
+            $ fullnesschange = alexa_fullmax - alexa_fullness
+            $ alexa_fullness = alexa_fullmax
+        if alexa_fullness + fullnesschange < 0:
+            $ fullnesschange = alexa_fullness
+            $ alexa_fullness = 0
+        if alexa_fullness + fullnesschange <= alexa_fullmax:
+            $ alexa_fullness += fullnesschange
+        
+        if fullnesschange > 0:
+            $ niimage = "fullness"    
+            $ notify_success("+[fullnesschange]")
+        else:
+            $ niimage = "fullness"
+            $ notify_success("[fullnesschange]")
+
+    if nigirlimage == "nikris":
+        if kris_fullness + fullnesschange > kris_fullmax:
+            $ fullnesschange = kris_fullmax - kris_fullness
+            $ kris_fullness = kris_fullmax
+        if kris_fullness + fullnesschange < 0:
+            $ fullnesschange = kris_fullness
+            $ kris_fullness = 0
+        if kris_fullness + fullnesschange <= kris_fullmax:
+            $ kris_fullness += fullnesschange
+        
+        if fullnesschange > 0:
+            $ niimage = "fullness"    
+            $ notify_success("+[fullnesschange]")
+        else:
+            $ niimage = "fullness"
+            $ notify_success("[fullnesschange]")
+
+
+    if nigirlimage == "niaurora":
+        if aurora_fullness + fullnesschange > aurora_fullmax:
+            $ fullnesschange = aurora_fullmax - aurora_fullness
+            $ aurora_fullness = aurora_fullmax
+        if aurora_fullness + fullnesschange < 0:
+            $ fullnesschange = aurora_fullness
+            $ aurora_fullness = 0
+        if aurora_fullness + fullnesschange <= aurora_fullmax:
+            $ aurora_fullness += fullnesschange
+        
+        if fullnesschange > 0:
+            $ niimage = "fullness"    
+            $ notify_success("+[fullnesschange]")
+        else:
+            $ niimage = "fullness"
+            $ notify_success("[fullnesschange]")
+
+    if nigirlimage == "nifarida":
+        if farida_fullness + fullnesschange > farida_fullmax:
+            $ fullnesschange = farida_fullmax - farida_fullness
+            $ farida_fullness = farida_fullmax
+        if farida_fullness + fullnesschange < 0:
+            $ fullnesschange = farida_fullness
+            $ farida_fullness = 0
+        if farida_fullness + fullnesschange <= farida_fullmax:
+            $ farida_fullness += fullnesschange
+        
+        if fullnesschange > 0:
+            $ niimage = "fullness"    
+            $ notify_success("+[fullnesschange]")
+        else:
+            $ niimage = "fullness"
+            $ notify_success("[fullnesschange]")
+
     return
 "Something went wrong Fullnesschange"

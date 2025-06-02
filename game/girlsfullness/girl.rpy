@@ -105,6 +105,29 @@ label girl:
     if mindy_fullstage > 20 and sevent == 1:
         $ mindy_fullstage = 20
 
+    if farida_fullness > farida_fullmax:
+        $ farida_fullness = farida_fullmax
+    $ farida_fullnessoz = int(farida_fullness*0.034)
+    $ farida_fullstage =int(farida_fullness/farida_minfullness)
+    if farida_fullstage <= 0:
+        $ farida_fullstage = 1
+    if farida_fullstage > 10 and sevent == 0:
+        $ farida_fullstage = 10
+    if farida_fullstage > 20 and sevent == 1:
+        $ farida_fullstage = 20
+
+
+    if aurora_fullness > aurora_fullmax:
+        $ aurora_fullness = aurora_fullmax
+    $ aurora_fullnessoz = int(aurora_fullness*0.034)
+    $ aurora_fullstage =int(aurora_fullness/aurora_minfullness)
+    if aurora_fullstage <= 0:
+        $ aurora_fullstage = 1
+    if aurora_fullstage > 10 and sevent == 0:
+        $ aurora_fullstage = 10
+    if aurora_fullstage > 20 and sevent == 1:
+        $ aurora_fullstage = 20
+
 
     return
 

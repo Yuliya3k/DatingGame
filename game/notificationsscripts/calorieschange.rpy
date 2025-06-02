@@ -96,5 +96,65 @@ label calorieschange:
             $ notify_success("[calorieschange]")  
 
 
+    if nigirlimage == "nifarida":
+        if farida_calories + calorieschange < 0:
+            $ calorieschange = farida_calories
+            $ calories = 0
+        else:
+            $ farida_calories += calorieschange
+
+        if calorieschange > 0:
+            $ niimage = "calories"    
+            $ notify_success("+[calorieschange]")
+        else:
+            $ niimage = "calories"
+            $ notify_success("[calorieschange]") 
+
+    if nigirlimage == "nialexa":
+        if alexa_calories + calorieschange < 0:
+            $ calorieschange = alexa_calories
+            $ calories = 0
+        else:
+            $ alexa_calories += calorieschange
+
+        if calorieschange > 0:
+            $ niimage = "calories"    
+            $ notify_success("+[calorieschange]")
+        else:
+            $ niimage = "calories"
+            $ notify_success("[calorieschange]") 
+
+
+    if nigirlimage == "niaurora":
+        if aurora_calories + calorieschange < 0:
+            $ calorieschange = aurora_calories
+            $ calories = 0
+        else:
+            $ aurora_calories += calorieschange
+
+        if calorieschange > 0:
+            $ niimage = "calories"    
+            $ notify_success("+[calorieschange]")
+        else:
+            $ niimage = "calories"
+            $ notify_success("[calorieschange]") 
+
+
+    if nigirlimage == "nikris":
+        if kris_calories + calorieschange < 0:
+            $ calorieschange = kris_calories
+            $ calories = 0
+        else:
+            $ kris_calories += calorieschange
+
+        if calorieschange > 0:
+            $ niimage = "calories"    
+            $ notify_success("+[calorieschange]")
+        else:
+            $ niimage = "calories"
+            $ notify_success("[calorieschange]") 
+
+
+    
 
     return

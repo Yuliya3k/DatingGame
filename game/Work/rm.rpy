@@ -7,6 +7,9 @@ label rm:
     call closescreens
     play music "audio/rmkitchen.mp3" volume 0.3
     
+
+    
+
     $ myrandom = renpy.random.randint(1,3)
     if margofirsttime == 0:
         $ position = "kitchen"
@@ -211,7 +214,7 @@ label rm:
             call sceneimg 
             player "Thank you, Margo. I'll do my best."
 
-        jump cook 
+        # jump cook 
 
 
     # next day no communication
@@ -310,7 +313,11 @@ label rm:
             $ position = "margormexplaining"
             call sceneimg
             Margo "Let's focus on your kitchen duties, then. Just remember, we're a team, and teamwork is crucial to our success."
-        jump cook 
+        
+    if ava_attitude >= 50 and workreputation >= 50:
+        call restaurantbeachdaytalk
+
+    jump cook 
 
 jump rm
     # worked a shift

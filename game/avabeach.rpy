@@ -342,6 +342,202 @@ label avabeach:
                                 $ position = "beachavacloselisten"
                                 call sceneimg
                                 player "That's quite the journey. It's great to meet someone who's so dedicated to their passion and the safety of others."
+                        
+                        "Ask her if she agree to a beach cafe days" if rbtok == 1 and avarbtok < 1:
+
+                            if avabossauth == 0:
+                                $ avabossauth = 1
+                                $ myrandom = renpy.random.randint(1,3)
+
+                                # ————————————————————————
+                                # Ava will ask permission from her boss (3×, 4 replicas each)
+                                # ————————————————————————
+                                if myrandom == 1:
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "Ava, our chef wants to run a tiny pop-up café on the weekdays—would that fly down here?"
+                                    $ position = "beachavacloseexplaining"
+                                    call sceneimg
+                                    Ava "I’m into the idea, but I’ll need the head lifeguard’s sign-off. Beach rules are strict."
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "Totally get it. Any chance you could bring it up after your shift?"
+                                    $ position = "beachavacloseexplaining"
+                                    call sceneimg
+                                    Ava "Count on me. I’ll hunt him down before sunset and text you the verdict."
+
+                                if myrandom == 2:
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "Quick thought—weekday beach café, small footprint, lots of happy sunbathers."
+                                    $ position = "beachavacloseexplaining"
+                                    call sceneimg
+                                    Ava "Sounds refreshing! Let me clear it with my supervisor first—we need to keep emergency lanes open."
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "Makes sense. Let me know what they say and I’ll get the permits rolling."
+                                    $ position = "beachavacloseexplaining"
+                                    call sceneimg
+                                    Ava "Will do. I’m meeting her for a patrol debrief anyway."
+
+                                if myrandom == 3:
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "Could we serve cold drinks and snacks down by the south jetty on weekdays?"
+                                    $ position = "beachavacloseexplaining"
+                                    call sceneimg
+                                    Ava "Love it in theory, but protocol first—I’ll pitch it to the beach manager during lunch break."
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "Appreciate you running interference!"
+                                    $ position = "beachavacloseexplaining"
+                                    call sceneimg
+                                    Ava "Hey, anything for good coffee on duty."
+
+                            if avabossauth == 1:
+                                $ myrandom = renpy.random.randint(1,3)
+
+                                # ————————————————————————
+                                # Ava hasn’t spoken to her boss yet (3×, 3 replicas each)
+                                # ————————————————————————
+                                if myrandom == 1:
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "Any luck tracking down your supervisor?"
+                                    $ position = "beachavacloseexplaining"
+                                    call sceneimg
+                                    Ava "Not yet—the rip-current briefing ran long. I’m grabbing him first thing tomorrow."
+
+                                if myrandom == 2:
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "How did the café talk go?"
+                                    $ position = "beachavacloseexplaining"
+                                    call sceneimg
+                                    Ava "Didn’t get the chance—rescues kept us slammed. It’s on my to-do list for the morning."
+
+                                if myrandom == 3:
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "Just checking in on the beach-café approval."
+                                    $ position = "beachavacloseexplaining"
+                                    call sceneimg
+                                    Ava "My boss ducked out early for a meeting downtown. I’ll corner him at roll-call at dawn."
+
+                            if avabossauth == 2:
+                                $ avarbtok = 1
+                                $ myrandom = renpy.random.randint(1,3)
+
+                                # ————————————————————————
+                                # Boss gave permission – Ava agrees (3×, 5 replicas each)
+                                # ————————————————————————
+                                if myrandom == 1:
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "So… verdict?"
+                                    $ position = "beachavacloseexplaining"
+                                    call sceneimg
+                                    Ava "Green light! My boss loves community vibes and okayed weekdays 08:00-16:00."
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "Fantastic—we’ll keep the path clear and pack up before patrol."
+                                    $ position = "beachavacloseexplaining"
+                                    call sceneimg
+                                    Ava "Perfect. He also wants trash bins nearby, so bring extra liners."
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "Done. Thanks for championing this!"
+
+                                if myrandom == 2:
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "Any news from HQ?"
+                                    $ position = "beachavacloseexplaining"
+                                    call sceneimg
+                                    Ava "Approved! As long as we don’t block the rescue-sled lane."
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "We can set tables back by the dunes—no obstruction at all."
+                                    $ position = "beachavacloseexplaining"
+                                    call sceneimg
+                                    Ava "Exactly what I told him. He’s even letting us borrow the storage shed for gear."
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "Sweet. First round of smoothies is on me."
+
+                                if myrandom == 3:
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "Did the big boss bite?"
+                                    $ position = "beachavacloseexplaining"
+                                    call sceneimg
+                                    Ava "Yup—full thumbs-up! We just need a daily clean-up log."
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "Easy—you’ll have a spotless shoreline."
+                                    $ position = "beachavacloseexplaining"
+                                    call sceneimg
+                                    Ava "He also suggested we put the menu on the notice board—free promo."
+                                    $ position = "beachavacloselisten"
+                                    call sceneimg
+                                    player "Brilliant idea. Thanks for pushing this through!"
+                        
+                        "I want to leave you the equipment for the cafe" if rbtok == 3:
+                            $ rbtok = 4
+                            $ myrandom = renpy.random.randint(1,3)
+                            
+                            if myrandom == 1:
+                                $ position = "beachavacloselisten"
+                                call sceneimg
+                                player "Ava, can I stash the café gear in your lifeguard building? It’s closest to the set-up spot."
+                                $ position = "beachavacloseexplaining"
+                                call sceneimg
+                                Ava "Absolutely. I’ve got a dry corner by the first-aid crates—no one touches it but me."
+                                $ position = "beachavaclosetalk"
+                                call sceneimg
+                                player "Perfect. I’ll drop the cooler and grill after shift."
+                                $ position = "beachavacloseexplaining"
+                                call sceneimg
+                                Ava "Leave the keys with me; they’ll be safer than in the restaurant storeroom."
+
+                            if myrandom == 2:
+                                $ position = "beachavacloselisten"
+                                call sceneimg
+                                player "Mind if the pop-up tent and tables live in your tower overnight?"
+                                $ position = "beachavacloseexplaining"
+                                call sceneimg
+                                Ava "Not at all. I’ve got room behind the rescue boards and I lock up after dusk."
+                                $ position = "beachavaclosetalk"
+                                call sceneimg
+                                player "Great—we’ll wheel everything over on the cart."
+                                $ position = "beachavacloseexplaining"
+                                call sceneimg
+                                Ava "I’ll keep an eye out; nothing disappears on my watch."
+
+                            if myrandom == 3:
+                                $ position = "beachavacloselisten"
+                                call sceneimg
+                                player "Can I park the signage and battery blender in your shack till we launch?"
+                                $ position = "beachavacloseexplaining"
+                                call sceneimg
+                                Ava "Sure thing. The storage locker’s empty—I’ll padlock it and keep the combo."
+                                $ position = "beachavaclosetalk"
+                                call sceneimg
+                                player "Thanks! Saves us hauling it back and forth."
+                                $ position = "beachavacloseexplaining"
+                                call sceneimg
+                                Ava "Happy to help. Your gear’s safe with the lifeguards."
+
+                        "Start the beach cafe event" if rbtok == 4 and calendar.Hours < 19 and calendar.Hours > 8 and calendar.WeekDay != "Sat" and calendar.WeekDay != "Sun":
+                            if beachcafeevents > 0:
+                                $ beachcafeevents -= 1
+                                jump beachcafe
+                            else:
+                                "You, due to the beach regulations, can have it only 4 times a month, wait for the next month"
+                            
+
+
+
                         "Nothing for now":
                             jump culinarychoices
                     jump avabeachloop

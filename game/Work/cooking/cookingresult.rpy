@@ -31,6 +31,8 @@ label cookingresult:
         $ cookingstatus = ""
 
 
+        
+
     else:
         $ cookingstatus = "You have failed"
         with slowdissolve
@@ -67,5 +69,9 @@ label cookingresult:
             
 
         pause
-        
+    
+
+    
+
+
     jump cook
