@@ -21,6 +21,8 @@
 
     init python:
         import os, store
+        import random
+        import math
 
         # ------------------------------------------------------------------
         # 1) discover thumbnails in game/videos/*.png
@@ -65,9 +67,7 @@
             renpy.hide_screen("gallery")
             renpy.invoke_in_new_context(renpy.movie_cutscene, entry["video"])
             renpy.show_screen("gallery")
-            import random
-
-            import math
+            
 
             _music_paused = False
 

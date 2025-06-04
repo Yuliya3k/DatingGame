@@ -2,7 +2,7 @@
     "expansion": false,
     "google_play_key": null,
     "google_play_salt": null,
-    "heap_size": "3",
+    "heap_size": "4",
     "icon_name": "Dating_game",
     "include_pil": false,
     "include_sqlite": false,
