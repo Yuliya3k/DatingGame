@@ -26,7 +26,8 @@ label avabeach:
                 call sceneimg
                 label avabeachloop:
                     menu:
-                        "Say hello":
+                        "Say hello" if avasayhellotoday == 0:
+                            $ avasayhellotoday = 1
                             $ myrandom = renpy.random.randint(1,3)
                             if avahello == 1:
                                 if myrandom == 1:

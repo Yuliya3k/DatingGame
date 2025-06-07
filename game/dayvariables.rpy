@@ -28,6 +28,7 @@ label dayvariables:
     else:
         pass
     $ sallyhellotoday = 0
+    $ avasayhellotoday = 0
     $ sallyhowstheday = 0
     $ lin_cafetoday = 0
 

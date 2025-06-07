@@ -113,7 +113,6 @@ label hayoonfirstmeet:
 
                 player "I'll keep that in mind, HaYoon. Thanks for all you do."
 
-
         "How did she decide to become a doctor?" if hayoondocq == 0:
             call hayooncantresisttowatch
             $ myrandom = renpy.random.randint(1,3)
@@ -201,8 +200,6 @@ label hayoonfirstmeet:
 
                 HaYoon "I'm lucky to be here. And who knows, maybe one day, I'll be able to help you too, even if it's just with some medical advice."
 
-
-
         "What do you do except your work?" if hayoonsparetime == 0:
             call hayooncantresisttowatch
             $ myrandom = renpy.random.randint(1,3)
@@ -286,8 +283,6 @@ label hayoonfirstmeet:
                 $ position = "barhayoonexplaining"
                 call sceneimg
                 HaYoon "I couldn't agree more. How about you? What do you like to do in your free time?"
-
-
 
         "Why are you visiting the bar?" if hayoonbarq == 0:
             call hayooncantresisttowatch

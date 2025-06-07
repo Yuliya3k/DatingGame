@@ -1025,7 +1025,8 @@ label sallyfirsttime:
 
     label morningsallytalk:
         menu:
-            "Say hello" if sallyhellotoday == 0:         
+            "Say hello" if sallyhellotoday == 0:  
+                $ sallyhellotoday = 1       
                 if sallylovesfood == 0:
                     $ position = "parksallyseaviewmorninglistening"
                     call sceneimg

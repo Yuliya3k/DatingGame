@@ -92,6 +92,8 @@ label ava:
 
     default avashark = 0
 
+    default avasayhellotoday = 0
+
     default avasurfingfirsttime = False
     default beachswim = False
     default avasurfing = False
