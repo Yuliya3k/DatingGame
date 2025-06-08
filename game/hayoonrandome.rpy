@@ -82,6 +82,63 @@ label hayoonrandome:
 
             label hayoonrandomencounterdialogueloop:
                 menu:
+                    "Give her some food" if hayoon_randomgivefood == False and hayoon_attitude > 10 and (water_bottle >= 1 or iced_tea >= 1 or smoothie_drink >= 1):
+                        $ hayoon_randomgivefood = True
+                        $ position = "randomencounterhayooncloselisten"
+                        call sceneimg
+                        player "I brought a few snacks along. Want something while you read?"
+                        $ position = "randomencounterhayoonclosetalk"
+                        call sceneimg
+                        HaYoon "That's thoughtful. I'd love a quick bite."
+                        menu:
+                            "Water" if water_bottle >= 1:
+                                $ position = "randomencounterhayoonclosetalk"
+                                call sceneimg
+                                player "Here, have a bottle of water."
+                                $ water_bottle -= 1
+                                $ fullnesschange = 250
+                                $ nigirlimage = "nihayoon"
+                                call fullnesschange
+                                pause 0.5
+                                $ calorieschange = 0
+                                $ nigirlimage = "nihayoon"
+                                call calorieschange
+                                $ position = "randomencounterhayooncloselisten"
+                                call sceneimg
+                                HaYoon "Thanks, that hits the spot."
+                            "Iced Tea" if iced_tea >= 1:
+                                $ position = "randomencounterhayoonclosetalk"
+                                call sceneimg
+                                player "Maybe some iced tea?"
+                                $ iced_tea -= 1
+                                $ fullnesschange = 300
+                                $ nigirlimage = "nihayoon"
+                                call fullnesschange
+                                pause 0.5
+                                $ calorieschange = 100
+                                $ nigirlimage = "nihayoon"
+                                call calorieschange
+                                $ position = "randomencounterhayooncloselisten"
+                                call sceneimg
+                                HaYoon "Nice and refreshing, thank you."
+                            "Smoothie" if smoothie_drink >= 1:
+                                $ position = "randomencounterhayoonclosetalk"
+                                call sceneimg
+                                player "How about a smoothie?"
+                                $ smoothie_drink -= 1
+                                $ fullnesschange = 400
+                                $ nigirlimage = "nihayoon"
+                                call fullnesschange
+                                pause 0.5
+                                $ calorieschange = 200
+                                $ nigirlimage = "nihayoon"
+                                call calorieschange
+                                $ position = "randomencounterhayooncloselisten"
+                                call sceneimg
+                                HaYoon "Delicious! Thanks."
+                        $ reputationchange = 3
+                        $ nigirlimage = "nihayoon"
+                        call reputationchange
                     "Ask if she usually reads here?" if hayoon_randomreadhere == False:
                         $ hayoon_randomreadhere = True
                         $ myrandom = renpy.random.randint(1,3)
@@ -203,178 +260,298 @@ label hayoonrandome:
                             call sceneimg 
 
                             HaYoon "I believe in treating both the mind and body. These books offer me insights and techniques that I can apply both personally and professionally."
-                    "Ask her what other interests she has?" if hayoon_randomotherinterests = False:
-                        $ hayoon_randomotherinterests = True
+                    "Ask her what other interests she has?":
+                        
                         $ myrandom = renpy.random.randint(1,3)
                         if myrandom == 1:
-                            "She is telling here that she enjoys psychology, biology and math, especially she is thrilled with current AI state, make it in 5 replicas"
+                            $ position = "randomencounterhayooncloselisten"
+                            call sceneimg
+
+                            player "Aside from reading, what other subjects fascinate you, Ha-Yoon?"
+                            $ position = "randomencounterhayoonclosetalk"
+                            call sceneimg
+
+                            HaYoon "I have a deep love for psychology, biology, and mathematics. Right now I'm especially excited about how fast artificial intelligence is advancing."
+                            $ position = "randomencounterhayooncloselisten"
+                            call sceneimg
+
+                            player "AI is moving quickly indeed. Do you keep up with the latest developments?"
+                            $ position = "randomencounterhayoonclosetalk"
+                            call sceneimg
+
+                            HaYoon "Whenever I can. The intersection of tech and medicine is fascinating. It feels like every month there's some new breakthrough."
                         if myrandom == 2:
-                            "She is telling here that she enjoys psychology, biology and math, especially she is thrilled with current AI state, make it in 5 replicas"
+                            $ position = "randomencounterhayooncloselisten"
+                            call sceneimg
+
+                            player "Do you have any hobbies outside of medicine and reading?"
+                            $ position = "randomencounterhayoonclosetalk"
+                            call sceneimg
+
+                            HaYoon "Definitely. I'm quite interested in psychology and biology. Lately I'm captivated by how AI might change our daily routines."
+                            $ position = "randomencounterhayooncloselisten"
+                            call sceneimg
+
+                            player "That does sound intriguing."
+                            $ position = "randomencounterhayoonclosetalk"
+                            call sceneimg
+
+                            HaYoon "It is. Math ties it all together for me—it helps explain the patterns behind everything." 
                         if myrandom == 3:
-                            "She is telling here that she enjoys psychology, biology and math, especially she is thrilled with current AI state, make it in 5 replicas"
+                            $ position = "randomencounterhayooncloselisten"
+                            call sceneimg
+
+                            player "I'd love to know more about your interests when you're not at the hospital."
+                            $ position = "randomencounterhayoonclosetalk"
+                            call sceneimg
+
+                            HaYoon "Well, I'm fascinated by psychology and biology, and I'm a bit of a math nerd. Recently I've been following the developments in AI quite closely." 
+                            $ position = "randomencounterhayooncloselisten"
+                            call sceneimg
+
+                            player "No wonder you're always so knowledgeable. AI does open many doors."
+                            $ position = "randomencounterhayoonclosetalk"
+                            call sceneimg
+
+                            HaYoon "Exactly. It's thrilling to imagine how these fields will converge in the near future."
+                        label hayoonotherintertestsloop:
                         menu:
                             "Talk about psychology" if hayoon_psychology == False:
                                 $ hayoon_psychology = True
                                 $ myrandom = renpy.random.randint(1,3)
                                 if myrandom == 1:
-                                    "Ha-Yoon tells to the player how important is psychology in her work with different kind of patients, like metabolic patients (diabetes type 2 and obesity) and cancer patients. make it at least in 5 replicas"
+                                    $ position = "randomencounterhayoonclosetalk"
+                                    call sceneimg
+
+                                    HaYoon "Psychology is crucial in my work. With metabolic patients or those facing cancer, understanding their mindset can make treatments far more effective."
+                                    $ position = "randomencounterhayooncloselisten"
+                                    call sceneimg
+
+                                    player "So you tailor your approach depending on how they respond emotionally?"
+                                    $ position = "randomencounterhayoonclosetalk"
+                                    call sceneimg
+
+                                    HaYoon "Exactly. It guides how I speak with them and what support I offer."
                                 if myrandom == 2:
-                                    "Ha-Yoon tells to the player how important is psychology in her work with different kind of patients, like metabolic patients (diabetes type 2 and obesity) and cancer patients. make it at least in 5 replicas"
+                                    $ position = "randomencounterhayoonclosetalk"
+                                    call sceneimg
+
+                                    HaYoon "Mental state plays a huge role for my diabetic and obese patients. Encouragement and empathy help them adopt healthier habits."
+                                    $ position = "randomencounterhayooncloselisten"
+                                    call sceneimg
+
+                                    player "That makes sense. A little motivation can go a long way."
+                                    $ position = "randomencounterhayoonclosetalk"
+                                    call sceneimg
+
+                                    HaYoon "Right, and with cancer cases it's often even more important because stress can affect recovery." 
                                 if myrandom == 3:
-                                    "Ha-Yoon tells to the player how important is psychology in her work with different kind of patients, like metabolic patients (diabetes type 2 and obesity) and cancer patients. make it at least in 5 replicas"
-                                
+                                    $ position = "randomencounterhayoonclosetalk"
+                                    call sceneimg
+
+                                    HaYoon "Over the years I've seen how understanding psychology helps connect with patients, especially those facing long-term illnesses." 
+                                    $ position = "randomencounterhayooncloselisten"
+                                    call sceneimg
+
+                                    player "It's impressive how you integrate that knowledge." 
+                                    $ position = "randomencounterhayoonclosetalk"
+                                    call sceneimg
+
+                                    HaYoon "Thank you. It definitely improves outcomes." 
+
                                 menu:
                                     "Tell her your aspects of using psychology" if player_customerfirst == True:
                                         $ myrandom = renpy.random.randint(1,3)
                                         if myrandom == 1:
-                                            "Player tells her that his primary goal is a client satisfaction, it is not the same as in medicine, because in medicine client should get something to get better and it is not always satisfactory, so it makes doctor's work much harder. . make it at least in 5 replicas"
-                                        if myrandom == 2:
-                                            "Player tells her that his primary goal is a client satisfaction, it is not the same as in medicine, because in medicine client should get something to get better and it is not always satisfactory, so it makes doctor's work much harder. . make it at least in 5 replicas"
-                                        if myrandom == 3:
-                                            "Player tells her that his primary goal is a client satisfaction, it is not the same as in medicine, because in medicine client should get something to get better and it is not always satisfactory, so it makes doctor's work much harder. Ha-Yoon shares his opinion . make it at least in 5 replicas"
+                                            player "In my work customer satisfaction is everything. Unlike medicine where treatment can be uncomfortable, I focus on making diners happy." 
+                                            $ position = "randomencounterhayoonclosetalk"
+                                            call sceneimg
+
+                                            HaYoon "I imagine that contrast can be challenging." 
+                                            $ position = "randomencounterhayooncloselisten"
+                                            call sceneimg
+
+                                            player "It is, but it also pushes me to understand people better." 
+                                            $ position = "randomencounterhayoonclosetalk"
+                                            call sceneimg
+
+                                            HaYoon "That perspective would certainly help in any field." 
+                                        if myrandom == 2 or myrandom == 3:
+                                            player "Satisfying customers is my priority. Sometimes it's easier than what you face in medicine, since diners usually leave happy." 
+                                            $ position = "randomencounterhayoonclosetalk"
+                                            call sceneimg
+
+                                            HaYoon "Still, it sounds like a lot of pressure." 
+                                            $ position = "randomencounterhayooncloselisten"
+                                            call sceneimg
+
+                                            player "It can be, but good feedback makes it worthwhile." 
 
                                         $ reputationchange = 10
                                         $ nigirlimage = "nihayoon"
                                         call reputationchange
-                                        
-                                    "Tell her your aspects of using psychology" if player_socialaverage == True:  
+                                    "Tell her your aspects of using psychology" if player_socialaverage == True:
                                         $ myrandom = renpy.random.randint(1,3)
                                         if myrandom == 1:
-                                            "Player tells her that he is not good at public relations, so he prefere to stay in the kitchen and cook ,this is what he does best. make it at least in 5 replicas"
-                                        if myrandom == 2:
-                                            "Player tells her that his primary goal is a client satisfaction, it is not the same as in medicine, because in medicine client should get something to get better and it is not always satisfactory, so it makes doctor's work much harder. . make it at least in 5 replicas"
-                                        if myrandom == 3:
-                                            "Player tells her that his primary goal is a client satisfaction, it is not the same as in medicine, because in medicine client should get something to get better and it is not always satisfactory, so it makes doctor's work much harder. Ha-Yoon supports him, saying tht it is a hard work to communicate . make it at least in 5 replicas"
+                                            player "Honestly I'm better off in the kitchen than chatting with customers. Cooking is what I do best." 
+                                            $ position = "randomencounterhayoonclosetalk"
+                                            call sceneimg
+
+                                            HaYoon "Sticking to strengths is smart." 
+                                            $ position = "randomencounterhayooncloselisten"
+                                            call sceneimg
+
+                                            player "Exactly. I let others handle most of the PR." 
+                                        if myrandom == 2 or myrandom == 3:
+                                            player "Customer satisfaction is still my goal, though medicine seems tougher since patients might resist what's good for them." 
+                                            $ position = "randomencounterhayoonclosetalk"
+                                            call sceneimg
+
+                                            HaYoon "True, sometimes we have to deliver hard news." 
 
                                         $ reputationchange = 5
                                         $ nigirlimage = "nihayoon"
                                         call reputationchange
-
                                     "Tell her your aspects of using psychology" if player_asocial == True:
                                         $ myrandom = renpy.random.randint(1,3)
-                                        if myrandom == 1:
-                                            "Player tells her that he does not like to talk to clients, he is more focused on the cooking and it is better for someone else to deal with the clients and his job is to be best cook so there would be less complaints. make it at least in 5 replicas"
-                                        if myrandom == 2:
-                                            "Player tells her that he does not like to talk to clients, he is more focused on the cooking and it is better for someone else to deal with the clients and his job is to be best cook so there would be less complaints. make it at least in 5 replicas"
-                                        if myrandom == 3:
-                                            "Player tells her that he does not like to talk to clients, he is more focused on the cooking and it is better for someone else to deal with the clients and his job is to be best cook so there would be less complaints. make it at least in 5 replicas"
+                                        if myrandom == 1 or myrandom == 2 or myrandom == 3:
+                                            player "I tend to avoid talking to customers altogether and focus purely on cooking. If the food is great, complaints are fewer." 
+                                            $ position = "randomencounterhayoonclosetalk"
+                                            call sceneimg
+
+                                            HaYoon "I understand. Everyone plays to their strengths." 
 
                                         $ reputationchange = 3
                                         $ nigirlimage = "nihayoon"
                                         call reputationchange
-                                    
                                     "!Lie! Tell her what you think she wants to hear from you about psychology" if player_asocial == True or player_socialaverage == True:
-                                        $ lied_to_hayoon_margo_knowsthetruth = 1                                        
+                                        $ lied_to_hayoon_margo_knowsthetruth = 1
                                         $ myrandom = renpy.random.randint(1,3)
-                                        if myrandom == 1:
-                                            "Player tells her that his work is a very complicated too and he has to deal with many kinds of problems, like talking with his boss and clients and that he need a lot of social skills to do it. make it at least in 5 replicas"
-                                        if myrandom == 2:
-                                            "Player tells her that his work is a very complicated too and he has to deal with many kinds of problems, like talking with his boss and clients and that he need a lot of social skills to do it. make it at least in 5 replicas"
-                                        if myrandom == 3:
-                                            "Player tells her that his work is a very complicated too and he has to deal with many kinds of problems, like talking with his boss and clients and that he need a lot of social skills to do it. Ha-Yoon is polite, but nothing more. Make it at least in 5 replicas"
+                                        if myrandom == 1 or myrandom == 2 or myrandom == 3:
+                                            player "My job involves constant conversation with clients and management, so I rely heavily on social skills." 
+                                            $ position = "randomencounterhayoonclosetalk"
+                                            call sceneimg
+
+                                            HaYoon "That's good to hear." 
+
                                         $ reputationchange = -1
                                         $ nigirlimage = "nihayoon"
                                         call reputationchange
-                                        
+                                jump hayoonotherintertestsloop
                             "Talk about biology" if hayoon_biology == False:
                                 $ hayoon_biology = True
                                 $ myrandom = renpy.random.randint(1,3)
-                                if myrandom == 1:
-                                    "Ha-Yoon tells the player how important is to know bilogical and biochemical background of all the processes in the body to understand current guidelines and also to think out of the box, in areas that are not described in guideline. make it at least in 5 replicas"
-                                if myrandom == 2:
-                                    "Ha-Yoon tells the player how important is to know bilogical and biochemical background of all the processes in the body to understand current guidelines and also to think out of the box, in areas that are not described in guideline. make it at least in 5 replicas"
-                                if myrandom == 3:
-                                    "Ha-Yoon tells the player how important is to know bilogical and biochemical background of all the processes in the body to understand current guidelines and also to think out of the box, in areas that are not described in guideline. make it at least in 5 replicas"
+                                if myrandom == 1 or myrandom == 2 or myrandom == 3:
+                                    $ position = "randomencounterhayoonclosetalk"
+                                    call sceneimg
+
+                                    HaYoon "Knowing the biochemical background helps me understand guidelines and also improvise when cases don't fit neatly." 
+                                    $ position = "randomencounterhayooncloselisten"
+                                    call sceneimg
+
+                                    player "So it gives you confidence to act even without direct instructions?" 
+                                    $ position = "randomencounterhayoonclosetalk"
+                                    call sceneimg
+
+                                    HaYoon "Exactly. A strong foundation lets me think outside the box." 
                                 menu:
                                     "Tell her she is right":
-                                        if myrandom == 1:
-                                            "Player just agrees with her, trying to hide that he understoon almost nothing. make it at least in 5 replicas"
-                                        if myrandom == 2:
-                                            "Player just agrees with her, trying to hide that he understoon almost nothing. make it at least in 5 replicas"
-                                        if myrandom == 3:
-                                            "Player just agrees with her, trying to hide that he understoon almost nothing. make it at least in 5 replicas"
+                                        if myrandom == 1 or myrandom == 2 or myrandom == 3:
+                                            player "You're absolutely right." 
+                                            $ position = "randomencounterhayoonclosetalk"
+                                            call sceneimg
+
+                                            HaYoon "I'm glad you agree." 
 
                                         $ reputationchange = 3
                                         $ nigirlimage = "nihayoon"
                                         call reputationchange
                                     "Ask her if she thinks out of the box, then she does not follow the standards?":
-                                        if myrandom == 1:
-                                            "player asks her if she does not follow standards with caution, Ha-Yoon appreciate it and understands what's lying beneath the question and answers that there are quite a lot of thing in medcicne that are not described in guidelines, so you have to improvise (act according to lower evidence) to make a solution for the problem. make it at least in 5 replicas"
-                                        if myrandom == 2:
-                                            "player asks her if she does not follow standards with caution, Ha-Yoon appreciate it and understands what's lying beneath the question and answers that there are quite a lot of thing in medcicne that are not described in guidelines, so you have to improvise (act according to lower evidence) to make a solution for the problem. make it at least in 5 replicas"
-                                        if myrandom == 3:
-                                            "player asks her if she does not follow standards with caution, Ha-Yoon appreciate it and understands what's lying beneath the question and answers that there are quite a lot of thing in medcicne that are not described in guidelines, so you have to improvise (act according to lower evidence) to make a solution for the problem. make it at least in 5 replicas"
+                                        if myrandom == 1 or myrandom == 2 or myrandom == 3:
+                                            player "If you improvise, does that mean ignoring standards sometimes?" 
+                                            $ position = "randomencounterhayoonclosetalk"
+                                            call sceneimg
+
+                                            HaYoon "Not at all. Guidelines cover common cases, but unique situations require judgment based on everything we know." 
+
                                         $ reputationchange = 10
                                         $ nigirlimage = "nihayoon"
                                         call reputationchange
                                     "Ask her if it is punishable to treat patients non standard way?":
-                                        if myrandom == 1:
-                                            "Player asks it, but Ha-Yoon sees that he does this in a slight negative way, so she answers formally that doctors indeed take all the responsibility for the treatmen t if something goes wrong and knowing what she knows helps her to avoid such situations. And yes she can act as she sees best fpr the patient. The problem usually is that doctors would like to follw the guidelines, but these guidelines cover only most frequent things. But they do not cover full treatment logic, so in most cases doctors have to use all their knowledge and experience to make proper decision. make it at least in 5 replicas"
-                                        if myrandom == 2:
-                                            "Player asks it, but Ha-Yoon sees that he does this in a slight negative way, so she answers formally that doctors indeed take all the responsibility for the treatmen t if something goes wrong and knowing what she knows helps her to avoid such situations. And yes she can act as she sees best fpr the patient. The problem usually is that doctors would like to follw the guidelines, but these guidelines cover only most frequent things. But they do not cover full treatment logic, so in most cases doctors have to use all their knowledge and experience to make proper decision. make it at least in 5 replicas"
-                                        if myrandom == 3:
-                                            "Player asks it, but Ha-Yoon sees that he does this in a slight negative way, so she answers formally that doctors indeed take all the responsibility for the treatmen t if something goes wrong and knowing what she knows helps her to avoid such situations. And yes she can act as she sees best fpr the patient. The problem usually is that doctors would like to follw the guidelines, but these guidelines cover only most frequent things. But they do not cover full treatment logic, so in most cases doctors have to use all their knowledge and experience to make proper decision. make it at least in 5 replicas"
+                                        if myrandom == 1 or myrandom == 2 or myrandom == 3:
+                                            player "Is there a risk of punishment if you treat patients differently from the guidelines?" 
+                                            $ position = "randomencounterhayoonclosetalk"
+                                            call sceneimg
+
+                                            HaYoon "Doctors take responsibility for every decision. The rules can't cover everything, so we rely on expertise." 
+
                                         $ reputationchange = 1
                                         $ nigirlimage = "nihayoon"
                                         call reputationchange
                                     "Tell her you think that doctors should act according to the standards":
-                                        if myrandom == 1:
-                                            "In this option, player afforded himself to tell what doctors and Ha-Yoon in particular should do and she in her doctor calm manner will set him in place. she should say something like we doctors have a lot of associacions and supervision and law that may tell us what we are doing wrong. And eventhey may not have enough competence in some cases vs acting doctor with his/ her patient. So she just tells him this idea and stops this topic. make it at least in 5 replicas"
-                                        if myrandom == 2:
-                                            "In this option, player afforded himself to tell what doctors and Ha-Yoon in particular should do and she in her doctor calm manner will set him in place. she should say something like we doctors have a lot of associacions and supervision and law that may tell us what we are doing wrong. And eventhey may not have enough competence in some cases vs acting doctor with his/ her patient. So she just tells him this idea and stops this topic. make it at least in 5 replicas"
-                                        if myrandom == 3:
-                                            "In this option, player afforded himself to tell what doctors and Ha-Yoon in particular should do and she in her doctor calm manner will set him in place. she should say something like we doctors have a lot of associacions and supervision and law that may tell us what we are doing wrong. And eventhey may not have enough competence in some cases vs acting doctor with his/ her patient. So she just tells him this idea and stops this topic. make it at least in 5 replicas"
+                                        if myrandom == 1 or myrandom == 2 or myrandom == 3:
+                                            player "I think doctors should always stick strictly to the guidelines." 
+                                            $ position = "randomencounterhayoonclosetalk"
+                                            call sceneimg
+
+                                            HaYoon "We are monitored closely already. Sometimes creativity is needed to truly help a patient." 
+
                                         $ reputationchange = -5
                                         $ nigirlimage = "nihayoon"
                                         call reputationchange
+                                jump hayoonotherintertestsloop
                             
                             "Talk about AI" if hayoon_ai == False:
                                 $ hayoon_ai = True
                                 $ myrandom = renpy.random.randint(1,3)
-                                if myrandom == 1:
-                                    "Ha-Yoon tells to the player how she sees the future of AI, it could help fill all the forms faster, find best solutions for treatment, make appointments for the patients according to the plan and many more automated things. Buy it is not all. AI can also work as an AI agent do 90% of work for the doctor in initial communiaction and summarizing the request and of course, AI may treat patients or at least help them to find best ways to help while no doctor is available.  make it at least in 5 replicas"
-                                if myrandom == 2:
-                                    "Ha-Yoon tells to the player how she sees the future of AI, it could help fill all the forms faster, find best solutions for treatment, make appointments for the patients according to the plan and many more automated things. Buy it is not all. AI can also work as an AI agent do 90% of work for the doctor in initial communiaction and summarizing the request and of course, AI may treat patients or at least help them to find best ways to help while no doctor is available.  make it at least in 5 replicas"
-                                if myrandom == 3:
-                                    "Ha-Yoon tells to the player how she sees the future of AI, it could help fill all the forms faster, find best solutions for treatment, make appointments for the patients according to the plan and many more automated things. Buy it is not all. AI can also work as an AI agent do 90% of work for the doctor in initial communiaction and summarizing the request and of course, AI may treat patients or at least help them to find best ways to help while no doctor is available.  make it at least in 5 replicas"
+                                if myrandom == 1 or myrandom == 2 or myrandom == 3:
+                                    $ position = "randomencounterhayoonclosetalk"
+                                    call sceneimg
+
+                                    HaYoon "AI could streamline paperwork, suggest treatments, even handle early patient conversations. It's an exciting tool." 
+                                    $ position = "randomencounterhayooncloselisten"
+                                    call sceneimg
+
+                                    player "Do you think AI might replace doctors someday?" 
+                                    $ position = "randomencounterhayoonclosetalk"
+                                    call sceneimg
+
+                                    HaYoon "Possibly for routine care. There aren't enough doctors worldwide, so AI could fill gaps while we focus on complex cases." 
+                                    $ reputationchange = 10
+                                    $ nigirlimage = "nihayoon"
+                                    call reputationchange
                                 menu:
-                                    "So you think AI may replace the doctor?":
-                                        $ myrandom = renpy.random.randint(1,3)
-                                        if myrandom == 1:
-                                            "Ha-Yoon answers that in fact it can and we may be in a new era of suffecient medicine for all people. As for the doctors, we have a vast shortage in them now 11-47 millions in different estimations, we will be in the AI industry, in quality control etc. We have a lot to improve in healthcare today and our routine keeps us from developing and making lives better for all people.  make it at least in 5 replicas"
-                                        if myrandom == 2:
-                                            "Ha-Yoon answers that in fact it can and we may be in a new era of suffecient medicine for all people. As for the doctors, we have a vast shortage in them now 11-47 millions in different estimations, we will be in the AI industry, in quality control etc. We have a lot to improve in healthcare today and our routine keeps us from developing and making lives better for all people.  make it at least in 5 replicas"
-                                        if myrandom == 3:
-                                            "Ha-Yoon answers that in fact it can and we may be in a new era of suffecient medicine for all people. As for the doctors, we have a vast shortage in them now 11-47 millions in different estimations, we will be in the AI industry, in quality control etc. We have a lot to improve in healthcare today and our routine keeps us from developing and making lives better for all people.  make it at least in 5 replicas"
-                                        $ reputationchange = 10
-                                        $ nigirlimage = "nihayoon"
-                                        call reputationchange
                                     "Do you think we can trust AI the treatment?":
                                         $ myrandom = renpy.random.randint(1,3)
-                                        if myrandom == 1:
-                                            "Ha-Yoon tells the player that he is right and we can't fully trust AI, not because it is evil, but because it was teached on human database that contains errors and misinterpretations. So the key problem is in us. so the question in fact, can we trust us? And the answer is no, we should create a system, where we should be able to control, what is happening. Make it at least in 5 replicas"
-                                        if myrandom == 2:
-                                            "Ha-Yoon tells to the player how she sees the future of AI, it could help fill all the forms faster, find best solutions for treatment, make appointments for the patients according to the plan and many more automated things. Buy it is not all. AI can also work as an AI agent do 90% of work for the doctor in initial communiaction and summarizing the request and of course, AI may treat patients or at least help them to find best ways to help while no doctor is available.  make it at least in 5 replicas"
-                                        if myrandom == 3:
-                                            "Ha-Yoon tells to the player how she sees the future of AI, it could help fill all the forms faster, find best solutions for treatment, make appointments for the patients according to the plan and many more automated things. Buy it is not all. AI can also work as an AI agent do 90% of work for the doctor in initial communiaction and summarizing the request and of course, AI may treat patients or at least help them to find best ways to help while no doctor is available.  make it at least in 5 replicas"
+                                        if myrandom == 1 or myrandom == 2 or myrandom == 3:
+                                            player "Is it really safe to trust AI with treatment decisions?" 
+                                            $ position = "randomencounterhayoonclosetalk"
+                                            call sceneimg
+
+                                            HaYoon "It's only as good as the data we train it on. We need oversight, but it could become very reliable." 
+
                                         $ reputationchange = 5
                                         $ nigirlimage = "nihayoon"
                                         call reputationchange
                                     "I do not believe in AI, it is just a black box with random answers":
                                         $ myrandom = renpy.random.randint(1,3)
-                                        if myrandom == 1:
-                                            "Ha-Yoon tells the player that he probaly have no idea how AI works, but she will tell him, that it is model of mathematics probabilities, so it is built on the math, but it is some kind of word math for LMs and she was talking about all kind of AIs. So in fact we may hot always trace the logic in AI's, but now we already have reasoning models, so I think in nearest future we will be able to trust it even better than us and to know what chain of thoughts it used, better than actual doctors.  make it at least in 5 replicas"
-                                        if myrandom == 2:
-                                            "Ha-Yoon tells the player that he probaly have no idea how AI works, but she will tell him, that it is model of mathematics probabilities, so it is built on the math, but it is some kind of word math for LMs and she was talking about all kind of AIs. So in fact we may hot always trace the logic in AI's, but now we already have reasoning models, so I think in nearest future we will be able to trust it even better than us and to know what chain of thoughts it used, better than actual doctors.  make it at least in 5 replicas"
-                                        if myrandom == 3:
-                                            "Ha-Yoon tells the player that he probaly have no idea how AI works, but she will tell him, that it is model of mathematics probabilities, so it is built on the math, but it is some kind of word math for LMs and she was talking about all kind of AIs. So in fact we may hot always trace the logic in AI's, but now we already have reasoning models, so I think in nearest future we will be able to trust it even better than us and to know what chain of thoughts it used, better than actual doctors.  make it at least in 5 replicas"
+                                        if myrandom == 1 or myrandom == 2 or myrandom == 3:
+                                            player "I'm skeptical of AI—it feels like a black box producing random answers." 
+                                            $ position = "randomencounterhayoonclosetalk"
+                                            call sceneimg
+
+                                            HaYoon "It's actually built on mathematical probabilities. Soon we'll be able to trace its reasoning even better than we do with human doctors." 
+
                                         $ reputationchange = -1
                                         $ nigirlimage = "nihayoon"
                                         call reputationchange
-                                    
-                                    
                                 
+                                jump hayoonotherintertestsloop    
+
+                            "Nothing":
+                                jump hayoonrandomencounterdialogueloop        
                                 
+                        jump hayoonrandomencounterdialogueloop         
 
                     "I need to go":
                         $ myrandom = renpy.random.randint(1,3)

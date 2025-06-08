@@ -354,50 +354,125 @@ label hayoonfirstmeet:
                 HaYoon "That's very kind of you. I'll keep that in mind. Thanks."
 
         "Do you want a drink?":
-            call hayooncantresisttowatch
-            $ myrandom = renpy.random.randint(1,3)
-            if myrandom == 1:
-                $ position = "barhayoonlecturing"
-                call sceneimg
-                player " HaYoon, can I get you a drink? It's on me."
-                $ position = "barhayoonclarifiying"
-                call sceneimg
-                HaYoon "That's really sweet of you, but I've got it covered, don't worry. I appreciate the offer, though."
+            if hayoon_attitude >= 20:
+                
+                $ moneytoadd = -renpy.random.randint(20, 30)
+                call moneynotification
+                if notenoughmoney == True:
+                    jump bar3
+                else:
+                    $ fullnesschange = 200
+                    $ nigirlimage = "nihayoon"
+                    call fullnesschange
+                    pause 0.6
+                    $ calorieschange = 200
+                    $ nigirlimage = "nihayoon"
+                    call calorieschange
+                    $ myrandom = renpy.random.randint(1,3)
+                    if myrandom == 1:
+                        $ position = "barhayoonlecturing"
+                        call sceneimg
+                        player "HaYoon, can I buy you a drink? You look like you could relax after your shift."
+                        $ position = "barhayoonclarifiying"
+                        call sceneimg
+                        HaYoon "You know what, that sounds wonderful. I won't say no."
+                        $ position = "barhayoonexplaining"
+                        call sceneimg
+                        player "Great, I'll grab something special for you."
+                        $ position = "barhayoonclarifiying"
+                        call sceneimg
+                        HaYoon "Thanks, [name]. It's nice to unwind a bit."
+                        $ position = "barhayoonexplaining"
+                        call sceneimg
+                        player "No problem, maybe we can toast to making it through another day."
+                        $ position = "barhayoonclarifiying"
+                        call sceneimg
+                        HaYoon "Cheers to that!"
 
-                player "Alright, no problem. Just thought I'd ask. If you change your mind or want anything, feel free to let me know."
-                $ position = "barhayoonexplaining"
-                call sceneimg
-                HaYoon "Thanks. I'll definitely keep that in mind. It's nice to know you're looking out for me."
+                    if myrandom == 2:
+                        $ position = "barhayoonlecturing"
+                        call sceneimg
+                        player "How about a drink on me? Something refreshing."
+                        $ position = "barhayoonclarifiying"
+                        call sceneimg
+                        HaYoon "That does sound nice. Sure, I'll accept."
+                        $ position = "barhayoonexplaining"
+                        call sceneimg
+                        player "Perfect. Let's see what Kira recommends tonight."
+                        $ position = "barhayoonclarifiying"
+                        call sceneimg
+                        HaYoon "You're spoiling me, [name]."
+                        $ position = "barhayoonexplaining"
+                        call sceneimg
+                        player "Only the best for the town's hardest working doctor."
+                        $ position = "barhayoonclarifiying"
+                        call sceneimg
+                        HaYoon "You're quite the charmer."
+
+                    if myrandom == 3:
+                        $ position = "barhayoonlecturing"
+                        call sceneimg
+                        player "Let me buy you a drink to celebrate the end of your shift."
+                        $ position = "barhayoonclarifiying"
+                        call sceneimg
+                        HaYoon "I could use one. Thanks."
+                        $ position = "barhayoonexplaining"
+                        call sceneimg
+                        player "Coming right up. Any preferences?"
+                        $ position = "barhayoonclarifiying"
+                        call sceneimg
+                        HaYoon "Surprise me, I'm in the mood to try something new."
+                        $ position = "barhayoonexplaining"
+                        call sceneimg
+                        player "Alright then, I'll see what Kira can mix for us."
+                        $ position = "barhayoonclarifiying"
+                        call sceneimg
+                        HaYoon "I'm looking forward to it."
+                    call hayooncantresisttowatch
+            else:
+                call hayooncantresisttowatch
+                $ myrandom = renpy.random.randint(1,3)
+                if myrandom == 1:
+                    $ position = "barhayoonlecturing"
+                    call sceneimg
+                    player " HaYoon, can I get you a drink? It's on me."
+                    $ position = "barhayoonclarifiying"
+                    call sceneimg
+                    HaYoon "That's really sweet of you, but I've got it covered, don't worry. I appreciate the offer, though."
+
+                    player "Alright, no problem. Just thought I'd ask. If you change your mind or want anything, feel free to let me know."
+                    $ position = "barhayoonexplaining"
+                    call sceneimg
+                    HaYoon "Thanks. I'll definitely keep that in mind. It's nice to know you're looking out for me."
 
 
-            if myrandom == 2:
-                $ position = "barhayoonlecturing"
-                call sceneimg
-                player " HaYoon, can I get you another drink?"
-                $ position = "barhayoonclarifiying"
-                call sceneimg
-                HaYoon "Thanks for the offer, but I've got it covered. I like to take care of my own tab."
+                if myrandom == 2:
+                    $ position = "barhayoonlecturing"
+                    call sceneimg
+                    player " HaYoon, can I get you another drink?"
+                    $ position = "barhayoonclarifiying"
+                    call sceneimg
+                    HaYoon "Thanks for the offer, but I've got it covered. I like to take care of my own tab."
 
-                player "Of course, HaYoon. Just wanted to make sure you were comfortable."
-                $ position = "barhayoonexplaining"
-                call sceneimg
+                    player "Of course, HaYoon. Just wanted to make sure you were comfortable."
+                    $ position = "barhayoonexplaining"
+                    call sceneimg
 
-                HaYoon "I appreciate that. It's sweet of you to offer."
+                    HaYoon "I appreciate that. It's sweet of you to offer."
 
-            if myrandom == 3:
-                $ position = "barhayoonlecturing"
-                call sceneimg
-                player " HaYoon, can I get you another drink? It's on me."
-                $ position = "barhayoonclarifiying"
-                call sceneimg
-                HaYoon "Thanks, but I can manage myself. I appreciate the offer, though."
+                if myrandom == 3:
+                    $ position = "barhayoonlecturing"
+                    call sceneimg
+                    player " HaYoon, can I get you another drink? It's on me."
+                    $ position = "barhayoonclarifiying"
+                    call sceneimg
+                    HaYoon "Thanks, but I can manage myself. I appreciate the offer, though."
 
-                player "Alright, just let me know if you change your mind. I'm here to help."
-                $ position = "barhayoonexplaining"
-                call sceneimg
+                    player "Alright, just let me know if you change your mind. I'm here to help."
+                    $ position = "barhayoonexplaining"
+                    call sceneimg
 
-                HaYoon "Will do. You're very kind. I enjoy our conversations."
-
+                    HaYoon "Will do. You're very kind. I enjoy our conversations."
         "What's your story, [name]?" if hayoonplayerstory == 1:
             call hayooncantresisttowatch
             $ hayoonplayerstory = 1

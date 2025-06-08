@@ -148,9 +148,7 @@ label variables:
     default hayoonrandome = 0
 
 
-    default iced_tea = 0
-    default water_bottle = 0
-    default smoothie_drink = 0
+    
 
 
     default mapbuttonisactive = True
@@ -288,6 +286,7 @@ label variables:
     
     default beachcafeevents = 4 
 
+    default hayoon_randomreadhere = False
     default hayoonrandome_today = False
     default hayoon_randombookschoice = False
     default player_customerfirst = False
@@ -295,11 +294,15 @@ label variables:
     default player_socialaverage = False
 
     default lied_to_hayoon_margo_knowsthetruth = 0
-    # default hayoon_psychology = False
-    # default hayoon_biology = False
-    # default hayoon_ai = False
-    # default 
-    # default 
+    default hayoon_psychology = False
+    default hayoon_biology = False
+    default hayoon_ai = False
+    default hayoon_randomotherinterests = False
+    default iced_tea = 999
+    default water_bottle = 999
+    default smoothie_drink = 999
+
+    default hayoon_randomgivefood = False
     # default 
     # default 
     # default 
