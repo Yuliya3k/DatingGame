@@ -65,6 +65,7 @@ label dayvariables:
     $ margo_fullnesscomplaint = False
     $ ava_fullnesscomplaint = False
     $ myrandom = renpy.random.randint(1,3)
+    $ hayoonrandome_today = False
     if myrandom == 1:
         if avabossauth == 1:
             $ avabossauth = 2

@@ -1,6 +1,7 @@
 label rm:
     $ myrandom = renpy.random.randint(1,10)
-    if myrandom > 5 and hayoonfirstmeet == 1:
+    if myrandom > 5 and hayoonfirstmeet == 1 and hayoonrandome_today == False:
+        $ hayoonrandome_today = True
         call hayoonrandome
 
 
@@ -38,6 +39,7 @@ label rm:
         call sceneimg 
         menu:
             "I understand, Margo. I've always believed in putting the customer first.":
+                $ player_customerfirst = True
                 $ position = "margormtalking"
                 call sceneimg
                 Margo "Excellent. That's the spirit. Our clients are the most important people in this restaurant, and their demands are the law. We're here to cater to their tastes and preferences, so always be attentive and responsive to their needs."
@@ -61,6 +63,7 @@ label rm:
 
         
             "I appreciate that, Margo, but I've always believed in focusing on the culinary aspect of things more than the customer service side.":
+                $ player_socialaverage = True
                 $ position = "margormtalking"
                 call sceneimg
                 Margo "I see. While our cuisine is undoubtedly important, the overall dining experience, including service, plays a crucial role in keeping our patrons coming back. It's the synergy of both that makes us exceptional."
@@ -90,6 +93,7 @@ label rm:
 
         
             "I appreciate that, Margo, but I've always believed that my primary role is in the kitchen, creating exceptional dishes. Service and customer interactions are best left to those who excel in that area.":
+                $ player_asocial = True
                 $ position = "margormexplaining"
                 call sceneimg
                 Margo "I understand your perspective, but here, we expect all team members to contribute to the overall guest experience. We believe that both the culinary and service aspects are essential for our success."

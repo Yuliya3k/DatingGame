@@ -280,28 +280,36 @@ label variables:
     default ava_fullnesscomplaint = False
     default avabeacbbqgreeting = False
     default margobeachbbqgreeting = False
+
+    
+
+
+    default fetish_club_stage = 0
     
     default beachcafeevents = 4 
+
+    default hayoonrandome_today = False
+    default hayoon_randombookschoice = False
+    default player_customerfirst = False
+    default player_asocial = False
+    default player_socialaverage = False
+
+    default lied_to_hayoon_margo_knowsthetruth = 0
+    # default hayoon_psychology = False
+    # default hayoon_biology = False
+    # default hayoon_ai = False
     # default 
-    # default  
-    # default  
-    # default  
-    # default  
-    # default  
-    # default  
-    # default  
-    # default  
-    # default  
-    # default  
-    # default  
-    # default  
-    # default  
-    # default  
-    # default  
-    # default  
-    # default  
-    # default  
     # default 
+    # default 
+    # default 
+    # default 
+    # default 
+    # default 
+    # default 
+    # default 
+    # default 
+    # default 
+    # default
 
 
     # define THUMB_W      = 260          # width  of each thumb (px)
