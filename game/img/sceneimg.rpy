@@ -63,14 +63,14 @@ label sceneimg:
 
 
     #hayoon
-    if position == "kirahayoonenter" or position == "randomencounterhayoon" or position == "hayoonhospitalleaning1" or position == "hayoonhospitalleaning2" or position == "hayoonhospitalstretching" or position == "barhayoonbellyview" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
+    if position == "kirahayoonenter" or position == "randomencounterhayoon" or position == "hayoonhospitalleaning1" or position == "hayoonhospitalleaning2" or position == "hayoonhospitalstretching" or position == "barhayoonbellyview" or position == "hayoonhospitalofficeworking" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
         if position == "hayoonhospitalleaning1" and hayoon_fullstage == 1 and hayoon_weightstage == 1: 
             $ renpy.movie_cutscene("videos/hayoonhospitalleaning1.webm")
         
         scene bg
         show hayoon
 
-    if position == "barhayoonlecturing" or position == "barhayoonchatting" or position == "barhayoonclarifiying" or position == "barhayoonexplaining" or position == "barhayoonhi" or position == "barhayoonlistening" or position == "barhayoonlistening" or position == "randomencounterhayoonclose" or position == "randomencounterhayooncloselisten" or position == "randomencounterhayoonclosetalk" or position == "hayoonhospitaltalklisten" or position == "hayoonhospitaltalktalk" or position == "hayoonhospitaltalkhello" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
+    if position == "barhayoonlecturing" or position == "barhayoonchatting" or position == "barhayoonclarifiying" or position == "barhayoonexplaining" or position == "barhayoonhi" or position == "barhayoonlistening" or position == "barhayoonlistening" or position == "randomencounterhayoonclose" or position == "randomencounterhayooncloselisten" or position == "randomencounterhayoonclosetalk" or position == "hayoonhospitaltalklisten" or position == "hayoonhospitaltalktalk" or position == "hayoonhospitaltalkhello" or position == "hayoonhospitalofficecloselisten" or position == "hayoonhospitalofficeclosetalk" or position == "hayoonhospitalofficeclosehi" or position == "..." or position == "..." or position == "..." or position == "..." or position == "..." or position == "...":
         if position == "randomencounterhayoonclose" and hayoon_weightstage == 1:
             $ renpy.movie_cutscene("videos/hayoonrandomencounterclose1.webm")
         scene bg

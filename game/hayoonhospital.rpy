@@ -199,8 +199,11 @@ label hayoonhospital:
                 HaYoon "Exactly, and I'm happy to assist. Understanding health issues can be challenging, and I'm here to make it more accessible and understandable. Feel free to ask me anything, anytime."
 
             menu:
-                "Tell her about your belly fetish":
-                    
+                "Tell her about your belly fetish" if hayoonbellyfetish == 0:
+                    $ reputationchange = 1
+                    $ nigirlimage = "nihayoon"
+                    call reputationchange
+                    $ hayoonbellyfetish = 1
                     $ myrandom = renpy.random.randint(1,3)
                     if myrandom == 1: 
                         $ position = "hayoonhospitaltalktalk"
@@ -245,6 +248,10 @@ label hayoonhospital:
                         HaYoon "You're welcome. Remember, seeking to understand and accept your preferences is a healthy approach, and professional guidance can be very helpful in this journey."
                     menu:
                         "Do you want to know why I asked you?":
+                            $ reputationchange = 1
+                            $ nigirlimage = "nihayoon"
+                            call reputationchange
+                            $ hayoonbellyfetish = 2
                             $ myrandom = renpy.random.randint(1,3)
                             if myrandom == 1: 
                                 $ position = "hayoonhospitaltalktalk"
@@ -289,6 +296,9 @@ label hayoonhospital:
                                 HaYoon "I'm honored that you trust me with this. It's important to have open channels of communication about these topics, and I'm here to offer any assistance or advice you might need."
                             menu:
                                 "Explain that you asked because she is a doctor":
+                                    $ reputationchange = 1
+                                    $ nigirlimage = "nihayoon"
+                                    call reputationchange
                                     $ myrandom = renpy.random.randint(1,3)
                                     if myrandom == 1: 
                                         $ position = "hayoonhospitaltalklisten"
@@ -329,8 +339,12 @@ label hayoonhospital:
                                         call sceneimg
 
                                         player "Thanks, Ha-Yoon. Your understanding and professional guidance have been incredibly reassuring."
+                                     
                                     jump hayoonghospitalgoodbye
                                 "Explain her that you asked because you've seen her belly bloated":
+                                    $ reputationchange = 1
+                                    $ nigirlimage = "nihayoon"
+                                    call reputationchange
                                     $ myrandom = renpy.random.randint(1,3)
                                     if myrandom == 1:
                                         $ position = "hayoonhospitaltalklisten"
@@ -387,6 +401,9 @@ label hayoonhospital:
                                         HaYoon "It's okay. I understand the curiosity, but in my situation, it's purely a matter of practicality and the nature of my work."
                                     menu:
                                         "Is it ok to eat like you?":
+                                            $ reputationchange = 1
+                                            $ nigirlimage = "nihayoon"
+                                            call reputationchange
                                             $ myrandom = renpy.random.randint(1,3)
                                             if myrandom == 1: 
                                                 $ position = "hayoonhospitaltalklisten"
@@ -445,6 +462,9 @@ label hayoonhospital:
                                             menu:
 
                                                 "Why do you do this?":
+                                                    $ reputationchange = 1
+                                                    $ nigirlimage = "nihayoon"
+                                                    call reputationchange
                                                     $ hayoonfasteater = 1
                                                     $ myrandom = renpy.random.randint(1,3)
                                                     if myrandom == 1: 
@@ -501,7 +521,8 @@ label hayoonhospital:
 
                                                         HaYoon "It is. It's about adapting to the circumstances while staying informed about our health choices."
                                                     menu:
-                                                        "Do you want to go to lunch with me from time to time? The food is on me!":
+                                                        "Do you want to go to lunch with me from time to time? The food is on me!" if hayoon_lunch == False:
+                                                            $ hayoon_lunch = True
                                                             $ myrandom = renpy.random.randint(1,3)
                                                             if myrandom == 1: 
                                                                 $ position = "hayoonhospitaltalklisten"
@@ -557,7 +578,8 @@ label hayoonhospital:
 
                                                                 HaYoon "Thank you for being understanding. And remember, my door is always open for any health advice or concerns you may have."
                                                                 jump hayoonghospitalgoodbye
-                                                        "You can come to my restaurant to have lunch any time as a gift":
+                                                        "You can come to my restaurant to have lunch any time as a gift" if hayoonrestaurant_agreed == False:
+                                                            $ hayoonrestaurant_agreed = True
                                                             $ myrandom = renpy.random.randint(1,3)
                                                             if myrandom == 1:
                                                                 $ position = "hayoonhospitaltalklisten"
@@ -626,6 +648,8 @@ label hayoonhospital:
                             jump hayoonghospitalgoodbye
                 "Nevermind, next time":
                     jump hayoonghospitalgoodbye
+        "Can we talk in your office, please?" if hayoonbellyfetish > 1:
+            jump hayoonhospitaloffice
         "Make her a compliment" if hayoonfasteater == 1:
             $ myrandom = renpy.random.randint(1,2)
             if myrandom == 1:

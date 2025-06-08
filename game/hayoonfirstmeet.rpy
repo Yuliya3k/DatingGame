@@ -13,6 +13,9 @@ label hayoonfirstmeet:
     # introduction
     menu:
         "How was your day?":
+            $ reputationchange = 1
+            $ nigirlimage = "nihayoon"
+            call reputationchange
             call hayooncantresisttowatch
             $ myrandom = renpy.random.randint(1,3)
 
@@ -114,6 +117,9 @@ label hayoonfirstmeet:
                 player "I'll keep that in mind, HaYoon. Thanks for all you do."
 
         "How did she decide to become a doctor?" if hayoondocq == 0:
+            $ reputationchange = 1
+            $ nigirlimage = "nihayoon"
+            call reputationchange
             call hayooncantresisttowatch
             $ myrandom = renpy.random.randint(1,3)
             $ hayoondocq = 1
@@ -201,6 +207,9 @@ label hayoonfirstmeet:
                 HaYoon "I'm lucky to be here. And who knows, maybe one day, I'll be able to help you too, even if it's just with some medical advice."
 
         "What do you do except your work?" if hayoonsparetime == 0:
+            $ reputationchange = 1
+            $ nigirlimage = "nihayoon"
+            call reputationchange
             call hayooncantresisttowatch
             $ myrandom = renpy.random.randint(1,3)
             $ hayoonsparetime = 1
@@ -285,6 +294,9 @@ label hayoonfirstmeet:
                 HaYoon "I couldn't agree more. How about you? What do you like to do in your free time?"
 
         "Why are you visiting the bar?" if hayoonbarq == 0:
+            $ reputationchange = 1
+            $ nigirlimage = "nihayoon"
+            call reputationchange
             call hayooncantresisttowatch
             $ hayoonbarq = 1
             $ myrandom = renpy.random.randint(1,3)
@@ -355,7 +367,9 @@ label hayoonfirstmeet:
 
         "Do you want a drink?":
             if hayoon_attitude >= 20:
-                
+                $ reputationchange = 1
+                $ nigirlimage = "nihayoon"
+                call reputationchange
                 $ moneytoadd = -renpy.random.randint(20, 30)
                 call moneynotification
                 if notenoughmoney == True:
@@ -430,6 +444,9 @@ label hayoonfirstmeet:
                         HaYoon "I'm looking forward to it."
                     call hayooncantresisttowatch
             else:
+                $ reputationchange = 1
+                $ nigirlimage = "nihayoon"
+                call reputationchange
                 call hayooncantresisttowatch
                 $ myrandom = renpy.random.randint(1,3)
                 if myrandom == 1:
@@ -556,6 +573,10 @@ label hayoonfirstmeet:
                 call sceneimg
 
                 player " Thanks, HaYoon. It's been quite an adventure so far, and I'm looking forward to more."
+            
+            $ reputationchange = 5
+            $ nigirlimage = "nihayoon"
+            call reputationchange
 
         "See you next time!":
             call hayooncantresisttowatch

@@ -303,9 +303,9 @@ label variables:
     default smoothie_drink = 999
 
     default hayoon_randomgivefood = False
-    # default 
-    # default 
-    # default 
+    default hayoonrestaurant_agreed = False
+    default hayoon_lunch = False
+    default hayoonbellyfetish = 0
     # default 
     # default 
     # default 
