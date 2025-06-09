@@ -40,7 +40,7 @@ label hayoon:
 
     default hayoon_breakfast = 0
 
-    default hayoon_lunch = 0
+    # default hayoon_lunch = 0
 
     default hayoon_dinner = 0
 
