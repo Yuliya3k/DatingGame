@@ -319,6 +319,13 @@ label variables:
     default goal_ash = ""
     default goal_nahuel = ""
 
+
+    default fetish_club_meeting_scheduled = False
+    default fetish_club_meeting_day = "Thu"
+    default fetish_club_meeting_hour = 18
+    default fetish_club_meeting_minute = 0
+    
+
     # default 
     # default 
     # default 

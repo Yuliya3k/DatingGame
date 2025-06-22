@@ -12,6 +12,8 @@ label hayoon_fetishists_club_menu:
             jump hayoon_fetishists_club_host
         "Request Ha-Yoon's help with guidelines" if fetish_club_stage == 2:
             jump hayoon_fetishists_club_guidelines
+        "Discuss Fetishists Anonymous meeting" if fetish_club_stage == 3:
+            jump hayoon_schedule_fetish_meeting
         "Finish conversation":
             jump hayoonhospital
 
@@ -93,5 +95,41 @@ label hayoon_fetishists_club_guidelines:
     $ fetish_club_stage = 3
     jump hayoonhospital
 
-"Something went wrong"
-jump culinarychoices
+
+
+
+
+label hayoon_schedule_fetish_meeting:
+    if not fetish_club_meeting_scheduled:
+        $ position = "hayoonhospitalofficeclosetalk"
+        call sceneimg
+        player "Can we set a time for the Fetishists Anonymous meeting?"
+        HaYoon "Sure. Let's plan for [fetish_club_meeting_day] at [fetish_club_meeting_hour]:[str(fetish_club_meeting_minute).zfill(2)]."
+        player "Sounds good."
+        $ fetish_club_meeting_scheduled = True
+        jump hayoonhospital
+
+    python:
+        meeting_minutes = fetish_club_meeting_hour * 60 + fetish_club_meeting_minute
+        now_minutes = calendar.Hours * 60 + calendar.minutes
+        within = abs(now_minutes - meeting_minutes) <= 15
+    if calendar.WeekDay == fetish_club_meeting_day and within:
+        HaYoon "You're right on time. Here's the conference-room key."
+        jump afmeeting
+    else:
+        HaYoon "The meeting is scheduled for [fetish_club_meeting_day] at [fetish_club_meeting_hour]:[str(fetish_club_meeting_minute).zfill(2)]."
+        menu:
+            "Reschedule the meeting":
+                $ _day = renpy.input("Day (Mon-Sun):")
+                if _day:
+                    $ fetish_club_meeting_day = _day
+                $ _hour = renpy.input("Hour (0-23):")
+                if _hour:
+                    $ fetish_club_meeting_hour = int(_hour)
+                $ _min = renpy.input("Minute (0-59):")
+                if _min:
+                    $ fetish_club_meeting_minute = int(_min)
+                HaYoon "All right, I'll update the schedule."
+                jump hayoonhospital
+            "Keep current time":
+                jump hayoonhospital

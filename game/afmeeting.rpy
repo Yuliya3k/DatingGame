@@ -1,4 +1,27 @@
+init python:
+
+    fc_listeners = [
+            "nahuelfccloselisten",
+            "charliefccloselisten",
+            "ashfccloselisten",
+            "borisfccloselisten",
+            "nikkifccloselisten",
+            "faridafccloselisten",
+            "aurorafccloselisten",
+            "fc",
+        ]
+
+label show_random_listener:
+    $ position = renpy.random.choice(fc_listeners)
+    call sceneimg
+    return
+
+
+
 label afmeeting:
+
+   
+
 
     $ position = "fc"
     call sceneimg
@@ -7,31 +30,54 @@ label afmeeting:
 
     # The host (player character) opens the meeting
     player "Hello, everyone. Thank you all for coming tonight."
+    call show_random_listener
     player "My name is [name], and I'm the one who put this group together."
+    call show_random_listener
     player "As some of you know, I'm a cook by trade... and I also have a feeder fetish."
+    call show_random_listener
     player "Yeah, I guess you could say I literally love to feed people."
+    call show_random_listener
     player "I started this group because I wanted a safe space for us to talk about our desires."
+    call show_random_listener
     player "This isn't about trying to get rid of our fetishes or feeling ashamed."
+    call show_random_listener
     player "It's not like some addiction group where the goal is abstinence."
+    call show_random_listener
     player "Instead, it's about understanding ourselves, finding balance, and setting healthy boundaries."
+    call show_random_listener
     player "We want to enjoy who we are without hurting ourselves or anyone else, right?"
+    call show_random_listener
     "A few heads around the circle nod in agreement."
     player "So, let's get started by introducing ourselves, if that's okay."
+    call show_random_listener
     player "You can share as much or as little as you're comfortable with."
+    call show_random_listener
     player "Maybe tell us your name, what your fetish or interest is, and what you're hoping to get out of this group."
+    call show_random_listener
     player "I'll go first to break the ice."
+    call show_random_listener
     "You take a breath, meeting the eyes of each person in the small circle."
     player "Like I said, I'm [name], and I have a feeder fetish."
+    call show_random_listener
     player "I love cooking and watching people enjoy my food... maybe a bit too much sometimes."
+    call show_random_listener
     player "There's this thrill I get from seeing someone really indulge in something I made."
+    call show_random_listener
     player "But I've realized I need to keep it within healthy limits."
+    call show_random_listener
     player "I don't want to pressure anyone into overeating or cross boundaries just because it excites me."
+    call show_random_listener
     player "I'm here to learn how to balance that desire with respect and care for my partners."
+    call show_random_listener
     player "Honestly, I also want to make sure I don't lose myself in it, since, well, food is basically my life and my job."
+    call show_random_listener
     player "So yeah, I'm looking for a healthier relationship with my fetish, and I'm really glad to meet others who understand."
+    call show_random_listener
     player "Thank you for listening."
+    call show_random_listener
     "You smile and give a small nod, then look around the room encouragingly."
     player "Who'd like to go next?"
+    call show_random_listener
     "There's a brief, quiet moment. Then one woman raises her hand slightly, offering a polite smile."
     $ position = "aurorafcclosetalk"
     call sceneimg
