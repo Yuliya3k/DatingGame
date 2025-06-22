@@ -20,6 +20,10 @@ label variables:
 
     call imgindex
 
+    call nikki
+
+    call charindex
+
     define player = Character("[name]")
 
     default calendar = Calendar(1, 7, 0, 1, 0, 0, ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31], ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"])
@@ -306,6 +310,15 @@ label variables:
     default hayoonrestaurant_agreed = False
     default hayoon_lunch = False
     default hayoonbellyfetish = 0
+
+    default goal_aurora = ""
+    default goal_nikki = ""
+    default goal_farida = ""
+    default goal_boris = ""
+    default goal_charlie = ""
+    default goal_ash = ""
+    default goal_nahuel = ""
+
     # default 
     # default 
     # default 

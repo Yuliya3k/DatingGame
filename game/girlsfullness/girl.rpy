@@ -129,6 +129,18 @@ label girl:
         $ aurora_fullstage = 20
 
 
+    if nikki_fullness > nikki_fullmax:
+        $ nikki_fullness = nikki_fullmax
+    $ nikki_fullnessoz = int(nikki_fullness*0.034)
+    $ nikki_fullstage =int(nikki_fullness/nikki_minfullness)
+    if nikki_fullstage <= 0:
+        $ nikki_fullstage = 1
+    if nikki_fullstage > 10 and sevent == 0:
+        $ nikki_fullstage = 10
+    if nikki_fullstage > 20 and sevent == 1:
+        $ nikki_fullstage = 20
+
+
     return
 
 

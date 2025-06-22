@@ -37,10 +37,11 @@ label imgindex:
 
     default auroraimgindex = (aurora_weightstage*10) + aurora_fullstage - 10
     image aurora = "/images/aurorapos[position] ([auroraimgindex]).png"
+    image auroradia = "/images/aurorapos[position] ([aurora_weightstage]).png"
 
     default faridaimgindex = (farida_weightstage*10) + farida_fullstage - 10
     image farida = "/images/faridapos[position] ([faridaimgindex]).png"
-
+    image faridadia = "/images/faridapos[position] ([farida_weightstage]).png"
 
     default juliaimgindex = (julia_weightstage*10) + julia_fullstage - 10
     image julia = "/images/juliapos[position] ([juliaimgindex]).png"
@@ -49,7 +50,9 @@ label imgindex:
     image mindy = "/images/mindypos[position] ([mindyimgindex]).png"
 
     
-
+    default nikkiimgindex = (nikki_weightstage*10) + nikki_fullstage - 10
+    image nikki = "/images/nikkipos[position] ([nikkiimgindex]).png"
+    image nikkidia = "/images/nikkipos[position] ([nikki_weightstage]).png"
     
     
 
