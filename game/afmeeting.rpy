@@ -661,3 +661,59 @@ label goal_nahuel:
 label goals_done:
     player "Great work, everyone. We'll check in next week to see how we all did."
     jump culinarychoices
+
+
+
+
+
+label weekly_goal_report:
+    if goal_aurora != "":
+        $ outcome = renpy.random.choice(["success", "disaster"])
+        if outcome == "success":
+            "Aurora successfully completed: [goal_aurora]."
+        else:
+            "Aurora's attempt at [goal_aurora] ended in disaster."
+        $ goal_aurora = ""
+    if goal_nikki != "":
+        $ outcome = renpy.random.choice(["success", "disaster"])
+        if outcome == "success":
+            "Nikki successfully completed: [goal_nikki]."
+        else:
+            "Nikki's attempt at [goal_nikki] ended in disaster."
+        $ goal_nikki = ""
+    if goal_farida != "":
+        $ outcome = renpy.random.choice(["success", "disaster"])
+        if outcome == "success":
+            "Farida successfully completed: [goal_farida]."
+        else:
+            "Farida's attempt at [goal_farida] ended in disaster."
+        $ goal_farida = ""
+    if goal_boris != "":
+        $ outcome = renpy.random.choice(["success", "disaster"])
+        if outcome == "success":
+            "Boris successfully completed: [goal_boris]."
+        else:
+            "Boris's attempt at [goal_boris] ended in disaster."
+        $ goal_boris = ""
+    if goal_charlie != "":
+        $ outcome = renpy.random.choice(["success", "disaster"])
+        if outcome == "success":
+            "Charlie successfully completed: [goal_charlie]."
+        else:
+            "Charlie\'s attempt at [goal_charlie] ended in disaster."
+        $ goal_charlie = ""
+    if goal_ash != "":
+        $ outcome = renpy.random.choice(["success", "disaster"])
+        if outcome == "success":
+            "Ash successfully completed: [goal_ash]."
+        else:
+            "Ash's attempt at [goal_ash] ended in disaster."
+        $ goal_ash = ""
+    if goal_nahuel != "":
+        $ outcome = renpy.random.choice(["success", "disaster"])
+        if outcome == "success":
+            "Nahuel successfully completed: [goal_nahuel]."
+        else:
+            "Nahuel's attempt at [goal_nahuel] ended in disaster."
+        $ goal_nahuel = ""
+    return
