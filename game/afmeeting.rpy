@@ -20,7 +20,7 @@ label show_random_listener:
 
 label afmeeting:
 
-   if fetish_club_first_meeting_done:
+    if fetish_club_first_meeting_done:
         "A week has passed, and everyone gathers again to discuss progress."
         jump weekly_goal_report
 
@@ -30,10 +30,7 @@ label afmeeting:
     with fade
 
 
-    $ position = "fc"
-    call sceneimg
     
-    with fade
 
     # The host (player character) opens the meeting
     player "Hello, everyone. Thank you all for coming tonight."
@@ -368,7 +365,12 @@ label goal_aurora:
             call sceneimg
             Aurora "Good idea. I'll set up a hobby night with my partner."
             $ goal_aurora = goal_options[6]
-        $ goal_aurora_outcome = renpy.random.choice(["success", "fail"])
+    $ goal_aurora_outcome = renpy.random.choice(["success", "fail"])
+    if goal_aurora_outcome == "fail":
+        $ scheduled_calls.append(
+            (calendar.TotalDays + renpy.random.randint(1,7),
+                "phone_goal_check", "Aurora", goal_aurora)
+        )
     jump choose_goal_member
 
 label goal_nikki:
@@ -419,6 +421,11 @@ label goal_nikki:
             Nikki "That'll help me remember I'm more than my fetish."
             $ goal_nikki = goal_options[6]
     $ goal_nikki_outcome = renpy.random.choice(["success", "fail"])
+    if goal_nikki_outcome == "fail":
+        $ scheduled_calls.append(
+            (calendar.TotalDays + renpy.random.randint(1,7),
+             "phone_goal_check", "Nikki", goal_nikki)
+        )
     jump choose_goal_member
 
 label goal_farida:
@@ -470,6 +477,11 @@ label goal_farida:
             $ goal_farida = goal_options[6]
     
     $ goal_farida_outcome = renpy.random.choice(["success", "fail"])
+    if goal_farida_outcome == "fail":
+        $ scheduled_calls.append(
+            (calendar.TotalDays + renpy.random.randint(1,7),
+             "phone_goal_check", "Farida", goal_farida)
+        )
     jump choose_goal_member
 
 label goal_boris:
@@ -520,6 +532,11 @@ label goal_boris:
             Boris "Maybe I'll pick up jogging again."
             $ goal_boris = goal_options[6]
     $ goal_boris_outcome = renpy.random.choice(["success", "fail"])
+    if goal_boris_outcome == "fail":
+        $ scheduled_calls.append(
+            (calendar.TotalDays + renpy.random.randint(1,7),
+             "phone_goal_check", "Boris", goal_boris)
+        )
     jump choose_goal_member
 
 label goal_charlie:
@@ -570,6 +587,11 @@ label goal_charlie:
             Charlie "Maybe a casual game night with friends."
             $ goal_charlie = goal_options[6]
     $ goal_charlie_outcome = renpy.random.choice(["success", "fail"])
+    if goal_charlie_outcome == "fail":
+        $ scheduled_calls.append(
+            (calendar.TotalDays + renpy.random.randint(1,7),
+             "phone_goal_check", "Charlie", goal_charlie)
+        )
     jump choose_goal_member
 
 label goal_ash:
@@ -620,6 +642,11 @@ label goal_ash:
             Ash "Maybe I'll volunteer somewhere low key."
             $ goal_ash = goal_options[6]
     $ goal_ash_outcome = renpy.random.choice(["success", "fail"])
+    if goal_ash_outcome == "fail":
+        $ scheduled_calls.append(
+            (calendar.TotalDays + renpy.random.randint(1,7),
+             "phone_goal_check", "Ash", goal_ash)
+        )
     jump choose_goal_member
 
 label goal_nahuel:
@@ -669,10 +696,13 @@ label goal_nahuel:
             call sceneimg
             Nahuel "Perfect, I'll go hiking."
             $ goal_nahuel = goal_options[6]
+    
     $ goal_nahuel_outcome = renpy.random.choice(["success", "fail"])
-    if  goal_nahuel_outcome == "fail":
-        # in these cases you should plan the call specifically for this member and also if all members fail then you must no schedule all at the same time, you should somehow avoid it
-        $ scheduled_calls.append((calendar.TotalDays + renpy.random.randint(1,7), "phone_motel_call"))
+    if goal_nahuel_outcome == "fail":
+        $ scheduled_calls.append(
+            (calendar.TotalDays + renpy.random.randint(1,7),
+             "phone_goal_check", "Nahuel", goal_nahuel)
+        )
     jump choose_goal_member
 
 
