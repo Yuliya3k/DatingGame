@@ -20,7 +20,14 @@ label show_random_listener:
 
 label afmeeting:
 
-   
+   if fetish_club_first_meeting_done:
+        "A week has passed, and everyone gathers again to discuss progress."
+        jump weekly_goal_report
+
+    $ position = "fc"
+    call sceneimg
+
+    with fade
 
 
     $ position = "fc"
@@ -275,6 +282,7 @@ label afmeeting:
     "As everyone files out, you feel a sense of pride and hope swelling in your chest."
     "In this small room, a new community has begun — one built on acceptance, understanding, and the promise of growth."
     "You couldn't have asked for a better first meeting."
+    $ fetish_club_first_meeting_done = True
 
     # After introductions, discuss weekly goals
     "As the chatter dies down, you clear your throat to draw everyone's attention."
@@ -360,6 +368,7 @@ label goal_aurora:
             call sceneimg
             Aurora "Good idea. I'll set up a hobby night with my partner."
             $ goal_aurora = goal_options[6]
+        $ goal_aurora_outcome = renpy.random.choice(["success", "fail"])
     jump choose_goal_member
 
 label goal_nikki:
@@ -409,6 +418,7 @@ label goal_nikki:
             call sceneimg
             Nikki "That'll help me remember I'm more than my fetish."
             $ goal_nikki = goal_options[6]
+    $ goal_nikki_outcome = renpy.random.choice(["success", "fail"])
     jump choose_goal_member
 
 label goal_farida:
@@ -458,6 +468,8 @@ label goal_farida:
             call sceneimg
             farida "Maybe a hike or something active. I like it."
             $ goal_farida = goal_options[6]
+    
+    $ goal_farida_outcome = renpy.random.choice(["success", "fail"])
     jump choose_goal_member
 
 label goal_boris:
@@ -507,6 +519,7 @@ label goal_boris:
             call sceneimg
             Boris "Maybe I'll pick up jogging again."
             $ goal_boris = goal_options[6]
+    $ goal_boris_outcome = renpy.random.choice(["success", "fail"])
     jump choose_goal_member
 
 label goal_charlie:
@@ -556,6 +569,7 @@ label goal_charlie:
             call sceneimg
             Charlie "Maybe a casual game night with friends."
             $ goal_charlie = goal_options[6]
+    $ goal_charlie_outcome = renpy.random.choice(["success", "fail"])
     jump choose_goal_member
 
 label goal_ash:
@@ -605,6 +619,7 @@ label goal_ash:
             call sceneimg
             Ash "Maybe I'll volunteer somewhere low key."
             $ goal_ash = goal_options[6]
+    $ goal_ash_outcome = renpy.random.choice(["success", "fail"])
     jump choose_goal_member
 
 label goal_nahuel:
@@ -654,6 +669,7 @@ label goal_nahuel:
             call sceneimg
             Nahuel "Perfect, I'll go hiking."
             $ goal_nahuel = goal_options[6]
+    $ goal_nahuel_outcome = renpy.random.choice(["success", "fail"])
     jump choose_goal_member
 
 
@@ -668,52 +684,52 @@ label goals_done:
 
 label weekly_goal_report:
     if goal_aurora != "":
-        $ outcome = renpy.random.choice(["success", "disaster"])
-        if outcome == "success":
-            "Aurora successfully completed: [goal_aurora]."
+        $ goal_aurora_outcome = renpy.random.choice(["success", "disaster"])
+        if goal_aurora_outcome == "success":
+            "[renpy.random.choice(aurora_success_lines)] Aurora successfully completed: [goal_aurora]."
         else:
-            "Aurora's attempt at [goal_aurora] ended in disaster."
+            "[renpy.random.choice(aurora_fail_lines)] Aurora's attempt at [goal_aurora] ended in disaster."
         $ goal_aurora = ""
     if goal_nikki != "":
-        $ outcome = renpy.random.choice(["success", "disaster"])
-        if outcome == "success":
-            "Nikki successfully completed: [goal_nikki]."
+        $ goal_nikki_outcome = renpy.random.choice(["success", "disaster"])
+        if goal_nikki_outcome == "success":
+            "[renpy.random.choice(nikki_success_lines)] Nikki successfully completed: [goal_nikki]."
         else:
-            "Nikki's attempt at [goal_nikki] ended in disaster."
+            "[renpy.random.choice(nikki_fail_lines)] Nikki's attempt at [goal_nikki] ended in disaster."
         $ goal_nikki = ""
     if goal_farida != "":
-        $ outcome = renpy.random.choice(["success", "disaster"])
-        if outcome == "success":
-            "Farida successfully completed: [goal_farida]."
+        $ goal_farida_outcome = renpy.random.choice(["success", "disaster"])
+        if goal_farida_outcome == "success":
+            "[renpy.random.choice(farida_success_lines)] Farida successfully completed: [goal_farida]."
         else:
-            "Farida's attempt at [goal_farida] ended in disaster."
+            "[renpy.random.choice(farida_fail_lines)] Farida's attempt at [goal_farida] ended in disaster."
         $ goal_farida = ""
     if goal_boris != "":
-        $ outcome = renpy.random.choice(["success", "disaster"])
-        if outcome == "success":
-            "Boris successfully completed: [goal_boris]."
+        $ goal_boris_outcome = renpy.random.choice(["success", "disaster"])
+        if goal_boris_outcome == "success":
+            "[renpy.random.choice(boris_success_lines)] Boris successfully completed: [goal_boris]."
         else:
-            "Boris's attempt at [goal_boris] ended in disaster."
+            "[renpy.random.choice(boris_fail_lines)] Boris's attempt at [goal_boris] ended in disaster."
         $ goal_boris = ""
     if goal_charlie != "":
-        $ outcome = renpy.random.choice(["success", "disaster"])
-        if outcome == "success":
-            "Charlie successfully completed: [goal_charlie]."
+        $ goal_charlie_outcome = renpy.random.choice(["success", "disaster"])
+        if goal_charlie_outcome == "success":
+            "[renpy.random.choice(charlie_success_lines)] Charlie successfully completed: [goal_charlie]."
         else:
-            "Charlie\'s attempt at [goal_charlie] ended in disaster."
+            "[renpy.random.choice(charlie_fail_lines)] Charlie's attempt at [goal_charlie] ended in disaster."
         $ goal_charlie = ""
     if goal_ash != "":
-        $ outcome = renpy.random.choice(["success", "disaster"])
-        if outcome == "success":
-            "Ash successfully completed: [goal_ash]."
+        $ goal_ash_outcome = renpy.random.choice(["success", "disaster"])
+        if goal_ash_outcome == "success":
+            "[renpy.random.choice(ash_success_lines)] Ash successfully completed: [goal_ash]."
         else:
-            "Ash's attempt at [goal_ash] ended in disaster."
+            "[renpy.random.choice(ash_fail_lines)] Ash's attempt at [goal_ash] ended in disaster."
         $ goal_ash = ""
     if goal_nahuel != "":
-        $ outcome = renpy.random.choice(["success", "disaster"])
-        if outcome == "success":
-            "Nahuel successfully completed: [goal_nahuel]."
+        $ goal_nahuel_outcome = renpy.random.choice(["success", "disaster"])
+        if goal_nahuel_outcome == "success":
+            "[renpy.random.choice(nahuel_success_lines)] Nahuel successfully completed: [goal_nahuel]."
         else:
-            "Nahuel's attempt at [goal_nahuel] ended in disaster."
+            "[renpy.random.choice(nahuel_fail_lines)] Nahuel's attempt at [goal_nahuel] ended in disaster."
         $ goal_nahuel = ""
     return

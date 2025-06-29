@@ -312,19 +312,110 @@ label variables:
     default hayoonbellyfetish = 0
 
     default goal_aurora = ""
+    default goal_aurora_outcome = ""
     default goal_nikki = ""
+    default goal_nikki_outcome = ""
     default goal_farida = ""
+    default goal_farida_outcome = ""
     default goal_boris = ""
+    default goal_boris_outcome = ""
     default goal_charlie = ""
+    default goal_charlie_outcome = ""
     default goal_ash = ""
+    default goal_ash_outcome = ""
     default goal_nahuel = ""
+    default goal_nahuel_outcome = ""
 
 
     default fetish_club_meeting_scheduled = False
     default fetish_club_meeting_day = "Thu"
     default fetish_club_meeting_hour = 18
     default fetish_club_meeting_minute = 0
+    default fetish_club_first_meeting_done = False
     
+    # Scheduled phone call events
+    default scheduled_calls = []
+
+    default aurora_success_lines = [
+        "Aurora beams with pride.",
+        "Aurora gives a cheerful thumbs up.",
+        "Aurora smiles broadly at her accomplishment."
+    ]
+    default aurora_fail_lines = [
+        "Aurora sighs in disappointment.",
+        "Aurora bites her lip, frustrated.",
+        "Aurora shrugs apologetically."
+    ]
+
+    default nikki_success_lines = [
+        "Nikki grins ear to ear.",
+        "Nikki pumps her fist in the air.",
+        "Nikki flashes a quick thumbs up."
+    ]
+    default nikki_fail_lines = [
+        "Nikki pouts, clearly unhappy.",
+        "Nikki laughs it off nervously.",
+        "Nikki shakes her head with a sigh."
+    ]
+
+    default farida_success_lines = [
+        "Farida nods with satisfaction.",
+        "Farida claps her hands excitedly.",
+        "Farida can't hide a proud smile."
+    ]
+    default farida_fail_lines = [
+        "Farida winces at the result.",
+        "Farida frowns in disappointment.",
+        "Farida sighs, making a note to try again."
+    ]
+
+    default boris_success_lines = [
+        "Boris gives a firm nod.",
+        "Boris smirks confidently.",
+        "Boris raises a triumphant fist."
+    ]
+    default boris_fail_lines = [
+        "Boris grumbles under his breath.",
+        "Boris shakes his head, frustrated.",
+        "Boris crosses his arms with a scowl."
+    ]
+
+    default charlie_success_lines = [
+        "Charlie laughs happily.",
+        "Charlie does a small victory dance.",
+        "Charlie winks playfully."
+    ]
+    default charlie_fail_lines = [
+        "Charlie groans in frustration.",
+        "Charlie slumps his shoulders.",
+        "Charlie rubs the back of his neck awkwardly."
+    ]
+
+    default ash_success_lines = [
+        "Ash gives a proud grin.",
+        "Ash punches the air in triumph.",
+        "Ash can't hide his excitement."
+    ]
+    default ash_fail_lines = [
+        "Ash sighs in defeat.",
+        "Ash mutters something under his breath.",
+        "Ash looks away, disappointed."
+    ]
+
+    default nahuel_success_lines = [
+        "Nahuel gives a satisfied smile.",
+        "Nahuel bows his head gratefully.",
+        "Nahuel looks relieved and happy."
+    ]
+    default nahuel_fail_lines = [
+        "Nahuel winces at the setback.",
+        "Nahuel shrugs with a rueful smile.",
+        "Nahuel glances down in frustration."
+    ]
+
+
+
+
 
     # default 
     # default 

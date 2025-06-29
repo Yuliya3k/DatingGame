@@ -22,6 +22,16 @@ label culinarychoices:
     $ youarehome = True
 
     label cchoicesloop: 
+        
+        python:
+            _jump_event = None
+            for ev in scheduled_calls:
+                if ev[0] == calendar.TotalDays:
+                    _jump_event = ev[1]
+                    scheduled_calls.remove(ev)
+                    break
+        if _jump_event:
+            jump expression _jump_event
 
         $ position = "backyard"
         call sceneimg
