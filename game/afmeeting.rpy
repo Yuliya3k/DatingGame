@@ -670,6 +670,9 @@ label goal_nahuel:
             Nahuel "Perfect, I'll go hiking."
             $ goal_nahuel = goal_options[6]
     $ goal_nahuel_outcome = renpy.random.choice(["success", "fail"])
+    if  goal_nahuel_outcome == "fail":
+        # in these cases you should plan the call specifically for this member and also if all members fail then you must no schedule all at the same time, you should somehow avoid it
+        $ scheduled_calls.append((calendar.TotalDays + renpy.random.randint(1,7), "phone_motel_call"))
     jump choose_goal_member
 
 
