@@ -92,6 +92,33 @@
                 renpy.music.set_pause(False, channel="music")
                 _music_paused = False
 
+        
+        def check_scheduled_calls():
+            _jump_event = None
+            _event_day = None
+            for ev in scheduled_calls:
+                if ev[0] == calendar.TotalDays:
+                    _jump_event = ev[1]
+                    _event_day = ev[0]
+                    scheduled_calls.remove(ev)
+                    break
+
+            if _jump_event:
+                if _jump_event == "phone_goal_check":
+                    global last_call_person, last_call_goal
+                    last_call_person, last_call_goal = phone_goal_details.pop(
+                        _event_day, (None, None)
+                    )
+                renpy.call_in_new_context(_jump_event)
+                return True
+            return False
+        
+        def show_map_unless_event():
+            """Display the map unless an event is scheduled."""
+            if not check_scheduled_calls():
+                renpy.show_screen_transient("map")
+
+
         # === WAVE CATCH PARAMETERS ===
         wave_zone_min = 0.4
         wave_zone_max = 0.6

@@ -24,18 +24,7 @@ label culinarychoices:
     label cchoicesloop: 
         
         python:
-            _jump_event = None
-            _event_day = None
-            for ev in scheduled_calls:
-                if ev[0] == calendar.TotalDays:
-                    _jump_event = ev[1]
-                    _event_day = ev[0]
-                    scheduled_calls.remove(ev)
-                    break
-        if _jump_event:
-            if _jump_event == "phone_goal_check":
-                $ last_call_person, last_call_goal = phone_goal_details.pop(_event_day, (None, None))
-            jump expression _jump_event    
+            check_scheduled_calls() 
 
         $ position = "backyard"
         call sceneimg
