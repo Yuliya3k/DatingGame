@@ -32,10 +32,10 @@ label culinarychoices:
                     _event_day = ev[0]
                     scheduled_calls.remove(ev)
                     break
-        if _jump_event:
-            if _jump_event == "phone_goal_check":
-                last_call_person, last_call_goal = phone_goal_details.pop(_event_day, (None, None))
-            jump expression _jump_event    
+    if _jump_event:
+        if _jump_event == "phone_goal_check":
+            last_call_person, last_call_goal = phone_goal_details.pop(_event_day, (None, None))
+        jump expression _jump_event    
 
         $ position = "backyard"
         call sceneimg
