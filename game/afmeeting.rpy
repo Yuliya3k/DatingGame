@@ -317,6 +317,10 @@ label choose_goal_member:
             jump goal_nahuel
         "Everyone has a goal." if goal_aurora != "" and goal_nikki != "" and goal_farida != "" and goal_boris != "" and goal_charlie != "" and goal_ash != "" and goal_nahuel != "":
             jump goals_done
+        "No more goals this week.":
+            jump goals_done
+            
+
 
 label goal_aurora:
     player "Aurora, let's start with you."
