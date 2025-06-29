@@ -414,7 +414,10 @@ label variables:
     ]
 
 
-
+    # Details for phone_goal_check events indexed by call day
+    default phone_goal_details = {}
+    default last_call_person = None
+    default last_call_goal = None
 
 
     # default 
