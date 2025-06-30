@@ -247,11 +247,11 @@ screen kitchenscale:
                 xoffset 3
  
 screen callmap():
-    # on "show" action SetVariable("mapbuttonisactive", False) #maybe something like this, ha?
+    # on "show" action Function ... #maybe something like this, ha?
 
     if mapbuttonisactive == True:
         imagebutton:
-            auto "gui/dg_map_callmap_%s.png" xpos 1834 ypos 0 action [ Play("sound", "audio/click2.mp3"), ShowTransient("map"), Function(check_scheduled_calls)] hovered [ Play("sound", "audio/button hover4.mp3") ]
+            auto "gui/dg_map_callmap_%s.png" xpos 1834 ypos 0 action [ Play("sound", "audio/click2.mp3"), ShowTransient("map")] hovered [ Play("sound", "audio/button hover4.mp3") ]
     
     if youarehome == False:
         imagebutton:

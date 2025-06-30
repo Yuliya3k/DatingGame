@@ -113,10 +113,11 @@
                 return True
             return False
         
+        # this does not work at all, it does not hide the dialogue menu for example, that makes all game look like buggy shit
         def show_map_unless_event():
             """Display the map unless an event is scheduled."""
             if not check_scheduled_calls():
-                renpy.show_screen_transient("map")
+                renpy.show_screen("map", _layer="transient")
 
 
         # === WAVE CATCH PARAMETERS ===
