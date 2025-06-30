@@ -247,7 +247,7 @@ screen kitchenscale:
                 xoffset 3
  
 screen callmap():
-    # on "show" action Function ... #maybe something like this, ha?
+    # on "show" action Function check_scheduled_calls #maybe something like this, ha?
 
     if mapbuttonisactive == True:
         imagebutton:
@@ -435,6 +435,7 @@ screen girlsstats():
 screen map():
     on "show" action SetVariable("youarehome", False)
     on "show" action Function(pause_music)
+    on "show" action Function(check_calls_map)
     on "hide" action Function(resume_music)
 
     image "gui/dg_map.png"
