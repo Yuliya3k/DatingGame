@@ -17,3 +17,18 @@ This project’s code is licensed under the [Creative Commons BY-NC-SA 4.0 Licen
 
 
 Copyright (c) 2025 Yuliya3k
+
+
+## Event Scheduling
+
+Use `schedule_event(day, hour, label, conditions=None)` to queue events that
+should run at a specific in‑game time. `conditions` is a list of variable/value
+pairs that must all match for the event to trigger.
+
+Example:
+
+```
+schedule_event(calendar.TotalDays + 1, 9, "morning_call",
+               [("goal_aurora", "Reach out for support")])
+```
+

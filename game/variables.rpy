@@ -333,7 +333,7 @@ label variables:
     default fetish_club_meeting_minute = 0
     default fetish_club_first_meeting_done = False
     
-    # Scheduled phone call events
+    # Scheduled phone call events stored as (day, hour, label)
     default scheduled_calls = []
 
     default aurora_success_lines = [
@@ -414,7 +414,7 @@ label variables:
     ]
 
 
-    # Details for phone_goal_check events indexed by call day
+    # Details for phone_goal_check events indexed by (day, hour)
     default phone_goal_details = {}
     default last_call_person = None
     default last_call_goal = None

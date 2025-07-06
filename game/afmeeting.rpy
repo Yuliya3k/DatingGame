@@ -372,8 +372,9 @@ label goal_aurora:
     $ goal_aurora_outcome = renpy.random.choice(["success", "fail"])
     if goal_aurora_outcome == "fail":
         $ call_day = calendar.TotalDays + renpy.random.randint(1,7)
-        $ phone_goal_details[call_day] = ("Aurora", goal_aurora)
-        $ scheduled_calls.append((call_day, "phone_goal_check"))
+        $ call_hour = calendar.Hours
+        $ phone_goal_details[(call_day, call_hour)] = ("Aurora", goal_aurora)
+        $ scheduled_calls.append((call_day, call_hour, "phone_goal_check"))
     jump choose_goal_member
 
 label goal_nikki:
@@ -426,8 +427,9 @@ label goal_nikki:
     $ goal_nikki_outcome = renpy.random.choice(["success", "fail"])
     if goal_nikki_outcome == "fail":
         $ call_day = calendar.TotalDays + renpy.random.randint(1,7)
-        $ phone_goal_details[call_day] = ("Nikki", goal_nikki)
-        $ scheduled_calls.append((call_day, "phone_goal_check"))
+        $ call_hour = calendar.Hours
+        $ phone_goal_details[(call_day, call_hour)] = ("Nikki", goal_nikki)
+        $ scheduled_calls.append((call_day, call_hour, "phone_goal_check"))
     jump choose_goal_member
 
 label goal_farida:
@@ -481,8 +483,9 @@ label goal_farida:
     $ goal_farida_outcome = renpy.random.choice(["success", "fail"])
     if goal_farida_outcome == "fail":
         $ call_day = calendar.TotalDays + renpy.random.randint(1,7)
-        $ phone_goal_details[call_day] = ("Farida", goal_farida)
-        $ scheduled_calls.append((call_day, "phone_goal_check"))
+        $ call_hour = calendar.Hours
+        $ phone_goal_details[(call_day, call_hour)] = ("Farida", goal_farida)
+        $ scheduled_calls.append((call_day, call_hour, "phone_goal_check"))
     jump choose_goal_member
 
 label goal_boris:
@@ -535,8 +538,9 @@ label goal_boris:
     $ goal_boris_outcome = renpy.random.choice(["success", "fail"])
     if goal_boris_outcome == "fail":
         $ call_day = calendar.TotalDays + renpy.random.randint(1,7)
-        $ phone_goal_details[call_day] = ("Boris", goal_boris)
-        $ scheduled_calls.append((call_day, "phone_goal_check"))
+        $ call_hour = calendar.Hours
+        $ phone_goal_details[(call_day, call_hour)] = ("Boris", goal_boris)
+        $ scheduled_calls.append((call_day, call_hour, "phone_goal_check"))
     jump choose_goal_member
 
 label goal_charlie:
@@ -589,8 +593,9 @@ label goal_charlie:
     $ goal_charlie_outcome = renpy.random.choice(["success", "fail"])
     if goal_charlie_outcome == "fail":
         $ call_day = calendar.TotalDays + renpy.random.randint(1,7)
-        $ phone_goal_details[call_day] = ("Charlie", goal_charlie)
-        $ scheduled_calls.append((call_day, "phone_goal_check"))
+        $ call_hour = calendar.Hours
+        $ phone_goal_details[(call_day, call_hour)] = ("Charlie", goal_charlie)
+        $ scheduled_calls.append((call_day, call_hour, "phone_goal_check"))
     jump choose_goal_member
 
 label goal_ash:
@@ -643,8 +648,9 @@ label goal_ash:
     $ goal_ash_outcome = renpy.random.choice(["success", "fail"])
     if goal_ash_outcome == "fail":
         $ call_day = calendar.TotalDays + renpy.random.randint(1,7)
-        $ phone_goal_details[call_day] = ("Ash", goal_ash)
-        $ scheduled_calls.append((call_day, "phone_goal_check"))
+        $ call_hour = calendar.Hours
+        $ phone_goal_details[(call_day, call_hour)] = ("Ash", goal_ash)
+        $ scheduled_calls.append((call_day, call_hour, "phone_goal_check"))
     jump choose_goal_member
 
 label goal_nahuel:
@@ -698,8 +704,9 @@ label goal_nahuel:
     $ goal_nahuel_outcome = renpy.random.choice(["success", "fail"])
     if goal_nahuel_outcome == "fail":
         $ call_day = calendar.TotalDays + renpy.random.randint(1,7)
-        $ phone_goal_details[call_day] = ("Nahuel", goal_nahuel)
-        $ scheduled_calls.append((call_day, "phone_goal_check"))
+        $ call_hour = calendar.Hours
+        $ phone_goal_details[(call_day, call_hour)] = ("Nahuel", goal_nahuel)
+        $ scheduled_calls.append((call_day, call_hour, "phone_goal_check"))
     jump choose_goal_member
 
 

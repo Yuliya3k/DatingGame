@@ -92,26 +92,59 @@
                 renpy.music.set_pause(False, channel="music")
                 _music_paused = False
 
-        
+        def schedule_event(day, hour, label, conditions=None):
+            """
+            Schedule an event for a specific day and hour.
+
+            `conditions` should be a list of ``(var_name, expected_value)``
+            tuples that must all evaluate to ``True`` in order for the event
+            to run.
+
+            Example::
+
+                schedule_event(calendar.TotalDays + 1, 9, "morning_call",
+                                [("goal_aurora", "Reach out for support")])
+            """
+
+            scheduled_calls.append((day, hour, label, conditions or []))
+
+            
         def check_scheduled_calls():
             _jump_event = None
             _event_day = None
             for ev in scheduled_calls:
-                if ev[0] == calendar.TotalDays:
-                    _jump_event = ev[1]
-                    _event_day = ev[0]
-                    scheduled_calls.remove(ev)
-                    break
+                # Backwards compatibility: allow 2‑tuple events without time
+                if len(ev) == 2:
+                    day, label = ev
+                    hour = None
+                    conditions = []
+                else:
+                    day, hour, label = ev[:3]
+                    conditions = ev[3] if len(ev) > 3 else []
+
+                if day == calendar.TotalDays and (hour is None or hour == calendar.Hours):
+                    all_ok = True
+                    for var, expected in conditions:
+                        if getattr(store, var, None) != expected:
+                            all_ok = False
+                            break
+
+                    if all_ok:
+                        _jump_event = label
+                        _event_day = day
+                        scheduled_calls.remove(ev)
+                        break
 
             if _jump_event:
                 if _jump_event == "phone_goal_check":
                     global last_call_person, last_call_goal
                     last_call_person, last_call_goal = phone_goal_details.pop(
-                        _event_day, (None, None)
+                        _event_key, (None, None)
                     )
                 renpy.call_in_new_context(_jump_event)
                 return True
             return False
+
         
         # this does not work at all, it does not hide the dialogue menu for example, that makes all game look like buggy shit
         # def show_map_unless_event():
