@@ -1,4 +1,9 @@
 label rm:
+    $ myrandom = renpy.random.randint(1,10)
+    if myrandom == 5 and hayoonfirstmeet == 1:
+        call hayoonrandome
+
+
     call closescreens
     play music "audio/rmkitchen.mp3" volume 0.3
     

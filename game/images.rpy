@@ -7,4 +7,7 @@ label images:
     image leftpan = "/images/rmpanleft ([leftpan]).png"
 
     image marshmallow = "/images/marshmallowpos[marshmallowpos] ([marshmallowstate]).png"
+    
+    image background = Solid("#fff")
+    
     return

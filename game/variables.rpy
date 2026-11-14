@@ -131,4 +131,12 @@ label variables:
     default parknothing = 0
 
     default promcafetoday = 0
+
+
+    default hospitalhi = 0
+
+    default hayoonfasteater = 1
+
+    default hayoonrandome = 0
+
     return

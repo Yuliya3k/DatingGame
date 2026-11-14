@@ -1,38 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/culiarychoices.rpy", line 20, in script call
+  File "game/culiarychoices.rpy", line 21, in script call
     menu:
-  File "game/park.rpy", line 67, in script call
-    call promcafe
-  File "game/linpromcafetalk.rpy", line 3, in script
+  File "game/culiarychoices.rpy", line 21, in script call
     menu:
-  File "game/linpromcafetalk.rpy", line 236, in <module>
-    "Ask Lin about her family" if lindtefamilyq == 0:
-NameError: name 'lindtefamilyq' is not defined
+  File "game/culiarychoices.rpy", line 21, in script call
+    menu:
+  [Previous line repeated 1 more time]
+ScriptError: could not find label 'g7stats'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/culiarychoices.rpy", line 20, in script call
+  File "D:\renpy-7.4.11-sdk\renpy\bootstrap.py", line 275, in bootstrap
+    renpy.main.main()
+  File "D:\renpy-7.4.11-sdk\renpy\main.py", line 670, in main
+    run(restart)
+  File "D:\renpy-7.4.11-sdk\renpy\main.py", line 144, in run
+    renpy.execution.run_context(True)
+  File "D:\renpy-7.4.11-sdk\renpy\execution.py", line 942, in run_context
+    context.run()
+  File "game/culiarychoices.rpy", line 21, in script call
     menu:
-  File "game/park.rpy", line 67, in script call
-    call promcafe
-  File "game/linpromcafetalk.rpy", line 3, in script
+  File "game/culiarychoices.rpy", line 21, in script call
     menu:
-  File "D:\renpy-7.4.11-sdk\renpy\ast.py", line 1922, in execute
-    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
-  File "D:\renpy-7.4.11-sdk\renpy\exports.py", line 1072, in menu
-    condition = renpy.python.py_eval(condition)
-  File "D:\renpy-7.4.11-sdk\renpy\python.py", line 1153, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "D:\renpy-7.4.11-sdk\renpy\python.py", line 1146, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/linpromcafetalk.rpy", line 236, in <module>
-    "Ask Lin about her family" if lindtefamilyq == 0:
-NameError: name 'lindtefamilyq' is not defined
+  File "game/culiarychoices.rpy", line 21, in script call
+    menu:
+  [Previous line repeated 1 more time]
+  File "D:\renpy-7.4.11-sdk\renpy\script.py", line 1013, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'g7stats'.
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.1.0.23051307
-Dating_game 0.3b
-Mon Dec  4 00:57:17 2023
+Dating_game 0.3e
+Mon Jan 22 00:55:27 2024

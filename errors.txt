@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/lindatelistening.rpy", line 10: expected statement.
-    lin_fullness = 4000
-                 ^
+File "game/my_screens.rpy", line 93: screen expects a non-empty block.
+    if hayoonrandome > 0:
+                         ^
 
 Ren'Py Version: Ren'Py 8.1.0.23051307
-Mon Dec  4 01:28:10 2023
+Mon Jan 22 00:53:59 2024

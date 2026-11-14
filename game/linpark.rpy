@@ -526,6 +526,7 @@ label linpark:
 
             "Would you like to ride a bike?" if linrideabike == 0:
                 $ linrideabike = 1
+                
                 $ myrandom = renpy.random.randint(1,3)
                 if myrandom == 1:
                     $ position = "parklintalktalk"
@@ -533,6 +534,7 @@ label linpark:
                     Lin "Hey, do you enjoy riding a bicycle? I was thinking about going for a nature trip this weekend, and it could be a lot of fun. Would you be interested in joining me?"
                     menu:
                         "Sure":
+                            $ linrideabikesat = 1
                             $ position = "parklintalklisten"
                             call sceneimg
                             player "Biking sounds like a great idea, Lin. I haven't ridden in a while, but I'd be up for the adventure. Count me in!"
@@ -555,9 +557,10 @@ label linpark:
                             $ position = "parklintalktalk"
                             call sceneimg
 
-                            Lin "Just your adventurous spirit, a water bottle, and a sense of excitement. We'll enjoy the ride, and I'll bring some snacks for our pitstops. It's going to be a memorable day!"
-                            "Continue in the next updates..."
+                            Lin "Just your adventurous spirit, a water bottle, and a sense of excitement. We'll enjoy the ride, and I'll bring some snacks for our pitstops. It's going to be a memorable day! See you at about 12:00 on saturday"
+                            
                         "No, thank you":
+                            $ linrideabikesat = 0
                             $ position = "parklintalklisten"
                             call sceneimg
                             player "Well, Lin, I appreciate the offer, but I'm not really a fan of cycling. I think I'll pass this time."
@@ -784,6 +787,81 @@ label linpark:
 
                             Lin "Just a quick note, please make sure you're not running late. 19:00 it is! Looking forward to it."
                         $ lin_cafetoday = 1
+            "How about hiking?" if linhike == 0:
+                $ linhike = 1
+                menu:
+                    "I'm in":
+                        $ linhikesun = 1
+                        $ myrandom = renpy.random.randint(1,3)
+                        if myrandom == 1:
+                        
+
+                            Lin "Hey, how about a hike this Sunday? I was thinking we could start after 10:00 AM. It's been too long since our last one."
+
+                            player "Sunday after 10:00 sounds perfect, Lin. A morning hike is just what I need. I'm in."
+
+                            Lin "Great! There’s this trail with amazing views around that time of day. It should be a relaxing yet invigorating hike."
+
+                            player "I'm already looking forward to it. Your trail choices are always spot on. Let's touch base on Saturday for the final plan."
+
+                            Lin "Sounds good. I'll send you the trail map and we can meet up at the trailhead. Excited for our hike!"
+                        if myrandom == 2:
+
+                            Lin "I'm planning a scenic hike this Sunday and thought you might want to join. How does starting after 10:00 AM sound?"
+
+                            player "A scenic hike on Sunday post-10:00 AM is perfect for me. I'm always up for exploring nature, especially with good company."
+
+                            Lin "Awesome! There’s a trail that’s just beautiful later in the morning. It's the perfect mix of sun and shade."
+
+                            player "That sounds ideal. Your hiking recommendations are always a hit. Let's finalize our plans closer to the weekend."
+
+                            Lin "Definitely! I’ll text you all the details. Can't wait for our Sunday adventure."
+                        if myrandom == 3:
+
+                            Lin "What do you think about a Sunday hike? I was thinking we could hit the trails after 10:00 AM. Interested?"
+
+                            player "A hike on Sunday after 10:00? That's a great idea, Lin. I'd love to join. Where were you thinking of going?"
+
+                            Lin "There's this one trail that really comes to life in the late morning. It’s not too crowded and offers some incredible views."
+
+                            player "That sounds like a perfect way to spend a Sunday morning. Count me in. We can iron out the details later in the week."
+
+                            Lin "Perfect! I'll get everything sorted and let you know. Looking forward to it!"
+                    "Well, I'm not ready yet":
+                        if myrandom == 1:
+
+                            Lin "Hey, I'm planning a hike this Sunday and thought you might want to join. We'll start after 10:00 AM. Are you in?"
+
+                            player "Lin, that sounds like a great plan, but I'm not quite ready for such a physical activity yet. I need to build up my endurance a bit more."
+
+                            Lin "I understand completely. It's important to listen to your body. Maybe we can plan something less strenuous soon?"
+
+                            player "That would be perfect. Thanks for being so understanding. I’d love to join once I feel more up to it."
+
+                            Lin "No problem at all. Let’s keep in touch and find something that works for both of us. Take care!"
+                        if myrandom == 2:
+
+                            Lin "I was thinking about going for a hike this Sunday after 10:00 AM. It should be fun! Do you want to come along?"
+
+                            player "Thanks for the invite, Lin, but I think I'll have to pass this time. I'm not quite ready for a hike yet. I need to work on my fitness a bit more."
+
+                            Lin "I get that. It’s important to be comfortable with the activity level. Let me know when you're feeling up for it, and we can plan something together."
+
+                            player "Definitely, I appreciate your understanding. Hopefully, I'll be ready to join you on one of your hikes soon."
+
+                            Lin "Looking forward to it. In the meantime, if there’s something else you’d like to do, just let me know."
+                        if myrandom == 3:
+
+                            Lin "This Sunday, I'm going hiking after 10:00 AM. It's going to be a beautiful day for it. Want to join me?"
+
+                            player "I really appreciate the offer, Lin, but I'm not ready for a hike right now. I need a bit more time to prepare myself physically."
+
+                            Lin "No worries at all. It's important to do what feels right for you. Maybe we can plan a casual walk or something lighter soon?"
+
+                            player "That sounds fantastic. Thanks for being so understanding. I’ll definitely take you up on that offer when I’m more prepared."
+
+                            Lin "Great! Just let me know when you're ready. We can always find activities that suit us both."
+            
             "Go for a walk":
                 jump parknothing
                 

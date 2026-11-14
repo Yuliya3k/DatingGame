@@ -76,9 +76,9 @@ screen map():
         auto "gui/dg_map_bar_%s.png" xpos 1027 ypos 315 action [ Play("sound", "audio/click2.mp3"), Jump("bar") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
     imagebutton:
         auto "gui/dg_map_burgers_%s.png" xpos 1034 ypos 160 action [ Play("sound", "audio/click2.mp3"), Jump("bcafe") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
-    if hayoonfirsttime > 0:
+    if hayoonrandome > 0:
         imagebutton:
-            auto "gui/dg_map_hospital_%s.png" xpos 818 ypos 511 action [ Play("sound", "audio/click2.mp3"), Call("g7stats") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+            auto "gui/dg_map_hospital_%s.png" xpos 818 ypos 511 action [ Play("sound", "audio/click2.mp3"), Jump("hayoonhospital") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
     
     if calendar.Hours < 23 and calendar.Hours > 5:
         imagebutton:
@@ -90,6 +90,8 @@ screen map():
     if overallpeople > 0 and ((calendar.WeekDay == 'Mon' or calendar.WeekDay == 'Tue' or calendar.WeekDay == 'Wed' or calendar.WeekDay == 'Thu' or calendar.WeekDay == 'Fri') and calendar.Hours >= 7 and calendar.Hours <= 23):
         imagebutton:
             auto "gui/dg_map_fitness_%s.png" xpos 544 ypos 407 action [ Play("sound", "audio/click2.mp3"), Jump("fitness") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    
+
 
 screen day_icon():
     frame:
@@ -606,3 +608,38 @@ screen linstats():
 screen back():
     imagebutton:
         auto "gui/back_%s.png" xpos 6 ypos 625 action [ Play("sound", "audio/click1.mp3"), Jump("test") ] hovered [ Play("sound", "audio/button hover2.mp3") ]
+
+
+
+
+
+screen linhikefeeding:
+
+    if position == "linsittingcampfiremouthopened" and linfeedingactive == 0:
+        imagebutton:
+            auto "gui/linfeed_%s.png" xpos 1003 ypos 126 action [ Play("sound", "audio/click2.mp3"), Jump("linfeedingscale") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    if position == "linsittingcampfiremouthopenedfromabove" and linfeedingactive == 0:
+        imagebutton:
+            auto "gui/linfeed_%s.png" xpos 924 ypos 687 action [ Play("sound", "audio/click2.mp3"), Jump("linfeedingscale") ] hovered [ Play("sound", "audio/button hover4.mp3") ]
+    
+    imagebutton:
+        auto "gui/linfeedstop_%s.png" xpos 1466 ypos 584 action [ Play("sound", "audio/click2.mp3"), Jump("linhiking") ] hovered [ Play("sound", "audio/button hover4.mp3") ] 
+        
+    frame:
+        xpos 1257
+        ypos 551
+        
+        background Solid("#800000ff")
+        xsize linfeedingpressurexsize
+        ysize 17
+
+    frame:
+        xpos 1257
+        ypos 489
+        background Solid("#00259fff")
+        xsize linfeedingchancexsize
+        ysize linfeedingchanceysize
+
+    image "gui/linfeedframe.png" xpos 1257 ypos 489
+    image "gui/fullness1.png" xpos 1458 ypos 506
+    image "gui/pressure1.png" xpos 1471 ypos 550

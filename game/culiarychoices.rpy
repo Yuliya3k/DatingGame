@@ -1,4 +1,5 @@
 label culinarychoices:
+    
     $ calendar.AddMinutes(20)
 
     $ myrandom = renpy.random.randint(1,10)
@@ -14,7 +15,7 @@ label culinarychoices:
 
 
     label cchoicesloop: 
-        
+
         $ position = "backyard"
         call sceneimg
         menu:
@@ -24,6 +25,10 @@ label culinarychoices:
                 call dayvariables
             "Go talk to Aurora" if auroraseen == 1:
                 jump aurorafirstmeet
+            "Cycling" if calendar.Hours > 11 and calendar.Hours < 16 and calendar.WeekDay == "Sat" and linrideabikesat == 1:
+                jump lincycling
+            "Hiking" if calendar.Hours > 9 and calendar.Hours < 18 and calendar.WeekDay == "Sun" and linhikesun == 1:
+                jump linhiking
             
             
             

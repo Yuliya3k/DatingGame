@@ -368,7 +368,7 @@ label linpromcafetalk:
 
                 player "  What can I say? You wear it well, my dear. It's like you're carrying all the delicious memories of our meal."
                 $ position = "parkpromlincafesittingtalking"
-                call sceneimgv
+                call sceneimg
 
                 Lin "  You always find a way to make me smile, even when I'm feeling a bit self-conscious about my full belly."
                 call lindatelistening

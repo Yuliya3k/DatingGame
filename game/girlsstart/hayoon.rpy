@@ -1,6 +1,6 @@
 label hayoon:
 
-    define HaYoon = Character("hayoon", colour="#000984")
+    define HaYoon = Character("Ha-Yoon", colour="#000984")
 
     image hayoon = "/images/hayoonpos[position]weight[hayoon_weightstage] ([hayoon_fullstage]).png"
 

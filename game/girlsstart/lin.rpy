@@ -88,16 +88,65 @@ label lin:
 
     default lindatefamilyq = 0
 
-    # default 
+    default lincycling = 0
+
+    default lincyclingboss = 0
+
+    default linrideabikesat = 0
+
+    default linhikinghi = 0
+
+    default linhikebreak = 0
+
+    default linhikebreakeat = 0
+
+    default linhikejustrest = 0
+
+    default linhikeexplodingeat = 0
+
+    default linhikefire = 0
+
+    default linhikesun = 0
+
+    default linhike = 0
+
+    default linhikingimpression = 0
+
+    default linhikingingredients = 0
+
+    default linhikingedible = 0
+
+    default linhikingecology = 0
+
+    default linhikingbreak = 0
+
+    default linpressure = 0
+
+    default linfeedingpressurexsize = 0
+
+    default linfeedingpressureysize = 17
+
+    default linfeedingchancexsize = int(lin_fullness/8)
+
+    default linfeedingchanceysize = 62
+
+    default lin_dayfullness = 0
+
+    default linfeedingactive = 0
+
+    default linistoofull = 0
 
     # default 
 
-    # default 
+    # default
 
-    # default 
+    # default
 
-    # default 
+    # default
 
-    # default 
+    # default
+
+    # default
+
 
 return
