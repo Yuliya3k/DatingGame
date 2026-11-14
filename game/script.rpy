@@ -112,6 +112,7 @@
         def check_scheduled_calls():
             _jump_event = None
             _event_day = None
+            _event_key = None
             for ev in scheduled_calls:
                 # Backwards compatibility: allow 2‑tuple events without time
                 if len(ev) == 2:
@@ -132,6 +133,7 @@
                     if all_ok:
                         _jump_event = label
                         _event_day = day
+                        _event_key = (day, hour)
                         scheduled_calls.remove(ev)
                         break
 
